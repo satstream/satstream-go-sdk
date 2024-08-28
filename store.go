@@ -6,10 +6,10 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/stainless-sdks/satstream-go/internal/apijson"
-	"github.com/stainless-sdks/satstream-go/internal/requestconfig"
-	"github.com/stainless-sdks/satstream-go/option"
-	"github.com/stainless-sdks/satstream-go/shared"
+	"github.com/satstream/satstream-go-sdk/internal/apijson"
+	"github.com/satstream/satstream-go-sdk/internal/requestconfig"
+	"github.com/satstream/satstream-go-sdk/option"
+	"github.com/satstream/satstream-go-sdk/shared"
 )
 
 // StoreService contains methods and other services that help with interacting with

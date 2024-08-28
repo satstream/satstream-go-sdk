@@ -5,8 +5,8 @@ package shared
 import (
 	"time"
 
-	"github.com/stainless-sdks/satstream-go/internal/apijson"
-	"github.com/stainless-sdks/satstream-go/internal/param"
+	"github.com/satstream/satstream-go-sdk/internal/apijson"
+	"github.com/satstream/satstream-go-sdk/internal/param"
 )
 
 type Order struct {

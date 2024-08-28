@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/satstream-go"
-	"github.com/stainless-sdks/satstream-go/internal/testutil"
-	"github.com/stainless-sdks/satstream-go/option"
-	"github.com/stainless-sdks/satstream-go/shared"
+	"github.com/satstream/satstream-go-sdk"
+	"github.com/satstream/satstream-go-sdk/internal/testutil"
+	"github.com/satstream/satstream-go-sdk/option"
+	"github.com/satstream/satstream-go-sdk/shared"
 )
 
 func TestStoreNewOrderWithOptionalParams(t *testing.T) {

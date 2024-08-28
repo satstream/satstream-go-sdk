@@ -17,10 +17,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/stainless-sdks/satstream-go/internal"
-	"github.com/stainless-sdks/satstream-go/internal/apierror"
-	"github.com/stainless-sdks/satstream-go/internal/apiform"
-	"github.com/stainless-sdks/satstream-go/internal/apiquery"
+	"github.com/satstream/satstream-go-sdk/internal"
+	"github.com/satstream/satstream-go-sdk/internal/apierror"
+	"github.com/satstream/satstream-go-sdk/internal/apiform"
+	"github.com/satstream/satstream-go-sdk/internal/apiquery"
 )
 
 func getDefaultHeaders() map[string]string {
