@@ -1,33 +1,25 @@
-# Petstore Go API Library
+# Satstream Go API Library
 
-<a href="https://pkg.go.dev/github.com/satstream/satstream-go-sdk"><img src="https://pkg.go.dev/badge/github.com/satstream/satstream-go-sdk.svg" alt="Go Reference"></a>
+<a href="https://pkg.go.dev/github.com/stainless-sdks/satstream-go"><img src="https://pkg.go.dev/badge/github.com/stainless-sdks/satstream-go.svg" alt="Go Reference"></a>
 
-The Petstore Go library provides convenient access to [the Petstore REST
-API](https://app.stainlessapi.com/docs) from applications written in Go. The full API of this library can be found in [api.md](api.md).
+The Satstream Go library provides convenient access to [the Satstream REST
+API](https://docs.satstream.com) from applications written in Go. The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainlessapi.com/).
 
 ## Installation
 
-<!-- x-release-please-start-version -->
-
 ```go
 import (
-	"github.com/satstream/satstream-go-sdk" // imported as satstream
+	"github.com/stainless-sdks/satstream-go" // imported as satstream
 )
 ```
 
-<!-- x-release-please-end -->
-
 Or to pin the version:
 
-<!-- x-release-please-start-version -->
-
 ```sh
-go get -u 'github.com/satstream/satstream-go-sdk@v0.0.1-alpha.0'
+go get -u 'github.com/stainless-sdks/satstream-go@v0.0.1-alpha.0'
 ```
-
-<!-- x-release-please-end -->
 
 ## Requirements
 
@@ -42,24 +34,16 @@ package main
 
 import (
 	"context"
-	"fmt"
 
-	"github.com/satstream/satstream-go-sdk"
-	"github.com/satstream/satstream-go-sdk/option"
-	"github.com/satstream/satstream-go-sdk/shared"
+	"github.com/stainless-sdks/satstream-go"
 )
 
 func main() {
-	client := satstream.NewClient(
-		option.WithAPIKey("My API Key"), // defaults to os.LookupEnv("PETSTORE_API_KEY")
-	)
-	order, err := client.Store.NewOrder(context.TODO(), satstream.StoreNewOrderParams{
-		Order: shared.OrderParam{},
-	})
+	client := satstream.NewClient()
+	fees, err := client.Fees.List(context.TODO())
 	if err != nil {
 		panic(err.Error())
 	}
-	fmt.Printf("%+v\n", order.ID)
 }
 
 ```
@@ -148,7 +132,7 @@ client := satstream.NewClient(
 	option.WithHeader("X-Some-Header", "custom_header_info"),
 )
 
-client.Store.Inventory(context.TODO(), ...,
+client.Fees.List(context.TODO(), ...,
 	// Override the header
 	option.WithHeader("X-Some-Header", "some_other_custom_header_info"),
 	// Add an undocumented field to the request body, using sjson syntax
@@ -156,7 +140,7 @@ client.Store.Inventory(context.TODO(), ...,
 )
 ```
 
-See the [full list of request options](https://pkg.go.dev/github.com/satstream/satstream-go-sdk/option).
+See the [full list of request options](https://pkg.go.dev/github.com/stainless-sdks/satstream-go/option).
 
 ### Pagination
 
@@ -177,14 +161,14 @@ When the API returns a non-success status code, we return an error with type
 To handle errors, we recommend that you use the `errors.As` pattern:
 
 ```go
-_, err := client.Store.Inventory(context.TODO())
+_, err := client.Fees.List(context.TODO())
 if err != nil {
 	var apierr *satstream.Error
 	if errors.As(err, &apierr) {
 		println(string(apierr.DumpRequest(true)))  // Prints the serialized HTTP request
 		println(string(apierr.DumpResponse(true))) // Prints the serialized HTTP response
 	}
-	panic(err.Error()) // GET "/store/inventory": 400 Bad Request { ... }
+	panic(err.Error()) // GET "/fees": 400 Bad Request { ... }
 }
 ```
 
@@ -202,7 +186,7 @@ To set a per-retry timeout, use `option.WithRequestTimeout()`.
 // This sets the timeout for the request, including all the retries.
 ctx, cancel := context.WithTimeout(context.Background(), 5*time.Minute)
 defer cancel()
-client.Store.Inventory(
+client.Fees.List(
 	ctx,
 	// This sets the per-retry timeout
 	option.WithRequestTimeout(20*time.Second),
@@ -237,7 +221,7 @@ client := satstream.NewClient(
 )
 
 // Override per-request:
-client.Store.Inventory(context.TODO(), option.WithMaxRetries(5))
+client.Fees.List(context.TODO(), option.WithMaxRetries(5))
 ```
 
 ### Making custom/undocumented requests
@@ -335,4 +319,4 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/satstream/satstream-go-sdk/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/satstream-go/issues) with questions, bugs, or suggestions.

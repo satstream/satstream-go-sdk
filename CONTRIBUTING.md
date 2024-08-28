@@ -34,7 +34,7 @@ To use a local version of this library from source in another project, edit the 
 directive. This can be done through the CLI with the following:
 
 ```bash
-go mod edit -replace github.com/satstream/satstream-go-sdk=/path/to/satstream-go-sdk
+go mod edit -replace github.com/stainless-sdks/satstream-go=/path/to/satstream-go
 ```
 
 ## Running tests

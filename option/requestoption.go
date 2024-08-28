@@ -11,15 +11,15 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/satstream/satstream-go-sdk/internal/requestconfig"
+	"github.com/stainless-sdks/satstream-go/internal/requestconfig"
 	"github.com/tidwall/sjson"
 )
 
-// RequestOption is an option for the requests made by the petstore API Client
+// RequestOption is an option for the requests made by the satstream API Client
 // which can be supplied to clients, services, and methods. You can read more about this functional
 // options pattern in our [README].
 //
-// [README]: https://pkg.go.dev/github.com/satstream/satstream-go-sdk#readme-requestoptions
+// [README]: https://pkg.go.dev/github.com/stainless-sdks/satstream-go#readme-requestoptions
 type RequestOption = func(*requestconfig.RequestConfig) error
 
 // WithBaseURL returns a RequestOption that sets the BaseURL for the client.
@@ -225,13 +225,5 @@ func WithRequestTimeout(dur time.Duration) RequestOption {
 // environment to be the "production" environment. An environment specifies which base URL
 // to use by default.
 func WithEnvironmentProduction() RequestOption {
-	return WithBaseURL("https://petstore3.swagger.io/api/v3/")
-}
-
-// WithAPIKey returns a RequestOption that sets the client setting "api_key".
-func WithAPIKey(value string) RequestOption {
-	return func(r *requestconfig.RequestConfig) error {
-		r.APIKey = value
-		return r.Apply(WithHeader("api_key", r.APIKey))
-	}
+	return WithBaseURL("//localhost:8085/api/v1/")
 }

@@ -1,4 +1,4 @@
-module github.com/satstream/satstream-go-sdk
+module github.com/stainless-sdks/satstream-go
 
 go 1.21
 
