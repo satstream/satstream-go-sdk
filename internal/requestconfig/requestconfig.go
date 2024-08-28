@@ -17,15 +17,15 @@ import (
 	"strings"
 	"time"
 
-	"github.com/satstream/satstream-go-sdk/internal"
-	"github.com/satstream/satstream-go-sdk/internal/apierror"
-	"github.com/satstream/satstream-go-sdk/internal/apiform"
-	"github.com/satstream/satstream-go-sdk/internal/apiquery"
+	"github.com/stainless-sdks/satstream-go/internal"
+	"github.com/stainless-sdks/satstream-go/internal/apierror"
+	"github.com/stainless-sdks/satstream-go/internal/apiform"
+	"github.com/stainless-sdks/satstream-go/internal/apiquery"
 )
 
 func getDefaultHeaders() map[string]string {
 	return map[string]string{
-		"User-Agent": fmt.Sprintf("Petstore/Go %s", internal.PackageVersion),
+		"User-Agent": fmt.Sprintf("Satstream/Go %s", internal.PackageVersion),
 	}
 }
 
@@ -171,7 +171,6 @@ type RequestConfig struct {
 	BaseURL        *url.URL
 	HTTPClient     *http.Client
 	Middlewares    []middleware
-	APIKey         string
 	// If ResponseBodyInto not nil, then we will attempt to deserialize into
 	// ResponseBodyInto. If Destination is a []byte, then it will return the body as
 	// is.

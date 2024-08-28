@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"net/http/httputil"
 
-	"github.com/satstream/satstream-go-sdk/internal/apijson"
+	"github.com/stainless-sdks/satstream-go/internal/apijson"
 )
 
 // Error represents an error that originates from the API, i.e. when a request is

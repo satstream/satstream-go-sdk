@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/satstream/satstream-go-sdk/internal/param"
+	"github.com/stainless-sdks/satstream-go/internal/param"
 )
 
 type Struct struct {

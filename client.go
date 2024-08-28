@@ -5,38 +5,32 @@ package satstream
 import (
 	"context"
 	"net/http"
-	"os"
 
-	"github.com/satstream/satstream-go-sdk/internal/requestconfig"
-	"github.com/satstream/satstream-go-sdk/option"
+	"github.com/stainless-sdks/satstream-go/internal/requestconfig"
+	"github.com/stainless-sdks/satstream-go/option"
 )
 
 // Client creates a struct with services and top level methods that help with
-// interacting with the petstore API. You should not instantiate this client
+// interacting with the satstream API. You should not instantiate this client
 // directly, and instead use the [NewClient] method instead.
 type Client struct {
 	Options []option.RequestOption
-	Pets    *PetService
-	Store   *StoreService
-	User    *UserService
+	Blocks  *BlockService
+	Fees    *FeeService
 }
 
 // NewClient generates a new client with the default option read from the
-// environment (PETSTORE_API_KEY). The option passed in as arguments are applied
-// after these default arguments, and all option will be passed down to the
-// services and requests that this client makes.
+// environment (). The option passed in as arguments are applied after these
+// default arguments, and all option will be passed down to the services and
+// requests that this client makes.
 func NewClient(opts ...option.RequestOption) (r *Client) {
 	defaults := []option.RequestOption{option.WithEnvironmentProduction()}
-	if o, ok := os.LookupEnv("PETSTORE_API_KEY"); ok {
-		defaults = append(defaults, option.WithAPIKey(o))
-	}
 	opts = append(defaults, opts...)
 
 	r = &Client{Options: opts}
 
-	r.Pets = NewPetService(opts...)
-	r.Store = NewStoreService(opts...)
-	r.User = NewUserService(opts...)
+	r.Blocks = NewBlockService(opts...)
+	r.Fees = NewFeeService(opts...)
 
 	return
 }

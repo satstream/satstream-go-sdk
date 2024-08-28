@@ -4,6 +4,7 @@ package satstream_test
 
 import (
 	"context"
+	"errors"
 	"os"
 	"testing"
 
@@ -12,7 +13,7 @@ import (
 	"github.com/stainless-sdks/satstream-go/option"
 )
 
-func TestUsage(t *testing.T) {
+func TestBlockTransactionList(t *testing.T) {
 	baseURL := "http://localhost:4010"
 	if envURL, ok := os.LookupEnv("TEST_API_BASE_URL"); ok {
 		baseURL = envURL
@@ -23,8 +24,12 @@ func TestUsage(t *testing.T) {
 	client := satstream.NewClient(
 		option.WithBaseURL(baseURL),
 	)
-	_, err := client.Fees.List(context.TODO())
+	_, err := client.Blocks.Transactions.List(context.TODO(), int64(0))
 	if err != nil {
-		t.Error(err)
+		var apierr *satstream.Error
+		if errors.As(err, &apierr) {
+			t.Log(string(apierr.DumpRequest(true)))
+		}
+		t.Fatalf("err should be nil: %s", err.Error())
 	}
 }
