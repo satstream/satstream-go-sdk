@@ -9,11 +9,11 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/stainless-sdks/satstream-go/internal/apijson"
-	"github.com/stainless-sdks/satstream-go/internal/apiquery"
-	"github.com/stainless-sdks/satstream-go/internal/param"
-	"github.com/stainless-sdks/satstream-go/internal/requestconfig"
-	"github.com/stainless-sdks/satstream-go/option"
+	"github.com/satstream/satstream-go-sdk/internal/apijson"
+	"github.com/satstream/satstream-go-sdk/internal/apiquery"
+	"github.com/satstream/satstream-go-sdk/internal/param"
+	"github.com/satstream/satstream-go-sdk/internal/requestconfig"
+	"github.com/satstream/satstream-go-sdk/option"
 )
 
 // UserService contains methods and other services that help with interacting with

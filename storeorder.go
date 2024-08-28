@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/stainless-sdks/satstream-go/internal/requestconfig"
-	"github.com/stainless-sdks/satstream-go/option"
-	"github.com/stainless-sdks/satstream-go/shared"
+	"github.com/satstream/satstream-go-sdk/internal/requestconfig"
+	"github.com/satstream/satstream-go-sdk/option"
+	"github.com/satstream/satstream-go-sdk/shared"
 )
 
 // StoreOrderService contains methods and other services that help with interacting

@@ -3,8 +3,8 @@
 package satstream
 
 import (
-	"github.com/stainless-sdks/satstream-go/internal/apierror"
-	"github.com/stainless-sdks/satstream-go/shared"
+	"github.com/satstream/satstream-go-sdk/internal/apierror"
+	"github.com/satstream/satstream-go-sdk/shared"
 )
 
 type Error = apierror.Error

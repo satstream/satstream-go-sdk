@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/stainless-sdks/satstream-go/internal/requestconfig"
-	"github.com/stainless-sdks/satstream-go/option"
+	"github.com/satstream/satstream-go-sdk/internal/requestconfig"
+	"github.com/satstream/satstream-go-sdk/option"
 )
 
 // Client creates a struct with services and top level methods that help with
