@@ -8,9 +8,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/stainless-sdks/satstream-go"
-	"github.com/stainless-sdks/satstream-go/internal/testutil"
-	"github.com/stainless-sdks/satstream-go/option"
+	"github.com/satstream/satstream-go-sdk"
+	"github.com/satstream/satstream-go-sdk/internal/testutil"
+	"github.com/satstream/satstream-go-sdk/option"
 )
 
 func TestBlockGet(t *testing.T) {

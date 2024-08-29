@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/stainless-sdks/satstream-go"
-	"github.com/stainless-sdks/satstream-go/internal"
-	"github.com/stainless-sdks/satstream-go/option"
+	"github.com/satstream/satstream-go-sdk"
+	"github.com/satstream/satstream-go-sdk/internal"
+	"github.com/satstream/satstream-go-sdk/option"
 )
 
 type closureTransport struct {
