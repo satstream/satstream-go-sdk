@@ -12,12 +12,10 @@ package swagger
 
 type TypesUserApp struct {
 	ApiKey *TypesApiKey `json:"api_key,omitempty"`
-	ApiKeyId string `json:"api_key_id,omitempty"`
 	CreatedAt string `json:"created_at,omitempty"`
 	Id string `json:"id,omitempty"`
 	Name string `json:"name,omitempty"`
 	Subscription *TypesSubscription `json:"subscription,omitempty"`
-	SubscriptionId string `json:"subscription_id,omitempty"`
 	UpdatedAt string `json:"updated_at,omitempty"`
 	UserId string `json:"user_id,omitempty"`
 }

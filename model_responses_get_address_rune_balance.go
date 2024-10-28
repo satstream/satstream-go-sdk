@@ -11,10 +11,11 @@
 package swagger
 
 type ResponsesGetAddressRuneBalance struct {
-	Amount int32 `json:"amount,omitempty"`
+	Amount string `json:"amount,omitempty"`
 	Divisibility int32 `json:"divisibility,omitempty"`
 	Rune_ string `json:"rune,omitempty"`
 	Runeid string `json:"runeid,omitempty"`
+	SpacedAmount string `json:"spacedAmount,omitempty"`
 	SpacedRune string `json:"spacedRune,omitempty"`
 	Symbol string `json:"symbol,omitempty"`
 }

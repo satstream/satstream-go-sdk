@@ -1,6 +1,6 @@
 # \MempoolApi
 
-All URIs are relative to *https://localhost:8085/api/v1*
+All URIs are relative to *https://api.satstream.io/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

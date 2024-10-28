@@ -11,7 +11,7 @@ info:
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "localhost:8085"
+host: "api.satstream.io"
 basePath: "/api/v1"
 paths:
   /addresses/{address}/balance:
@@ -424,9 +424,7 @@ paths:
           description: "OK"
           schema:
             type: "array"
-            items:
-              type: "object"
-              properties: {}
+            items: {}
         "500":
           description: "Internal Server Error"
           schema:
@@ -445,8 +443,7 @@ paths:
       responses:
         "200":
           description: "OK"
-          schema:
-            type: "object"
+          schema: {}
         "500":
           description: "Internal Server Error"
           schema:
@@ -471,8 +468,7 @@ paths:
       responses:
         "200":
           description: "OK"
-          schema:
-            type: "object"
+          schema: {}
         "500":
           description: "Internal Server Error"
           schema:
@@ -499,9 +495,7 @@ paths:
           description: "OK"
           schema:
             type: "array"
-            items:
-              type: "object"
-              properties: {}
+            items: {}
         "500":
           description: "Internal Server Error"
           schema:
@@ -923,30 +917,43 @@ definitions:
     type: "object"
     properties:
       amount:
-        type: "integer"
+        type: "string"
+        example: "52286"
       divisibility:
         type: "integer"
+        example: 5
       rune:
         type: "string"
+        example: "DOGGOTOTHEMOON"
       runeid:
         type: "string"
+        example: "840000:3"
+      spacedAmount:
+        type: "string"
+        example: "52.286"
       spacedRune:
         type: "string"
+        example: "DOG•GO•TO•THE•MOON"
       symbol:
         type: "string"
+        example: "🐕"
     example:
-      symbol: "symbol"
-      amount: 0
-      spacedRune: "spacedRune"
-      runeid: "runeid"
-      divisibility: 6
-      rune: "rune"
+      symbol: "🐕"
+      amount: "52286"
+      spacedRune: "DOG•GO•TO•THE•MOON"
+      runeid: "840000:3"
+      spacedAmount: "52.286"
+      divisibility: 5
+      rune: "DOGGOTOTHEMOON"
   responses.GetAddressRunesBalanceListItem:
     type: "object"
     properties:
       amount:
-        type: "integer"
-        example: 52286
+        type: "string"
+        example: "52286"
+      parsedAmount:
+        type: "string"
+        example: "52.286"
       rune_id:
         type: "string"
         example: "840000:3"
@@ -954,9 +961,10 @@ definitions:
         type: "string"
         example: "DECENTRALIZED"
     example:
-      amount: 52286
+      amount: "52286"
       spacedRune: "DECENTRALIZED"
       rune_id: "840000:3"
+      parsedAmount: "52.286"
   responses.GetAddressTimeframeBalance:
     type: "object"
     properties:
@@ -1761,8 +1769,6 @@ definitions:
     properties:
       api_key:
         $ref: "#/definitions/types.ApiKey"
-      api_key_id:
-        type: "string"
       created_at:
         type: "string"
       id:
@@ -1771,14 +1777,11 @@ definitions:
         type: "string"
       subscription:
         $ref: "#/definitions/types.Subscription"
-      subscription_id:
-        type: "string"
       updated_at:
         type: "string"
       user_id:
         type: "string"
     example:
-      subscription_id: "subscription_id"
       updated_at: "updated_at"
       api_key:
         rate_limit_max: 0
@@ -1813,7 +1816,6 @@ definitions:
         created_at: "created_at"
         id: "id"
         type: {}
-      api_key_id: "api_key_id"
   inline_response_200:
     type: "object"
     properties:
@@ -1825,12 +1827,14 @@ definitions:
         $ref: "#/definitions/responses.BaseResponse"
     example:
       data:
-      - amount: 52286
+      - amount: "52286"
         spacedRune: "DECENTRALIZED"
         rune_id: "840000:3"
-      - amount: 52286
+        parsedAmount: "52.286"
+      - amount: "52286"
         spacedRune: "DECENTRALIZED"
         rune_id: "840000:3"
+        parsedAmount: "52.286"
       responses.BaseResponse:
         msg: "msg"
         code: 0

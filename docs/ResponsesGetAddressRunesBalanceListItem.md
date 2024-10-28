@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **int32** |  | [optional] [default to null]
+**Amount** | **string** |  | [optional] [default to null]
+**ParsedAmount** | **string** |  | [optional] [default to null]
 **RuneId** | **string** |  | [optional] [default to null]
 **SpacedRune** | **string** |  | [optional] [default to null]
 

@@ -17,7 +17,7 @@ import "./swagger"
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://localhost:8085/api/v1*
+All URIs are relative to *https://api.satstream.io/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
