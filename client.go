@@ -57,8 +57,6 @@ type APIClient struct {
 	RunesApi *RunesApiService
 
 	TransactionsApi *TransactionsApiService
-
-	UserApi *UserApiService
 }
 
 type service struct {
@@ -83,7 +81,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.MempoolApi = (*MempoolApiService)(&c.common)
 	c.RunesApi = (*RunesApiService)(&c.common)
 	c.TransactionsApi = (*TransactionsApiService)(&c.common)
-	c.UserApi = (*UserApiService)(&c.common)
 
 	return c
 }

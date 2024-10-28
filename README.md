@@ -42,14 +42,6 @@ Class | Method | HTTP request | Description
 *TransactionsApi* | [**TransactionsBroadcastPost**](docs/TransactionsApi.md#transactionsbroadcastpost) | **Post** /transactions/broadcast | Broadcast transaction
 *TransactionsApi* | [**TransactionsTxidGet**](docs/TransactionsApi.md#transactionstxidget) | **Get** /transactions/{txid} | Get transaction info
 *TransactionsApi* | [**TransactionsTxidInputsGet**](docs/TransactionsApi.md#transactionstxidinputsget) | **Get** /transactions/{txid}/inputs | Get transaction inputs
-*UserApi* | [**UserApiKeysGet**](docs/UserApi.md#userapikeysget) | **Get** /user/api-keys | Get API keys
-*UserApi* | [**UserApiKeysIdDelete**](docs/UserApi.md#userapikeysiddelete) | **Delete** /user/api-keys/{id} | Delete API key
-*UserApi* | [**UserAppsAppIdGet**](docs/UserApi.md#userappsappidget) | **Get** /user/apps/{app_id} | Get user app
-*UserApi* | [**UserAppsGet**](docs/UserApi.md#userappsget) | **Get** /user/apps | Get user apps
-*UserApi* | [**UserAppsPost**](docs/UserApi.md#userappspost) | **Post** /user/apps | Create user app
-*UserApi* | [**UserPaymentsCreateIntentPost**](docs/UserApi.md#userpaymentscreateintentpost) | **Post** /user/payments/create-intent | Create payment intent
-*UserApi* | [**UserRefreshTokenPost**](docs/UserApi.md#userrefreshtokenpost) | **Post** /user/refresh-token | Refresh token
-*UserApi* | [**UserSubscriptionsGet**](docs/UserApi.md#usersubscriptionsget) | **Get** /user/subscriptions | Get active subscription
 
 
 ## Documentation For Models
@@ -57,11 +49,8 @@ Class | Method | HTTP request | Description
  - [ApiErrorResponse](docs/ApiErrorResponse.md)
  - [BigInt](docs/BigInt.md)
  - [InlineResponse200](docs/InlineResponse200.md)
- - [RequestsCreatePaymentIntentRequest](docs/RequestsCreatePaymentIntentRequest.md)
- - [RequestsCreateUserAppRequest](docs/RequestsCreateUserAppRequest.md)
  - [ResponsesBaseResponse](docs/ResponsesBaseResponse.md)
  - [ResponsesBlockRange](docs/ResponsesBlockRange.md)
- - [ResponsesCreatePaymentIntentResponse](docs/ResponsesCreatePaymentIntentResponse.md)
  - [ResponsesGetAddressBalance](docs/ResponsesGetAddressBalance.md)
  - [ResponsesGetAddressNonInscriptionUtxoData](docs/ResponsesGetAddressNonInscriptionUtxoData.md)
  - [ResponsesGetAddressRuneBalance](docs/ResponsesGetAddressRuneBalance.md)
@@ -70,7 +59,6 @@ Class | Method | HTTP request | Description
  - [ResponsesGetAddressTimeframeBalanceItem](docs/ResponsesGetAddressTimeframeBalanceItem.md)
  - [ResponsesGetAddressTimeframeBalanceItemBlockRange](docs/ResponsesGetAddressTimeframeBalanceItemBlockRange.md)
  - [ResponsesNonInscriptionUtxo](docs/ResponsesNonInscriptionUtxo.md)
- - [ResponsesRefreshTokenResponse](docs/ResponsesRefreshTokenResponse.md)
  - [ResponsesSendRawTransaction](docs/ResponsesSendRawTransaction.md)
  - [RpcBlock](docs/RpcBlock.md)
  - [RpcBtcTx](docs/RpcBtcTx.md)
@@ -82,17 +70,7 @@ Class | Method | HTTP request | Description
  - [RpcVout](docs/RpcVout.md)
  - [SsApiServerApiRunesResponsesErrorResponse](docs/SsApiServerApiRunesResponsesErrorResponse.md)
  - [SsApiServerApiTransactionsResponsesErrorResponse](docs/SsApiServerApiTransactionsResponsesErrorResponse.md)
- - [SsApiServerAppApikeysResponsesErrorResponse](docs/SsApiServerAppApikeysResponsesErrorResponse.md)
- - [SsApiServerAppPaymentsResponsesErrorResponse](docs/SsApiServerAppPaymentsResponsesErrorResponse.md)
- - [SsApiServerAppSubscriptionsResponsesErrorResponse](docs/SsApiServerAppSubscriptionsResponsesErrorResponse.md)
- - [SsApiServerAppUserappsResponsesErrorResponse](docs/SsApiServerAppUserappsResponsesErrorResponse.md)
- - [SsApiServerAppUsersResponsesErrorResponse](docs/SsApiServerAppUsersResponsesErrorResponse.md)
  - [StoreTransactionDocument](docs/StoreTransactionDocument.md)
- - [TypesApiKey](docs/TypesApiKey.md)
- - [TypesSubscription](docs/TypesSubscription.md)
- - [TypesSubscriptionQuota](docs/TypesSubscriptionQuota.md)
- - [TypesSubscriptionType](docs/TypesSubscriptionType.md)
- - [TypesUserApp](docs/TypesUserApp.md)
 
 
 ## Documentation For Authorization
