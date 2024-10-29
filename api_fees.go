@@ -106,7 +106,7 @@ func (a *FeesApiService) FeesGet(ctx context.Context) (InlineResponse2007, *http
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ApiErrorResponse
+			var v BlocksErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

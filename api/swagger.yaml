@@ -202,7 +202,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/api.ErrorResponse"
+            $ref: "#/definitions/blocks.ErrorResponse"
   /blocks/hash/{hash}:
     get:
       tags:
@@ -228,11 +228,11 @@ paths:
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/api.ErrorResponse"
+            $ref: "#/definitions/blocks.ErrorResponse"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/api.ErrorResponse"
+            $ref: "#/definitions/blocks.ErrorResponse"
   /blocks/{height}:
     get:
       tags:
@@ -258,11 +258,11 @@ paths:
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/api.ErrorResponse"
+            $ref: "#/definitions/blocks.ErrorResponse"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/api.ErrorResponse"
+            $ref: "#/definitions/blocks.ErrorResponse"
   /blocks/{height}/transactions:
     get:
       tags:
@@ -296,11 +296,11 @@ paths:
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/api.ErrorResponse"
+            $ref: "#/definitions/blocks.ErrorResponse"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/api.ErrorResponse"
+            $ref: "#/definitions/blocks.ErrorResponse"
   /fees:
     get:
       tags:
@@ -320,7 +320,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/api.ErrorResponse"
+            $ref: "#/definitions/blocks.ErrorResponse"
   /indexer/tx/{hash}:
     get:
       tags:
@@ -382,7 +382,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/api.ErrorResponse"
+            $ref: "#/definitions/blocks.ErrorResponse"
   /mempool/transactions:
     get:
       tags:
@@ -412,7 +412,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/api.ErrorResponse"
+            $ref: "#/definitions/blocks.ErrorResponse"
   /mempool/transactions/{txid}:
     get:
       tags:
@@ -440,7 +440,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/api.ErrorResponse"
+            $ref: "#/definitions/blocks.ErrorResponse"
   /runes:
     get:
       tags:
@@ -646,7 +646,9 @@ securityDefinitions:
     name: "X-API-KEY"
     in: "header"
 definitions:
-  api.ErrorResponse:
+  big.Int:
+    type: "object"
+  blocks.ErrorResponse:
     type: "object"
     properties:
       code:
@@ -654,8 +656,6 @@ definitions:
       data: {}
       msg:
         type: "string"
-  big.Int:
-    type: "object"
   responses.BaseResponse:
     type: "object"
     properties:

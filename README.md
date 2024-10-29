@@ -47,8 +47,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [ApiErrorResponse](docs/ApiErrorResponse.md)
  - [BigInt](docs/BigInt.md)
+ - [BlocksErrorResponse](docs/BlocksErrorResponse.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
  - [InlineResponse20010](docs/InlineResponse20010.md)
