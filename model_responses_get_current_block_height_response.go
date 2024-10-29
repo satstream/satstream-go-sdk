@@ -10,7 +10,6 @@
 
 package swagger
 
-type InlineResponse2005 struct {
-	Data *ResponsesGetCurrentBlockHeightResponse `json:"data,omitempty"`
-	ResponsesBaseResponse *ResponsesBaseResponse `json:"responses.BaseResponse,omitempty"`
+type ResponsesGetCurrentBlockHeightResponse struct {
+	Height int32 `json:"height,omitempty"`
 }

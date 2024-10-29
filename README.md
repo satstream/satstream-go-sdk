@@ -69,6 +69,7 @@ Class | Method | HTTP request | Description
  - [ResponsesGetAddressTimeframeBalance](docs/ResponsesGetAddressTimeframeBalance.md)
  - [ResponsesGetAddressTimeframeBalanceItem](docs/ResponsesGetAddressTimeframeBalanceItem.md)
  - [ResponsesGetAddressTimeframeBalanceItemBlockRange](docs/ResponsesGetAddressTimeframeBalanceItemBlockRange.md)
+ - [ResponsesGetCurrentBlockHeightResponse](docs/ResponsesGetCurrentBlockHeightResponse.md)
  - [ResponsesNonInscriptionUtxo](docs/ResponsesNonInscriptionUtxo.md)
  - [ResponsesSendRawTransaction](docs/ResponsesSendRawTransaction.md)
  - [ResponsesTxInfo](docs/ResponsesTxInfo.md)

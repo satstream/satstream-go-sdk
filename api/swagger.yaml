@@ -805,6 +805,13 @@ definitions:
     example:
       balance: 0.80082819046101150206595775671303272247314453125
       blockRange: {}
+  responses.GetCurrentBlockHeightResponse:
+    type: "object"
+    properties:
+      height:
+        type: "integer"
+    example:
+      height: 0
   responses.NonInscriptionUTXO:
     type: "object"
     properties:
@@ -1620,11 +1627,12 @@ definitions:
     type: "object"
     properties:
       data:
-        type: "integer"
+        $ref: "#/definitions/responses.GetCurrentBlockHeightResponse"
       responses.BaseResponse:
         $ref: "#/definitions/responses.BaseResponse"
     example:
-      data: 0
+      data:
+        height: 0
       responses.BaseResponse:
         msg: "msg"
         code: 6
