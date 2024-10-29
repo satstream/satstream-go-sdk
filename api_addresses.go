@@ -33,15 +33,15 @@ Get the current balance of a Bitcoin address
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address
 
-@return ResponsesGetAddressBalance
+@return InlineResponse200
 */
-func (a *AddressesApiService) AddressesAddressBalanceGet(ctx context.Context, address string) (ResponsesGetAddressBalance, *http.Response, error) {
+func (a *AddressesApiService) AddressesAddressBalanceGet(ctx context.Context, address string) (InlineResponse200, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ResponsesGetAddressBalance
+		localVarReturnValue InlineResponse200
 	)
 
 	// create path and map variables
@@ -68,6 +68,19 @@ func (a *AddressesApiService) AddressesAddressBalanceGet(ctx context.Context, ad
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-Key"] = key
+			
+		}
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -98,7 +111,7 @@ func (a *AddressesApiService) AddressesAddressBalanceGet(ctx context.Context, ad
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ResponsesGetAddressBalance
+			var v InlineResponse200
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -133,15 +146,15 @@ Get the balance of a Bitcoin address for a specific timeframe
  * @param start Start block height
  * @param end End block height
 
-@return ResponsesGetAddressTimeframeBalance
+@return InlineResponse2001
 */
-func (a *AddressesApiService) AddressesAddressBalanceTimeframeGet(ctx context.Context, address string, start int32, end int32) (ResponsesGetAddressTimeframeBalance, *http.Response, error) {
+func (a *AddressesApiService) AddressesAddressBalanceTimeframeGet(ctx context.Context, address string, start int32, end int32) (InlineResponse2001, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ResponsesGetAddressTimeframeBalance
+		localVarReturnValue InlineResponse2001
 	)
 
 	// create path and map variables
@@ -170,6 +183,19 @@ func (a *AddressesApiService) AddressesAddressBalanceTimeframeGet(ctx context.Co
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-Key"] = key
+			
+		}
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -200,7 +226,7 @@ func (a *AddressesApiService) AddressesAddressBalanceTimeframeGet(ctx context.Co
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ResponsesGetAddressTimeframeBalance
+			var v InlineResponse2001
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -233,15 +259,15 @@ Get the balance of all runes for a Bitcoin address
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address
 
-@return InlineResponse200
+@return InlineResponse2002
 */
-func (a *AddressesApiService) AddressesAddressRunesGet(ctx context.Context, address string) (InlineResponse200, *http.Response, error) {
+func (a *AddressesApiService) AddressesAddressRunesGet(ctx context.Context, address string) (InlineResponse2002, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse200
+		localVarReturnValue InlineResponse2002
 	)
 
 	// create path and map variables
@@ -268,6 +294,19 @@ func (a *AddressesApiService) AddressesAddressRunesGet(ctx context.Context, addr
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-Key"] = key
+			
+		}
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -298,7 +337,7 @@ func (a *AddressesApiService) AddressesAddressRunesGet(ctx context.Context, addr
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse200
+			var v InlineResponse2002
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -354,15 +393,15 @@ Get the balance of a specific rune for a Bitcoin address
  * @param address Bitcoin address
  * @param runeid Rune ID
 
-@return ResponsesGetAddressRuneBalance
+@return InlineResponse2003
 */
-func (a *AddressesApiService) AddressesAddressRunesRuneidGet(ctx context.Context, address string, runeid string) (ResponsesGetAddressRuneBalance, *http.Response, error) {
+func (a *AddressesApiService) AddressesAddressRunesRuneidGet(ctx context.Context, address string, runeid string) (InlineResponse2003, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ResponsesGetAddressRuneBalance
+		localVarReturnValue InlineResponse2003
 	)
 
 	// create path and map variables
@@ -390,6 +429,19 @@ func (a *AddressesApiService) AddressesAddressRunesRuneidGet(ctx context.Context
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-Key"] = key
+			
+		}
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -420,7 +472,7 @@ func (a *AddressesApiService) AddressesAddressRunesRuneidGet(ctx context.Context
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ResponsesGetAddressRuneBalance
+			var v InlineResponse2003
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -453,15 +505,15 @@ Get all non-inscription UTXOs for a Bitcoin address
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address
 
-@return []ResponsesGetAddressNonInscriptionUtxoData
+@return InlineResponse2004
 */
-func (a *AddressesApiService) AddressesAddressUtxosGet(ctx context.Context, address string) ([]ResponsesGetAddressNonInscriptionUtxoData, *http.Response, error) {
+func (a *AddressesApiService) AddressesAddressUtxosGet(ctx context.Context, address string) (InlineResponse2004, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue []ResponsesGetAddressNonInscriptionUtxoData
+		localVarReturnValue InlineResponse2004
 	)
 
 	// create path and map variables
@@ -488,6 +540,19 @@ func (a *AddressesApiService) AddressesAddressUtxosGet(ctx context.Context, addr
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-Key"] = key
+			
+		}
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -518,7 +583,7 @@ func (a *AddressesApiService) AddressesAddressUtxosGet(ctx context.Context, addr
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []ResponsesGetAddressNonInscriptionUtxoData
+			var v InlineResponse2004
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

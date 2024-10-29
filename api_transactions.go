@@ -33,15 +33,15 @@ Get a transaction by its hash
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param hash Transaction hash
 
-@return RpcBtcTx
+@return InlineResponse2008
 */
-func (a *TransactionsApiService) IndexerTxHashGet(ctx context.Context, hash string) (RpcBtcTx, *http.Response, error) {
+func (a *TransactionsApiService) IndexerTxHashGet(ctx context.Context, hash string) (InlineResponse2008, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue RpcBtcTx
+		localVarReturnValue InlineResponse2008
 	)
 
 	// create path and map variables
@@ -98,7 +98,7 @@ func (a *TransactionsApiService) IndexerTxHashGet(ctx context.Context, hash stri
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v RpcBtcTx
+			var v InlineResponse2008
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -131,15 +131,15 @@ Broadcast a raw transaction to the Bitcoin network
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param transaction Raw transaction hex
 
-@return ResponsesSendRawTransaction
+@return InlineResponse2009
 */
-func (a *TransactionsApiService) TransactionsBroadcastPost(ctx context.Context, transaction string) (ResponsesSendRawTransaction, *http.Response, error) {
+func (a *TransactionsApiService) TransactionsBroadcastPost(ctx context.Context, transaction string) (InlineResponse2009, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ResponsesSendRawTransaction
+		localVarReturnValue InlineResponse2009
 	)
 
 	// create path and map variables
@@ -168,6 +168,19 @@ func (a *TransactionsApiService) TransactionsBroadcastPost(ctx context.Context, 
 	}
 	// body params
 	localVarPostBody = &transaction
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-Key"] = key
+			
+		}
+	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -197,7 +210,7 @@ func (a *TransactionsApiService) TransactionsBroadcastPost(ctx context.Context, 
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ResponsesSendRawTransaction
+			var v InlineResponse2009
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -230,15 +243,15 @@ Get detailed information about a specific transaction
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
 
-@return RpcBtcTx
+@return InlineResponse20010
 */
-func (a *TransactionsApiService) TransactionsTxidGet(ctx context.Context, txid string) (RpcBtcTx, *http.Response, error) {
+func (a *TransactionsApiService) TransactionsTxidGet(ctx context.Context, txid string) (InlineResponse20010, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue RpcBtcTx
+		localVarReturnValue InlineResponse20010
 	)
 
 	// create path and map variables
@@ -265,6 +278,19 @@ func (a *TransactionsApiService) TransactionsTxidGet(ctx context.Context, txid s
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-Key"] = key
+			
+		}
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -295,7 +321,7 @@ func (a *TransactionsApiService) TransactionsTxidGet(ctx context.Context, txid s
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v RpcBtcTx
+			var v InlineResponse20010
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -328,15 +354,15 @@ Get the inputs of a specific transaction
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
 
-@return []RpcVin
+@return []interface{}
 */
-func (a *TransactionsApiService) TransactionsTxidInputsGet(ctx context.Context, txid string) ([]RpcVin, *http.Response, error) {
+func (a *TransactionsApiService) TransactionsTxidInputsGet(ctx context.Context, txid string) ([]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue []RpcVin
+		localVarReturnValue []interface{}
 	)
 
 	// create path and map variables
@@ -363,6 +389,19 @@ func (a *TransactionsApiService) TransactionsTxidInputsGet(ctx context.Context, 
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-Key"] = key
+			
+		}
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -393,7 +432,7 @@ func (a *TransactionsApiService) TransactionsTxidInputsGet(ctx context.Context, 
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []RpcVin
+			var v []interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

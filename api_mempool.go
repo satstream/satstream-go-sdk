@@ -33,15 +33,15 @@ Get all mempool transactions for a specific address
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address
 
-@return []RpcBtcTx
+@return []interface{}
 */
-func (a *MempoolApiService) MempoolAddressesAddressTransactionsGet(ctx context.Context, address string) ([]RpcBtcTx, *http.Response, error) {
+func (a *MempoolApiService) MempoolAddressesAddressTransactionsGet(ctx context.Context, address string) ([]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue []RpcBtcTx
+		localVarReturnValue []interface{}
 	)
 
 	// create path and map variables
@@ -68,6 +68,19 @@ func (a *MempoolApiService) MempoolAddressesAddressTransactionsGet(ctx context.C
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-Key"] = key
+			
+		}
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -98,7 +111,7 @@ func (a *MempoolApiService) MempoolAddressesAddressTransactionsGet(ctx context.C
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []RpcBtcTx
+			var v []interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -130,15 +143,15 @@ MempoolApiService Get mempool transactions
 Get all transactions currently in the mempool
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
-@return []RpcBtcTx
+@return []interface{}
 */
-func (a *MempoolApiService) MempoolTransactionsGet(ctx context.Context) ([]RpcBtcTx, *http.Response, error) {
+func (a *MempoolApiService) MempoolTransactionsGet(ctx context.Context) ([]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue []RpcBtcTx
+		localVarReturnValue []interface{}
 	)
 
 	// create path and map variables
@@ -164,6 +177,19 @@ func (a *MempoolApiService) MempoolTransactionsGet(ctx context.Context) ([]RpcBt
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-Key"] = key
+			
+		}
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -194,7 +220,7 @@ func (a *MempoolApiService) MempoolTransactionsGet(ctx context.Context) ([]RpcBt
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []RpcBtcTx
+			var v []interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -227,15 +253,15 @@ Get information about a specific transaction in the mempool
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
 
-@return RpcBtcTx
+@return InlineResponse2008
 */
-func (a *MempoolApiService) MempoolTransactionsTxidGet(ctx context.Context, txid string) (RpcBtcTx, *http.Response, error) {
+func (a *MempoolApiService) MempoolTransactionsTxidGet(ctx context.Context, txid string) (InlineResponse2008, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue RpcBtcTx
+		localVarReturnValue InlineResponse2008
 	)
 
 	// create path and map variables
@@ -262,6 +288,19 @@ func (a *MempoolApiService) MempoolTransactionsTxidGet(ctx context.Context, txid
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-Key"] = key
+			
+		}
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -292,7 +331,7 @@ func (a *MempoolApiService) MempoolTransactionsTxidGet(ctx context.Context, txid
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v RpcBtcTx
+			var v InlineResponse2008
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

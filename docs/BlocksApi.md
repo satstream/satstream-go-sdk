@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **BlocksCurrentHeightGet**
-> int32 BlocksCurrentHeightGet(ctx, )
+> InlineResponse2005 BlocksCurrentHeightGet(ctx, )
 Get current block height
 
 Get the current block height of the Bitcoin blockchain
@@ -21,11 +21,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**int32**
+[**InlineResponse2005**](inline_response_200_5.md)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -35,7 +35,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **BlocksHashHashGet**
-> RpcBlock BlocksHashHashGet(ctx, hash)
+> InlineResponse2006 BlocksHashHashGet(ctx, hash)
 Get block by hash
 
 Get information about a specific block by its hash
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RpcBlock**](rpc.Block.md)
+[**InlineResponse2006**](inline_response_200_6.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **BlocksHeightGet**
-> RpcBlock BlocksHeightGet(ctx, height)
+> InlineResponse2006 BlocksHeightGet(ctx, height)
 Get block info
 
 Get information about a specific block by height
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RpcBlock**](rpc.Block.md)
+[**InlineResponse2006**](inline_response_200_6.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **BlocksHeightTransactionsGet**
-> []StoreTransactionDocument BlocksHeightTransactionsGet(ctx, height)
+> []interface{} BlocksHeightTransactionsGet(ctx, height)
 Get block transactions
 
 Get transactions for a specific block height
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]StoreTransactionDocument**](store.TransactionDocument.md)
+**[]interface{}**
 
 ### Authorization
 

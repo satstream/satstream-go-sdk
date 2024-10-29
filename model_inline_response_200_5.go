@@ -10,7 +10,7 @@
 
 package swagger
 
-type InlineResponse200 struct {
-	Data *ResponsesGetAddressBalance `json:"data,omitempty"`
+type InlineResponse2005 struct {
+	Data int32 `json:"data,omitempty"`
 	ResponsesBaseResponse *ResponsesBaseResponse `json:"responses.BaseResponse,omitempty"`
 }

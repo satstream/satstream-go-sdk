@@ -7,6 +7,7 @@ info:
   termsOfService: "http://swagger.io/terms/"
   contact:
     name: "Satstream"
+    url: "https://satstream.io"
     email: "team@satstream.io"
   license:
     name: "Apache 2.0"
@@ -31,11 +32,13 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "Address"
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/responses.GetAddressBalance"
+            $ref: "#/definitions/inline_response_200"
         "500":
           description: "Internal Server Error"
           schema:
@@ -69,11 +72,13 @@ paths:
         required: true
         type: "integer"
         x-exportParamName: "End"
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/responses.GetAddressTimeframeBalance"
+            $ref: "#/definitions/inline_response_200_1"
         "500":
           description: "Internal Server Error"
           schema:
@@ -95,11 +100,13 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "Address"
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200"
+            $ref: "#/definitions/inline_response_200_2"
         "400":
           description: "Bad Request"
           schema:
@@ -135,11 +142,13 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "Runeid"
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/responses.GetAddressRuneBalance"
+            $ref: "#/definitions/inline_response_200_3"
         "500":
           description: "Internal Server Error"
           schema:
@@ -161,13 +170,13 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "Address"
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
           schema:
-            type: "array"
-            items:
-              $ref: "#/definitions/responses.GetAddressNonInscriptionUTXOData"
+            $ref: "#/definitions/inline_response_200_4"
         "500":
           description: "Internal Server Error"
           schema:
@@ -183,11 +192,13 @@ paths:
       produces:
       - "application/json"
       parameters: []
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
           schema:
-            type: "integer"
+            $ref: "#/definitions/inline_response_200_5"
         "500":
           description: "Internal Server Error"
           schema:
@@ -213,7 +224,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/rpc.Block"
+            $ref: "#/definitions/inline_response_200_6"
         "400":
           description: "Bad Request"
           schema:
@@ -243,7 +254,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/rpc.Block"
+            $ref: "#/definitions/inline_response_200_6"
         "400":
           description: "Bad Request"
           schema:
@@ -275,7 +286,13 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/store.TransactionDocument"
+              type: "object"
+              allOf:
+              - $ref: "#/definitions/responses.BaseResponse"
+              - type: "object"
+                properties:
+                  data:
+                    $ref: "#/definitions/store.TransactionDocument"
         "400":
           description: "Bad Request"
           schema:
@@ -299,9 +316,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            type: "object"
-            additionalProperties:
-              type: "number"
+            $ref: "#/definitions/inline_response_200_7"
         "500":
           description: "Internal Server Error"
           schema:
@@ -327,7 +342,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/rpc.BtcTx"
+            $ref: "#/definitions/inline_response_200_8"
         "500":
           description: "Internal Server Error"
           schema:
@@ -349,13 +364,21 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "Address"
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/rpc.BtcTx"
+              type: "object"
+              allOf:
+              - $ref: "#/definitions/responses.BaseResponse"
+              - type: "object"
+                properties:
+                  data:
+                    $ref: "#/definitions/rpc.BtcTx"
         "500":
           description: "Internal Server Error"
           schema:
@@ -371,13 +394,21 @@ paths:
       produces:
       - "application/json"
       parameters: []
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/rpc.BtcTx"
+              type: "object"
+              allOf:
+              - $ref: "#/definitions/responses.BaseResponse"
+              - type: "object"
+                properties:
+                  data:
+                    $ref: "#/definitions/rpc.BtcTx"
         "500":
           description: "Internal Server Error"
           schema:
@@ -399,11 +430,13 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "Txid"
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/rpc.BtcTx"
+            $ref: "#/definitions/inline_response_200_8"
         "500":
           description: "Internal Server Error"
           schema:
@@ -419,6 +452,8 @@ paths:
       produces:
       - "application/json"
       parameters: []
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
@@ -442,6 +477,8 @@ paths:
       produces:
       - "application/json"
       parameters: []
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
@@ -468,6 +505,8 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "RuneId"
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
@@ -494,6 +533,8 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "RuneId"
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
@@ -524,11 +565,13 @@ paths:
         schema:
           type: "string"
         x-exportParamName: "Transaction"
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/responses.SendRawTransaction"
+            $ref: "#/definitions/inline_response_200_9"
         "500":
           description: "Internal Server Error"
           schema:
@@ -550,11 +593,13 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "Txid"
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/rpc.BtcTx"
+            $ref: "#/definitions/inline_response_200_10"
         "500":
           description: "Internal Server Error"
           schema:
@@ -576,17 +621,30 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "Txid"
+      security:
+      - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/rpc.Vin"
+              type: "object"
+              allOf:
+              - $ref: "#/definitions/responses.BaseResponse"
+              - type: "object"
+                properties:
+                  data:
+                    $ref: "#/definitions/rpc.Vin"
         "500":
           description: "Internal Server Error"
           schema:
             $ref: "#/definitions/ss_api_server_api_transactions_responses.ErrorResponse"
+securityDefinitions:
+  ApiKeyAuth:
+    type: "apiKey"
+    name: "X-API-Key"
+    in: "header"
 definitions:
   api.ErrorResponse:
     type: "object"
@@ -608,7 +666,7 @@ definitions:
         type: "string"
     example:
       msg: "msg"
-      code: 0
+      code: 6
       data: ""
   responses.BlockRange:
     type: "object"
@@ -795,6 +853,51 @@ definitions:
         type: "string"
     example:
       tx_hash: "tx_hash"
+  responses.TxInfo:
+    type: "object"
+    properties:
+      blkid:
+        type: "string"
+      height:
+        type: "integer"
+      idx:
+        type: "integer"
+      inSatoshi:
+        $ref: "#/definitions/big.Int"
+      locktime:
+        type: "integer"
+      nIn:
+        type: "integer"
+      nInInscription:
+        type: "integer"
+      nLostInscription:
+        type: "integer"
+      nNewInscription:
+        type: "integer"
+      nOut:
+        type: "integer"
+      nOutInscription:
+        type: "integer"
+      outSatoshi:
+        $ref: "#/definitions/big.Int"
+      size:
+        type: "integer"
+      txid:
+        type: "string"
+    example:
+      locktime: 1
+      nLostInscription: 2
+      txid: "txid"
+      nNewInscription: 7
+      blkid: "blkid"
+      nInInscription: 5
+      inSatoshi: {}
+      nIn: 5
+      nOut: 9
+      size: 2
+      idx: 6
+      nOutInscription: 3
+      height: 0
   rpc.Block:
     type: "object"
     properties:
@@ -1368,20 +1471,40 @@ definitions:
         type: "integer"
         example: 100
     description: "Detailed information about a transaction"
-    example:
-      address: "1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"
-      vsize: 100
-      locktime: 0
-      size: 100
-      fee: 0.001
-      index: 0
-      txid: "8631dedfc6c46e6f923cd30e7e71cff541f205887b5cde7d0e1119121e3c563f"
-      weight: 100
-      hex: "0000000000000000000000000000000000000000000000000000000000000000"
-      version: 1
-      hash: "0000000000000000000000000000000000000000000000000000000000000000"
-      blockheight: 100
   inline_response_200:
+    type: "object"
+    properties:
+      data:
+        $ref: "#/definitions/responses.GetAddressBalance"
+      responses.BaseResponse:
+        $ref: "#/definitions/responses.BaseResponse"
+    example:
+      data:
+        address: "address"
+        balance: 0.80082819046101150206595775671303272247314453125
+      responses.BaseResponse:
+        msg: "msg"
+        code: 6
+        data: ""
+  inline_response_200_1:
+    type: "object"
+    properties:
+      data:
+        $ref: "#/definitions/responses.GetAddressTimeframeBalance"
+      responses.BaseResponse:
+        $ref: "#/definitions/responses.BaseResponse"
+    example:
+      data:
+        items:
+        - balance: 0.80082819046101150206595775671303272247314453125
+          blockRange: {}
+        - balance: 0.80082819046101150206595775671303272247314453125
+          blockRange: {}
+      responses.BaseResponse:
+        msg: "msg"
+        code: 6
+        data: ""
+  inline_response_200_2:
     type: "object"
     properties:
       data:
@@ -1402,7 +1525,486 @@ definitions:
         parsedAmount: "52.286"
       responses.BaseResponse:
         msg: "msg"
-        code: 0
+        code: 6
+        data: ""
+  inline_response_200_3:
+    type: "object"
+    properties:
+      data:
+        $ref: "#/definitions/responses.GetAddressRuneBalance"
+      responses.BaseResponse:
+        $ref: "#/definitions/responses.BaseResponse"
+    example:
+      data:
+        symbol: "🐕"
+        amount: "52286"
+        spacedRune: "DOG•GO•TO•THE•MOON"
+        runeid: "840000:3"
+        spacedAmount: "52.286"
+        divisibility: 5
+        rune: "DOGGOTOTHEMOON"
+      responses.BaseResponse:
+        msg: "msg"
+        code: 6
+        data: ""
+  inline_response_200_4:
+    type: "object"
+    properties:
+      data:
+        type: "array"
+        items:
+          $ref: "#/definitions/responses.GetAddressNonInscriptionUTXOData"
+      responses.BaseResponse:
+        $ref: "#/definitions/responses.BaseResponse"
+    example:
+      data:
+      - cursor: 0
+        totalUnconfirmed: 5
+        utxo:
+        - satoshi: {}
+          scriptPk: "scriptPk"
+          address: "address"
+          codeType: 7
+          isSpent: true
+          scriptType: "scriptType"
+          txid: "txid"
+          idx: 3
+          isOpInRBF: true
+          height: 9
+          vout: 2
+        - satoshi: {}
+          scriptPk: "scriptPk"
+          address: "address"
+          codeType: 7
+          isSpent: true
+          scriptType: "scriptType"
+          txid: "txid"
+          idx: 3
+          isOpInRBF: true
+          height: 9
+          vout: 2
+        total: 6
+        totalUnconfirmedSpend: 2
+        totalRunes: 5
+        totalConfirmed: 1
+      - cursor: 0
+        totalUnconfirmed: 5
+        utxo:
+        - satoshi: {}
+          scriptPk: "scriptPk"
+          address: "address"
+          codeType: 7
+          isSpent: true
+          scriptType: "scriptType"
+          txid: "txid"
+          idx: 3
+          isOpInRBF: true
+          height: 9
+          vout: 2
+        - satoshi: {}
+          scriptPk: "scriptPk"
+          address: "address"
+          codeType: 7
+          isSpent: true
+          scriptType: "scriptType"
+          txid: "txid"
+          idx: 3
+          isOpInRBF: true
+          height: 9
+          vout: 2
+        total: 6
+        totalUnconfirmedSpend: 2
+        totalRunes: 5
+        totalConfirmed: 1
+      responses.BaseResponse:
+        msg: "msg"
+        code: 6
+        data: ""
+  inline_response_200_5:
+    type: "object"
+    properties:
+      data:
+        type: "integer"
+      responses.BaseResponse:
+        $ref: "#/definitions/responses.BaseResponse"
+    example:
+      data: 0
+      responses.BaseResponse:
+        msg: "msg"
+        code: 6
+        data: ""
+  inline_response_200_6:
+    type: "object"
+    properties:
+      data:
+        $ref: "#/definitions/rpc.Block"
+      responses.BaseResponse:
+        $ref: "#/definitions/responses.BaseResponse"
+    example:
+      data:
+        mediantime: 5
+        tx:
+        - vsize: 6
+          locktime: 1
+          fee: 4.1456080298839363962315474054776132106781005859375
+          index: 7
+          txid: "txid"
+          weight: 8
+          version: 1
+          blockheight: 2
+          vout:
+          - scriptPubKey:
+              address: "address"
+              asm: "asm"
+              hex: "hex"
+              type: "type"
+              desc: "desc"
+            rune_holdings:
+            - amount: {}
+              rune_id: "rune_id"
+            - amount: {}
+              rune_id: "rune_id"
+            value: 9.3693102714106686335071572102606296539306640625
+            "n": 9
+          - scriptPubKey:
+              address: "address"
+              asm: "asm"
+              hex: "hex"
+              type: "type"
+              desc: "desc"
+            rune_holdings:
+            - amount: {}
+              rune_id: "rune_id"
+            - amount: {}
+              rune_id: "rune_id"
+            value: 9.3693102714106686335071572102606296539306640625
+            "n": 9
+          size: 1
+          hex: "hex"
+          vin:
+          - sequence: 4
+            coinbase: "coinbase"
+            prevout:
+              scriptPubKey:
+                address: "address"
+                asm: "asm"
+                hex: "hex"
+                type: "type"
+                desc: "desc"
+              populated: true
+              rune_holdings:
+              - amount: {}
+                rune_id: "rune_id"
+              - amount: {}
+                rune_id: "rune_id"
+              value: 1.173074250955943309548956676735542714595794677734375
+              "n": 7
+              height: 6
+            scriptSig:
+              asm: "asm"
+              hex: "hex"
+            txid: "txid"
+            txinwitness:
+            - "txinwitness"
+            - "txinwitness"
+            vout: 5
+          - sequence: 4
+            coinbase: "coinbase"
+            prevout:
+              scriptPubKey:
+                address: "address"
+                asm: "asm"
+                hex: "hex"
+                type: "type"
+                desc: "desc"
+              populated: true
+              rune_holdings:
+              - amount: {}
+                rune_id: "rune_id"
+              - amount: {}
+                rune_id: "rune_id"
+              value: 1.173074250955943309548956676735542714595794677734375
+              "n": 7
+              height: 6
+            scriptSig:
+              asm: "asm"
+              hex: "hex"
+            txid: "txid"
+            txinwitness:
+            - "txinwitness"
+            - "txinwitness"
+            vout: 5
+          hash: "hash"
+        - vsize: 6
+          locktime: 1
+          fee: 4.1456080298839363962315474054776132106781005859375
+          index: 7
+          txid: "txid"
+          weight: 8
+          version: 1
+          blockheight: 2
+          vout:
+          - scriptPubKey:
+              address: "address"
+              asm: "asm"
+              hex: "hex"
+              type: "type"
+              desc: "desc"
+            rune_holdings:
+            - amount: {}
+              rune_id: "rune_id"
+            - amount: {}
+              rune_id: "rune_id"
+            value: 9.3693102714106686335071572102606296539306640625
+            "n": 9
+          - scriptPubKey:
+              address: "address"
+              asm: "asm"
+              hex: "hex"
+              type: "type"
+              desc: "desc"
+            rune_holdings:
+            - amount: {}
+              rune_id: "rune_id"
+            - amount: {}
+              rune_id: "rune_id"
+            value: 9.3693102714106686335071572102606296539306640625
+            "n": 9
+          size: 1
+          hex: "hex"
+          vin:
+          - sequence: 4
+            coinbase: "coinbase"
+            prevout:
+              scriptPubKey:
+                address: "address"
+                asm: "asm"
+                hex: "hex"
+                type: "type"
+                desc: "desc"
+              populated: true
+              rune_holdings:
+              - amount: {}
+                rune_id: "rune_id"
+              - amount: {}
+                rune_id: "rune_id"
+              value: 1.173074250955943309548956676735542714595794677734375
+              "n": 7
+              height: 6
+            scriptSig:
+              asm: "asm"
+              hex: "hex"
+            txid: "txid"
+            txinwitness:
+            - "txinwitness"
+            - "txinwitness"
+            vout: 5
+          - sequence: 4
+            coinbase: "coinbase"
+            prevout:
+              scriptPubKey:
+                address: "address"
+                asm: "asm"
+                hex: "hex"
+                type: "type"
+                desc: "desc"
+              populated: true
+              rune_holdings:
+              - amount: {}
+                rune_id: "rune_id"
+              - amount: {}
+                rune_id: "rune_id"
+              value: 1.173074250955943309548956676735542714595794677734375
+              "n": 7
+              height: 6
+            scriptSig:
+              asm: "asm"
+              hex: "hex"
+            txid: "txid"
+            txinwitness:
+            - "txinwitness"
+            - "txinwitness"
+            vout: 5
+          hash: "hash"
+        previousblockhash: "previousblockhash"
+        bits: "bits"
+        weight: 6
+        strippedSize: 9
+        versionHex: "versionHex"
+        confirmations: 0
+        nonce: 2
+        version: 9
+        difficulty: 6.02745618307040320615897144307382404804229736328125
+        chainwork: "chainwork"
+        nTx: 5
+        size: 7
+        merkleroot: "merkleroot"
+        time: 3
+        hash: "hash"
+        height: 1
+      responses.BaseResponse:
+        msg: "msg"
+        code: 6
+        data: ""
+  inline_response_200_7:
+    type: "object"
+    properties:
+      data:
+        type: "object"
+        additionalProperties:
+          type: "number"
+      responses.BaseResponse:
+        $ref: "#/definitions/responses.BaseResponse"
+    example:
+      data:
+        key: 0.80082819046101150206595775671303272247314453125
+      responses.BaseResponse:
+        msg: "msg"
+        code: 6
+        data: ""
+  inline_response_200_8:
+    type: "object"
+    properties:
+      data:
+        $ref: "#/definitions/rpc.BtcTx"
+      responses.BaseResponse:
+        $ref: "#/definitions/responses.BaseResponse"
+    example:
+      data:
+        vsize: 6
+        locktime: 1
+        fee: 4.1456080298839363962315474054776132106781005859375
+        index: 7
+        txid: "txid"
+        weight: 8
+        version: 1
+        blockheight: 2
+        vout:
+        - scriptPubKey:
+            address: "address"
+            asm: "asm"
+            hex: "hex"
+            type: "type"
+            desc: "desc"
+          rune_holdings:
+          - amount: {}
+            rune_id: "rune_id"
+          - amount: {}
+            rune_id: "rune_id"
+          value: 9.3693102714106686335071572102606296539306640625
+          "n": 9
+        - scriptPubKey:
+            address: "address"
+            asm: "asm"
+            hex: "hex"
+            type: "type"
+            desc: "desc"
+          rune_holdings:
+          - amount: {}
+            rune_id: "rune_id"
+          - amount: {}
+            rune_id: "rune_id"
+          value: 9.3693102714106686335071572102606296539306640625
+          "n": 9
+        size: 1
+        hex: "hex"
+        vin:
+        - sequence: 4
+          coinbase: "coinbase"
+          prevout:
+            scriptPubKey:
+              address: "address"
+              asm: "asm"
+              hex: "hex"
+              type: "type"
+              desc: "desc"
+            populated: true
+            rune_holdings:
+            - amount: {}
+              rune_id: "rune_id"
+            - amount: {}
+              rune_id: "rune_id"
+            value: 1.173074250955943309548956676735542714595794677734375
+            "n": 7
+            height: 6
+          scriptSig:
+            asm: "asm"
+            hex: "hex"
+          txid: "txid"
+          txinwitness:
+          - "txinwitness"
+          - "txinwitness"
+          vout: 5
+        - sequence: 4
+          coinbase: "coinbase"
+          prevout:
+            scriptPubKey:
+              address: "address"
+              asm: "asm"
+              hex: "hex"
+              type: "type"
+              desc: "desc"
+            populated: true
+            rune_holdings:
+            - amount: {}
+              rune_id: "rune_id"
+            - amount: {}
+              rune_id: "rune_id"
+            value: 1.173074250955943309548956676735542714595794677734375
+            "n": 7
+            height: 6
+          scriptSig:
+            asm: "asm"
+            hex: "hex"
+          txid: "txid"
+          txinwitness:
+          - "txinwitness"
+          - "txinwitness"
+          vout: 5
+        hash: "hash"
+      responses.BaseResponse:
+        msg: "msg"
+        code: 6
+        data: ""
+  inline_response_200_9:
+    type: "object"
+    properties:
+      data:
+        $ref: "#/definitions/responses.SendRawTransaction"
+      responses.BaseResponse:
+        $ref: "#/definitions/responses.BaseResponse"
+    example:
+      data:
+        tx_hash: "tx_hash"
+      responses.BaseResponse:
+        msg: "msg"
+        code: 6
+        data: ""
+  inline_response_200_10:
+    type: "object"
+    properties:
+      data:
+        $ref: "#/definitions/responses.TxInfo"
+      responses.BaseResponse:
+        $ref: "#/definitions/responses.BaseResponse"
+    example:
+      data:
+        locktime: 1
+        nLostInscription: 2
+        txid: "txid"
+        nNewInscription: 7
+        blkid: "blkid"
+        nInInscription: 5
+        inSatoshi: {}
+        nIn: 5
+        nOut: 9
+        size: 2
+        idx: 6
+        nOutInscription: 3
+        height: 0
+      responses.BaseResponse:
+        msg: "msg"
+        code: 6
         data: ""
   responses.GetAddressTimeframeBalanceItem_blockRange:
     type: "object"

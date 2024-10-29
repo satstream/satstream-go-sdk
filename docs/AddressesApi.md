@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **AddressesAddressBalanceGet**
-> ResponsesGetAddressBalance AddressesAddressBalanceGet(ctx, address)
+> InlineResponse200 AddressesAddressBalanceGet(ctx, address)
 Get address balance
 
 Get the current balance of a Bitcoin address
@@ -26,11 +26,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponsesGetAddressBalance**](responses.GetAddressBalance.md)
+[**InlineResponse200**](inline_response_200.md)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -40,7 +40,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **AddressesAddressBalanceTimeframeGet**
-> ResponsesGetAddressTimeframeBalance AddressesAddressBalanceTimeframeGet(ctx, address, start, end)
+> InlineResponse2001 AddressesAddressBalanceTimeframeGet(ctx, address, start, end)
 Get address timeframe balance
 
 Get the balance of a Bitcoin address for a specific timeframe
@@ -56,11 +56,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponsesGetAddressTimeframeBalance**](responses.GetAddressTimeframeBalance.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -70,7 +70,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **AddressesAddressRunesGet**
-> InlineResponse200 AddressesAddressRunesGet(ctx, address)
+> InlineResponse2002 AddressesAddressRunesGet(ctx, address)
 Get address runes balance list
 
 Get the balance of all runes for a Bitcoin address
@@ -84,11 +84,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**InlineResponse2002**](inline_response_200_2.md)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -98,7 +98,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **AddressesAddressRunesRuneidGet**
-> ResponsesGetAddressRuneBalance AddressesAddressRunesRuneidGet(ctx, address, runeid)
+> InlineResponse2003 AddressesAddressRunesRuneidGet(ctx, address, runeid)
 Get address rune balance
 
 Get the balance of a specific rune for a Bitcoin address
@@ -113,11 +113,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponsesGetAddressRuneBalance**](responses.GetAddressRuneBalance.md)
+[**InlineResponse2003**](inline_response_200_3.md)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -127,7 +127,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **AddressesAddressUtxosGet**
-> []ResponsesGetAddressNonInscriptionUtxoData AddressesAddressUtxosGet(ctx, address)
+> InlineResponse2004 AddressesAddressUtxosGet(ctx, address)
 Get address non-inscription UTXOs
 
 Get all non-inscription UTXOs for a Bitcoin address
@@ -141,11 +141,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ResponsesGetAddressNonInscriptionUtxoData**](responses.GetAddressNonInscriptionUTXOData.md)
+[**InlineResponse2004**](inline_response_200_4.md)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **MempoolAddressesAddressTransactionsGet**
-> []RpcBtcTx MempoolAddressesAddressTransactionsGet(ctx, address)
+> []interface{} MempoolAddressesAddressTransactionsGet(ctx, address)
 Get address mempool transactions
 
 Get all mempool transactions for a specific address
@@ -24,11 +24,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]RpcBtcTx**](rpc.BtcTx.md)
+**[]interface{}**
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -38,7 +38,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **MempoolTransactionsGet**
-> []RpcBtcTx MempoolTransactionsGet(ctx, )
+> []interface{} MempoolTransactionsGet(ctx, )
 Get mempool transactions
 
 Get all transactions currently in the mempool
@@ -48,11 +48,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[]RpcBtcTx**](rpc.BtcTx.md)
+**[]interface{}**
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -62,7 +62,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **MempoolTransactionsTxidGet**
-> RpcBtcTx MempoolTransactionsTxidGet(ctx, txid)
+> InlineResponse2008 MempoolTransactionsTxidGet(ctx, txid)
 Get mempool transaction info
 
 Get information about a specific transaction in the mempool
@@ -76,11 +76,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RpcBtcTx**](rpc.BtcTx.md)
+[**InlineResponse2008**](inline_response_200_8.md)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

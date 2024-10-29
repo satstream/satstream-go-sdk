@@ -32,15 +32,15 @@ BlocksApiService Get current block height
 Get the current block height of the Bitcoin blockchain
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
-@return int32
+@return InlineResponse2005
 */
-func (a *BlocksApiService) BlocksCurrentHeightGet(ctx context.Context) (int32, *http.Response, error) {
+func (a *BlocksApiService) BlocksCurrentHeightGet(ctx context.Context) (InlineResponse2005, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue int32
+		localVarReturnValue InlineResponse2005
 	)
 
 	// create path and map variables
@@ -66,6 +66,19 @@ func (a *BlocksApiService) BlocksCurrentHeightGet(ctx context.Context) (int32, *
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
 	if localVarHttpHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-Key"] = key
+			
+		}
 	}
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 	if err != nil {
@@ -96,7 +109,7 @@ func (a *BlocksApiService) BlocksCurrentHeightGet(ctx context.Context) (int32, *
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v int32
+			var v InlineResponse2005
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -129,15 +142,15 @@ Get information about a specific block by its hash
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param hash Block hash
 
-@return RpcBlock
+@return InlineResponse2006
 */
-func (a *BlocksApiService) BlocksHashHashGet(ctx context.Context, hash string) (RpcBlock, *http.Response, error) {
+func (a *BlocksApiService) BlocksHashHashGet(ctx context.Context, hash string) (InlineResponse2006, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue RpcBlock
+		localVarReturnValue InlineResponse2006
 	)
 
 	// create path and map variables
@@ -194,7 +207,7 @@ func (a *BlocksApiService) BlocksHashHashGet(ctx context.Context, hash string) (
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v RpcBlock
+			var v InlineResponse2006
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -238,15 +251,15 @@ Get information about a specific block by height
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param height Block height
 
-@return RpcBlock
+@return InlineResponse2006
 */
-func (a *BlocksApiService) BlocksHeightGet(ctx context.Context, height int32) (RpcBlock, *http.Response, error) {
+func (a *BlocksApiService) BlocksHeightGet(ctx context.Context, height int32) (InlineResponse2006, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue RpcBlock
+		localVarReturnValue InlineResponse2006
 	)
 
 	// create path and map variables
@@ -303,7 +316,7 @@ func (a *BlocksApiService) BlocksHeightGet(ctx context.Context, height int32) (R
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v RpcBlock
+			var v InlineResponse2006
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -347,15 +360,15 @@ Get transactions for a specific block height
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param height Block height
 
-@return []StoreTransactionDocument
+@return []interface{}
 */
-func (a *BlocksApiService) BlocksHeightTransactionsGet(ctx context.Context, height int32) ([]StoreTransactionDocument, *http.Response, error) {
+func (a *BlocksApiService) BlocksHeightTransactionsGet(ctx context.Context, height int32) ([]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue []StoreTransactionDocument
+		localVarReturnValue []interface{}
 	)
 
 	// create path and map variables
@@ -412,7 +425,7 @@ func (a *BlocksApiService) BlocksHeightTransactionsGet(ctx context.Context, heig
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []StoreTransactionDocument
+			var v []interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

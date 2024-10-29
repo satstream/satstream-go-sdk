@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **IndexerTxHashGet**
-> RpcBtcTx IndexerTxHashGet(ctx, hash)
+> InlineResponse2008 IndexerTxHashGet(ctx, hash)
 Get transaction
 
 Get a transaction by its hash
@@ -25,7 +25,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RpcBtcTx**](rpc.BtcTx.md)
+[**InlineResponse2008**](inline_response_200_8.md)
 
 ### Authorization
 
@@ -39,7 +39,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **TransactionsBroadcastPost**
-> ResponsesSendRawTransaction TransactionsBroadcastPost(ctx, transaction)
+> InlineResponse2009 TransactionsBroadcastPost(ctx, transaction)
 Broadcast transaction
 
 Broadcast a raw transaction to the Bitcoin network
@@ -53,11 +53,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponsesSendRawTransaction**](responses.SendRawTransaction.md)
+[**InlineResponse2009**](inline_response_200_9.md)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -67,7 +67,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **TransactionsTxidGet**
-> RpcBtcTx TransactionsTxidGet(ctx, txid)
+> InlineResponse20010 TransactionsTxidGet(ctx, txid)
 Get transaction info
 
 Get detailed information about a specific transaction
@@ -81,11 +81,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RpcBtcTx**](rpc.BtcTx.md)
+[**InlineResponse20010**](inline_response_200_10.md)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -95,7 +95,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **TransactionsTxidInputsGet**
-> []RpcVin TransactionsTxidInputsGet(ctx, txid)
+> []interface{} TransactionsTxidInputsGet(ctx, txid)
 Get transaction inputs
 
 Get the inputs of a specific transaction
@@ -109,11 +109,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]RpcVin**](rpc.Vin.md)
+**[]interface{}**
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

@@ -31,15 +31,15 @@ FeesApiService Get recommended fees
 Get recommended fees for Bitcoin transactions
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
-@return map[string]float32
+@return InlineResponse2007
 */
-func (a *FeesApiService) FeesGet(ctx context.Context) (map[string]float32, *http.Response, error) {
+func (a *FeesApiService) FeesGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue map[string]float32
+		localVarReturnValue InlineResponse2007
 	)
 
 	// create path and map variables
@@ -95,7 +95,7 @@ func (a *FeesApiService) FeesGet(ctx context.Context) (map[string]float32, *http
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v map[string]float32
+			var v InlineResponse2007
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

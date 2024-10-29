@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **FeesGet**
-> map[string]float32 FeesGet(ctx, )
+> InlineResponse2007 FeesGet(ctx, )
 Get recommended fees
 
 Get recommended fees for Bitcoin transactions
@@ -18,7 +18,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**map[string]float32**
+[**InlineResponse2007**](inline_response_200_7.md)
 
 ### Authorization
 
