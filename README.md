@@ -70,6 +70,7 @@ Class | Method | HTTP request | Description
  - [ResponsesGetAddressTimeframeBalanceItem](docs/ResponsesGetAddressTimeframeBalanceItem.md)
  - [ResponsesGetAddressTimeframeBalanceItemBlockRange](docs/ResponsesGetAddressTimeframeBalanceItemBlockRange.md)
  - [ResponsesGetCurrentBlockHeightResponse](docs/ResponsesGetCurrentBlockHeightResponse.md)
+ - [ResponsesGetFeesResponse](docs/ResponsesGetFeesResponse.md)
  - [ResponsesNonInscriptionUtxo](docs/ResponsesNonInscriptionUtxo.md)
  - [ResponsesSendRawTransaction](docs/ResponsesSendRawTransaction.md)
  - [ResponsesTxInfo](docs/ResponsesTxInfo.md)

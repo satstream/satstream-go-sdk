@@ -812,6 +812,16 @@ definitions:
         type: "integer"
     example:
       height: 0
+  responses.GetFeesResponse:
+    type: "object"
+    properties:
+      confirmation_blocks:
+        type: "integer"
+      fee_rate_in_btc:
+        type: "number"
+    example:
+      confirmation_blocks: 0
+      fee_rate_in_btc: 6.02745618307040320615897144307382404804229736328125
   responses.NonInscriptionUTXO:
     type: "object"
     properties:
@@ -1854,14 +1864,13 @@ definitions:
     type: "object"
     properties:
       data:
-        type: "object"
-        additionalProperties:
-          type: "number"
+        $ref: "#/definitions/responses.GetFeesResponse"
       responses.BaseResponse:
         $ref: "#/definitions/responses.BaseResponse"
     example:
       data:
-        key: 0.80082819046101150206595775671303272247314453125
+        confirmation_blocks: 0
+        fee_rate_in_btc: 6.02745618307040320615897144307382404804229736328125
       responses.BaseResponse:
         msg: "msg"
         code: 6

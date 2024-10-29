@@ -1,10 +1,10 @@
-# InlineResponse2007
+# ResponsesGetFeesResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [***ResponsesGetFeesResponse**](responses.GetFeesResponse.md) |  | [optional] [default to null]
-**ResponsesBaseResponse** | [***ResponsesBaseResponse**](responses.BaseResponse.md) |  | [optional] [default to null]
+**ConfirmationBlocks** | **int32** |  | [optional] [default to null]
+**FeeRateInBtc** | **float32** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

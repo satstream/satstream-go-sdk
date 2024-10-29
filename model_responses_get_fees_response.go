@@ -10,7 +10,7 @@
 
 package swagger
 
-type InlineResponse2007 struct {
-	Data *ResponsesGetFeesResponse `json:"data,omitempty"`
-	ResponsesBaseResponse *ResponsesBaseResponse `json:"responses.BaseResponse,omitempty"`
+type ResponsesGetFeesResponse struct {
+	ConfirmationBlocks int32 `json:"confirmation_blocks,omitempty"`
+	FeeRateInBtc float32 `json:"fee_rate_in_btc,omitempty"`
 }
