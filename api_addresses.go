@@ -78,7 +78,7 @@ func (a *AddressesApiService) AddressesAddressBalanceGet(ctx context.Context, ad
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}
@@ -193,7 +193,7 @@ func (a *AddressesApiService) AddressesAddressBalanceTimeframeGet(ctx context.Co
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}
@@ -304,7 +304,7 @@ func (a *AddressesApiService) AddressesAddressRunesGet(ctx context.Context, addr
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}
@@ -439,7 +439,7 @@ func (a *AddressesApiService) AddressesAddressRunesRuneidGet(ctx context.Context
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}
@@ -550,7 +550,7 @@ func (a *AddressesApiService) AddressesAddressUtxosGet(ctx context.Context, addr
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}

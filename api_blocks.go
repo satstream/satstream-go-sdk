@@ -76,7 +76,7 @@ func (a *BlocksApiService) BlocksCurrentHeightGet(ctx context.Context) (InlineRe
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}

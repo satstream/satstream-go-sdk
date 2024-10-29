@@ -76,7 +76,7 @@ func (a *RunesApiService) RunesGet(ctx context.Context) ([]interface{}, *http.Re
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}
@@ -187,7 +187,7 @@ func (a *RunesApiService) RunesRuneIdGet(ctx context.Context, runeId string) (in
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}
@@ -298,7 +298,7 @@ func (a *RunesApiService) RunesRuneIdHoldersGet(ctx context.Context, runeId stri
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}
@@ -407,7 +407,7 @@ func (a *RunesApiService) RunesStatusGet(ctx context.Context) (interface{}, *htt
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}

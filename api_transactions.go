@@ -177,7 +177,7 @@ func (a *TransactionsApiService) TransactionsBroadcastPost(ctx context.Context, 
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}
@@ -288,7 +288,7 @@ func (a *TransactionsApiService) TransactionsTxidGet(ctx context.Context, txid s
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}
@@ -399,7 +399,7 @@ func (a *TransactionsApiService) TransactionsTxidInputsGet(ctx context.Context, 
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}

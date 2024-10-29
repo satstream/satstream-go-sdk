@@ -78,7 +78,7 @@ func (a *MempoolApiService) MempoolAddressesAddressTransactionsGet(ctx context.C
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}
@@ -187,7 +187,7 @@ func (a *MempoolApiService) MempoolTransactionsGet(ctx context.Context) ([]inter
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}
@@ -298,7 +298,7 @@ func (a *MempoolApiService) MempoolTransactionsTxidGet(ctx context.Context, txid
 			} else {
 				key = auth.Key
 			}
-			localVarHeaderParams["X-API-Key"] = key
+			localVarHeaderParams["X-API-KEY"] = key
 			
 		}
 	}
