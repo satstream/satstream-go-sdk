@@ -10,7 +10,7 @@
 
 package swagger
 
-type ResponsesGetAddressTimeframeBalanceItem struct {
-	Balance string `json:"balance,omitempty"`
-	BlockRange *ResponsesGetAddressTimeframeBalanceItemBlockRange `json:"blockRange,omitempty"`
+type OrdinalsTermsRange struct {
+	End *BigInt `json:"end,omitempty"`
+	Start *BigInt `json:"start,omitempty"`
 }

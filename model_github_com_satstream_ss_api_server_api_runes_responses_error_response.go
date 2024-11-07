@@ -10,7 +10,8 @@
 
 package swagger
 
-type ResponsesGetAddressTimeframeBalanceItem struct {
-	Balance string `json:"balance,omitempty"`
-	BlockRange *ResponsesGetAddressTimeframeBalanceItemBlockRange `json:"blockRange,omitempty"`
+type GithubComSatstreamSsApiServerApiRunesResponsesErrorResponse struct {
+	Code int32 `json:"code,omitempty"`
+	Data interface{} `json:"data,omitempty"`
+	Msg string `json:"msg,omitempty"`
 }

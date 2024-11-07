@@ -18,6 +18,7 @@ import (
 	"net/url"
 	"strings"
 	"fmt"
+	"github.com/antihax/optional"
 )
 
 // Linger please
@@ -122,7 +123,7 @@ func (a *AddressesApiService) AddressesAddressBalanceGet(ctx context.Context, ad
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -143,12 +144,18 @@ AddressesApiService Get address timeframe balance
 Get the balance of a Bitcoin address for a specific timeframe
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address
- * @param start Start block height
- * @param end End block height
+ * @param timeframe Timeframe
+ * @param optional nil or *AddressesApiAddressesAddressBalanceTimeframeGetOpts - Optional Parameters:
+     * @param "Token" (optional.String) -  Token
 
 @return InlineResponse2001
 */
-func (a *AddressesApiService) AddressesAddressBalanceTimeframeGet(ctx context.Context, address string, start int32, end int32) (InlineResponse2001, *http.Response, error) {
+
+type AddressesApiAddressesAddressBalanceTimeframeGetOpts struct { 
+	Token optional.String
+}
+
+func (a *AddressesApiService) AddressesAddressBalanceTimeframeGet(ctx context.Context, address string, timeframe string, localVarOptionals *AddressesApiAddressesAddressBalanceTimeframeGetOpts) (InlineResponse2001, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -165,8 +172,10 @@ func (a *AddressesApiService) AddressesAddressBalanceTimeframeGet(ctx context.Co
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	localVarQueryParams.Add("start", parameterToString(start, ""))
-	localVarQueryParams.Add("end", parameterToString(end, ""))
+	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
+		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
+	}
+	localVarQueryParams.Add("timeframe", parameterToString(timeframe, ""))
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -237,7 +246,7 @@ func (a *AddressesApiService) AddressesAddressBalanceTimeframeGet(ctx context.Co
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -348,7 +357,7 @@ func (a *AddressesApiService) AddressesAddressRunesGet(ctx context.Context, addr
 		}
 		
 		if localVarHttpResponse.StatusCode == 400 {
-			var v ResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -359,7 +368,7 @@ func (a *AddressesApiService) AddressesAddressRunesGet(ctx context.Context, addr
 		}
 		
 		if localVarHttpResponse.StatusCode == 401 {
-			var v ResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -370,7 +379,7 @@ func (a *AddressesApiService) AddressesAddressRunesGet(ctx context.Context, addr
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -483,7 +492,7 @@ func (a *AddressesApiService) AddressesAddressRunesRuneidGet(ctx context.Context
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -594,7 +603,7 @@ func (a *AddressesApiService) AddressesAddressUtxosGet(ctx context.Context, addr
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

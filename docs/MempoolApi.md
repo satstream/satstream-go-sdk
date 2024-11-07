@@ -62,7 +62,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **MempoolTransactionsTxidGet**
-> InlineResponse2008 MempoolTransactionsTxidGet(ctx, txid)
+> InlineResponse2009 MempoolTransactionsTxidGet(ctx, txid)
 Get mempool transaction info
 
 Get information about a specific transaction in the mempool
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](inline_response_200_8.md)
+[**InlineResponse2009**](inline_response_200_9.md)
 
 ### Authorization
 

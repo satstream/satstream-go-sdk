@@ -12,5 +12,5 @@ package swagger
 
 type ResponsesGetAddressBalance struct {
 	Address string `json:"address,omitempty"`
-	Balance float32 `json:"balance,omitempty"`
+	Balance string `json:"balance,omitempty"`
 }

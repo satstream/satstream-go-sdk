@@ -11,6 +11,6 @@
 package swagger
 
 type InlineResponse20010 struct {
-	Data *ResponsesTxInfo `json:"data,omitempty"`
-	ResponsesBaseResponse *ResponsesBaseResponse `json:"responses.BaseResponse,omitempty"`
+	Data []ResponsesRuneInfo `json:"data,omitempty"`
+	GithubComSatstreamSsApiServerApiRunesResponsesBaseResponse *GithubComSatstreamSsApiServerApiRunesResponsesBaseResponse `json:"github_com_satstream_ss-api_server_api_runes_responses.BaseResponse,omitempty"`
 }

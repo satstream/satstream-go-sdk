@@ -109,7 +109,7 @@ func (a *TransactionsApiService) IndexerTxHashGet(ctx context.Context, hash stri
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v SsApiServerApiTransactionsResponsesErrorResponse
+			var v GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -131,15 +131,15 @@ Broadcast a raw transaction to the Bitcoin network
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param transaction Raw transaction hex
 
-@return InlineResponse2009
+@return InlineResponse20011
 */
-func (a *TransactionsApiService) TransactionsBroadcastPost(ctx context.Context, transaction string) (InlineResponse2009, *http.Response, error) {
+func (a *TransactionsApiService) TransactionsBroadcastPost(ctx context.Context, transaction string) (InlineResponse20011, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2009
+		localVarReturnValue InlineResponse20011
 	)
 
 	// create path and map variables
@@ -210,7 +210,7 @@ func (a *TransactionsApiService) TransactionsBroadcastPost(ctx context.Context, 
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2009
+			var v InlineResponse20011
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -221,7 +221,7 @@ func (a *TransactionsApiService) TransactionsBroadcastPost(ctx context.Context, 
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v SsApiServerApiTransactionsResponsesErrorResponse
+			var v GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -243,15 +243,15 @@ Get detailed information about a specific transaction
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
 
-@return InlineResponse20010
+@return InlineResponse20012
 */
-func (a *TransactionsApiService) TransactionsTxidGet(ctx context.Context, txid string) (InlineResponse20010, *http.Response, error) {
+func (a *TransactionsApiService) TransactionsTxidGet(ctx context.Context, txid string) (InlineResponse20012, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20010
+		localVarReturnValue InlineResponse20012
 	)
 
 	// create path and map variables
@@ -321,7 +321,7 @@ func (a *TransactionsApiService) TransactionsTxidGet(ctx context.Context, txid s
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20010
+			var v InlineResponse20012
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -332,7 +332,7 @@ func (a *TransactionsApiService) TransactionsTxidGet(ctx context.Context, txid s
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v SsApiServerApiTransactionsResponsesErrorResponse
+			var v GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -443,7 +443,7 @@ func (a *TransactionsApiService) TransactionsTxidInputsGet(ctx context.Context, 
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v SsApiServerApiTransactionsResponsesErrorResponse
+			var v GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

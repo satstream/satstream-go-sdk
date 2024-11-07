@@ -7,21 +7,32 @@ Method | HTTP request | Description
 [**RunesGet**](RunesApi.md#RunesGet) | **Get** /runes | Get runes info list
 [**RunesRuneIdGet**](RunesApi.md#RunesRuneIdGet) | **Get** /runes/{runeId} | Get rune info
 [**RunesRuneIdHoldersGet**](RunesApi.md#RunesRuneIdHoldersGet) | **Get** /runes/{runeId}/holders | Get rune holders
-[**RunesStatusGet**](RunesApi.md#RunesStatusGet) | **Get** /runes/status | Get runes status
 
 
 # **RunesGet**
-> []interface{} RunesGet(ctx, )
+> InlineResponse20010 RunesGet(ctx, optional)
 Get runes info list
 
 Get information about all runes
 
 ### Required Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+ **optional** | ***RunesApiRunesGetOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a RunesApiRunesGetOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page** | **optional.Int32**| Page number (default: 1) | 
+ **perPage** | **optional.Int32**| Items per page (default: 10) | 
 
 ### Return type
 
-**[]interface{}**
+[**InlineResponse20010**](inline_response_200_10.md)
 
 ### Authorization
 
@@ -78,30 +89,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 **[]interface{}**
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **RunesStatusGet**
-> interface{} RunesStatusGet(ctx, )
-Get runes status
-
-Get the current status of the runes system
-
-### Required Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-**interface{}**
 
 ### Authorization
 

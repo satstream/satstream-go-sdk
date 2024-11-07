@@ -1,4 +1,4 @@
-# BlocksErrorResponse
+# GithubComSatstreamSsApiServerApiRunesResponsesBaseResponse
 
 ## Properties
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# SsApiServerApiRunesResponsesErrorResponse
+# GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse
 
 ## Properties
 Name | Type | Description | Notes

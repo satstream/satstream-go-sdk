@@ -10,7 +10,7 @@
 
 package swagger
 
-type InlineResponse2008 struct {
-	Data *RpcBtcTx `json:"data,omitempty"`
+type InlineResponse20012 struct {
+	Data *ResponsesTxInfo `json:"data,omitempty"`
 	GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse *GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse `json:"github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse,omitempty"`
 }

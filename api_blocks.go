@@ -107,7 +107,7 @@ func (a *BlocksApiService) BlocksCurrentHeightGet(ctx context.Context) (InlineRe
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v BlocksErrorResponse
+			var v GithubComSatstreamSsApiServerApiBlocksResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -205,7 +205,7 @@ func (a *BlocksApiService) BlocksHashHashGet(ctx context.Context, hash string) (
 		}
 		
 		if localVarHttpResponse.StatusCode == 400 {
-			var v BlocksErrorResponse
+			var v GithubComSatstreamSsApiServerApiBlocksResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -216,7 +216,7 @@ func (a *BlocksApiService) BlocksHashHashGet(ctx context.Context, hash string) (
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v BlocksErrorResponse
+			var v GithubComSatstreamSsApiServerApiBlocksResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -314,7 +314,7 @@ func (a *BlocksApiService) BlocksHeightGet(ctx context.Context, height int32) (I
 		}
 		
 		if localVarHttpResponse.StatusCode == 400 {
-			var v BlocksErrorResponse
+			var v GithubComSatstreamSsApiServerApiBlocksResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -325,7 +325,7 @@ func (a *BlocksApiService) BlocksHeightGet(ctx context.Context, height int32) (I
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v BlocksErrorResponse
+			var v GithubComSatstreamSsApiServerApiBlocksResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -423,7 +423,7 @@ func (a *BlocksApiService) BlocksHeightTransactionsGet(ctx context.Context, heig
 		}
 		
 		if localVarHttpResponse.StatusCode == 400 {
-			var v BlocksErrorResponse
+			var v GithubComSatstreamSsApiServerApiBlocksResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -434,7 +434,7 @@ func (a *BlocksApiService) BlocksHeightTransactionsGet(ctx context.Context, heig
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v BlocksErrorResponse
+			var v GithubComSatstreamSsApiServerApiBlocksResponsesBaseResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

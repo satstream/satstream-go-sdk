@@ -12,5 +12,5 @@ package swagger
 
 type InlineResponse2002 struct {
 	Data []ResponsesGetAddressRunesBalanceListItem `json:"data,omitempty"`
-	ResponsesBaseResponse *ResponsesBaseResponse `json:"responses.BaseResponse,omitempty"`
+	GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse *GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse `json:"github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse,omitempty"`
 }

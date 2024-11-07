@@ -10,7 +10,7 @@
 
 package swagger
 
-type ResponsesBaseResponse struct {
+type GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse struct {
 	Code int32 `json:"code,omitempty"`
 	Data interface{} `json:"data,omitempty"`
 	Msg string `json:"msg,omitempty"`

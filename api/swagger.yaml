@@ -42,7 +42,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/responses.BaseResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse"
   /addresses/{address}/balance/timeframe:
     get:
       tags:
@@ -60,18 +60,27 @@ paths:
         required: true
         type: "string"
         x-exportParamName: "Address"
-      - name: "start"
+      - name: "token"
         in: "query"
-        description: "Start block height"
-        required: true
-        type: "integer"
-        x-exportParamName: "Start"
-      - name: "end"
+        description: "Token"
+        required: false
+        type: "string"
+        enum:
+        - "BTC"
+        - "RUNE"
+        x-exportParamName: "Token"
+        x-optionalDataType: "String"
+      - name: "timeframe"
         in: "query"
-        description: "End block height"
+        description: "Timeframe"
         required: true
-        type: "integer"
-        x-exportParamName: "End"
+        type: "string"
+        enum:
+        - "4h"
+        - "1d"
+        - "1w"
+        - "1m"
+        x-exportParamName: "Timeframe"
       security:
       - ApiKeyAuth: []
       responses:
@@ -82,7 +91,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/responses.BaseResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse"
   /addresses/{address}/runes:
     get:
       tags:
@@ -110,15 +119,15 @@ paths:
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/responses.BaseResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse"
         "401":
           description: "Unauthorized"
           schema:
-            $ref: "#/definitions/responses.BaseResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/responses.BaseResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse"
   /addresses/{address}/runes/{runeid}:
     get:
       tags:
@@ -152,7 +161,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/responses.BaseResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse"
   /addresses/{address}/utxos:
     get:
       tags:
@@ -180,7 +189,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/responses.BaseResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse"
   /blocks/current-height:
     get:
       tags:
@@ -200,7 +209,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/blocks.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
   /blocks/hash/{hash}:
     get:
       tags:
@@ -226,11 +235,11 @@ paths:
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/blocks.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/blocks.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
   /blocks/{height}:
     get:
       tags:
@@ -256,11 +265,11 @@ paths:
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/blocks.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/blocks.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
   /blocks/{height}/transactions:
     get:
       tags:
@@ -286,7 +295,7 @@ paths:
             items:
               type: "object"
               allOf:
-              - $ref: "#/definitions/responses.BaseResponse"
+              - $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
               - type: "object"
                 properties:
                   data:
@@ -294,11 +303,11 @@ paths:
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/blocks.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/blocks.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
   /fees:
     get:
       tags:
@@ -318,7 +327,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/blocks.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
   /indexer/tx/{hash}:
     get:
       tags:
@@ -344,7 +353,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/ss_api_server_api_transactions_responses.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse"
   /mempool/addresses/{address}/transactions:
     get:
       tags:
@@ -372,7 +381,7 @@ paths:
             items:
               type: "object"
               allOf:
-              - $ref: "#/definitions/responses.BaseResponse"
+              - $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
               - type: "object"
                 properties:
                   data:
@@ -380,7 +389,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/blocks.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
   /mempool/transactions:
     get:
       tags:
@@ -400,7 +409,7 @@ paths:
             items:
               type: "object"
               allOf:
-              - $ref: "#/definitions/responses.BaseResponse"
+              - $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
               - type: "object"
                 properties:
                   data:
@@ -408,7 +417,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/blocks.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
   /mempool/transactions/{txid}:
     get:
       tags:
@@ -432,11 +441,11 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_8"
+            $ref: "#/definitions/inline_response_200_9"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/blocks.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
   /runes:
     get:
       tags:
@@ -447,43 +456,36 @@ paths:
       - "application/json"
       produces:
       - "application/json"
-      parameters: []
+      parameters:
+      - name: "page"
+        in: "query"
+        description: "Page number (default: 1)"
+        required: false
+        type: "integer"
+        x-exportParamName: "Page"
+        x-optionalDataType: "Int32"
+      - name: "per_page"
+        in: "query"
+        description: "Items per page (default: 10)"
+        required: false
+        type: "integer"
+        x-exportParamName: "PerPage"
+        x-optionalDataType: "Int32"
       security:
       - ApiKeyAuth: []
       responses:
         "200":
           description: "OK"
           schema:
-            type: "array"
-            items:
-              type: "object"
-              properties: {}
+            $ref: "#/definitions/inline_response_200_10"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_runes_responses.ErrorResponse"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/ss_api_server_api_runes_responses.ErrorResponse"
-  /runes/status:
-    get:
-      tags:
-      - "Runes"
-      summary: "Get runes status"
-      description: "Get the current status of the runes system"
-      consumes:
-      - "application/json"
-      produces:
-      - "application/json"
-      parameters: []
-      security:
-      - ApiKeyAuth: []
-      responses:
-        "200":
-          description: "OK"
-          schema:
-            type: "object"
-        "500":
-          description: "Internal Server Error"
-          schema:
-            $ref: "#/definitions/ss_api_server_api_runes_responses.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_runes_responses.ErrorResponse"
   /runes/{runeId}:
     get:
       tags:
@@ -511,7 +513,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/ss_api_server_api_runes_responses.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_runes_responses.ErrorResponse"
   /runes/{runeId}/holders:
     get:
       tags:
@@ -542,7 +544,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/ss_api_server_api_runes_responses.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_runes_responses.ErrorResponse"
   /transactions/broadcast:
     post:
       tags:
@@ -567,11 +569,11 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_9"
+            $ref: "#/definitions/inline_response_200_11"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/ss_api_server_api_transactions_responses.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse"
   /transactions/{txid}:
     get:
       tags:
@@ -595,11 +597,11 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_10"
+            $ref: "#/definitions/inline_response_200_12"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/ss_api_server_api_transactions_responses.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse"
   /transactions/{txid}/inputs:
     get:
       tags:
@@ -627,7 +629,7 @@ paths:
             items:
               type: "object"
               allOf:
-              - $ref: "#/definitions/responses.BaseResponse"
+              - $ref: "#/definitions/github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse"
               - type: "object"
                 properties:
                   data:
@@ -635,7 +637,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/ss_api_server_api_transactions_responses.ErrorResponse"
+            $ref: "#/definitions/github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse"
 securityDefinitions:
   ApiKeyAuth:
     type: "apiKey"
@@ -644,7 +646,7 @@ securityDefinitions:
 definitions:
   big.Int:
     type: "object"
-  blocks.ErrorResponse:
+  github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse:
     type: "object"
     properties:
       code:
@@ -652,7 +654,11 @@ definitions:
       data: {}
       msg:
         type: "string"
-  responses.BaseResponse:
+    example:
+      msg: "msg"
+      code: 0
+      data: ""
+  github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
     type: "object"
     properties:
       code:
@@ -664,6 +670,60 @@ definitions:
       msg: "msg"
       code: 6
       data: ""
+  github_com_satstream_ss-api_server_api_runes_responses.BaseResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data: {}
+      msg:
+        type: "string"
+    example:
+      msg: "msg"
+      code: 5
+      data: ""
+  github_com_satstream_ss-api_server_api_runes_responses.ErrorResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data: {}
+      msg:
+        type: "string"
+  github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data: {}
+      msg:
+        type: "string"
+    example:
+      msg: "msg"
+      code: 0
+      data: ""
+  ordinals.Terms:
+    type: "object"
+    properties:
+      amount:
+        $ref: "#/definitions/big.Int"
+      cap:
+        $ref: "#/definitions/big.Int"
+      height:
+        $ref: "#/definitions/ordinals.TermsRange"
+      offset:
+        $ref: "#/definitions/ordinals.TermsRange"
+    example:
+      offset: {}
+      height: {}
+  ordinals.TermsRange:
+    type: "object"
+    properties:
+      end:
+        $ref: "#/definitions/big.Int"
+      start:
+        $ref: "#/definitions/big.Int"
+    example: {}
   responses.BlockRange:
     type: "object"
     properties:
@@ -676,11 +736,13 @@ definitions:
     properties:
       address:
         type: "string"
+        example: "bc1q..."
       balance:
-        type: "number"
+        type: "string"
+        example: "100.00"
     example:
-      address: "address"
-      balance: 0.80082819046101150206595775671303272247314453125
+      address: "bc1q..."
+      balance: "100.00"
   responses.GetAddressNonInscriptionUTXOData:
     type: "object"
     properties:
@@ -791,19 +853,19 @@ definitions:
           $ref: "#/definitions/responses.GetAddressTimeframeBalanceItem"
     example:
       items:
-      - balance: 0.80082819046101150206595775671303272247314453125
+      - balance: "balance"
         blockRange: {}
-      - balance: 0.80082819046101150206595775671303272247314453125
+      - balance: "balance"
         blockRange: {}
   responses.GetAddressTimeframeBalanceItem:
     type: "object"
     properties:
       balance:
-        type: "number"
+        type: "string"
       blockRange:
         $ref: "responses.GetAddressTimeframeBalanceItem_blockRange"
     example:
-      balance: 0.80082819046101150206595775671303272247314453125
+      balance: "balance"
       blockRange: {}
   responses.GetCurrentBlockHeightResponse:
     type: "object"
@@ -859,6 +921,51 @@ definitions:
       isOpInRBF: true
       height: 9
       vout: 2
+  responses.RuneInfo:
+    type: "object"
+    properties:
+      block_height:
+        type: "integer"
+      divisibility:
+        type: "integer"
+      minted:
+        type: "string"
+      premine:
+        $ref: "#/definitions/big.Int"
+      rune:
+        type: "string"
+      rune_id:
+        type: "string"
+      spaced_rune:
+        type: "string"
+      spacers:
+        type: "integer"
+      symbol:
+        type: "string"
+      terms:
+        $ref: "#/definitions/ordinals.Terms"
+      turbo:
+        type: "boolean"
+      tx_height:
+        type: "integer"
+      txid:
+        type: "string"
+    example:
+      symbol: "symbol"
+      turbo: true
+      txid: "txid"
+      rune_id: "rune_id"
+      block_height: 0
+      rune: "rune"
+      spaced_rune: "spaced_rune"
+      premine: {}
+      terms:
+        offset: {}
+        height: {}
+      tx_height: 5
+      spacers: 1
+      minted: "minted"
+      divisibility: 6
   responses.SendRawTransaction:
     type: "object"
     properties:
@@ -1428,22 +1535,6 @@ definitions:
         rune_id: "rune_id"
       value: 9.3693102714106686335071572102606296539306640625
       "n": 9
-  ss_api_server_api_runes_responses.ErrorResponse:
-    type: "object"
-    properties:
-      code:
-        type: "integer"
-      data: {}
-      msg:
-        type: "string"
-  ss_api_server_api_transactions_responses.ErrorResponse:
-    type: "object"
-    properties:
-      code:
-        type: "integer"
-      data: {}
-      msg:
-        type: "string"
   store.TransactionDocument:
     type: "object"
     properties:
@@ -1489,33 +1580,33 @@ definitions:
     properties:
       data:
         $ref: "#/definitions/responses.GetAddressBalance"
-      responses.BaseResponse:
-        $ref: "#/definitions/responses.BaseResponse"
+      github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse:
+        $ref: "#/definitions/github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse"
     example:
       data:
-        address: "address"
-        balance: 0.80082819046101150206595775671303272247314453125
-      responses.BaseResponse:
+        address: "bc1q..."
+        balance: "100.00"
+      github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse:
         msg: "msg"
-        code: 6
+        code: 0
         data: ""
   inline_response_200_1:
     type: "object"
     properties:
       data:
         $ref: "#/definitions/responses.GetAddressTimeframeBalance"
-      responses.BaseResponse:
-        $ref: "#/definitions/responses.BaseResponse"
+      github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse:
+        $ref: "#/definitions/github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse"
     example:
       data:
         items:
-        - balance: 0.80082819046101150206595775671303272247314453125
+        - balance: "balance"
           blockRange: {}
-        - balance: 0.80082819046101150206595775671303272247314453125
+        - balance: "balance"
           blockRange: {}
-      responses.BaseResponse:
+      github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse:
         msg: "msg"
-        code: 6
+        code: 0
         data: ""
   inline_response_200_2:
     type: "object"
@@ -1524,8 +1615,8 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/responses.GetAddressRunesBalanceListItem"
-      responses.BaseResponse:
-        $ref: "#/definitions/responses.BaseResponse"
+      github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse:
+        $ref: "#/definitions/github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse"
     example:
       data:
       - amount: "52286"
@@ -1536,17 +1627,17 @@ definitions:
         spacedRune: "DECENTRALIZED"
         rune_id: "840000:3"
         parsedAmount: "52.286"
-      responses.BaseResponse:
+      github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse:
         msg: "msg"
-        code: 6
+        code: 0
         data: ""
   inline_response_200_3:
     type: "object"
     properties:
       data:
         $ref: "#/definitions/responses.GetAddressRuneBalance"
-      responses.BaseResponse:
-        $ref: "#/definitions/responses.BaseResponse"
+      github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse:
+        $ref: "#/definitions/github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse"
     example:
       data:
         symbol: "🐕"
@@ -1556,9 +1647,9 @@ definitions:
         spacedAmount: "52.286"
         divisibility: 5
         rune: "DOGGOTOTHEMOON"
-      responses.BaseResponse:
+      github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse:
         msg: "msg"
-        code: 6
+        code: 0
         data: ""
   inline_response_200_4:
     type: "object"
@@ -1567,8 +1658,8 @@ definitions:
         type: "array"
         items:
           $ref: "#/definitions/responses.GetAddressNonInscriptionUTXOData"
-      responses.BaseResponse:
-        $ref: "#/definitions/responses.BaseResponse"
+      github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse:
+        $ref: "#/definitions/github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse"
     example:
       data:
       - cursor: 0
@@ -1629,21 +1720,21 @@ definitions:
         totalUnconfirmedSpend: 2
         totalRunes: 5
         totalConfirmed: 1
-      responses.BaseResponse:
+      github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse:
         msg: "msg"
-        code: 6
+        code: 0
         data: ""
   inline_response_200_5:
     type: "object"
     properties:
       data:
         $ref: "#/definitions/responses.GetCurrentBlockHeightResponse"
-      responses.BaseResponse:
-        $ref: "#/definitions/responses.BaseResponse"
+      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
+        $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
     example:
       data:
         height: 0
-      responses.BaseResponse:
+      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
         msg: "msg"
         code: 6
         data: ""
@@ -1652,8 +1743,8 @@ definitions:
     properties:
       data:
         $ref: "#/definitions/rpc.Block"
-      responses.BaseResponse:
-        $ref: "#/definitions/responses.BaseResponse"
+      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
+        $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
     example:
       data:
         mediantime: 5
@@ -1856,7 +1947,7 @@ definitions:
         time: 3
         hash: "hash"
         height: 1
-      responses.BaseResponse:
+      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
         msg: "msg"
         code: 6
         data: ""
@@ -1865,13 +1956,13 @@ definitions:
     properties:
       data:
         $ref: "#/definitions/responses.GetFeesResponse"
-      responses.BaseResponse:
-        $ref: "#/definitions/responses.BaseResponse"
+      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
+        $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
     example:
       data:
         confirmation_blocks: 0
         fee_rate_in_btc: 6.02745618307040320615897144307382404804229736328125
-      responses.BaseResponse:
+      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
         msg: "msg"
         code: 6
         data: ""
@@ -1880,8 +1971,112 @@ definitions:
     properties:
       data:
         $ref: "#/definitions/rpc.BtcTx"
-      responses.BaseResponse:
-        $ref: "#/definitions/responses.BaseResponse"
+      github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse:
+        $ref: "#/definitions/github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse"
+    example:
+      github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse:
+        msg: "msg"
+        code: 0
+        data: ""
+      data:
+        vsize: 6
+        locktime: 1
+        fee: 4.1456080298839363962315474054776132106781005859375
+        index: 7
+        txid: "txid"
+        weight: 8
+        version: 1
+        blockheight: 2
+        vout:
+        - scriptPubKey:
+            address: "address"
+            asm: "asm"
+            hex: "hex"
+            type: "type"
+            desc: "desc"
+          rune_holdings:
+          - amount: {}
+            rune_id: "rune_id"
+          - amount: {}
+            rune_id: "rune_id"
+          value: 9.3693102714106686335071572102606296539306640625
+          "n": 9
+        - scriptPubKey:
+            address: "address"
+            asm: "asm"
+            hex: "hex"
+            type: "type"
+            desc: "desc"
+          rune_holdings:
+          - amount: {}
+            rune_id: "rune_id"
+          - amount: {}
+            rune_id: "rune_id"
+          value: 9.3693102714106686335071572102606296539306640625
+          "n": 9
+        size: 1
+        hex: "hex"
+        vin:
+        - sequence: 4
+          coinbase: "coinbase"
+          prevout:
+            scriptPubKey:
+              address: "address"
+              asm: "asm"
+              hex: "hex"
+              type: "type"
+              desc: "desc"
+            populated: true
+            rune_holdings:
+            - amount: {}
+              rune_id: "rune_id"
+            - amount: {}
+              rune_id: "rune_id"
+            value: 1.173074250955943309548956676735542714595794677734375
+            "n": 7
+            height: 6
+          scriptSig:
+            asm: "asm"
+            hex: "hex"
+          txid: "txid"
+          txinwitness:
+          - "txinwitness"
+          - "txinwitness"
+          vout: 5
+        - sequence: 4
+          coinbase: "coinbase"
+          prevout:
+            scriptPubKey:
+              address: "address"
+              asm: "asm"
+              hex: "hex"
+              type: "type"
+              desc: "desc"
+            populated: true
+            rune_holdings:
+            - amount: {}
+              rune_id: "rune_id"
+            - amount: {}
+              rune_id: "rune_id"
+            value: 1.173074250955943309548956676735542714595794677734375
+            "n": 7
+            height: 6
+          scriptSig:
+            asm: "asm"
+            hex: "hex"
+          txid: "txid"
+          txinwitness:
+          - "txinwitness"
+          - "txinwitness"
+          vout: 5
+        hash: "hash"
+  inline_response_200_9:
+    type: "object"
+    properties:
+      data:
+        $ref: "#/definitions/rpc.BtcTx"
+      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
+        $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
     example:
       data:
         vsize: 6
@@ -1975,21 +2170,7 @@ definitions:
           - "txinwitness"
           vout: 5
         hash: "hash"
-      responses.BaseResponse:
-        msg: "msg"
-        code: 6
-        data: ""
-  inline_response_200_9:
-    type: "object"
-    properties:
-      data:
-        $ref: "#/definitions/responses.SendRawTransaction"
-      responses.BaseResponse:
-        $ref: "#/definitions/responses.BaseResponse"
-    example:
-      data:
-        tx_hash: "tx_hash"
-      responses.BaseResponse:
+      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
         msg: "msg"
         code: 6
         data: ""
@@ -1997,10 +2178,73 @@ definitions:
     type: "object"
     properties:
       data:
-        $ref: "#/definitions/responses.TxInfo"
-      responses.BaseResponse:
-        $ref: "#/definitions/responses.BaseResponse"
+        type: "array"
+        items:
+          $ref: "#/definitions/responses.RuneInfo"
+      github_com_satstream_ss-api_server_api_runes_responses.BaseResponse:
+        $ref: "#/definitions/github_com_satstream_ss-api_server_api_runes_responses.BaseResponse"
     example:
+      data:
+      - symbol: "symbol"
+        turbo: true
+        txid: "txid"
+        rune_id: "rune_id"
+        block_height: 0
+        rune: "rune"
+        spaced_rune: "spaced_rune"
+        premine: {}
+        terms:
+          offset: {}
+          height: {}
+        tx_height: 5
+        spacers: 1
+        minted: "minted"
+        divisibility: 6
+      - symbol: "symbol"
+        turbo: true
+        txid: "txid"
+        rune_id: "rune_id"
+        block_height: 0
+        rune: "rune"
+        spaced_rune: "spaced_rune"
+        premine: {}
+        terms:
+          offset: {}
+          height: {}
+        tx_height: 5
+        spacers: 1
+        minted: "minted"
+        divisibility: 6
+      github_com_satstream_ss-api_server_api_runes_responses.BaseResponse:
+        msg: "msg"
+        code: 5
+        data: ""
+  inline_response_200_11:
+    type: "object"
+    properties:
+      data:
+        $ref: "#/definitions/responses.SendRawTransaction"
+      github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse:
+        $ref: "#/definitions/github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse"
+    example:
+      github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse:
+        msg: "msg"
+        code: 0
+        data: ""
+      data:
+        tx_hash: "tx_hash"
+  inline_response_200_12:
+    type: "object"
+    properties:
+      data:
+        $ref: "#/definitions/responses.TxInfo"
+      github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse:
+        $ref: "#/definitions/github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse"
+    example:
+      github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse:
+        msg: "msg"
+        code: 0
+        data: ""
       data:
         locktime: 1
         nLostInscription: 2
@@ -2015,10 +2259,6 @@ definitions:
         idx: 6
         nOutInscription: 3
         height: 0
-      responses.BaseResponse:
-        msg: "msg"
-        code: 6
-        data: ""
   responses.GetAddressTimeframeBalanceItem_blockRange:
     type: "object"
     description: "Time       time.Time  `json:\"time\"`"

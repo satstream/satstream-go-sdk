@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **AddressesAddressBalanceTimeframeGet**
-> InlineResponse2001 AddressesAddressBalanceTimeframeGet(ctx, address, start, end)
+> InlineResponse2001 AddressesAddressBalanceTimeframeGet(ctx, address, timeframe, optional)
 Get address timeframe balance
 
 Get the balance of a Bitcoin address for a specific timeframe
@@ -51,8 +51,17 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **address** | **string**| Bitcoin address | 
-  **start** | **int32**| Start block height | 
-  **end** | **int32**| End block height | 
+  **timeframe** | **string**| Timeframe | 
+ **optional** | ***AddressesApiAddressesAddressBalanceTimeframeGetOpts** | optional parameters | nil if no parameters
+
+### Optional Parameters
+Optional parameters are passed through a pointer to a AddressesApiAddressesAddressBalanceTimeframeGetOpts struct
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+ **token** | **optional.String**| Token | 
 
 ### Return type
 

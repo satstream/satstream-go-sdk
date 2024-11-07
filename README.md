@@ -38,7 +38,6 @@ Class | Method | HTTP request | Description
 *RunesApi* | [**RunesGet**](docs/RunesApi.md#runesget) | **Get** /runes | Get runes info list
 *RunesApi* | [**RunesRuneIdGet**](docs/RunesApi.md#runesruneidget) | **Get** /runes/{runeId} | Get rune info
 *RunesApi* | [**RunesRuneIdHoldersGet**](docs/RunesApi.md#runesruneidholdersget) | **Get** /runes/{runeId}/holders | Get rune holders
-*RunesApi* | [**RunesStatusGet**](docs/RunesApi.md#runesstatusget) | **Get** /runes/status | Get runes status
 *TransactionsApi* | [**IndexerTxHashGet**](docs/TransactionsApi.md#indexertxhashget) | **Get** /indexer/tx/{hash} | Get transaction
 *TransactionsApi* | [**TransactionsBroadcastPost**](docs/TransactionsApi.md#transactionsbroadcastpost) | **Post** /transactions/broadcast | Broadcast transaction
 *TransactionsApi* | [**TransactionsTxidGet**](docs/TransactionsApi.md#transactionstxidget) | **Get** /transactions/{txid} | Get transaction info
@@ -48,10 +47,16 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [BigInt](docs/BigInt.md)
- - [BlocksErrorResponse](docs/BlocksErrorResponse.md)
+ - [GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse](docs/GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse.md)
+ - [GithubComSatstreamSsApiServerApiBlocksResponsesBaseResponse](docs/GithubComSatstreamSsApiServerApiBlocksResponsesBaseResponse.md)
+ - [GithubComSatstreamSsApiServerApiRunesResponsesBaseResponse](docs/GithubComSatstreamSsApiServerApiRunesResponsesBaseResponse.md)
+ - [GithubComSatstreamSsApiServerApiRunesResponsesErrorResponse](docs/GithubComSatstreamSsApiServerApiRunesResponsesErrorResponse.md)
+ - [GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse](docs/GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
  - [InlineResponse20010](docs/InlineResponse20010.md)
+ - [InlineResponse20011](docs/InlineResponse20011.md)
+ - [InlineResponse20012](docs/InlineResponse20012.md)
  - [InlineResponse2002](docs/InlineResponse2002.md)
  - [InlineResponse2003](docs/InlineResponse2003.md)
  - [InlineResponse2004](docs/InlineResponse2004.md)
@@ -60,7 +65,8 @@ Class | Method | HTTP request | Description
  - [InlineResponse2007](docs/InlineResponse2007.md)
  - [InlineResponse2008](docs/InlineResponse2008.md)
  - [InlineResponse2009](docs/InlineResponse2009.md)
- - [ResponsesBaseResponse](docs/ResponsesBaseResponse.md)
+ - [OrdinalsTerms](docs/OrdinalsTerms.md)
+ - [OrdinalsTermsRange](docs/OrdinalsTermsRange.md)
  - [ResponsesBlockRange](docs/ResponsesBlockRange.md)
  - [ResponsesGetAddressBalance](docs/ResponsesGetAddressBalance.md)
  - [ResponsesGetAddressNonInscriptionUtxoData](docs/ResponsesGetAddressNonInscriptionUtxoData.md)
@@ -72,6 +78,7 @@ Class | Method | HTTP request | Description
  - [ResponsesGetCurrentBlockHeightResponse](docs/ResponsesGetCurrentBlockHeightResponse.md)
  - [ResponsesGetFeesResponse](docs/ResponsesGetFeesResponse.md)
  - [ResponsesNonInscriptionUtxo](docs/ResponsesNonInscriptionUtxo.md)
+ - [ResponsesRuneInfo](docs/ResponsesRuneInfo.md)
  - [ResponsesSendRawTransaction](docs/ResponsesSendRawTransaction.md)
  - [ResponsesTxInfo](docs/ResponsesTxInfo.md)
  - [RpcBlock](docs/RpcBlock.md)
@@ -82,8 +89,6 @@ Class | Method | HTTP request | Description
  - [RpcUtxoRune](docs/RpcUtxoRune.md)
  - [RpcVin](docs/RpcVin.md)
  - [RpcVout](docs/RpcVout.md)
- - [SsApiServerApiRunesResponsesErrorResponse](docs/SsApiServerApiRunesResponsesErrorResponse.md)
- - [SsApiServerApiTransactionsResponsesErrorResponse](docs/SsApiServerApiTransactionsResponsesErrorResponse.md)
  - [StoreTransactionDocument](docs/StoreTransactionDocument.md)
 
 
