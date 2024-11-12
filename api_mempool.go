@@ -144,15 +144,15 @@ Get information about a specific transaction in the mempool
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
 
-@return InlineResponse2009
+@return InlineResponse2008
 */
-func (a *MempoolApiService) GetMempoolTransactionInfo(ctx context.Context, txid string) (InlineResponse2009, *http.Response, error) {
+func (a *MempoolApiService) GetMempoolTransactionInfo(ctx context.Context, txid string) (InlineResponse2008, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2009
+		localVarReturnValue InlineResponse2008
 	)
 
 	// create path and map variables
@@ -222,7 +222,7 @@ func (a *MempoolApiService) GetMempoolTransactionInfo(ctx context.Context, txid 
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2009
+			var v InlineResponse2008
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

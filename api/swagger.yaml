@@ -213,7 +213,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_5"
+            $ref: "#/definitions/responses.BlockHeightResponse"
         "500":
           description: "Internal Server Error"
           schema:
@@ -240,7 +240,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_6"
+            $ref: "#/definitions/inline_response_200_5"
         "400":
           description: "Bad Request"
           schema:
@@ -271,7 +271,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_6"
+            $ref: "#/definitions/inline_response_200_5"
         "400":
           description: "Bad Request"
           schema:
@@ -335,7 +335,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_7"
+            $ref: "#/definitions/inline_response_200_6"
         "500":
           description: "Internal Server Error"
           schema:
@@ -362,7 +362,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_8"
+            $ref: "#/definitions/inline_response_200_7"
         "500":
           description: "Internal Server Error"
           schema:
@@ -457,7 +457,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_9"
+            $ref: "#/definitions/inline_response_200_8"
         "500":
           description: "Internal Server Error"
           schema:
@@ -494,7 +494,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_10"
+            $ref: "#/definitions/inline_response_200_9"
         "400":
           description: "Bad Request"
           schema:
@@ -586,7 +586,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_11"
+            $ref: "#/definitions/inline_response_200_10"
         "500":
           description: "Internal Server Error"
           schema:
@@ -615,7 +615,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_12"
+            $ref: "#/definitions/inline_response_200_11"
         "500":
           description: "Internal Server Error"
           schema:
@@ -687,7 +687,7 @@ definitions:
         type: "string"
     example:
       msg: "msg"
-      code: 6
+      code: 3
       data: ""
   github_com_satstream_ss-api_server_api_runes_responses.BaseResponse:
     type: "object"
@@ -1300,6 +1300,24 @@ definitions:
         type: "integer"
         example: 100
     description: "Detailed information about a transaction"
+  responses.BlockHeightResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data:
+        $ref: "responses.BlockHeightResponse_data"
+      msg:
+        type: "string"
+    example:
+      msg: "msg"
+      code: 0
+      data: {}
+  responses.BlockHeightResponseData:
+    type: "object"
+    properties:
+      height:
+        type: "integer"
   responses.BlockRange:
     type: "object"
     properties:
@@ -1443,13 +1461,6 @@ definitions:
     example:
       balance: "balance"
       blockRange: {}
-  responses.GetCurrentBlockHeightResponse:
-    type: "object"
-    properties:
-      height:
-        type: "integer"
-    example:
-      height: 0
   responses.GetFeesResponse:
     type: "object"
     properties:
@@ -1747,20 +1758,6 @@ definitions:
     type: "object"
     properties:
       data:
-        $ref: "#/definitions/responses.GetCurrentBlockHeightResponse"
-      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
-        $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
-    example:
-      data:
-        height: 0
-      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
-        msg: "msg"
-        code: 6
-        data: ""
-  inline_response_200_6:
-    type: "object"
-    properties:
-      data:
         $ref: "#/definitions/github_com_satstream_ss-utils_rpc.Block"
       github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
         $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
@@ -1968,9 +1965,9 @@ definitions:
         height: 1
       github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
         msg: "msg"
-        code: 6
+        code: 3
         data: ""
-  inline_response_200_7:
+  inline_response_200_6:
     type: "object"
     properties:
       data:
@@ -1983,9 +1980,9 @@ definitions:
         fee_rate_in_btc: 6.02745618307040320615897144307382404804229736328125
       github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
         msg: "msg"
-        code: 6
+        code: 3
         data: ""
-  inline_response_200_8:
+  inline_response_200_7:
     type: "object"
     properties:
       data:
@@ -2089,7 +2086,7 @@ definitions:
           - "txinwitness"
           vout: 5
         hash: "hash"
-  inline_response_200_9:
+  inline_response_200_8:
     type: "object"
     properties:
       data:
@@ -2191,9 +2188,9 @@ definitions:
         hash: "hash"
       github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
         msg: "msg"
-        code: 6
+        code: 3
         data: ""
-  inline_response_200_10:
+  inline_response_200_9:
     type: "object"
     properties:
       data:
@@ -2238,7 +2235,7 @@ definitions:
         msg: "msg"
         code: 5
         data: ""
-  inline_response_200_11:
+  inline_response_200_10:
     type: "object"
     properties:
       data:
@@ -2252,7 +2249,7 @@ definitions:
         data: ""
       data:
         tx_hash: "tx_hash"
-  inline_response_200_12:
+  inline_response_200_11:
     type: "object"
     properties:
       data:
@@ -2278,6 +2275,9 @@ definitions:
         idx: 6
         nOutInscription: 3
         height: 0
+  responses.BlockHeightResponse_data:
+    type: "object"
+    description: "The specific data for this endpoint"
   responses.GetAddressTimeframeBalanceItem_blockRange:
     type: "object"
     description: "Time       time.Time  `json:\"time\"`"

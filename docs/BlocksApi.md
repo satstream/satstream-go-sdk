@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **GetBlockByHash**
-> InlineResponse2006 GetBlockByHash(ctx, hash)
+> InlineResponse2005 GetBlockByHash(ctx, hash)
 Get block by hash
 
 Get information about a specific block by its hash
@@ -25,7 +25,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](inline_response_200_6.md)
+[**InlineResponse2005**](inline_response_200_5.md)
 
 ### Authorization
 
@@ -39,7 +39,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBlockInfo**
-> InlineResponse2006 GetBlockInfo(ctx, height)
+> InlineResponse2005 GetBlockInfo(ctx, height)
 Get block info
 
 Get information about a specific block by height
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](inline_response_200_6.md)
+[**InlineResponse2005**](inline_response_200_5.md)
 
 ### Authorization
 
@@ -95,7 +95,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCurrentBlockHeight**
-> InlineResponse2005 GetCurrentBlockHeight(ctx, )
+> ResponsesBlockHeightResponse GetCurrentBlockHeight(ctx, )
 Get current block height
 
 Get the current block height of the Bitcoin blockchain
@@ -105,7 +105,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2005**](inline_response_200_5.md)
+[**ResponsesBlockHeightResponse**](responses.BlockHeightResponse.md)
 
 ### Authorization
 

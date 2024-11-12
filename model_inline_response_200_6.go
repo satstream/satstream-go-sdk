@@ -11,6 +11,6 @@
 package swagger
 
 type InlineResponse2006 struct {
-	Data *GithubComSatstreamSsUtilsRpcBlock `json:"data,omitempty"`
+	Data *ResponsesGetFeesResponse `json:"data,omitempty"`
 	GithubComSatstreamSsApiServerApiBlocksResponsesBaseResponse *GithubComSatstreamSsApiServerApiBlocksResponsesBaseResponse `json:"github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse,omitempty"`
 }
