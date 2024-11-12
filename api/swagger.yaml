@@ -526,8 +526,7 @@ paths:
       responses:
         "200":
           description: "OK"
-          schema:
-            type: "object"
+          schema: {}
         "500":
           description: "Internal Server Error"
           schema:
@@ -557,9 +556,7 @@ paths:
           description: "OK"
           schema:
             type: "array"
-            items:
-              type: "object"
-              properties: {}
+            items: {}
         "500":
           description: "Internal Server Error"
           schema:
