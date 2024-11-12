@@ -31,15 +31,15 @@ FeesApiService Get recommended fees
 Get recommended fees for Bitcoin transactions
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
-@return InlineResponse2006
+@return ResponsesGetFees
 */
-func (a *FeesApiService) GetRecommendedFees(ctx context.Context) (InlineResponse2006, *http.Response, error) {
+func (a *FeesApiService) GetRecommendedFees(ctx context.Context) (ResponsesGetFees, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2006
+		localVarReturnValue ResponsesGetFees
 	)
 
 	// create path and map variables
@@ -95,7 +95,7 @@ func (a *FeesApiService) GetRecommendedFees(ctx context.Context) (InlineResponse
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2006
+			var v ResponsesGetFees
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -106,7 +106,7 @@ func (a *FeesApiService) GetRecommendedFees(ctx context.Context) (InlineResponse
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v GithubComSatstreamSsApiServerApiBlocksResponsesBaseResponse
+			var v ResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

@@ -10,7 +10,6 @@
 
 package swagger
 
-type InlineResponse2007 struct {
-	Data *GithubComSatstreamSsUtilsRpcBtcTx `json:"data,omitempty"`
-	ResponsesBase *ResponsesBase `json:"responses.Base,omitempty"`
+// The specific data for this endpoint
+type ResponsesBlockHeightData struct {
 }

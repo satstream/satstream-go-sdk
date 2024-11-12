@@ -123,7 +123,7 @@ func (a *RunesApiService) GetRunesHolders(ctx context.Context, runeId string) ([
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v GithubComSatstreamSsApiServerApiRunesResponsesErrorResponse
+			var v ResponsesErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -234,7 +234,7 @@ func (a *RunesApiService) GetRunesInfo(ctx context.Context, runeId string) (inte
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v GithubComSatstreamSsApiServerApiRunesResponsesErrorResponse
+			var v ResponsesErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -258,7 +258,7 @@ Get information about all runes
      * @param "Page" (optional.Int32) -  Page number (default: 1)
      * @param "PerPage" (optional.Int32) -  Items per page (default: 10)
 
-@return InlineResponse2009
+@return InlineResponse2008
 */
 
 type RunesApiGetRunesInfoListOpts struct { 
@@ -266,13 +266,13 @@ type RunesApiGetRunesInfoListOpts struct {
 	PerPage optional.Int32
 }
 
-func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptionals *RunesApiGetRunesInfoListOpts) (InlineResponse2009, *http.Response, error) {
+func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptionals *RunesApiGetRunesInfoListOpts) (InlineResponse2008, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2009
+		localVarReturnValue InlineResponse2008
 	)
 
 	// create path and map variables
@@ -347,7 +347,7 @@ func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptional
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2009
+			var v InlineResponse2008
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -358,7 +358,7 @@ func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptional
 		}
 		
 		if localVarHttpResponse.StatusCode == 400 {
-			var v GithubComSatstreamSsApiServerApiRunesResponsesErrorResponse
+			var v ResponsesErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -369,7 +369,7 @@ func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptional
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v GithubComSatstreamSsApiServerApiRunesResponsesErrorResponse
+			var v ResponsesErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

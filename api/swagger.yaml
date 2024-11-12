@@ -213,11 +213,11 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/responses.BlockHeightResponse"
+            $ref: "#/definitions/responses.BlockHeight"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+            $ref: "#/definitions/responses.Error"
   /blocks/hash/{hash}:
     get:
       tags:
@@ -244,11 +244,11 @@ paths:
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+            $ref: "#/definitions/responses.Base"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+            $ref: "#/definitions/responses.Base"
   /blocks/{height}:
     get:
       tags:
@@ -275,11 +275,11 @@ paths:
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+            $ref: "#/definitions/responses.Base"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+            $ref: "#/definitions/responses.Base"
   /blocks/{height}/transactions:
     get:
       tags:
@@ -306,7 +306,7 @@ paths:
             items:
               type: "object"
               allOf:
-              - $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+              - $ref: "#/definitions/responses.Base"
               - type: "object"
                 properties:
                   data:
@@ -314,11 +314,11 @@ paths:
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+            $ref: "#/definitions/responses.Base"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+            $ref: "#/definitions/responses.Base"
   /fees:
     get:
       tags:
@@ -335,11 +335,11 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_6"
+            $ref: "#/definitions/responses.GetFees"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+            $ref: "#/definitions/responses.Error"
   /indexer/tx/{hash}:
     get:
       tags:
@@ -362,7 +362,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_7"
+            $ref: "#/definitions/inline_response_200_6"
         "500":
           description: "Internal Server Error"
           schema:
@@ -395,7 +395,7 @@ paths:
             items:
               type: "object"
               allOf:
-              - $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+              - $ref: "#/definitions/responses.Base"
               - type: "object"
                 properties:
                   data:
@@ -403,7 +403,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+            $ref: "#/definitions/responses.Error"
   /mempool/transactions:
     get:
       tags:
@@ -424,7 +424,7 @@ paths:
             items:
               type: "object"
               allOf:
-              - $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+              - $ref: "#/definitions/responses.Base"
               - type: "object"
                 properties:
                   data:
@@ -432,7 +432,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+            $ref: "#/definitions/responses.Base"
   /mempool/transactions/{txid}:
     get:
       tags:
@@ -457,11 +457,11 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_8"
+            $ref: "#/definitions/inline_response_200_7"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+            $ref: "#/definitions/responses.Base"
   /runes:
     get:
       tags:
@@ -494,15 +494,15 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_9"
+            $ref: "#/definitions/inline_response_200_8"
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_runes_responses.ErrorResponse"
+            $ref: "#/definitions/responses.ErrorResponse"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_runes_responses.ErrorResponse"
+            $ref: "#/definitions/responses.ErrorResponse"
   /runes/{runeId}:
     get:
       tags:
@@ -530,7 +530,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_runes_responses.ErrorResponse"
+            $ref: "#/definitions/responses.ErrorResponse"
   /runes/{runeId}/holders:
     get:
       tags:
@@ -560,7 +560,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/github_com_satstream_ss-api_server_api_runes_responses.ErrorResponse"
+            $ref: "#/definitions/responses.ErrorResponse"
   /transactions/broadcast:
     post:
       tags:
@@ -586,7 +586,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_10"
+            $ref: "#/definitions/inline_response_200_9"
         "500":
           description: "Internal Server Error"
           schema:
@@ -615,7 +615,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/inline_response_200_11"
+            $ref: "#/definitions/inline_response_200_10"
         "500":
           description: "Internal Server Error"
           schema:
@@ -677,18 +677,6 @@ definitions:
       msg: "msg"
       code: 0
       data: ""
-  github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
-    type: "object"
-    properties:
-      code:
-        type: "integer"
-      data: {}
-      msg:
-        type: "string"
-    example:
-      msg: "msg"
-      code: 3
-      data: ""
   github_com_satstream_ss-api_server_api_runes_responses.BaseResponse:
     type: "object"
     properties:
@@ -701,14 +689,6 @@ definitions:
       msg: "msg"
       code: 5
       data: ""
-  github_com_satstream_ss-api_server_api_runes_responses.ErrorResponse:
-    type: "object"
-    properties:
-      code:
-        type: "integer"
-      data: {}
-      msg:
-        type: "string"
   github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse:
     type: "object"
     properties:
@@ -1300,20 +1280,32 @@ definitions:
         type: "integer"
         example: 100
     description: "Detailed information about a transaction"
-  responses.BlockHeightResponse:
+  responses.Base:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data: {}
+      msg:
+        type: "string"
+    example:
+      msg: "msg"
+      code: 3
+      data: ""
+  responses.BlockHeight:
     type: "object"
     properties:
       code:
         type: "integer"
       data:
-        $ref: "responses.BlockHeightResponse_data"
+        $ref: "responses.BlockHeight_data"
       msg:
         type: "string"
     example:
       msg: "msg"
       code: 0
       data: {}
-  responses.BlockHeightResponseData:
+  responses.BlockHeightData:
     type: "object"
     properties:
       height:
@@ -1325,6 +1317,22 @@ definitions:
         type: "integer"
       start:
         type: "integer"
+  responses.Error:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data: {}
+      msg:
+        type: "string"
+  responses.ErrorResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data: {}
+      msg:
+        type: "string"
   responses.GetAddressBalance:
     type: "object"
     properties:
@@ -1461,7 +1469,22 @@ definitions:
     example:
       balance: "balance"
       blockRange: {}
-  responses.GetFeesResponse:
+  responses.GetFees:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data:
+        $ref: "#/definitions/responses.GetFeesData"
+      msg:
+        type: "string"
+    example:
+      msg: "msg"
+      code: 0
+      data:
+        confirmation_blocks: 6
+        fee_rate_in_btc: 1.46581298050294517310021547018550336360931396484375
+  responses.GetFeesData:
     type: "object"
     properties:
       confirmation_blocks:
@@ -1469,8 +1492,8 @@ definitions:
       fee_rate_in_btc:
         type: "number"
     example:
-      confirmation_blocks: 0
-      fee_rate_in_btc: 6.02745618307040320615897144307382404804229736328125
+      confirmation_blocks: 6
+      fee_rate_in_btc: 1.46581298050294517310021547018550336360931396484375
   responses.NonInscriptionUTXO:
     type: "object"
     properties:
@@ -1759,8 +1782,8 @@ definitions:
     properties:
       data:
         $ref: "#/definitions/github_com_satstream_ss-utils_rpc.Block"
-      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
-        $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+      responses.Base:
+        $ref: "#/definitions/responses.Base"
     example:
       data:
         mediantime: 5
@@ -1963,26 +1986,11 @@ definitions:
         time: 3
         hash: "hash"
         height: 1
-      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
+      responses.Base:
         msg: "msg"
         code: 3
         data: ""
   inline_response_200_6:
-    type: "object"
-    properties:
-      data:
-        $ref: "#/definitions/responses.GetFeesResponse"
-      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
-        $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
-    example:
-      data:
-        confirmation_blocks: 0
-        fee_rate_in_btc: 6.02745618307040320615897144307382404804229736328125
-      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
-        msg: "msg"
-        code: 3
-        data: ""
-  inline_response_200_7:
     type: "object"
     properties:
       data:
@@ -2086,13 +2094,13 @@ definitions:
           - "txinwitness"
           vout: 5
         hash: "hash"
-  inline_response_200_8:
+  inline_response_200_7:
     type: "object"
     properties:
       data:
         $ref: "#/definitions/github_com_satstream_ss-utils_rpc.BtcTx"
-      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
-        $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
+      responses.Base:
+        $ref: "#/definitions/responses.Base"
     example:
       data:
         vsize: 6
@@ -2186,11 +2194,11 @@ definitions:
           - "txinwitness"
           vout: 5
         hash: "hash"
-      github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
+      responses.Base:
         msg: "msg"
         code: 3
         data: ""
-  inline_response_200_9:
+  inline_response_200_8:
     type: "object"
     properties:
       data:
@@ -2235,7 +2243,7 @@ definitions:
         msg: "msg"
         code: 5
         data: ""
-  inline_response_200_10:
+  inline_response_200_9:
     type: "object"
     properties:
       data:
@@ -2249,7 +2257,7 @@ definitions:
         data: ""
       data:
         tx_hash: "tx_hash"
-  inline_response_200_11:
+  inline_response_200_10:
     type: "object"
     properties:
       data:
@@ -2275,7 +2283,7 @@ definitions:
         idx: 6
         nOutInscription: 3
         height: 0
-  responses.BlockHeightResponse_data:
+  responses.BlockHeight_data:
     type: "object"
     description: "The specific data for this endpoint"
   responses.GetAddressTimeframeBalanceItem_blockRange:

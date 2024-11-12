@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **GetRecommendedFees**
-> InlineResponse2006 GetRecommendedFees(ctx, )
+> ResponsesGetFees GetRecommendedFees(ctx, )
 Get recommended fees
 
 Get recommended fees for Bitcoin transactions
@@ -18,7 +18,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2006**](inline_response_200_6.md)
+[**ResponsesGetFees**](responses.GetFees.md)
 
 ### Authorization
 

@@ -10,7 +10,8 @@
 
 package swagger
 
-type InlineResponse2007 struct {
-	Data *GithubComSatstreamSsUtilsRpcBtcTx `json:"data,omitempty"`
-	ResponsesBase *ResponsesBase `json:"responses.Base,omitempty"`
+type ResponsesGetFees struct {
+	Code int32 `json:"code,omitempty"`
+	Data *ResponsesGetFeesData `json:"data,omitempty"`
+	Msg string `json:"msg,omitempty"`
 }
