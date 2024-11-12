@@ -10,7 +10,6 @@
 
 package swagger
 
-type InlineResponse2005 struct {
-	BlocksBase *BlocksBase `json:"blocks.Base,omitempty"`
-	Data *GithubComSatstreamSsUtilsRpcBlock `json:"data,omitempty"`
+type BlocksBlockHeightData struct {
+	Height int32 `json:"height,omitempty"`
 }

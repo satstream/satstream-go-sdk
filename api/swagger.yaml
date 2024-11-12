@@ -213,11 +213,11 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/responses.BlockHeight"
+            $ref: "#/definitions/blocks.BlockHeight"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/responses.Error"
+            $ref: "#/definitions/blocks.Error"
   /blocks/hash/{hash}:
     get:
       tags:
@@ -244,11 +244,11 @@ paths:
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/responses.Base"
+            $ref: "#/definitions/blocks.Base"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/responses.Base"
+            $ref: "#/definitions/blocks.Base"
   /blocks/{height}:
     get:
       tags:
@@ -275,11 +275,11 @@ paths:
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/responses.Base"
+            $ref: "#/definitions/blocks.Base"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/responses.Base"
+            $ref: "#/definitions/blocks.Base"
   /blocks/{height}/transactions:
     get:
       tags:
@@ -306,7 +306,7 @@ paths:
             items:
               type: "object"
               allOf:
-              - $ref: "#/definitions/responses.Base"
+              - $ref: "#/definitions/blocks.Base"
               - type: "object"
                 properties:
                   data:
@@ -314,11 +314,11 @@ paths:
         "400":
           description: "Bad Request"
           schema:
-            $ref: "#/definitions/responses.Base"
+            $ref: "#/definitions/blocks.Base"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/responses.Base"
+            $ref: "#/definitions/blocks.Base"
   /fees:
     get:
       tags:
@@ -335,11 +335,11 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/responses.GetFees"
+            $ref: "#/definitions/blocks.GetFees"
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/responses.Error"
+            $ref: "#/definitions/blocks.Error"
   /indexer/tx/{hash}:
     get:
       tags:
@@ -395,7 +395,7 @@ paths:
             items:
               type: "object"
               allOf:
-              - $ref: "#/definitions/responses.Base"
+              - $ref: "#/definitions/blocks.Base"
               - type: "object"
                 properties:
                   data:
@@ -403,7 +403,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/responses.Error"
+            $ref: "#/definitions/blocks.Error"
   /mempool/transactions:
     get:
       tags:
@@ -424,7 +424,7 @@ paths:
             items:
               type: "object"
               allOf:
-              - $ref: "#/definitions/responses.Base"
+              - $ref: "#/definitions/blocks.Base"
               - type: "object"
                 properties:
                   data:
@@ -432,7 +432,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/responses.Base"
+            $ref: "#/definitions/blocks.Base"
   /mempool/transactions/{txid}:
     get:
       tags:
@@ -461,7 +461,7 @@ paths:
         "500":
           description: "Internal Server Error"
           schema:
-            $ref: "#/definitions/responses.Base"
+            $ref: "#/definitions/blocks.Base"
   /runes:
     get:
       tags:
@@ -665,6 +665,72 @@ securityDefinitions:
 definitions:
   big.Int:
     type: "object"
+  blocks.Base:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data: {}
+      msg:
+        type: "string"
+    example:
+      msg: "msg"
+      code: 0
+      data: ""
+  blocks.BlockHeight:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data:
+        $ref: "#/definitions/blocks.BlockHeightData"
+      msg:
+        type: "string"
+    example:
+      msg: "msg"
+      code: 0
+      data:
+        height: 6
+  blocks.BlockHeightData:
+    type: "object"
+    properties:
+      height:
+        type: "integer"
+    example:
+      height: 6
+  blocks.Error:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data: {}
+      msg:
+        type: "string"
+  blocks.GetFees:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data:
+        $ref: "#/definitions/blocks.GetFeesData"
+      msg:
+        type: "string"
+    example:
+      msg: "msg"
+      code: 0
+      data:
+        confirmation_blocks: 6
+        fee_rate_in_btc: 1.46581298050294517310021547018550336360931396484375
+  blocks.GetFeesData:
+    type: "object"
+    properties:
+      confirmation_blocks:
+        type: "integer"
+      fee_rate_in_btc:
+        type: "number"
+    example:
+      confirmation_blocks: 6
+      fee_rate_in_btc: 1.46581298050294517310021547018550336360931396484375
   github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse:
     type: "object"
     properties:
@@ -768,14 +834,14 @@ definitions:
     example:
       mediantime: 5
       tx:
-      - vsize: 6
+      - vsize: 8
         locktime: 1
-        fee: 4.1456080298839363962315474054776132106781005859375
-        index: 7
+        fee: 7.3862819483858839220147274318151175975799560546875
+        index: 1
         txid: "txid"
-        weight: 8
-        version: 1
-        blockheight: 2
+        weight: 9
+        version: 6
+        blockheight: 4
         vout:
         - scriptPubKey:
             address: "address"
@@ -788,7 +854,7 @@ definitions:
             rune_id: "rune_id"
           - amount: {}
             rune_id: "rune_id"
-          value: 9.3693102714106686335071572102606296539306640625
+          value: 6.683562403749608193948006373830139636993408203125
           "n": 9
         - scriptPubKey:
             address: "address"
@@ -801,12 +867,12 @@ definitions:
             rune_id: "rune_id"
           - amount: {}
             rune_id: "rune_id"
-          value: 9.3693102714106686335071572102606296539306640625
+          value: 6.683562403749608193948006373830139636993408203125
           "n": 9
         size: 1
         hex: "hex"
         vin:
-        - sequence: 4
+        - sequence: 5
           coinbase: "coinbase"
           prevout:
             scriptPubKey:
@@ -821,9 +887,9 @@ definitions:
               rune_id: "rune_id"
             - amount: {}
               rune_id: "rune_id"
-            value: 1.173074250955943309548956676735542714595794677734375
-            "n": 7
-            height: 6
+            value: 4.9652184929849543237878606305457651615142822265625
+            "n": 1
+            height: 7
           scriptSig:
             asm: "asm"
             hex: "hex"
@@ -831,8 +897,8 @@ definitions:
           txinwitness:
           - "txinwitness"
           - "txinwitness"
-          vout: 5
-        - sequence: 4
+          vout: 9
+        - sequence: 5
           coinbase: "coinbase"
           prevout:
             scriptPubKey:
@@ -847,9 +913,9 @@ definitions:
               rune_id: "rune_id"
             - amount: {}
               rune_id: "rune_id"
-            value: 1.173074250955943309548956676735542714595794677734375
-            "n": 7
-            height: 6
+            value: 4.9652184929849543237878606305457651615142822265625
+            "n": 1
+            height: 7
           scriptSig:
             asm: "asm"
             hex: "hex"
@@ -857,16 +923,16 @@ definitions:
           txinwitness:
           - "txinwitness"
           - "txinwitness"
-          vout: 5
+          vout: 9
         hash: "hash"
-      - vsize: 6
+      - vsize: 8
         locktime: 1
-        fee: 4.1456080298839363962315474054776132106781005859375
-        index: 7
+        fee: 7.3862819483858839220147274318151175975799560546875
+        index: 1
         txid: "txid"
-        weight: 8
-        version: 1
-        blockheight: 2
+        weight: 9
+        version: 6
+        blockheight: 4
         vout:
         - scriptPubKey:
             address: "address"
@@ -879,7 +945,7 @@ definitions:
             rune_id: "rune_id"
           - amount: {}
             rune_id: "rune_id"
-          value: 9.3693102714106686335071572102606296539306640625
+          value: 6.683562403749608193948006373830139636993408203125
           "n": 9
         - scriptPubKey:
             address: "address"
@@ -892,12 +958,12 @@ definitions:
             rune_id: "rune_id"
           - amount: {}
             rune_id: "rune_id"
-          value: 9.3693102714106686335071572102606296539306640625
+          value: 6.683562403749608193948006373830139636993408203125
           "n": 9
         size: 1
         hex: "hex"
         vin:
-        - sequence: 4
+        - sequence: 5
           coinbase: "coinbase"
           prevout:
             scriptPubKey:
@@ -912,9 +978,9 @@ definitions:
               rune_id: "rune_id"
             - amount: {}
               rune_id: "rune_id"
-            value: 1.173074250955943309548956676735542714595794677734375
-            "n": 7
-            height: 6
+            value: 4.9652184929849543237878606305457651615142822265625
+            "n": 1
+            height: 7
           scriptSig:
             asm: "asm"
             hex: "hex"
@@ -922,8 +988,8 @@ definitions:
           txinwitness:
           - "txinwitness"
           - "txinwitness"
-          vout: 5
-        - sequence: 4
+          vout: 9
+        - sequence: 5
           coinbase: "coinbase"
           prevout:
             scriptPubKey:
@@ -938,9 +1004,9 @@ definitions:
               rune_id: "rune_id"
             - amount: {}
               rune_id: "rune_id"
-            value: 1.173074250955943309548956676735542714595794677734375
-            "n": 7
-            height: 6
+            value: 4.9652184929849543237878606305457651615142822265625
+            "n": 1
+            height: 7
           scriptSig:
             asm: "asm"
             hex: "hex"
@@ -948,24 +1014,24 @@ definitions:
           txinwitness:
           - "txinwitness"
           - "txinwitness"
-          vout: 5
+          vout: 9
         hash: "hash"
       previousblockhash: "previousblockhash"
       bits: "bits"
-      weight: 6
-      strippedSize: 9
+      weight: 3
+      strippedSize: 3
       versionHex: "versionHex"
-      confirmations: 0
-      nonce: 2
-      version: 9
-      difficulty: 6.02745618307040320615897144307382404804229736328125
+      confirmations: 6
+      nonce: 7
+      version: 6
+      difficulty: 1.46581298050294517310021547018550336360931396484375
       chainwork: "chainwork"
-      nTx: 5
-      size: 7
+      nTx: 2
+      size: 9
       merkleroot: "merkleroot"
-      time: 3
+      time: 2
       hash: "hash"
-      height: 1
+      height: 5
   github_com_satstream_ss-utils_rpc.BtcTx:
     type: "object"
     properties:
@@ -1002,14 +1068,14 @@ definitions:
       weight:
         type: "integer"
     example:
-      vsize: 6
+      vsize: 8
       locktime: 1
-      fee: 4.1456080298839363962315474054776132106781005859375
-      index: 7
+      fee: 7.3862819483858839220147274318151175975799560546875
+      index: 1
       txid: "txid"
-      weight: 8
-      version: 1
-      blockheight: 2
+      weight: 9
+      version: 6
+      blockheight: 4
       vout:
       - scriptPubKey:
           address: "address"
@@ -1022,7 +1088,7 @@ definitions:
           rune_id: "rune_id"
         - amount: {}
           rune_id: "rune_id"
-        value: 9.3693102714106686335071572102606296539306640625
+        value: 6.683562403749608193948006373830139636993408203125
         "n": 9
       - scriptPubKey:
           address: "address"
@@ -1035,12 +1101,12 @@ definitions:
           rune_id: "rune_id"
         - amount: {}
           rune_id: "rune_id"
-        value: 9.3693102714106686335071572102606296539306640625
+        value: 6.683562403749608193948006373830139636993408203125
         "n": 9
       size: 1
       hex: "hex"
       vin:
-      - sequence: 4
+      - sequence: 5
         coinbase: "coinbase"
         prevout:
           scriptPubKey:
@@ -1055,9 +1121,9 @@ definitions:
             rune_id: "rune_id"
           - amount: {}
             rune_id: "rune_id"
-          value: 1.173074250955943309548956676735542714595794677734375
-          "n": 7
-          height: 6
+          value: 4.9652184929849543237878606305457651615142822265625
+          "n": 1
+          height: 7
         scriptSig:
           asm: "asm"
           hex: "hex"
@@ -1065,8 +1131,8 @@ definitions:
         txinwitness:
         - "txinwitness"
         - "txinwitness"
-        vout: 5
-      - sequence: 4
+        vout: 9
+      - sequence: 5
         coinbase: "coinbase"
         prevout:
           scriptPubKey:
@@ -1081,9 +1147,9 @@ definitions:
             rune_id: "rune_id"
           - amount: {}
             rune_id: "rune_id"
-          value: 1.173074250955943309548956676735542714595794677734375
-          "n": 7
-          height: 6
+          value: 4.9652184929849543237878606305457651615142822265625
+          "n": 1
+          height: 7
         scriptSig:
           asm: "asm"
           hex: "hex"
@@ -1091,7 +1157,7 @@ definitions:
         txinwitness:
         - "txinwitness"
         - "txinwitness"
-        vout: 5
+        vout: 9
       hash: "hash"
   github_com_satstream_ss-utils_rpc.PrevOut:
     type: "object"
@@ -1125,9 +1191,9 @@ definitions:
         rune_id: "rune_id"
       - amount: {}
         rune_id: "rune_id"
-      value: 1.173074250955943309548956676735542714595794677734375
-      "n": 7
-      height: 6
+      value: 4.9652184929849543237878606305457651615142822265625
+      "n": 1
+      height: 7
   github_com_satstream_ss-utils_rpc.ScriptPubKey:
     type: "object"
     properties:
@@ -1187,7 +1253,7 @@ definitions:
       vout:
         type: "integer"
     example:
-      sequence: 4
+      sequence: 5
       coinbase: "coinbase"
       prevout:
         scriptPubKey:
@@ -1202,9 +1268,9 @@ definitions:
           rune_id: "rune_id"
         - amount: {}
           rune_id: "rune_id"
-        value: 1.173074250955943309548956676735542714595794677734375
-        "n": 7
-        height: 6
+        value: 4.9652184929849543237878606305457651615142822265625
+        "n": 1
+        height: 7
       scriptSig:
         asm: "asm"
         hex: "hex"
@@ -1212,7 +1278,7 @@ definitions:
       txinwitness:
       - "txinwitness"
       - "txinwitness"
-      vout: 5
+      vout: 9
   github_com_satstream_ss-utils_rpc.Vout:
     type: "object"
     properties:
@@ -1238,7 +1304,7 @@ definitions:
         rune_id: "rune_id"
       - amount: {}
         rune_id: "rune_id"
-      value: 9.3693102714106686335071572102606296539306640625
+      value: 6.683562403749608193948006373830139636993408203125
       "n": 9
   github_com_satstream_ss-utils_store.TransactionDocument:
     type: "object"
@@ -1280,36 +1346,6 @@ definitions:
         type: "integer"
         example: 100
     description: "Detailed information about a transaction"
-  responses.Base:
-    type: "object"
-    properties:
-      code:
-        type: "integer"
-      data: {}
-      msg:
-        type: "string"
-    example:
-      msg: "msg"
-      code: 3
-      data: ""
-  responses.BlockHeight:
-    type: "object"
-    properties:
-      code:
-        type: "integer"
-      data:
-        $ref: "responses.BlockHeight_data"
-      msg:
-        type: "string"
-    example:
-      msg: "msg"
-      code: 0
-      data: {}
-  responses.BlockHeightData:
-    type: "object"
-    properties:
-      height:
-        type: "integer"
   responses.BlockRange:
     type: "object"
     properties:
@@ -1317,14 +1353,6 @@ definitions:
         type: "integer"
       start:
         type: "integer"
-  responses.Error:
-    type: "object"
-    properties:
-      code:
-        type: "integer"
-      data: {}
-      msg:
-        type: "string"
   responses.ErrorResponse:
     type: "object"
     properties:
@@ -1469,31 +1497,6 @@ definitions:
     example:
       balance: "balance"
       blockRange: {}
-  responses.GetFees:
-    type: "object"
-    properties:
-      code:
-        type: "integer"
-      data:
-        $ref: "#/definitions/responses.GetFeesData"
-      msg:
-        type: "string"
-    example:
-      msg: "msg"
-      code: 0
-      data:
-        confirmation_blocks: 6
-        fee_rate_in_btc: 1.46581298050294517310021547018550336360931396484375
-  responses.GetFeesData:
-    type: "object"
-    properties:
-      confirmation_blocks:
-        type: "integer"
-      fee_rate_in_btc:
-        type: "number"
-    example:
-      confirmation_blocks: 6
-      fee_rate_in_btc: 1.46581298050294517310021547018550336360931396484375
   responses.NonInscriptionUTXO:
     type: "object"
     properties:
@@ -1780,22 +1783,26 @@ definitions:
   inline_response_200_5:
     type: "object"
     properties:
+      blocks.Base:
+        $ref: "#/definitions/blocks.Base"
       data:
         $ref: "#/definitions/github_com_satstream_ss-utils_rpc.Block"
-      responses.Base:
-        $ref: "#/definitions/responses.Base"
     example:
+      blocks.Base:
+        msg: "msg"
+        code: 0
+        data: ""
       data:
         mediantime: 5
         tx:
-        - vsize: 6
+        - vsize: 8
           locktime: 1
-          fee: 4.1456080298839363962315474054776132106781005859375
-          index: 7
+          fee: 7.3862819483858839220147274318151175975799560546875
+          index: 1
           txid: "txid"
-          weight: 8
-          version: 1
-          blockheight: 2
+          weight: 9
+          version: 6
+          blockheight: 4
           vout:
           - scriptPubKey:
               address: "address"
@@ -1808,7 +1815,7 @@ definitions:
               rune_id: "rune_id"
             - amount: {}
               rune_id: "rune_id"
-            value: 9.3693102714106686335071572102606296539306640625
+            value: 6.683562403749608193948006373830139636993408203125
             "n": 9
           - scriptPubKey:
               address: "address"
@@ -1821,12 +1828,12 @@ definitions:
               rune_id: "rune_id"
             - amount: {}
               rune_id: "rune_id"
-            value: 9.3693102714106686335071572102606296539306640625
+            value: 6.683562403749608193948006373830139636993408203125
             "n": 9
           size: 1
           hex: "hex"
           vin:
-          - sequence: 4
+          - sequence: 5
             coinbase: "coinbase"
             prevout:
               scriptPubKey:
@@ -1841,9 +1848,9 @@ definitions:
                 rune_id: "rune_id"
               - amount: {}
                 rune_id: "rune_id"
-              value: 1.173074250955943309548956676735542714595794677734375
-              "n": 7
-              height: 6
+              value: 4.9652184929849543237878606305457651615142822265625
+              "n": 1
+              height: 7
             scriptSig:
               asm: "asm"
               hex: "hex"
@@ -1851,8 +1858,8 @@ definitions:
             txinwitness:
             - "txinwitness"
             - "txinwitness"
-            vout: 5
-          - sequence: 4
+            vout: 9
+          - sequence: 5
             coinbase: "coinbase"
             prevout:
               scriptPubKey:
@@ -1867,9 +1874,9 @@ definitions:
                 rune_id: "rune_id"
               - amount: {}
                 rune_id: "rune_id"
-              value: 1.173074250955943309548956676735542714595794677734375
-              "n": 7
-              height: 6
+              value: 4.9652184929849543237878606305457651615142822265625
+              "n": 1
+              height: 7
             scriptSig:
               asm: "asm"
               hex: "hex"
@@ -1877,16 +1884,16 @@ definitions:
             txinwitness:
             - "txinwitness"
             - "txinwitness"
-            vout: 5
+            vout: 9
           hash: "hash"
-        - vsize: 6
+        - vsize: 8
           locktime: 1
-          fee: 4.1456080298839363962315474054776132106781005859375
-          index: 7
+          fee: 7.3862819483858839220147274318151175975799560546875
+          index: 1
           txid: "txid"
-          weight: 8
-          version: 1
-          blockheight: 2
+          weight: 9
+          version: 6
+          blockheight: 4
           vout:
           - scriptPubKey:
               address: "address"
@@ -1899,7 +1906,7 @@ definitions:
               rune_id: "rune_id"
             - amount: {}
               rune_id: "rune_id"
-            value: 9.3693102714106686335071572102606296539306640625
+            value: 6.683562403749608193948006373830139636993408203125
             "n": 9
           - scriptPubKey:
               address: "address"
@@ -1912,12 +1919,12 @@ definitions:
               rune_id: "rune_id"
             - amount: {}
               rune_id: "rune_id"
-            value: 9.3693102714106686335071572102606296539306640625
+            value: 6.683562403749608193948006373830139636993408203125
             "n": 9
           size: 1
           hex: "hex"
           vin:
-          - sequence: 4
+          - sequence: 5
             coinbase: "coinbase"
             prevout:
               scriptPubKey:
@@ -1932,9 +1939,9 @@ definitions:
                 rune_id: "rune_id"
               - amount: {}
                 rune_id: "rune_id"
-              value: 1.173074250955943309548956676735542714595794677734375
-              "n": 7
-              height: 6
+              value: 4.9652184929849543237878606305457651615142822265625
+              "n": 1
+              height: 7
             scriptSig:
               asm: "asm"
               hex: "hex"
@@ -1942,8 +1949,8 @@ definitions:
             txinwitness:
             - "txinwitness"
             - "txinwitness"
-            vout: 5
-          - sequence: 4
+            vout: 9
+          - sequence: 5
             coinbase: "coinbase"
             prevout:
               scriptPubKey:
@@ -1958,9 +1965,9 @@ definitions:
                 rune_id: "rune_id"
               - amount: {}
                 rune_id: "rune_id"
-              value: 1.173074250955943309548956676735542714595794677734375
-              "n": 7
-              height: 6
+              value: 4.9652184929849543237878606305457651615142822265625
+              "n": 1
+              height: 7
             scriptSig:
               asm: "asm"
               hex: "hex"
@@ -1968,28 +1975,24 @@ definitions:
             txinwitness:
             - "txinwitness"
             - "txinwitness"
-            vout: 5
+            vout: 9
           hash: "hash"
         previousblockhash: "previousblockhash"
         bits: "bits"
-        weight: 6
-        strippedSize: 9
+        weight: 3
+        strippedSize: 3
         versionHex: "versionHex"
-        confirmations: 0
-        nonce: 2
-        version: 9
-        difficulty: 6.02745618307040320615897144307382404804229736328125
+        confirmations: 6
+        nonce: 7
+        version: 6
+        difficulty: 1.46581298050294517310021547018550336360931396484375
         chainwork: "chainwork"
-        nTx: 5
-        size: 7
+        nTx: 2
+        size: 9
         merkleroot: "merkleroot"
-        time: 3
+        time: 2
         hash: "hash"
-        height: 1
-      responses.Base:
-        msg: "msg"
-        code: 3
-        data: ""
+        height: 5
   inline_response_200_6:
     type: "object"
     properties:
@@ -2003,14 +2006,14 @@ definitions:
         code: 0
         data: ""
       data:
-        vsize: 6
+        vsize: 8
         locktime: 1
-        fee: 4.1456080298839363962315474054776132106781005859375
-        index: 7
+        fee: 7.3862819483858839220147274318151175975799560546875
+        index: 1
         txid: "txid"
-        weight: 8
-        version: 1
-        blockheight: 2
+        weight: 9
+        version: 6
+        blockheight: 4
         vout:
         - scriptPubKey:
             address: "address"
@@ -2023,7 +2026,7 @@ definitions:
             rune_id: "rune_id"
           - amount: {}
             rune_id: "rune_id"
-          value: 9.3693102714106686335071572102606296539306640625
+          value: 6.683562403749608193948006373830139636993408203125
           "n": 9
         - scriptPubKey:
             address: "address"
@@ -2036,12 +2039,12 @@ definitions:
             rune_id: "rune_id"
           - amount: {}
             rune_id: "rune_id"
-          value: 9.3693102714106686335071572102606296539306640625
+          value: 6.683562403749608193948006373830139636993408203125
           "n": 9
         size: 1
         hex: "hex"
         vin:
-        - sequence: 4
+        - sequence: 5
           coinbase: "coinbase"
           prevout:
             scriptPubKey:
@@ -2056,9 +2059,9 @@ definitions:
               rune_id: "rune_id"
             - amount: {}
               rune_id: "rune_id"
-            value: 1.173074250955943309548956676735542714595794677734375
-            "n": 7
-            height: 6
+            value: 4.9652184929849543237878606305457651615142822265625
+            "n": 1
+            height: 7
           scriptSig:
             asm: "asm"
             hex: "hex"
@@ -2066,8 +2069,8 @@ definitions:
           txinwitness:
           - "txinwitness"
           - "txinwitness"
-          vout: 5
-        - sequence: 4
+          vout: 9
+        - sequence: 5
           coinbase: "coinbase"
           prevout:
             scriptPubKey:
@@ -2082,9 +2085,9 @@ definitions:
               rune_id: "rune_id"
             - amount: {}
               rune_id: "rune_id"
-            value: 1.173074250955943309548956676735542714595794677734375
-            "n": 7
-            height: 6
+            value: 4.9652184929849543237878606305457651615142822265625
+            "n": 1
+            height: 7
           scriptSig:
             asm: "asm"
             hex: "hex"
@@ -2092,25 +2095,29 @@ definitions:
           txinwitness:
           - "txinwitness"
           - "txinwitness"
-          vout: 5
+          vout: 9
         hash: "hash"
   inline_response_200_7:
     type: "object"
     properties:
+      blocks.Base:
+        $ref: "#/definitions/blocks.Base"
       data:
         $ref: "#/definitions/github_com_satstream_ss-utils_rpc.BtcTx"
-      responses.Base:
-        $ref: "#/definitions/responses.Base"
     example:
+      blocks.Base:
+        msg: "msg"
+        code: 0
+        data: ""
       data:
-        vsize: 6
+        vsize: 8
         locktime: 1
-        fee: 4.1456080298839363962315474054776132106781005859375
-        index: 7
+        fee: 7.3862819483858839220147274318151175975799560546875
+        index: 1
         txid: "txid"
-        weight: 8
-        version: 1
-        blockheight: 2
+        weight: 9
+        version: 6
+        blockheight: 4
         vout:
         - scriptPubKey:
             address: "address"
@@ -2123,7 +2130,7 @@ definitions:
             rune_id: "rune_id"
           - amount: {}
             rune_id: "rune_id"
-          value: 9.3693102714106686335071572102606296539306640625
+          value: 6.683562403749608193948006373830139636993408203125
           "n": 9
         - scriptPubKey:
             address: "address"
@@ -2136,12 +2143,12 @@ definitions:
             rune_id: "rune_id"
           - amount: {}
             rune_id: "rune_id"
-          value: 9.3693102714106686335071572102606296539306640625
+          value: 6.683562403749608193948006373830139636993408203125
           "n": 9
         size: 1
         hex: "hex"
         vin:
-        - sequence: 4
+        - sequence: 5
           coinbase: "coinbase"
           prevout:
             scriptPubKey:
@@ -2156,9 +2163,9 @@ definitions:
               rune_id: "rune_id"
             - amount: {}
               rune_id: "rune_id"
-            value: 1.173074250955943309548956676735542714595794677734375
-            "n": 7
-            height: 6
+            value: 4.9652184929849543237878606305457651615142822265625
+            "n": 1
+            height: 7
           scriptSig:
             asm: "asm"
             hex: "hex"
@@ -2166,8 +2173,8 @@ definitions:
           txinwitness:
           - "txinwitness"
           - "txinwitness"
-          vout: 5
-        - sequence: 4
+          vout: 9
+        - sequence: 5
           coinbase: "coinbase"
           prevout:
             scriptPubKey:
@@ -2182,9 +2189,9 @@ definitions:
               rune_id: "rune_id"
             - amount: {}
               rune_id: "rune_id"
-            value: 1.173074250955943309548956676735542714595794677734375
-            "n": 7
-            height: 6
+            value: 4.9652184929849543237878606305457651615142822265625
+            "n": 1
+            height: 7
           scriptSig:
             asm: "asm"
             hex: "hex"
@@ -2192,12 +2199,8 @@ definitions:
           txinwitness:
           - "txinwitness"
           - "txinwitness"
-          vout: 5
+          vout: 9
         hash: "hash"
-      responses.Base:
-        msg: "msg"
-        code: 3
-        data: ""
   inline_response_200_8:
     type: "object"
     properties:
@@ -2283,9 +2286,6 @@ definitions:
         idx: 6
         nOutInscription: 3
         height: 0
-  responses.BlockHeight_data:
-    type: "object"
-    description: "The specific data for this endpoint"
   responses.GetAddressTimeframeBalanceItem_blockRange:
     type: "object"
     description: "Time       time.Time  `json:\"time\"`"

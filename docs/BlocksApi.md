@@ -95,7 +95,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCurrentBlockHeight**
-> ResponsesBlockHeight GetCurrentBlockHeight(ctx, )
+> BlocksBlockHeight GetCurrentBlockHeight(ctx, )
 Get current block height
 
 Get the current block height of the Bitcoin blockchain
@@ -105,7 +105,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**ResponsesBlockHeight**](responses.BlockHeight.md)
+[**BlocksBlockHeight**](blocks.BlockHeight.md)
 
 ### Authorization
 

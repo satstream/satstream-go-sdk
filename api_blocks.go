@@ -109,7 +109,7 @@ func (a *BlocksApiService) GetBlockByHash(ctx context.Context, hash string) (Inl
 		}
 		
 		if localVarHttpResponse.StatusCode == 400 {
-			var v ResponsesBase
+			var v BlocksBase
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -120,7 +120,7 @@ func (a *BlocksApiService) GetBlockByHash(ctx context.Context, hash string) (Inl
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesBase
+			var v BlocksBase
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -218,7 +218,7 @@ func (a *BlocksApiService) GetBlockInfo(ctx context.Context, height int32) (Inli
 		}
 		
 		if localVarHttpResponse.StatusCode == 400 {
-			var v ResponsesBase
+			var v BlocksBase
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -229,7 +229,7 @@ func (a *BlocksApiService) GetBlockInfo(ctx context.Context, height int32) (Inli
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesBase
+			var v BlocksBase
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -327,7 +327,7 @@ func (a *BlocksApiService) GetBlockTransactions(ctx context.Context, height int3
 		}
 		
 		if localVarHttpResponse.StatusCode == 400 {
-			var v ResponsesBase
+			var v BlocksBase
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -338,7 +338,7 @@ func (a *BlocksApiService) GetBlockTransactions(ctx context.Context, height int3
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesBase
+			var v BlocksBase
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -359,15 +359,15 @@ BlocksApiService Get current block height
 Get the current block height of the Bitcoin blockchain
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
-@return ResponsesBlockHeight
+@return BlocksBlockHeight
 */
-func (a *BlocksApiService) GetCurrentBlockHeight(ctx context.Context) (ResponsesBlockHeight, *http.Response, error) {
+func (a *BlocksApiService) GetCurrentBlockHeight(ctx context.Context) (BlocksBlockHeight, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ResponsesBlockHeight
+		localVarReturnValue BlocksBlockHeight
 	)
 
 	// create path and map variables
@@ -423,7 +423,7 @@ func (a *BlocksApiService) GetCurrentBlockHeight(ctx context.Context) (Responses
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ResponsesBlockHeight
+			var v BlocksBlockHeight
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -434,7 +434,7 @@ func (a *BlocksApiService) GetCurrentBlockHeight(ctx context.Context) (Responses
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesError
+			var v BlocksError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

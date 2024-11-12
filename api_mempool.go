@@ -122,7 +122,7 @@ func (a *MempoolApiService) GetAddressMempoolTransactions(ctx context.Context, a
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesError
+			var v BlocksError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -233,7 +233,7 @@ func (a *MempoolApiService) GetMempoolTransactionInfo(ctx context.Context, txid 
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesBase
+			var v BlocksBase
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -329,7 +329,7 @@ func (a *MempoolApiService) GetMempoolTransactions(ctx context.Context) ([]inter
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesBase
+			var v BlocksBase
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
