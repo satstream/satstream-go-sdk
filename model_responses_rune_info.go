@@ -20,7 +20,7 @@ type ResponsesRuneInfo struct {
 	SpacedRune string `json:"spaced_rune,omitempty"`
 	Spacers int32 `json:"spacers,omitempty"`
 	Symbol string `json:"symbol,omitempty"`
-	Terms *OrdinalsTerms `json:"terms,omitempty"`
+	Terms *GithubComSatstreamSsUtilsOrdinalsTerms `json:"terms,omitempty"`
 	Turbo bool `json:"turbo,omitempty"`
 	TxHeight int32 `json:"tx_height,omitempty"`
 	Txid string `json:"txid,omitempty"`

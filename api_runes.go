@@ -29,43 +29,30 @@ var (
 type RunesApiService service
 
 /*
-RunesApiService Get runes info list
-Get information about all runes
+RunesApiService Get rune holders
+Get a list of addresses holding a specific rune
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *RunesApiRunesGetOpts - Optional Parameters:
-     * @param "Page" (optional.Int32) -  Page number (default: 1)
-     * @param "PerPage" (optional.Int32) -  Items per page (default: 10)
+ * @param runeId Rune ID
 
-@return InlineResponse20010
+@return []interface{}
 */
-
-type RunesApiRunesGetOpts struct { 
-	Page optional.Int32
-	PerPage optional.Int32
-}
-
-func (a *RunesApiService) RunesGet(ctx context.Context, localVarOptionals *RunesApiRunesGetOpts) (InlineResponse20010, *http.Response, error) {
+func (a *RunesApiService) GetRunesHolders(ctx context.Context, runeId string) ([]interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20010
+		localVarReturnValue []interface{}
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/runes"
+	localVarPath := a.client.cfg.BasePath + "/runes/{runeId}/holders"
+	localVarPath = strings.Replace(localVarPath, "{"+"runeId"+"}", fmt.Sprintf("%v", runeId), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if localVarOptionals != nil && localVarOptionals.Page.IsSet() {
-		localVarQueryParams.Add("page", parameterToString(localVarOptionals.Page.Value(), ""))
-	}
-	if localVarOptionals != nil && localVarOptionals.PerPage.IsSet() {
-		localVarQueryParams.Add("per_page", parameterToString(localVarOptionals.PerPage.Value(), ""))
-	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -125,18 +112,7 @@ func (a *RunesApiService) RunesGet(ctx context.Context, localVarOptionals *Runes
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20010
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
-				return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		
-		if localVarHttpResponse.StatusCode == 400 {
-			var v GithubComSatstreamSsApiServerApiRunesResponsesErrorResponse
+			var v []interface{}
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -171,7 +147,7 @@ Get detailed information about a specific rune
 
 @return interface{}
 */
-func (a *RunesApiService) RunesRuneIdGet(ctx context.Context, runeId string) (interface{}, *http.Response, error) {
+func (a *RunesApiService) GetRunesInfo(ctx context.Context, runeId string) (interface{}, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -275,30 +251,43 @@ func (a *RunesApiService) RunesRuneIdGet(ctx context.Context, runeId string) (in
 }
 
 /*
-RunesApiService Get rune holders
-Get a list of addresses holding a specific rune
+RunesApiService Get runes info list
+Get information about all runes
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param runeId Rune ID
+ * @param optional nil or *RunesApiGetRunesInfoListOpts - Optional Parameters:
+     * @param "Page" (optional.Int32) -  Page number (default: 1)
+     * @param "PerPage" (optional.Int32) -  Items per page (default: 10)
 
-@return []interface{}
+@return InlineResponse20010
 */
-func (a *RunesApiService) RunesRuneIdHoldersGet(ctx context.Context, runeId string) ([]interface{}, *http.Response, error) {
+
+type RunesApiGetRunesInfoListOpts struct { 
+	Page optional.Int32
+	PerPage optional.Int32
+}
+
+func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptionals *RunesApiGetRunesInfoListOpts) (InlineResponse20010, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue []interface{}
+		localVarReturnValue InlineResponse20010
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/runes/{runeId}/holders"
-	localVarPath = strings.Replace(localVarPath, "{"+"runeId"+"}", fmt.Sprintf("%v", runeId), -1)
+	localVarPath := a.client.cfg.BasePath + "/runes"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.Page.IsSet() {
+		localVarQueryParams.Add("page", parameterToString(localVarOptionals.Page.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.PerPage.IsSet() {
+		localVarQueryParams.Add("per_page", parameterToString(localVarOptionals.PerPage.Value(), ""))
+	}
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -358,7 +347,18 @@ func (a *RunesApiService) RunesRuneIdHoldersGet(ctx context.Context, runeId stri
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []interface{}
+			var v InlineResponse20010
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		
+		if localVarHttpResponse.StatusCode == 400 {
+			var v GithubComSatstreamSsApiServerApiRunesResponsesErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

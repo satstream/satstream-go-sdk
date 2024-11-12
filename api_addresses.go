@@ -36,7 +36,7 @@ Get the current balance of a Bitcoin address
 
 @return InlineResponse200
 */
-func (a *AddressesApiService) AddressesAddressBalanceGet(ctx context.Context, address string) (InlineResponse200, *http.Response, error) {
+func (a *AddressesApiService) GetAddressBalance(ctx context.Context, address string) (InlineResponse200, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -140,42 +140,30 @@ func (a *AddressesApiService) AddressesAddressBalanceGet(ctx context.Context, ad
 }
 
 /*
-AddressesApiService Get address timeframe balance
-Get the balance of a Bitcoin address for a specific timeframe
+AddressesApiService Get address non-inscription UTXOs
+Get all non-inscription UTXOs for a Bitcoin address
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address
- * @param timeframe Timeframe
- * @param optional nil or *AddressesApiAddressesAddressBalanceTimeframeGetOpts - Optional Parameters:
-     * @param "Token" (optional.String) -  Token
 
-@return InlineResponse2001
+@return InlineResponse2004
 */
-
-type AddressesApiAddressesAddressBalanceTimeframeGetOpts struct { 
-	Token optional.String
-}
-
-func (a *AddressesApiService) AddressesAddressBalanceTimeframeGet(ctx context.Context, address string, timeframe string, localVarOptionals *AddressesApiAddressesAddressBalanceTimeframeGetOpts) (InlineResponse2001, *http.Response, error) {
+func (a *AddressesApiService) GetAddressNonInscriptionUtxos(ctx context.Context, address string) (InlineResponse2004, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2001
+		localVarReturnValue InlineResponse2004
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/addresses/{address}/balance/timeframe"
+	localVarPath := a.client.cfg.BasePath + "/addresses/{address}/utxos"
 	localVarPath = strings.Replace(localVarPath, "{"+"address"+"}", fmt.Sprintf("%v", address), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
-		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
-	}
-	localVarQueryParams.Add("timeframe", parameterToString(timeframe, ""))
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -235,7 +223,120 @@ func (a *AddressesApiService) AddressesAddressBalanceTimeframeGet(ctx context.Co
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v InlineResponse2004
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		
+		if localVarHttpResponse.StatusCode == 500 {
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+
+/*
+AddressesApiService Get address rune balance
+Get the balance of a specific rune for a Bitcoin address
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param address Bitcoin address
+ * @param runeid Rune ID
+
+@return InlineResponse2003
+*/
+func (a *AddressesApiService) GetAddressRuneBalance(ctx context.Context, address string, runeid string) (InlineResponse2003, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue InlineResponse2003
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/addresses/{address}/runes/{runeid}"
+	localVarPath = strings.Replace(localVarPath, "{"+"address"+"}", fmt.Sprintf("%v", address), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"runeid"+"}", fmt.Sprintf("%v", runeid), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-KEY"] = key
+			
+		}
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode < 300 {
+		// If we succeed, return the data, otherwise pass on to decode error.
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body: localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		
+		if localVarHttpResponse.StatusCode == 200 {
+			var v InlineResponse2003
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -270,7 +371,7 @@ Get the balance of all runes for a Bitcoin address
 
 @return InlineResponse2002
 */
-func (a *AddressesApiService) AddressesAddressRunesGet(ctx context.Context, address string) (InlineResponse2002, *http.Response, error) {
+func (a *AddressesApiService) GetAddressRunesBalanceList(ctx context.Context, address string) (InlineResponse2002, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -396,143 +497,42 @@ func (a *AddressesApiService) AddressesAddressRunesGet(ctx context.Context, addr
 }
 
 /*
-AddressesApiService Get address rune balance
-Get the balance of a specific rune for a Bitcoin address
+AddressesApiService Get address timeframe balance
+Get the balance of a Bitcoin address for a specific timeframe
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address
- * @param runeid Rune ID
+ * @param timeframe Timeframe
+ * @param optional nil or *AddressesApiGetAddressTimeframeBalanceOpts - Optional Parameters:
+     * @param "Token" (optional.String) -  Token
 
-@return InlineResponse2003
+@return InlineResponse2001
 */
-func (a *AddressesApiService) AddressesAddressRunesRuneidGet(ctx context.Context, address string, runeid string) (InlineResponse2003, *http.Response, error) {
-	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2003
-	)
 
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/addresses/{address}/runes/{runeid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"address"+"}", fmt.Sprintf("%v", address), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"runeid"+"}", fmt.Sprintf("%v", runeid), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["X-API-KEY"] = key
-			
-		}
-	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode < 300 {
-		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body: localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		
-		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2003
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
-				return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		
-		if localVarHttpResponse.StatusCode == 500 {
-			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
-				return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
+type AddressesApiGetAddressTimeframeBalanceOpts struct { 
+	Token optional.String
 }
 
-/*
-AddressesApiService Get address non-inscription UTXOs
-Get all non-inscription UTXOs for a Bitcoin address
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param address Bitcoin address
-
-@return InlineResponse2004
-*/
-func (a *AddressesApiService) AddressesAddressUtxosGet(ctx context.Context, address string) (InlineResponse2004, *http.Response, error) {
+func (a *AddressesApiService) GetAddressTimeframeBalance(ctx context.Context, address string, timeframe string, localVarOptionals *AddressesApiGetAddressTimeframeBalanceOpts) (InlineResponse2001, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2004
+		localVarReturnValue InlineResponse2001
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/addresses/{address}/utxos"
+	localVarPath := a.client.cfg.BasePath + "/addresses/{address}/balance/timeframe"
 	localVarPath = strings.Replace(localVarPath, "{"+"address"+"}", fmt.Sprintf("%v", address), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if localVarOptionals != nil && localVarOptionals.Token.IsSet() {
+		localVarQueryParams.Add("token", parameterToString(localVarOptionals.Token.Value(), ""))
+	}
+	localVarQueryParams.Add("timeframe", parameterToString(timeframe, ""))
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{"application/json"}
 
@@ -592,7 +592,7 @@ func (a *AddressesApiService) AddressesAddressUtxosGet(ctx context.Context, addr
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2004
+			var v InlineResponse2001
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

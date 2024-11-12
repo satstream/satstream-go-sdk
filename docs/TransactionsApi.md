@@ -4,42 +4,14 @@ All URIs are relative to *https://api.satstream.io/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**IndexerTxHashGet**](TransactionsApi.md#IndexerTxHashGet) | **Get** /indexer/tx/{hash} | Get transaction
-[**TransactionsBroadcastPost**](TransactionsApi.md#TransactionsBroadcastPost) | **Post** /transactions/broadcast | Broadcast transaction
-[**TransactionsTxidGet**](TransactionsApi.md#TransactionsTxidGet) | **Get** /transactions/{txid} | Get transaction info
-[**TransactionsTxidInputsGet**](TransactionsApi.md#TransactionsTxidInputsGet) | **Get** /transactions/{txid}/inputs | Get transaction inputs
+[**BroadcastTransaction**](TransactionsApi.md#BroadcastTransaction) | **Post** /transactions/broadcast | Broadcast transaction
+[**GetTransaction**](TransactionsApi.md#GetTransaction) | **Get** /indexer/tx/{hash} | Get transaction
+[**GetTransactionInfo**](TransactionsApi.md#GetTransactionInfo) | **Get** /transactions/{txid} | Get transaction info
+[**GetTransactionInputs**](TransactionsApi.md#GetTransactionInputs) | **Get** /transactions/{txid}/inputs | Get transaction inputs
 
 
-# **IndexerTxHashGet**
-> InlineResponse2008 IndexerTxHashGet(ctx, hash)
-Get transaction
-
-Get a transaction by its hash
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **hash** | **string**| Transaction hash | 
-
-### Return type
-
-[**InlineResponse2008**](inline_response_200_8.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **TransactionsBroadcastPost**
-> InlineResponse20011 TransactionsBroadcastPost(ctx, transaction)
+# **BroadcastTransaction**
+> InlineResponse20011 BroadcastTransaction(ctx, transaction)
 Broadcast transaction
 
 Broadcast a raw transaction to the Bitcoin network
@@ -66,8 +38,36 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **TransactionsTxidGet**
-> InlineResponse20012 TransactionsTxidGet(ctx, txid)
+# **GetTransaction**
+> InlineResponse2008 GetTransaction(ctx, hash)
+Get transaction
+
+Get a transaction by its hash
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **hash** | **string**| Transaction hash | 
+
+### Return type
+
+[**InlineResponse2008**](inline_response_200_8.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetTransactionInfo**
+> InlineResponse20012 GetTransactionInfo(ctx, txid)
 Get transaction info
 
 Get detailed information about a specific transaction
@@ -94,8 +94,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **TransactionsTxidInputsGet**
-> []interface{} TransactionsTxidInputsGet(ctx, txid)
+# **GetTransactionInputs**
+> []interface{} GetTransactionInputs(ctx, txid)
 Get transaction inputs
 
 Get the inputs of a specific transaction

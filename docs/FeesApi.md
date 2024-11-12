@@ -4,11 +4,11 @@ All URIs are relative to *https://api.satstream.io/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**FeesGet**](FeesApi.md#FeesGet) | **Get** /fees | Get recommended fees
+[**GetRecommendedFees**](FeesApi.md#GetRecommendedFees) | **Get** /fees | Get recommended fees
 
 
-# **FeesGet**
-> InlineResponse2007 FeesGet(ctx, )
+# **GetRecommendedFees**
+> InlineResponse2007 GetRecommendedFees(ctx, )
 Get recommended fees
 
 Get recommended fees for Bitcoin transactions

@@ -14,6 +14,8 @@ info:
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
 host: "api.satstream.io"
 basePath: "/api/v1"
+schemes:
+- "https"
 paths:
   /addresses/{address}/balance:
     get:
@@ -21,6 +23,7 @@ paths:
       - "Addresses"
       summary: "Get address balance"
       description: "Get the current balance of a Bitcoin address"
+      operationId: "get-address-balance"
       consumes:
       - "application/json"
       produces:
@@ -49,6 +52,7 @@ paths:
       - "Addresses"
       summary: "Get address timeframe balance"
       description: "Get the balance of a Bitcoin address for a specific timeframe"
+      operationId: "get-address-timeframe-balance"
       consumes:
       - "application/json"
       produces:
@@ -98,6 +102,7 @@ paths:
       - "Addresses"
       summary: "Get address runes balance list"
       description: "Get the balance of all runes for a Bitcoin address"
+      operationId: "get-address-runes-balance-list"
       consumes:
       - "application/json"
       produces:
@@ -134,6 +139,7 @@ paths:
       - "Addresses"
       summary: "Get address rune balance"
       description: "Get the balance of a specific rune for a Bitcoin address"
+      operationId: "get-address-rune-balance"
       consumes:
       - "application/json"
       produces:
@@ -168,6 +174,7 @@ paths:
       - "Addresses"
       summary: "Get address non-inscription UTXOs"
       description: "Get all non-inscription UTXOs for a Bitcoin address"
+      operationId: "get-address-non-inscription-utxos"
       consumes:
       - "application/json"
       produces:
@@ -196,6 +203,7 @@ paths:
       - "Blocks"
       summary: "Get current block height"
       description: "Get the current block height of the Bitcoin blockchain"
+      operationId: "get-current-block-height"
       consumes:
       - "application/json"
       produces:
@@ -216,6 +224,7 @@ paths:
       - "Blocks"
       summary: "Get block by hash"
       description: "Get information about a specific block by its hash"
+      operationId: "get-block-by-hash"
       consumes:
       - "application/json"
       produces:
@@ -246,6 +255,7 @@ paths:
       - "Blocks"
       summary: "Get block info"
       description: "Get information about a specific block by height"
+      operationId: "get-block-info"
       consumes:
       - "application/json"
       produces:
@@ -276,6 +286,7 @@ paths:
       - "Blocks"
       summary: "Get block transactions"
       description: "Get transactions for a specific block height"
+      operationId: "get-block-transactions"
       consumes:
       - "application/json"
       produces:
@@ -299,7 +310,7 @@ paths:
               - type: "object"
                 properties:
                   data:
-                    $ref: "#/definitions/store.TransactionDocument"
+                    $ref: "#/definitions/github_com_satstream_ss-utils_store.TransactionDocument"
         "400":
           description: "Bad Request"
           schema:
@@ -314,6 +325,7 @@ paths:
       - "Fees"
       summary: "Get recommended fees"
       description: "Get recommended fees for Bitcoin transactions"
+      operationId: "get-recommended-fees"
       consumes:
       - "application/json"
       produces:
@@ -334,6 +346,7 @@ paths:
       - "Transactions"
       summary: "Get transaction"
       description: "Get a transaction by its hash"
+      operationId: "get-transaction"
       consumes:
       - "application/json"
       produces:
@@ -360,6 +373,7 @@ paths:
       - "Mempool"
       summary: "Get address mempool transactions"
       description: "Get all mempool transactions for a specific address"
+      operationId: "get-address-mempool-transactions"
       consumes:
       - "application/json"
       produces:
@@ -385,7 +399,7 @@ paths:
               - type: "object"
                 properties:
                   data:
-                    $ref: "#/definitions/rpc.BtcTx"
+                    $ref: "#/definitions/github_com_satstream_ss-utils_rpc.BtcTx"
         "500":
           description: "Internal Server Error"
           schema:
@@ -396,6 +410,7 @@ paths:
       - "Mempool"
       summary: "Get mempool transactions"
       description: "Get all transactions currently in the mempool"
+      operationId: "get-mempool-transactions"
       consumes:
       - "application/json"
       produces:
@@ -413,7 +428,7 @@ paths:
               - type: "object"
                 properties:
                   data:
-                    $ref: "#/definitions/rpc.BtcTx"
+                    $ref: "#/definitions/github_com_satstream_ss-utils_rpc.BtcTx"
         "500":
           description: "Internal Server Error"
           schema:
@@ -424,6 +439,7 @@ paths:
       - "Mempool"
       summary: "Get mempool transaction info"
       description: "Get information about a specific transaction in the mempool"
+      operationId: "get-mempool-transaction-info"
       consumes:
       - "application/json"
       produces:
@@ -452,6 +468,7 @@ paths:
       - "Runes"
       summary: "Get runes info list"
       description: "Get information about all runes"
+      operationId: "get-runes-info-list"
       consumes:
       - "application/json"
       produces:
@@ -492,6 +509,7 @@ paths:
       - "Runes"
       summary: "Get rune info"
       description: "Get detailed information about a specific rune"
+      operationId: "get-runes-info"
       consumes:
       - "application/json"
       produces:
@@ -520,6 +538,7 @@ paths:
       - "Runes"
       summary: "Get rune holders"
       description: "Get a list of addresses holding a specific rune"
+      operationId: "get-runes-holders"
       consumes:
       - "application/json"
       produces:
@@ -551,6 +570,7 @@ paths:
       - "Transactions"
       summary: "Broadcast transaction"
       description: "Broadcast a raw transaction to the Bitcoin network"
+      operationId: "broadcast-transaction"
       consumes:
       - "application/json"
       produces:
@@ -580,6 +600,7 @@ paths:
       - "Transactions"
       summary: "Get transaction info"
       description: "Get detailed information about a specific transaction"
+      operationId: "get-transaction-info"
       consumes:
       - "application/json"
       produces:
@@ -608,6 +629,7 @@ paths:
       - "Transactions"
       summary: "Get transaction inputs"
       description: "Get the inputs of a specific transaction"
+      operationId: "get-transaction-inputs"
       consumes:
       - "application/json"
       produces:
@@ -633,7 +655,7 @@ paths:
               - type: "object"
                 properties:
                   data:
-                    $ref: "#/definitions/rpc.Vin"
+                    $ref: "#/definitions/github_com_satstream_ss-utils_rpc.Vin"
         "500":
           description: "Internal Server Error"
           schema:
@@ -702,7 +724,7 @@ definitions:
       msg: "msg"
       code: 0
       data: ""
-  ordinals.Terms:
+  github_com_satstream_ss-utils_ordinals.Terms:
     type: "object"
     properties:
       amount:
@@ -710,13 +732,13 @@ definitions:
       cap:
         $ref: "#/definitions/big.Int"
       height:
-        $ref: "#/definitions/ordinals.TermsRange"
+        $ref: "#/definitions/github_com_satstream_ss-utils_ordinals.TermsRange"
       offset:
-        $ref: "#/definitions/ordinals.TermsRange"
+        $ref: "#/definitions/github_com_satstream_ss-utils_ordinals.TermsRange"
     example:
       offset: {}
       height: {}
-  ordinals.TermsRange:
+  github_com_satstream_ss-utils_ordinals.TermsRange:
     type: "object"
     properties:
       end:
@@ -724,6 +746,563 @@ definitions:
       start:
         $ref: "#/definitions/big.Int"
     example: {}
+  github_com_satstream_ss-utils_rpc.Block:
+    type: "object"
+    properties:
+      bits:
+        type: "string"
+      chainwork:
+        type: "string"
+      confirmations:
+        type: "integer"
+      difficulty:
+        type: "number"
+      hash:
+        type: "string"
+      height:
+        type: "integer"
+      mediantime:
+        type: "integer"
+      merkleroot:
+        type: "string"
+      nTx:
+        type: "integer"
+      nonce:
+        type: "integer"
+      previousblockhash:
+        type: "string"
+      size:
+        type: "integer"
+      strippedSize:
+        type: "integer"
+      time:
+        type: "integer"
+      tx:
+        type: "array"
+        description: "Txns will be stored in a separate collection in the DB"
+        items:
+          $ref: "#/definitions/github_com_satstream_ss-utils_rpc.BtcTx"
+      version:
+        type: "integer"
+      versionHex:
+        type: "string"
+      weight:
+        type: "integer"
+    example:
+      mediantime: 5
+      tx:
+      - vsize: 6
+        locktime: 1
+        fee: 4.1456080298839363962315474054776132106781005859375
+        index: 7
+        txid: "txid"
+        weight: 8
+        version: 1
+        blockheight: 2
+        vout:
+        - scriptPubKey:
+            address: "address"
+            asm: "asm"
+            hex: "hex"
+            type: "type"
+            desc: "desc"
+          rune_holdings:
+          - amount: {}
+            rune_id: "rune_id"
+          - amount: {}
+            rune_id: "rune_id"
+          value: 9.3693102714106686335071572102606296539306640625
+          "n": 9
+        - scriptPubKey:
+            address: "address"
+            asm: "asm"
+            hex: "hex"
+            type: "type"
+            desc: "desc"
+          rune_holdings:
+          - amount: {}
+            rune_id: "rune_id"
+          - amount: {}
+            rune_id: "rune_id"
+          value: 9.3693102714106686335071572102606296539306640625
+          "n": 9
+        size: 1
+        hex: "hex"
+        vin:
+        - sequence: 4
+          coinbase: "coinbase"
+          prevout:
+            scriptPubKey:
+              address: "address"
+              asm: "asm"
+              hex: "hex"
+              type: "type"
+              desc: "desc"
+            populated: true
+            rune_holdings:
+            - amount: {}
+              rune_id: "rune_id"
+            - amount: {}
+              rune_id: "rune_id"
+            value: 1.173074250955943309548956676735542714595794677734375
+            "n": 7
+            height: 6
+          scriptSig:
+            asm: "asm"
+            hex: "hex"
+          txid: "txid"
+          txinwitness:
+          - "txinwitness"
+          - "txinwitness"
+          vout: 5
+        - sequence: 4
+          coinbase: "coinbase"
+          prevout:
+            scriptPubKey:
+              address: "address"
+              asm: "asm"
+              hex: "hex"
+              type: "type"
+              desc: "desc"
+            populated: true
+            rune_holdings:
+            - amount: {}
+              rune_id: "rune_id"
+            - amount: {}
+              rune_id: "rune_id"
+            value: 1.173074250955943309548956676735542714595794677734375
+            "n": 7
+            height: 6
+          scriptSig:
+            asm: "asm"
+            hex: "hex"
+          txid: "txid"
+          txinwitness:
+          - "txinwitness"
+          - "txinwitness"
+          vout: 5
+        hash: "hash"
+      - vsize: 6
+        locktime: 1
+        fee: 4.1456080298839363962315474054776132106781005859375
+        index: 7
+        txid: "txid"
+        weight: 8
+        version: 1
+        blockheight: 2
+        vout:
+        - scriptPubKey:
+            address: "address"
+            asm: "asm"
+            hex: "hex"
+            type: "type"
+            desc: "desc"
+          rune_holdings:
+          - amount: {}
+            rune_id: "rune_id"
+          - amount: {}
+            rune_id: "rune_id"
+          value: 9.3693102714106686335071572102606296539306640625
+          "n": 9
+        - scriptPubKey:
+            address: "address"
+            asm: "asm"
+            hex: "hex"
+            type: "type"
+            desc: "desc"
+          rune_holdings:
+          - amount: {}
+            rune_id: "rune_id"
+          - amount: {}
+            rune_id: "rune_id"
+          value: 9.3693102714106686335071572102606296539306640625
+          "n": 9
+        size: 1
+        hex: "hex"
+        vin:
+        - sequence: 4
+          coinbase: "coinbase"
+          prevout:
+            scriptPubKey:
+              address: "address"
+              asm: "asm"
+              hex: "hex"
+              type: "type"
+              desc: "desc"
+            populated: true
+            rune_holdings:
+            - amount: {}
+              rune_id: "rune_id"
+            - amount: {}
+              rune_id: "rune_id"
+            value: 1.173074250955943309548956676735542714595794677734375
+            "n": 7
+            height: 6
+          scriptSig:
+            asm: "asm"
+            hex: "hex"
+          txid: "txid"
+          txinwitness:
+          - "txinwitness"
+          - "txinwitness"
+          vout: 5
+        - sequence: 4
+          coinbase: "coinbase"
+          prevout:
+            scriptPubKey:
+              address: "address"
+              asm: "asm"
+              hex: "hex"
+              type: "type"
+              desc: "desc"
+            populated: true
+            rune_holdings:
+            - amount: {}
+              rune_id: "rune_id"
+            - amount: {}
+              rune_id: "rune_id"
+            value: 1.173074250955943309548956676735542714595794677734375
+            "n": 7
+            height: 6
+          scriptSig:
+            asm: "asm"
+            hex: "hex"
+          txid: "txid"
+          txinwitness:
+          - "txinwitness"
+          - "txinwitness"
+          vout: 5
+        hash: "hash"
+      previousblockhash: "previousblockhash"
+      bits: "bits"
+      weight: 6
+      strippedSize: 9
+      versionHex: "versionHex"
+      confirmations: 0
+      nonce: 2
+      version: 9
+      difficulty: 6.02745618307040320615897144307382404804229736328125
+      chainwork: "chainwork"
+      nTx: 5
+      size: 7
+      merkleroot: "merkleroot"
+      time: 3
+      hash: "hash"
+      height: 1
+  github_com_satstream_ss-utils_rpc.BtcTx:
+    type: "object"
+    properties:
+      blockheight:
+        type: "integer"
+      fee:
+        type: "number"
+      hash:
+        type: "string"
+      hex:
+        type: "string"
+      index:
+        type: "integer"
+      locktime:
+        type: "integer"
+      size:
+        type: "integer"
+      txid:
+        type: "string"
+      version:
+        type: "integer"
+      vin:
+        type: "array"
+        description: "Vin will be stored in a separate collection in the DB"
+        items:
+          $ref: "#/definitions/github_com_satstream_ss-utils_rpc.Vin"
+      vout:
+        type: "array"
+        description: "Vout will be stored in a separate collection in the DB"
+        items:
+          $ref: "#/definitions/github_com_satstream_ss-utils_rpc.Vout"
+      vsize:
+        type: "integer"
+      weight:
+        type: "integer"
+    example:
+      vsize: 6
+      locktime: 1
+      fee: 4.1456080298839363962315474054776132106781005859375
+      index: 7
+      txid: "txid"
+      weight: 8
+      version: 1
+      blockheight: 2
+      vout:
+      - scriptPubKey:
+          address: "address"
+          asm: "asm"
+          hex: "hex"
+          type: "type"
+          desc: "desc"
+        rune_holdings:
+        - amount: {}
+          rune_id: "rune_id"
+        - amount: {}
+          rune_id: "rune_id"
+        value: 9.3693102714106686335071572102606296539306640625
+        "n": 9
+      - scriptPubKey:
+          address: "address"
+          asm: "asm"
+          hex: "hex"
+          type: "type"
+          desc: "desc"
+        rune_holdings:
+        - amount: {}
+          rune_id: "rune_id"
+        - amount: {}
+          rune_id: "rune_id"
+        value: 9.3693102714106686335071572102606296539306640625
+        "n": 9
+      size: 1
+      hex: "hex"
+      vin:
+      - sequence: 4
+        coinbase: "coinbase"
+        prevout:
+          scriptPubKey:
+            address: "address"
+            asm: "asm"
+            hex: "hex"
+            type: "type"
+            desc: "desc"
+          populated: true
+          rune_holdings:
+          - amount: {}
+            rune_id: "rune_id"
+          - amount: {}
+            rune_id: "rune_id"
+          value: 1.173074250955943309548956676735542714595794677734375
+          "n": 7
+          height: 6
+        scriptSig:
+          asm: "asm"
+          hex: "hex"
+        txid: "txid"
+        txinwitness:
+        - "txinwitness"
+        - "txinwitness"
+        vout: 5
+      - sequence: 4
+        coinbase: "coinbase"
+        prevout:
+          scriptPubKey:
+            address: "address"
+            asm: "asm"
+            hex: "hex"
+            type: "type"
+            desc: "desc"
+          populated: true
+          rune_holdings:
+          - amount: {}
+            rune_id: "rune_id"
+          - amount: {}
+            rune_id: "rune_id"
+          value: 1.173074250955943309548956676735542714595794677734375
+          "n": 7
+          height: 6
+        scriptSig:
+          asm: "asm"
+          hex: "hex"
+        txid: "txid"
+        txinwitness:
+        - "txinwitness"
+        - "txinwitness"
+        vout: 5
+      hash: "hash"
+  github_com_satstream_ss-utils_rpc.PrevOut:
+    type: "object"
+    properties:
+      height:
+        type: "integer"
+      "n":
+        type: "integer"
+      populated:
+        type: "boolean"
+        description: "* The populated field is used to determine if the prevout has\
+          \ been populated from our code or automatically by the RPC on fetch"
+      rune_holdings:
+        type: "array"
+        items:
+          $ref: "#/definitions/github_com_satstream_ss-utils_rpc.UtxoRune"
+      scriptPubKey:
+        $ref: "#/definitions/github_com_satstream_ss-utils_rpc.ScriptPubKey"
+      value:
+        type: "number"
+    example:
+      scriptPubKey:
+        address: "address"
+        asm: "asm"
+        hex: "hex"
+        type: "type"
+        desc: "desc"
+      populated: true
+      rune_holdings:
+      - amount: {}
+        rune_id: "rune_id"
+      - amount: {}
+        rune_id: "rune_id"
+      value: 1.173074250955943309548956676735542714595794677734375
+      "n": 7
+      height: 6
+  github_com_satstream_ss-utils_rpc.ScriptPubKey:
+    type: "object"
+    properties:
+      address:
+        type: "string"
+      asm:
+        type: "string"
+      desc:
+        type: "string"
+      hex:
+        type: "string"
+      type:
+        type: "string"
+    example:
+      address: "address"
+      asm: "asm"
+      hex: "hex"
+      type: "type"
+      desc: "desc"
+  github_com_satstream_ss-utils_rpc.ScriptSig:
+    type: "object"
+    properties:
+      asm:
+        type: "string"
+      hex:
+        type: "string"
+    example:
+      asm: "asm"
+      hex: "hex"
+  github_com_satstream_ss-utils_rpc.UtxoRune:
+    type: "object"
+    properties:
+      amount:
+        $ref: "#/definitions/big.Int"
+      rune_id:
+        type: "string"
+    example:
+      amount: {}
+      rune_id: "rune_id"
+  github_com_satstream_ss-utils_rpc.Vin:
+    type: "object"
+    properties:
+      coinbase:
+        type: "string"
+      prevout:
+        $ref: "#/definitions/github_com_satstream_ss-utils_rpc.PrevOut"
+      scriptSig:
+        $ref: "#/definitions/github_com_satstream_ss-utils_rpc.ScriptSig"
+      sequence:
+        type: "integer"
+      txid:
+        type: "string"
+      txinwitness:
+        type: "array"
+        items:
+          type: "string"
+      vout:
+        type: "integer"
+    example:
+      sequence: 4
+      coinbase: "coinbase"
+      prevout:
+        scriptPubKey:
+          address: "address"
+          asm: "asm"
+          hex: "hex"
+          type: "type"
+          desc: "desc"
+        populated: true
+        rune_holdings:
+        - amount: {}
+          rune_id: "rune_id"
+        - amount: {}
+          rune_id: "rune_id"
+        value: 1.173074250955943309548956676735542714595794677734375
+        "n": 7
+        height: 6
+      scriptSig:
+        asm: "asm"
+        hex: "hex"
+      txid: "txid"
+      txinwitness:
+      - "txinwitness"
+      - "txinwitness"
+      vout: 5
+  github_com_satstream_ss-utils_rpc.Vout:
+    type: "object"
+    properties:
+      "n":
+        type: "integer"
+      rune_holdings:
+        type: "array"
+        items:
+          $ref: "#/definitions/github_com_satstream_ss-utils_rpc.UtxoRune"
+      scriptPubKey:
+        $ref: "#/definitions/github_com_satstream_ss-utils_rpc.ScriptPubKey"
+      value:
+        type: "number"
+    example:
+      scriptPubKey:
+        address: "address"
+        asm: "asm"
+        hex: "hex"
+        type: "type"
+        desc: "desc"
+      rune_holdings:
+      - amount: {}
+        rune_id: "rune_id"
+      - amount: {}
+        rune_id: "rune_id"
+      value: 9.3693102714106686335071572102606296539306640625
+      "n": 9
+  github_com_satstream_ss-utils_store.TransactionDocument:
+    type: "object"
+    properties:
+      address:
+        type: "string"
+        example: "1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"
+      blockheight:
+        type: "integer"
+        example: 100
+      fee:
+        type: "number"
+        example: 0.001
+      hash:
+        type: "string"
+        example: "0000000000000000000000000000000000000000000000000000000000000000"
+      hex:
+        type: "string"
+        example: "0000000000000000000000000000000000000000000000000000000000000000"
+      index:
+        type: "integer"
+        example: 0
+      locktime:
+        type: "integer"
+        example: 0
+      size:
+        type: "integer"
+        example: 100
+      txid:
+        type: "string"
+        example: "8631dedfc6c46e6f923cd30e7e71cff541f205887b5cde7d0e1119121e3c563f"
+      version:
+        type: "integer"
+        example: 1
+      vsize:
+        type: "integer"
+        example: 100
+      weight:
+        type: "integer"
+        example: 100
+    description: "Detailed information about a transaction"
   responses.BlockRange:
     type: "object"
     properties:
@@ -943,7 +1522,7 @@ definitions:
       symbol:
         type: "string"
       terms:
-        $ref: "#/definitions/ordinals.Terms"
+        $ref: "#/definitions/github_com_satstream_ss-utils_ordinals.Terms"
       turbo:
         type: "boolean"
       tx_height:
@@ -1018,563 +1597,6 @@ definitions:
       idx: 6
       nOutInscription: 3
       height: 0
-  rpc.Block:
-    type: "object"
-    properties:
-      bits:
-        type: "string"
-      chainwork:
-        type: "string"
-      confirmations:
-        type: "integer"
-      difficulty:
-        type: "number"
-      hash:
-        type: "string"
-      height:
-        type: "integer"
-      mediantime:
-        type: "integer"
-      merkleroot:
-        type: "string"
-      nTx:
-        type: "integer"
-      nonce:
-        type: "integer"
-      previousblockhash:
-        type: "string"
-      size:
-        type: "integer"
-      strippedSize:
-        type: "integer"
-      time:
-        type: "integer"
-      tx:
-        type: "array"
-        description: "Txns will be stored in a separate collection in the DB"
-        items:
-          $ref: "#/definitions/rpc.BtcTx"
-      version:
-        type: "integer"
-      versionHex:
-        type: "string"
-      weight:
-        type: "integer"
-    example:
-      mediantime: 5
-      tx:
-      - vsize: 6
-        locktime: 1
-        fee: 4.1456080298839363962315474054776132106781005859375
-        index: 7
-        txid: "txid"
-        weight: 8
-        version: 1
-        blockheight: 2
-        vout:
-        - scriptPubKey:
-            address: "address"
-            asm: "asm"
-            hex: "hex"
-            type: "type"
-            desc: "desc"
-          rune_holdings:
-          - amount: {}
-            rune_id: "rune_id"
-          - amount: {}
-            rune_id: "rune_id"
-          value: 9.3693102714106686335071572102606296539306640625
-          "n": 9
-        - scriptPubKey:
-            address: "address"
-            asm: "asm"
-            hex: "hex"
-            type: "type"
-            desc: "desc"
-          rune_holdings:
-          - amount: {}
-            rune_id: "rune_id"
-          - amount: {}
-            rune_id: "rune_id"
-          value: 9.3693102714106686335071572102606296539306640625
-          "n": 9
-        size: 1
-        hex: "hex"
-        vin:
-        - sequence: 4
-          coinbase: "coinbase"
-          prevout:
-            scriptPubKey:
-              address: "address"
-              asm: "asm"
-              hex: "hex"
-              type: "type"
-              desc: "desc"
-            populated: true
-            rune_holdings:
-            - amount: {}
-              rune_id: "rune_id"
-            - amount: {}
-              rune_id: "rune_id"
-            value: 1.173074250955943309548956676735542714595794677734375
-            "n": 7
-            height: 6
-          scriptSig:
-            asm: "asm"
-            hex: "hex"
-          txid: "txid"
-          txinwitness:
-          - "txinwitness"
-          - "txinwitness"
-          vout: 5
-        - sequence: 4
-          coinbase: "coinbase"
-          prevout:
-            scriptPubKey:
-              address: "address"
-              asm: "asm"
-              hex: "hex"
-              type: "type"
-              desc: "desc"
-            populated: true
-            rune_holdings:
-            - amount: {}
-              rune_id: "rune_id"
-            - amount: {}
-              rune_id: "rune_id"
-            value: 1.173074250955943309548956676735542714595794677734375
-            "n": 7
-            height: 6
-          scriptSig:
-            asm: "asm"
-            hex: "hex"
-          txid: "txid"
-          txinwitness:
-          - "txinwitness"
-          - "txinwitness"
-          vout: 5
-        hash: "hash"
-      - vsize: 6
-        locktime: 1
-        fee: 4.1456080298839363962315474054776132106781005859375
-        index: 7
-        txid: "txid"
-        weight: 8
-        version: 1
-        blockheight: 2
-        vout:
-        - scriptPubKey:
-            address: "address"
-            asm: "asm"
-            hex: "hex"
-            type: "type"
-            desc: "desc"
-          rune_holdings:
-          - amount: {}
-            rune_id: "rune_id"
-          - amount: {}
-            rune_id: "rune_id"
-          value: 9.3693102714106686335071572102606296539306640625
-          "n": 9
-        - scriptPubKey:
-            address: "address"
-            asm: "asm"
-            hex: "hex"
-            type: "type"
-            desc: "desc"
-          rune_holdings:
-          - amount: {}
-            rune_id: "rune_id"
-          - amount: {}
-            rune_id: "rune_id"
-          value: 9.3693102714106686335071572102606296539306640625
-          "n": 9
-        size: 1
-        hex: "hex"
-        vin:
-        - sequence: 4
-          coinbase: "coinbase"
-          prevout:
-            scriptPubKey:
-              address: "address"
-              asm: "asm"
-              hex: "hex"
-              type: "type"
-              desc: "desc"
-            populated: true
-            rune_holdings:
-            - amount: {}
-              rune_id: "rune_id"
-            - amount: {}
-              rune_id: "rune_id"
-            value: 1.173074250955943309548956676735542714595794677734375
-            "n": 7
-            height: 6
-          scriptSig:
-            asm: "asm"
-            hex: "hex"
-          txid: "txid"
-          txinwitness:
-          - "txinwitness"
-          - "txinwitness"
-          vout: 5
-        - sequence: 4
-          coinbase: "coinbase"
-          prevout:
-            scriptPubKey:
-              address: "address"
-              asm: "asm"
-              hex: "hex"
-              type: "type"
-              desc: "desc"
-            populated: true
-            rune_holdings:
-            - amount: {}
-              rune_id: "rune_id"
-            - amount: {}
-              rune_id: "rune_id"
-            value: 1.173074250955943309548956676735542714595794677734375
-            "n": 7
-            height: 6
-          scriptSig:
-            asm: "asm"
-            hex: "hex"
-          txid: "txid"
-          txinwitness:
-          - "txinwitness"
-          - "txinwitness"
-          vout: 5
-        hash: "hash"
-      previousblockhash: "previousblockhash"
-      bits: "bits"
-      weight: 6
-      strippedSize: 9
-      versionHex: "versionHex"
-      confirmations: 0
-      nonce: 2
-      version: 9
-      difficulty: 6.02745618307040320615897144307382404804229736328125
-      chainwork: "chainwork"
-      nTx: 5
-      size: 7
-      merkleroot: "merkleroot"
-      time: 3
-      hash: "hash"
-      height: 1
-  rpc.BtcTx:
-    type: "object"
-    properties:
-      blockheight:
-        type: "integer"
-      fee:
-        type: "number"
-      hash:
-        type: "string"
-      hex:
-        type: "string"
-      index:
-        type: "integer"
-      locktime:
-        type: "integer"
-      size:
-        type: "integer"
-      txid:
-        type: "string"
-      version:
-        type: "integer"
-      vin:
-        type: "array"
-        description: "Vin will be stored in a separate collection in the DB"
-        items:
-          $ref: "#/definitions/rpc.Vin"
-      vout:
-        type: "array"
-        description: "Vout will be stored in a separate collection in the DB"
-        items:
-          $ref: "#/definitions/rpc.Vout"
-      vsize:
-        type: "integer"
-      weight:
-        type: "integer"
-    example:
-      vsize: 6
-      locktime: 1
-      fee: 4.1456080298839363962315474054776132106781005859375
-      index: 7
-      txid: "txid"
-      weight: 8
-      version: 1
-      blockheight: 2
-      vout:
-      - scriptPubKey:
-          address: "address"
-          asm: "asm"
-          hex: "hex"
-          type: "type"
-          desc: "desc"
-        rune_holdings:
-        - amount: {}
-          rune_id: "rune_id"
-        - amount: {}
-          rune_id: "rune_id"
-        value: 9.3693102714106686335071572102606296539306640625
-        "n": 9
-      - scriptPubKey:
-          address: "address"
-          asm: "asm"
-          hex: "hex"
-          type: "type"
-          desc: "desc"
-        rune_holdings:
-        - amount: {}
-          rune_id: "rune_id"
-        - amount: {}
-          rune_id: "rune_id"
-        value: 9.3693102714106686335071572102606296539306640625
-        "n": 9
-      size: 1
-      hex: "hex"
-      vin:
-      - sequence: 4
-        coinbase: "coinbase"
-        prevout:
-          scriptPubKey:
-            address: "address"
-            asm: "asm"
-            hex: "hex"
-            type: "type"
-            desc: "desc"
-          populated: true
-          rune_holdings:
-          - amount: {}
-            rune_id: "rune_id"
-          - amount: {}
-            rune_id: "rune_id"
-          value: 1.173074250955943309548956676735542714595794677734375
-          "n": 7
-          height: 6
-        scriptSig:
-          asm: "asm"
-          hex: "hex"
-        txid: "txid"
-        txinwitness:
-        - "txinwitness"
-        - "txinwitness"
-        vout: 5
-      - sequence: 4
-        coinbase: "coinbase"
-        prevout:
-          scriptPubKey:
-            address: "address"
-            asm: "asm"
-            hex: "hex"
-            type: "type"
-            desc: "desc"
-          populated: true
-          rune_holdings:
-          - amount: {}
-            rune_id: "rune_id"
-          - amount: {}
-            rune_id: "rune_id"
-          value: 1.173074250955943309548956676735542714595794677734375
-          "n": 7
-          height: 6
-        scriptSig:
-          asm: "asm"
-          hex: "hex"
-        txid: "txid"
-        txinwitness:
-        - "txinwitness"
-        - "txinwitness"
-        vout: 5
-      hash: "hash"
-  rpc.PrevOut:
-    type: "object"
-    properties:
-      height:
-        type: "integer"
-      "n":
-        type: "integer"
-      populated:
-        type: "boolean"
-        description: "* The populated field is used to determine if the prevout has\
-          \ been populated from our code or automatically by the RPC on fetch"
-      rune_holdings:
-        type: "array"
-        items:
-          $ref: "#/definitions/rpc.UtxoRune"
-      scriptPubKey:
-        $ref: "#/definitions/rpc.ScriptPubKey"
-      value:
-        type: "number"
-    example:
-      scriptPubKey:
-        address: "address"
-        asm: "asm"
-        hex: "hex"
-        type: "type"
-        desc: "desc"
-      populated: true
-      rune_holdings:
-      - amount: {}
-        rune_id: "rune_id"
-      - amount: {}
-        rune_id: "rune_id"
-      value: 1.173074250955943309548956676735542714595794677734375
-      "n": 7
-      height: 6
-  rpc.ScriptPubKey:
-    type: "object"
-    properties:
-      address:
-        type: "string"
-      asm:
-        type: "string"
-      desc:
-        type: "string"
-      hex:
-        type: "string"
-      type:
-        type: "string"
-    example:
-      address: "address"
-      asm: "asm"
-      hex: "hex"
-      type: "type"
-      desc: "desc"
-  rpc.ScriptSig:
-    type: "object"
-    properties:
-      asm:
-        type: "string"
-      hex:
-        type: "string"
-    example:
-      asm: "asm"
-      hex: "hex"
-  rpc.UtxoRune:
-    type: "object"
-    properties:
-      amount:
-        $ref: "#/definitions/big.Int"
-      rune_id:
-        type: "string"
-    example:
-      amount: {}
-      rune_id: "rune_id"
-  rpc.Vin:
-    type: "object"
-    properties:
-      coinbase:
-        type: "string"
-      prevout:
-        $ref: "#/definitions/rpc.PrevOut"
-      scriptSig:
-        $ref: "#/definitions/rpc.ScriptSig"
-      sequence:
-        type: "integer"
-      txid:
-        type: "string"
-      txinwitness:
-        type: "array"
-        items:
-          type: "string"
-      vout:
-        type: "integer"
-    example:
-      sequence: 4
-      coinbase: "coinbase"
-      prevout:
-        scriptPubKey:
-          address: "address"
-          asm: "asm"
-          hex: "hex"
-          type: "type"
-          desc: "desc"
-        populated: true
-        rune_holdings:
-        - amount: {}
-          rune_id: "rune_id"
-        - amount: {}
-          rune_id: "rune_id"
-        value: 1.173074250955943309548956676735542714595794677734375
-        "n": 7
-        height: 6
-      scriptSig:
-        asm: "asm"
-        hex: "hex"
-      txid: "txid"
-      txinwitness:
-      - "txinwitness"
-      - "txinwitness"
-      vout: 5
-  rpc.Vout:
-    type: "object"
-    properties:
-      "n":
-        type: "integer"
-      rune_holdings:
-        type: "array"
-        items:
-          $ref: "#/definitions/rpc.UtxoRune"
-      scriptPubKey:
-        $ref: "#/definitions/rpc.ScriptPubKey"
-      value:
-        type: "number"
-    example:
-      scriptPubKey:
-        address: "address"
-        asm: "asm"
-        hex: "hex"
-        type: "type"
-        desc: "desc"
-      rune_holdings:
-      - amount: {}
-        rune_id: "rune_id"
-      - amount: {}
-        rune_id: "rune_id"
-      value: 9.3693102714106686335071572102606296539306640625
-      "n": 9
-  store.TransactionDocument:
-    type: "object"
-    properties:
-      address:
-        type: "string"
-        example: "1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2"
-      blockheight:
-        type: "integer"
-        example: 100
-      fee:
-        type: "number"
-        example: 0.001
-      hash:
-        type: "string"
-        example: "0000000000000000000000000000000000000000000000000000000000000000"
-      hex:
-        type: "string"
-        example: "0000000000000000000000000000000000000000000000000000000000000000"
-      index:
-        type: "integer"
-        example: 0
-      locktime:
-        type: "integer"
-        example: 0
-      size:
-        type: "integer"
-        example: 100
-      txid:
-        type: "string"
-        example: "8631dedfc6c46e6f923cd30e7e71cff541f205887b5cde7d0e1119121e3c563f"
-      version:
-        type: "integer"
-        example: 1
-      vsize:
-        type: "integer"
-        example: 100
-      weight:
-        type: "integer"
-        example: 100
-    description: "Detailed information about a transaction"
   inline_response_200:
     type: "object"
     properties:
@@ -1742,7 +1764,7 @@ definitions:
     type: "object"
     properties:
       data:
-        $ref: "#/definitions/rpc.Block"
+        $ref: "#/definitions/github_com_satstream_ss-utils_rpc.Block"
       github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
         $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
     example:
@@ -1970,7 +1992,7 @@ definitions:
     type: "object"
     properties:
       data:
-        $ref: "#/definitions/rpc.BtcTx"
+        $ref: "#/definitions/github_com_satstream_ss-utils_rpc.BtcTx"
       github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse:
         $ref: "#/definitions/github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse"
     example:
@@ -2074,7 +2096,7 @@ definitions:
     type: "object"
     properties:
       data:
-        $ref: "#/definitions/rpc.BtcTx"
+        $ref: "#/definitions/github_com_satstream_ss-utils_rpc.BtcTx"
       github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse:
         $ref: "#/definitions/github_com_satstream_ss-api_server_api_blocks_responses.BaseResponse"
     example:

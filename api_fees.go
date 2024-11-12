@@ -33,7 +33,7 @@ Get recommended fees for Bitcoin transactions
 
 @return InlineResponse2007
 */
-func (a *FeesApiService) FeesGet(ctx context.Context) (InlineResponse2007, *http.Response, error) {
+func (a *FeesApiService) GetRecommendedFees(ctx context.Context) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}

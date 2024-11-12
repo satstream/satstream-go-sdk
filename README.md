@@ -22,26 +22,26 @@ All URIs are relative to *https://api.satstream.io/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AddressesApi* | [**AddressesAddressBalanceGet**](docs/AddressesApi.md#addressesaddressbalanceget) | **Get** /addresses/{address}/balance | Get address balance
-*AddressesApi* | [**AddressesAddressBalanceTimeframeGet**](docs/AddressesApi.md#addressesaddressbalancetimeframeget) | **Get** /addresses/{address}/balance/timeframe | Get address timeframe balance
-*AddressesApi* | [**AddressesAddressRunesGet**](docs/AddressesApi.md#addressesaddressrunesget) | **Get** /addresses/{address}/runes | Get address runes balance list
-*AddressesApi* | [**AddressesAddressRunesRuneidGet**](docs/AddressesApi.md#addressesaddressrunesruneidget) | **Get** /addresses/{address}/runes/{runeid} | Get address rune balance
-*AddressesApi* | [**AddressesAddressUtxosGet**](docs/AddressesApi.md#addressesaddressutxosget) | **Get** /addresses/{address}/utxos | Get address non-inscription UTXOs
-*BlocksApi* | [**BlocksCurrentHeightGet**](docs/BlocksApi.md#blockscurrentheightget) | **Get** /blocks/current-height | Get current block height
-*BlocksApi* | [**BlocksHashHashGet**](docs/BlocksApi.md#blockshashhashget) | **Get** /blocks/hash/{hash} | Get block by hash
-*BlocksApi* | [**BlocksHeightGet**](docs/BlocksApi.md#blocksheightget) | **Get** /blocks/{height} | Get block info
-*BlocksApi* | [**BlocksHeightTransactionsGet**](docs/BlocksApi.md#blocksheighttransactionsget) | **Get** /blocks/{height}/transactions | Get block transactions
-*FeesApi* | [**FeesGet**](docs/FeesApi.md#feesget) | **Get** /fees | Get recommended fees
-*MempoolApi* | [**MempoolAddressesAddressTransactionsGet**](docs/MempoolApi.md#mempooladdressesaddresstransactionsget) | **Get** /mempool/addresses/{address}/transactions | Get address mempool transactions
-*MempoolApi* | [**MempoolTransactionsGet**](docs/MempoolApi.md#mempooltransactionsget) | **Get** /mempool/transactions | Get mempool transactions
-*MempoolApi* | [**MempoolTransactionsTxidGet**](docs/MempoolApi.md#mempooltransactionstxidget) | **Get** /mempool/transactions/{txid} | Get mempool transaction info
-*RunesApi* | [**RunesGet**](docs/RunesApi.md#runesget) | **Get** /runes | Get runes info list
-*RunesApi* | [**RunesRuneIdGet**](docs/RunesApi.md#runesruneidget) | **Get** /runes/{runeId} | Get rune info
-*RunesApi* | [**RunesRuneIdHoldersGet**](docs/RunesApi.md#runesruneidholdersget) | **Get** /runes/{runeId}/holders | Get rune holders
-*TransactionsApi* | [**IndexerTxHashGet**](docs/TransactionsApi.md#indexertxhashget) | **Get** /indexer/tx/{hash} | Get transaction
-*TransactionsApi* | [**TransactionsBroadcastPost**](docs/TransactionsApi.md#transactionsbroadcastpost) | **Post** /transactions/broadcast | Broadcast transaction
-*TransactionsApi* | [**TransactionsTxidGet**](docs/TransactionsApi.md#transactionstxidget) | **Get** /transactions/{txid} | Get transaction info
-*TransactionsApi* | [**TransactionsTxidInputsGet**](docs/TransactionsApi.md#transactionstxidinputsget) | **Get** /transactions/{txid}/inputs | Get transaction inputs
+*AddressesApi* | [**GetAddressBalance**](docs/AddressesApi.md#getaddressbalance) | **Get** /addresses/{address}/balance | Get address balance
+*AddressesApi* | [**GetAddressNonInscriptionUtxos**](docs/AddressesApi.md#getaddressnoninscriptionutxos) | **Get** /addresses/{address}/utxos | Get address non-inscription UTXOs
+*AddressesApi* | [**GetAddressRuneBalance**](docs/AddressesApi.md#getaddressrunebalance) | **Get** /addresses/{address}/runes/{runeid} | Get address rune balance
+*AddressesApi* | [**GetAddressRunesBalanceList**](docs/AddressesApi.md#getaddressrunesbalancelist) | **Get** /addresses/{address}/runes | Get address runes balance list
+*AddressesApi* | [**GetAddressTimeframeBalance**](docs/AddressesApi.md#getaddresstimeframebalance) | **Get** /addresses/{address}/balance/timeframe | Get address timeframe balance
+*BlocksApi* | [**GetBlockByHash**](docs/BlocksApi.md#getblockbyhash) | **Get** /blocks/hash/{hash} | Get block by hash
+*BlocksApi* | [**GetBlockInfo**](docs/BlocksApi.md#getblockinfo) | **Get** /blocks/{height} | Get block info
+*BlocksApi* | [**GetBlockTransactions**](docs/BlocksApi.md#getblocktransactions) | **Get** /blocks/{height}/transactions | Get block transactions
+*BlocksApi* | [**GetCurrentBlockHeight**](docs/BlocksApi.md#getcurrentblockheight) | **Get** /blocks/current-height | Get current block height
+*FeesApi* | [**GetRecommendedFees**](docs/FeesApi.md#getrecommendedfees) | **Get** /fees | Get recommended fees
+*MempoolApi* | [**GetAddressMempoolTransactions**](docs/MempoolApi.md#getaddressmempooltransactions) | **Get** /mempool/addresses/{address}/transactions | Get address mempool transactions
+*MempoolApi* | [**GetMempoolTransactionInfo**](docs/MempoolApi.md#getmempooltransactioninfo) | **Get** /mempool/transactions/{txid} | Get mempool transaction info
+*MempoolApi* | [**GetMempoolTransactions**](docs/MempoolApi.md#getmempooltransactions) | **Get** /mempool/transactions | Get mempool transactions
+*RunesApi* | [**GetRunesHolders**](docs/RunesApi.md#getrunesholders) | **Get** /runes/{runeId}/holders | Get rune holders
+*RunesApi* | [**GetRunesInfo**](docs/RunesApi.md#getrunesinfo) | **Get** /runes/{runeId} | Get rune info
+*RunesApi* | [**GetRunesInfoList**](docs/RunesApi.md#getrunesinfolist) | **Get** /runes | Get runes info list
+*TransactionsApi* | [**BroadcastTransaction**](docs/TransactionsApi.md#broadcasttransaction) | **Post** /transactions/broadcast | Broadcast transaction
+*TransactionsApi* | [**GetTransaction**](docs/TransactionsApi.md#gettransaction) | **Get** /indexer/tx/{hash} | Get transaction
+*TransactionsApi* | [**GetTransactionInfo**](docs/TransactionsApi.md#gettransactioninfo) | **Get** /transactions/{txid} | Get transaction info
+*TransactionsApi* | [**GetTransactionInputs**](docs/TransactionsApi.md#gettransactioninputs) | **Get** /transactions/{txid}/inputs | Get transaction inputs
 
 
 ## Documentation For Models
@@ -52,6 +52,17 @@ Class | Method | HTTP request | Description
  - [GithubComSatstreamSsApiServerApiRunesResponsesBaseResponse](docs/GithubComSatstreamSsApiServerApiRunesResponsesBaseResponse.md)
  - [GithubComSatstreamSsApiServerApiRunesResponsesErrorResponse](docs/GithubComSatstreamSsApiServerApiRunesResponsesErrorResponse.md)
  - [GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse](docs/GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse.md)
+ - [GithubComSatstreamSsUtilsOrdinalsTerms](docs/GithubComSatstreamSsUtilsOrdinalsTerms.md)
+ - [GithubComSatstreamSsUtilsOrdinalsTermsRange](docs/GithubComSatstreamSsUtilsOrdinalsTermsRange.md)
+ - [GithubComSatstreamSsUtilsRpcBlock](docs/GithubComSatstreamSsUtilsRpcBlock.md)
+ - [GithubComSatstreamSsUtilsRpcBtcTx](docs/GithubComSatstreamSsUtilsRpcBtcTx.md)
+ - [GithubComSatstreamSsUtilsRpcPrevOut](docs/GithubComSatstreamSsUtilsRpcPrevOut.md)
+ - [GithubComSatstreamSsUtilsRpcScriptPubKey](docs/GithubComSatstreamSsUtilsRpcScriptPubKey.md)
+ - [GithubComSatstreamSsUtilsRpcScriptSig](docs/GithubComSatstreamSsUtilsRpcScriptSig.md)
+ - [GithubComSatstreamSsUtilsRpcUtxoRune](docs/GithubComSatstreamSsUtilsRpcUtxoRune.md)
+ - [GithubComSatstreamSsUtilsRpcVin](docs/GithubComSatstreamSsUtilsRpcVin.md)
+ - [GithubComSatstreamSsUtilsRpcVout](docs/GithubComSatstreamSsUtilsRpcVout.md)
+ - [GithubComSatstreamSsUtilsStoreTransactionDocument](docs/GithubComSatstreamSsUtilsStoreTransactionDocument.md)
  - [InlineResponse200](docs/InlineResponse200.md)
  - [InlineResponse2001](docs/InlineResponse2001.md)
  - [InlineResponse20010](docs/InlineResponse20010.md)
@@ -65,8 +76,6 @@ Class | Method | HTTP request | Description
  - [InlineResponse2007](docs/InlineResponse2007.md)
  - [InlineResponse2008](docs/InlineResponse2008.md)
  - [InlineResponse2009](docs/InlineResponse2009.md)
- - [OrdinalsTerms](docs/OrdinalsTerms.md)
- - [OrdinalsTermsRange](docs/OrdinalsTermsRange.md)
  - [ResponsesBlockRange](docs/ResponsesBlockRange.md)
  - [ResponsesGetAddressBalance](docs/ResponsesGetAddressBalance.md)
  - [ResponsesGetAddressNonInscriptionUtxoData](docs/ResponsesGetAddressNonInscriptionUtxoData.md)
@@ -81,15 +90,6 @@ Class | Method | HTTP request | Description
  - [ResponsesRuneInfo](docs/ResponsesRuneInfo.md)
  - [ResponsesSendRawTransaction](docs/ResponsesSendRawTransaction.md)
  - [ResponsesTxInfo](docs/ResponsesTxInfo.md)
- - [RpcBlock](docs/RpcBlock.md)
- - [RpcBtcTx](docs/RpcBtcTx.md)
- - [RpcPrevOut](docs/RpcPrevOut.md)
- - [RpcScriptPubKey](docs/RpcScriptPubKey.md)
- - [RpcScriptSig](docs/RpcScriptSig.md)
- - [RpcUtxoRune](docs/RpcUtxoRune.md)
- - [RpcVin](docs/RpcVin.md)
- - [RpcVout](docs/RpcVout.md)
- - [StoreTransactionDocument](docs/StoreTransactionDocument.md)
 
 
 ## Documentation For Authorization
