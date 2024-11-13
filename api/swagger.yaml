@@ -200,7 +200,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/responses.GetAddressNonInscriptionUTXOData"
+            $ref: "#/definitions/responses.GetAddressNonInscriptionUTXO"
         "400":
           description: "Bad Request"
           schema:
@@ -1475,6 +1475,48 @@ definitions:
           - "txinwitness"
           vout: 9
         hash: "hash"
+  responses.GetAddressNonInscriptionUTXO:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data:
+        $ref: "#/definitions/responses.GetAddressNonInscriptionUTXOData"
+      msg:
+        type: "string"
+    example:
+      msg: "msg"
+      code: 0
+      data:
+        cursor: 6
+        totalUnconfirmed: 2
+        utxo:
+        - satoshi: {}
+          scriptPk: "scriptPk"
+          address: "address"
+          codeType: 9
+          isSpent: true
+          scriptType: "scriptType"
+          txid: "txid"
+          idx: 2
+          isOpInRBF: true
+          height: 3
+          vout: 4
+        - satoshi: {}
+          scriptPk: "scriptPk"
+          address: "address"
+          codeType: 9
+          isSpent: true
+          scriptType: "scriptType"
+          txid: "txid"
+          idx: 2
+          isOpInRBF: true
+          height: 3
+          vout: 4
+        total: 1
+        totalUnconfirmedSpend: 7
+        totalRunes: 5
+        totalConfirmed: 5
   responses.GetAddressNonInscriptionUTXOData:
     type: "object"
     properties:
@@ -1495,35 +1537,35 @@ definitions:
         items:
           $ref: "#/definitions/responses.NonInscriptionUTXO"
     example:
-      cursor: 0
-      totalUnconfirmed: 5
+      cursor: 6
+      totalUnconfirmed: 2
       utxo:
       - satoshi: {}
         scriptPk: "scriptPk"
         address: "address"
-        codeType: 7
+        codeType: 9
         isSpent: true
         scriptType: "scriptType"
         txid: "txid"
-        idx: 3
+        idx: 2
         isOpInRBF: true
-        height: 9
-        vout: 2
+        height: 3
+        vout: 4
       - satoshi: {}
         scriptPk: "scriptPk"
         address: "address"
-        codeType: 7
+        codeType: 9
         isSpent: true
         scriptType: "scriptType"
         txid: "txid"
-        idx: 3
+        idx: 2
         isOpInRBF: true
-        height: 9
-        vout: 2
-      total: 6
-      totalUnconfirmedSpend: 2
+        height: 3
+        vout: 4
+      total: 1
+      totalUnconfirmedSpend: 7
       totalRunes: 5
-      totalConfirmed: 1
+      totalConfirmed: 5
   responses.GetAddressRuneBalance:
     type: "object"
     properties:
@@ -2858,14 +2900,14 @@ definitions:
       satoshi: {}
       scriptPk: "scriptPk"
       address: "address"
-      codeType: 7
+      codeType: 9
       isSpent: true
       scriptType: "scriptType"
       txid: "txid"
-      idx: 3
+      idx: 2
       isOpInRBF: true
-      height: 9
-      vout: 2
+      height: 3
+      vout: 4
   responses.PaginationInfo:
     type: "object"
     properties:

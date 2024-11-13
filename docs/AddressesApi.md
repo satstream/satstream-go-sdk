@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAddressNonInscriptionUtxos**
-> ResponsesGetAddressNonInscriptionUtxoData GetAddressNonInscriptionUtxos(ctx, address)
+> ResponsesGetAddressNonInscriptionUtxo GetAddressNonInscriptionUtxos(ctx, address)
 Get address non-inscription UTXOs
 
 Get all non-inscription UTXOs for a Bitcoin address
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponsesGetAddressNonInscriptionUtxoData**](responses.GetAddressNonInscriptionUTXOData.md)
+[**ResponsesGetAddressNonInscriptionUtxo**](responses.GetAddressNonInscriptionUTXO.md)
 
 ### Authorization
 

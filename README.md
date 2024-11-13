@@ -65,6 +65,7 @@ Class | Method | HTTP request | Description
  - [ResponsesGetAddressBalance](docs/ResponsesGetAddressBalance.md)
  - [ResponsesGetAddressBalanceData](docs/ResponsesGetAddressBalanceData.md)
  - [ResponsesGetAddressMempoolTxs](docs/ResponsesGetAddressMempoolTxs.md)
+ - [ResponsesGetAddressNonInscriptionUtxo](docs/ResponsesGetAddressNonInscriptionUtxo.md)
  - [ResponsesGetAddressNonInscriptionUtxoData](docs/ResponsesGetAddressNonInscriptionUtxoData.md)
  - [ResponsesGetAddressRuneBalance](docs/ResponsesGetAddressRuneBalance.md)
  - [ResponsesGetAddressRuneBalanceData](docs/ResponsesGetAddressRuneBalanceData.md)

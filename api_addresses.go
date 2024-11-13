@@ -145,15 +145,15 @@ Get all non-inscription UTXOs for a Bitcoin address
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address
 
-@return ResponsesGetAddressNonInscriptionUtxoData
+@return ResponsesGetAddressNonInscriptionUtxo
 */
-func (a *AddressesApiService) GetAddressNonInscriptionUtxos(ctx context.Context, address string) (ResponsesGetAddressNonInscriptionUtxoData, *http.Response, error) {
+func (a *AddressesApiService) GetAddressNonInscriptionUtxos(ctx context.Context, address string) (ResponsesGetAddressNonInscriptionUtxo, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue ResponsesGetAddressNonInscriptionUtxoData
+		localVarReturnValue ResponsesGetAddressNonInscriptionUtxo
 	)
 
 	// create path and map variables
@@ -223,7 +223,7 @@ func (a *AddressesApiService) GetAddressNonInscriptionUtxos(ctx context.Context,
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v ResponsesGetAddressNonInscriptionUtxoData
+			var v ResponsesGetAddressNonInscriptionUtxo
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
