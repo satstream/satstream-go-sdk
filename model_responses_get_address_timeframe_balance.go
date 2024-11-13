@@ -11,5 +11,7 @@
 package swagger
 
 type ResponsesGetAddressTimeframeBalance struct {
-	Items []ResponsesGetAddressTimeframeBalanceItem `json:"items,omitempty"`
+	Code int32 `json:"code,omitempty"`
+	Data *ResponsesGetAddressTimeframeBalanceData `json:"data,omitempty"`
+	Msg string `json:"msg,omitempty"`
 }

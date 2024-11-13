@@ -11,5 +11,7 @@
 package swagger
 
 type ResponsesSendRawTransaction struct {
-	TxHash string `json:"tx_hash,omitempty"`
+	Code int32 `json:"code,omitempty"`
+	Data *ResponsesSendRawTransactionData `json:"data,omitempty"`
+	Msg string `json:"msg,omitempty"`
 }

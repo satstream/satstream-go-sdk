@@ -7,11 +7,10 @@ Method | HTTP request | Description
 [**BroadcastTransaction**](TransactionsApi.md#BroadcastTransaction) | **Post** /transactions/broadcast | Broadcast transaction
 [**GetTransaction**](TransactionsApi.md#GetTransaction) | **Get** /indexer/tx/{hash} | Get transaction
 [**GetTransactionInfo**](TransactionsApi.md#GetTransactionInfo) | **Get** /transactions/{txid} | Get transaction info
-[**GetTransactionInputs**](TransactionsApi.md#GetTransactionInputs) | **Get** /transactions/{txid}/inputs | Get transaction inputs
 
 
 # **BroadcastTransaction**
-> InlineResponse2007 BroadcastTransaction(ctx, transaction)
+> ResponsesSendRawTransaction BroadcastTransaction(ctx, transaction)
 Broadcast transaction
 
 Broadcast a raw transaction to the Bitcoin network
@@ -25,7 +24,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](inline_response_200_7.md)
+[**ResponsesSendRawTransaction**](responses.SendRawTransaction.md)
 
 ### Authorization
 
@@ -39,7 +38,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetTransaction**
-> InlineResponse2005 GetTransaction(ctx, hash)
+> ResponsesGetTransaction GetTransaction(ctx, hash)
 Get transaction
 
 Get a transaction by its hash
@@ -53,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](inline_response_200_5.md)
+[**ResponsesGetTransaction**](responses.GetTransaction.md)
 
 ### Authorization
 
@@ -67,7 +66,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetTransactionInfo**
-> InlineResponse2008 GetTransactionInfo(ctx, txid)
+> ResponsesGetTxInfo GetTransactionInfo(ctx, txid)
 Get transaction info
 
 Get detailed information about a specific transaction
@@ -81,35 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](inline_response_200_8.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetTransactionInputs**
-> []interface{} GetTransactionInputs(ctx, txid)
-Get transaction inputs
-
-Get the inputs of a specific transaction
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **txid** | **string**| Transaction ID | 
-
-### Return type
-
-**[]interface{}**
+[**ResponsesGetTxInfo**](responses.GetTxInfo.md)
 
 ### Authorization
 

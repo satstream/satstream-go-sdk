@@ -11,6 +11,6 @@
 package swagger
 
 type InlineResponse2001 struct {
-	Data *ResponsesGetAddressTimeframeBalance `json:"data,omitempty"`
-	GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse *GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse `json:"github_com_satstream_ss-api_server_api_addresses_responses.BaseResponse,omitempty"`
+	Data []ResponsesRuneInfo `json:"data,omitempty"`
+	GithubComSatstreamSsApiServerApiRunesResponsesBaseResponse *GithubComSatstreamSsApiServerApiRunesResponsesBaseResponse `json:"github_com_satstream_ss-api_server_api_runes_responses.BaseResponse,omitempty"`
 }

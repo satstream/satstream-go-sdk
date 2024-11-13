@@ -34,15 +34,15 @@ Get a list of addresses holding a specific rune
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param runeId Rune ID
 
-@return []interface{}
+@return ResponsesGetRuneHolders
 */
-func (a *RunesApiService) GetRunesHolders(ctx context.Context, runeId string) ([]interface{}, *http.Response, error) {
+func (a *RunesApiService) GetRunesHolders(ctx context.Context, runeId string) (ResponsesGetRuneHolders, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue []interface{}
+		localVarReturnValue ResponsesGetRuneHolders
 	)
 
 	// create path and map variables
@@ -112,7 +112,7 @@ func (a *RunesApiService) GetRunesHolders(ctx context.Context, runeId string) ([
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []interface{}
+			var v ResponsesGetRuneHolders
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -123,7 +123,7 @@ func (a *RunesApiService) GetRunesHolders(ctx context.Context, runeId string) ([
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesErrorResponse
+			var v GithubComSatstreamSsApiServerApiRunesResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -145,15 +145,15 @@ Get detailed information about a specific rune
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param runeId Rune ID
 
-@return interface{}
+@return ResponsesGetRuneInfo
 */
-func (a *RunesApiService) GetRunesInfo(ctx context.Context, runeId string) (interface{}, *http.Response, error) {
+func (a *RunesApiService) GetRunesInfo(ctx context.Context, runeId string) (ResponsesGetRuneInfo, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue interface{}
+		localVarReturnValue ResponsesGetRuneInfo
 	)
 
 	// create path and map variables
@@ -223,7 +223,7 @@ func (a *RunesApiService) GetRunesInfo(ctx context.Context, runeId string) (inte
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v interface{}
+			var v ResponsesGetRuneInfo
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -234,7 +234,7 @@ func (a *RunesApiService) GetRunesInfo(ctx context.Context, runeId string) (inte
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesErrorResponse
+			var v GithubComSatstreamSsApiServerApiRunesResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -258,7 +258,7 @@ Get information about all runes
      * @param "Page" (optional.Int32) -  Page number (default: 1)
      * @param "PerPage" (optional.Int32) -  Items per page (default: 10)
 
-@return InlineResponse2006
+@return ResponsesGetRunesInfoList
 */
 
 type RunesApiGetRunesInfoListOpts struct { 
@@ -266,13 +266,13 @@ type RunesApiGetRunesInfoListOpts struct {
 	PerPage optional.Int32
 }
 
-func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptionals *RunesApiGetRunesInfoListOpts) (InlineResponse2006, *http.Response, error) {
+func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptionals *RunesApiGetRunesInfoListOpts) (ResponsesGetRunesInfoList, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2006
+		localVarReturnValue ResponsesGetRunesInfoList
 	)
 
 	// create path and map variables
@@ -347,7 +347,7 @@ func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptional
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2006
+			var v ResponsesGetRunesInfoList
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -358,7 +358,7 @@ func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptional
 		}
 		
 		if localVarHttpResponse.StatusCode == 400 {
-			var v ResponsesErrorResponse
+			var v GithubComSatstreamSsApiServerApiRunesResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -369,7 +369,7 @@ func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptional
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v ResponsesErrorResponse
+			var v GithubComSatstreamSsApiServerApiRunesResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

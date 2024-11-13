@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **GetAddressBalance**
-> InlineResponse200 GetAddressBalance(ctx, address)
+> ResponsesGetAddressBalance GetAddressBalance(ctx, address)
 Get address balance
 
 Get the current balance of a Bitcoin address
@@ -26,7 +26,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**ResponsesGetAddressBalance**](responses.GetAddressBalance.md)
 
 ### Authorization
 
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAddressNonInscriptionUtxos**
-> InlineResponse2004 GetAddressNonInscriptionUtxos(ctx, address)
+> ResponsesGetAddressNonInscriptionUtxoData GetAddressNonInscriptionUtxos(ctx, address)
 Get address non-inscription UTXOs
 
 Get all non-inscription UTXOs for a Bitcoin address
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2004**](inline_response_200_4.md)
+[**ResponsesGetAddressNonInscriptionUtxoData**](responses.GetAddressNonInscriptionUTXOData.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAddressRuneBalance**
-> InlineResponse2003 GetAddressRuneBalance(ctx, address, runeid)
+> ResponsesGetAddressRuneBalance GetAddressRuneBalance(ctx, address, runeid)
 Get address rune balance
 
 Get the balance of a specific rune for a Bitcoin address
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](inline_response_200_3.md)
+[**ResponsesGetAddressRuneBalance**](responses.GetAddressRuneBalance.md)
 
 ### Authorization
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAddressRunesBalanceList**
-> InlineResponse2002 GetAddressRunesBalanceList(ctx, address)
+> ResponsesGetAddressRunesBalanceList GetAddressRunesBalanceList(ctx, address)
 Get address runes balance list
 
 Get the balance of all runes for a Bitcoin address
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](inline_response_200_2.md)
+[**ResponsesGetAddressRunesBalanceList**](responses.GetAddressRunesBalanceList.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAddressTimeframeBalance**
-> InlineResponse2001 GetAddressTimeframeBalance(ctx, address, timeframe, optional)
+> ResponsesGetAddressTimeframeBalance GetAddressTimeframeBalance(ctx, address, timeframe, optional)
 Get address timeframe balance
 
 Get the balance of a Bitcoin address for a specific timeframe
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**ResponsesGetAddressTimeframeBalance**](responses.GetAddressTimeframeBalance.md)
 
 ### Authorization
 

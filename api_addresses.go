@@ -34,15 +34,15 @@ Get the current balance of a Bitcoin address
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address
 
-@return InlineResponse200
+@return ResponsesGetAddressBalance
 */
-func (a *AddressesApiService) GetAddressBalance(ctx context.Context, address string) (InlineResponse200, *http.Response, error) {
+func (a *AddressesApiService) GetAddressBalance(ctx context.Context, address string) (ResponsesGetAddressBalance, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse200
+		localVarReturnValue ResponsesGetAddressBalance
 	)
 
 	// create path and map variables
@@ -112,7 +112,7 @@ func (a *AddressesApiService) GetAddressBalance(ctx context.Context, address str
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse200
+			var v ResponsesGetAddressBalance
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -123,7 +123,7 @@ func (a *AddressesApiService) GetAddressBalance(ctx context.Context, address str
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -145,15 +145,15 @@ Get all non-inscription UTXOs for a Bitcoin address
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address
 
-@return InlineResponse2004
+@return ResponsesGetAddressNonInscriptionUtxoData
 */
-func (a *AddressesApiService) GetAddressNonInscriptionUtxos(ctx context.Context, address string) (InlineResponse2004, *http.Response, error) {
+func (a *AddressesApiService) GetAddressNonInscriptionUtxos(ctx context.Context, address string) (ResponsesGetAddressNonInscriptionUtxoData, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2004
+		localVarReturnValue ResponsesGetAddressNonInscriptionUtxoData
 	)
 
 	// create path and map variables
@@ -223,7 +223,29 @@ func (a *AddressesApiService) GetAddressNonInscriptionUtxos(ctx context.Context,
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2004
+			var v ResponsesGetAddressNonInscriptionUtxoData
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		
+		if localVarHttpResponse.StatusCode == 400 {
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesError
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		
+		if localVarHttpResponse.StatusCode == 401 {
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -234,7 +256,7 @@ func (a *AddressesApiService) GetAddressNonInscriptionUtxos(ctx context.Context,
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -257,15 +279,15 @@ Get the balance of a specific rune for a Bitcoin address
  * @param address Bitcoin address
  * @param runeid Rune ID
 
-@return InlineResponse2003
+@return ResponsesGetAddressRuneBalance
 */
-func (a *AddressesApiService) GetAddressRuneBalance(ctx context.Context, address string, runeid string) (InlineResponse2003, *http.Response, error) {
+func (a *AddressesApiService) GetAddressRuneBalance(ctx context.Context, address string, runeid string) (ResponsesGetAddressRuneBalance, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2003
+		localVarReturnValue ResponsesGetAddressRuneBalance
 	)
 
 	// create path and map variables
@@ -336,7 +358,29 @@ func (a *AddressesApiService) GetAddressRuneBalance(ctx context.Context, address
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2003
+			var v ResponsesGetAddressRuneBalance
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		
+		if localVarHttpResponse.StatusCode == 400 {
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesError
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		
+		if localVarHttpResponse.StatusCode == 401 {
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -347,7 +391,7 @@ func (a *AddressesApiService) GetAddressRuneBalance(ctx context.Context, address
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -369,15 +413,15 @@ Get the balance of all runes for a Bitcoin address
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address
 
-@return InlineResponse2002
+@return ResponsesGetAddressRunesBalanceList
 */
-func (a *AddressesApiService) GetAddressRunesBalanceList(ctx context.Context, address string) (InlineResponse2002, *http.Response, error) {
+func (a *AddressesApiService) GetAddressRunesBalanceList(ctx context.Context, address string) (ResponsesGetAddressRunesBalanceList, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2002
+		localVarReturnValue ResponsesGetAddressRunesBalanceList
 	)
 
 	// create path and map variables
@@ -447,7 +491,7 @@ func (a *AddressesApiService) GetAddressRunesBalanceList(ctx context.Context, ad
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2002
+			var v ResponsesGetAddressRunesBalanceList
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -458,7 +502,7 @@ func (a *AddressesApiService) GetAddressRunesBalanceList(ctx context.Context, ad
 		}
 		
 		if localVarHttpResponse.StatusCode == 400 {
-			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -469,7 +513,7 @@ func (a *AddressesApiService) GetAddressRunesBalanceList(ctx context.Context, ad
 		}
 		
 		if localVarHttpResponse.StatusCode == 401 {
-			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -480,7 +524,7 @@ func (a *AddressesApiService) GetAddressRunesBalanceList(ctx context.Context, ad
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -505,20 +549,20 @@ Get the balance of a Bitcoin address for a specific timeframe
  * @param optional nil or *AddressesApiGetAddressTimeframeBalanceOpts - Optional Parameters:
      * @param "Token" (optional.String) -  Token
 
-@return InlineResponse2001
+@return ResponsesGetAddressTimeframeBalance
 */
 
 type AddressesApiGetAddressTimeframeBalanceOpts struct { 
 	Token optional.String
 }
 
-func (a *AddressesApiService) GetAddressTimeframeBalance(ctx context.Context, address string, timeframe string, localVarOptionals *AddressesApiGetAddressTimeframeBalanceOpts) (InlineResponse2001, *http.Response, error) {
+func (a *AddressesApiService) GetAddressTimeframeBalance(ctx context.Context, address string, timeframe string, localVarOptionals *AddressesApiGetAddressTimeframeBalanceOpts) (ResponsesGetAddressTimeframeBalance, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2001
+		localVarReturnValue ResponsesGetAddressTimeframeBalance
 	)
 
 	// create path and map variables
@@ -592,7 +636,7 @@ func (a *AddressesApiService) GetAddressTimeframeBalance(ctx context.Context, ad
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v ResponsesGetAddressTimeframeBalance
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -603,7 +647,7 @@ func (a *AddressesApiService) GetAddressTimeframeBalance(ctx context.Context, ad
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v GithubComSatstreamSsApiServerApiAddressesResponsesBaseResponse
+			var v GithubComSatstreamSsApiServerApiAddressesResponsesError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

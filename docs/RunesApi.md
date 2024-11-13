@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **GetRunesHolders**
-> []interface{} GetRunesHolders(ctx, runeId)
+> ResponsesGetRuneHolders GetRunesHolders(ctx, runeId)
 Get rune holders
 
 Get a list of addresses holding a specific rune
@@ -24,7 +24,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**[]interface{}**
+[**ResponsesGetRuneHolders**](responses.GetRuneHolders.md)
 
 ### Authorization
 
@@ -38,7 +38,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRunesInfo**
-> interface{} GetRunesInfo(ctx, runeId)
+> ResponsesGetRuneInfo GetRunesInfo(ctx, runeId)
 Get rune info
 
 Get detailed information about a specific rune
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**interface{}**
+[**ResponsesGetRuneInfo**](responses.GetRuneInfo.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRunesInfoList**
-> InlineResponse2006 GetRunesInfoList(ctx, optional)
+> ResponsesGetRunesInfoList GetRunesInfoList(ctx, optional)
 Get runes info list
 
 Get information about all runes
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](inline_response_200_6.md)
+[**ResponsesGetRunesInfoList**](responses.GetRunesInfoList.md)
 
 ### Authorization
 

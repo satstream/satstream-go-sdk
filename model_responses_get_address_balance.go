@@ -11,6 +11,7 @@
 package swagger
 
 type ResponsesGetAddressBalance struct {
-	Address string `json:"address,omitempty"`
-	Balance string `json:"balance,omitempty"`
+	Code int32 `json:"code,omitempty"`
+	Data *ResponsesGetAddressBalanceData `json:"data,omitempty"`
+	Msg string `json:"msg,omitempty"`
 }

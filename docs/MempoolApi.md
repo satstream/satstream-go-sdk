@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **GetAddressMempoolTransactions**
-> BlocksAddressMempoolTxs GetAddressMempoolTransactions(ctx, address)
+> ResponsesGetAddressMempoolTxs GetAddressMempoolTransactions(ctx, address)
 Get address mempool transactions
 
 Get all mempool transactions for a specific address
@@ -24,7 +24,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlocksAddressMempoolTxs**](blocks.AddressMempoolTxs.md)
+[**ResponsesGetAddressMempoolTxs**](responses.GetAddressMempoolTxs.md)
 
 ### Authorization
 
@@ -38,7 +38,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMempoolTransactionInfo**
-> BlocksMempoolTxInfo GetMempoolTransactionInfo(ctx, txid)
+> ResponsesGetMempoolTxInfo GetMempoolTransactionInfo(ctx, txid)
 Get mempool transaction info
 
 Get information about a specific transaction in the mempool
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlocksMempoolTxInfo**](blocks.MempoolTxInfo.md)
+[**ResponsesGetMempoolTxInfo**](responses.GetMempoolTxInfo.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMempoolTransactions**
-> BlocksMempoolTransactions GetMempoolTransactions(ctx, )
+> ResponsesGetMempoolTransactions GetMempoolTransactions(ctx, )
 Get mempool transactions
 
 Get all transactions currently in the mempool
@@ -76,7 +76,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BlocksMempoolTransactions**](blocks.MempoolTransactions.md)
+[**ResponsesGetMempoolTransactions**](responses.GetMempoolTransactions.md)
 
 ### Authorization
 
