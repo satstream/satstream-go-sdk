@@ -31,15 +31,15 @@ FeesApiService Get recommended fees
 Get recommended fees for Bitcoin transactions
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
-@return BlocksGetFees
+@return BlocksFees
 */
-func (a *FeesApiService) GetRecommendedFees(ctx context.Context) (BlocksGetFees, *http.Response, error) {
+func (a *FeesApiService) GetRecommendedFees(ctx context.Context) (BlocksFees, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue BlocksGetFees
+		localVarReturnValue BlocksFees
 	)
 
 	// create path and map variables
@@ -95,7 +95,7 @@ func (a *FeesApiService) GetRecommendedFees(ctx context.Context) (BlocksGetFees,
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v BlocksGetFees
+			var v BlocksFees
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

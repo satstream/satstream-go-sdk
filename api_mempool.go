@@ -33,15 +33,15 @@ Get all mempool transactions for a specific address
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address
 
-@return BlocksGetAddressMempoolTransactions
+@return BlocksAddressMempoolTxs
 */
-func (a *MempoolApiService) GetAddressMempoolTransactions(ctx context.Context, address string) (BlocksGetAddressMempoolTransactions, *http.Response, error) {
+func (a *MempoolApiService) GetAddressMempoolTransactions(ctx context.Context, address string) (BlocksAddressMempoolTxs, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue BlocksGetAddressMempoolTransactions
+		localVarReturnValue BlocksAddressMempoolTxs
 	)
 
 	// create path and map variables
@@ -111,7 +111,7 @@ func (a *MempoolApiService) GetAddressMempoolTransactions(ctx context.Context, a
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v BlocksGetAddressMempoolTransactions
+			var v BlocksAddressMempoolTxs
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -144,15 +144,15 @@ Get information about a specific transaction in the mempool
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
 
-@return BlocksGetMempoolTxInfo
+@return BlocksMempoolTxInfo
 */
-func (a *MempoolApiService) GetMempoolTransactionInfo(ctx context.Context, txid string) (BlocksGetMempoolTxInfo, *http.Response, error) {
+func (a *MempoolApiService) GetMempoolTransactionInfo(ctx context.Context, txid string) (BlocksMempoolTxInfo, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue BlocksGetMempoolTxInfo
+		localVarReturnValue BlocksMempoolTxInfo
 	)
 
 	// create path and map variables
@@ -222,7 +222,7 @@ func (a *MempoolApiService) GetMempoolTransactionInfo(ctx context.Context, txid 
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v BlocksGetMempoolTxInfo
+			var v BlocksMempoolTxInfo
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -254,15 +254,15 @@ MempoolApiService Get mempool transactions
 Get all transactions currently in the mempool
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
-@return BlocksGetMempoolTransactions
+@return BlocksMempoolTransactions
 */
-func (a *MempoolApiService) GetMempoolTransactions(ctx context.Context) (BlocksGetMempoolTransactions, *http.Response, error) {
+func (a *MempoolApiService) GetMempoolTransactions(ctx context.Context) (BlocksMempoolTransactions, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue BlocksGetMempoolTransactions
+		localVarReturnValue BlocksMempoolTransactions
 	)
 
 	// create path and map variables
@@ -318,7 +318,7 @@ func (a *MempoolApiService) GetMempoolTransactions(ctx context.Context) (BlocksG
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v BlocksGetMempoolTransactions
+			var v BlocksMempoolTransactions
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

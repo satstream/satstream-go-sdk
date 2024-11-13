@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **GetBlockByHash**
-> BlocksGetBlockByHash GetBlockByHash(ctx, hash)
+> BlocksBlockByHash GetBlockByHash(ctx, hash)
 Get block by hash
 
 Get information about a specific block by its hash
@@ -25,7 +25,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlocksGetBlockByHash**](blocks.GetBlockByHash.md)
+[**BlocksBlockByHash**](blocks.BlockByHash.md)
 
 ### Authorization
 
@@ -39,7 +39,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBlockInfo**
-> BlocksGetBlockInfo GetBlockInfo(ctx, height)
+> BlocksBlockInfo GetBlockInfo(ctx, height)
 Get block info
 
 Get information about a specific block by height
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlocksGetBlockInfo**](blocks.GetBlockInfo.md)
+[**BlocksBlockInfo**](blocks.BlockInfo.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBlockTransactions**
-> BlocksGetBlockTransactions GetBlockTransactions(ctx, height)
+> BlocksBlockTransactions GetBlockTransactions(ctx, height)
 Get block transactions
 
 Get transactions for a specific block height
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BlocksGetBlockTransactions**](blocks.GetBlockTransactions.md)
+[**BlocksBlockTransactions**](blocks.BlockTransactions.md)
 
 ### Authorization
 
@@ -95,7 +95,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetCurrentBlockHeight**
-> BlocksGetCurrentBlockHeight GetCurrentBlockHeight(ctx, )
+> BlocksBlockHeight GetCurrentBlockHeight(ctx, )
 Get current block height
 
 Get the current block height of the Bitcoin blockchain
@@ -105,7 +105,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BlocksGetCurrentBlockHeight**](blocks.GetCurrentBlockHeight.md)
+[**BlocksBlockHeight**](blocks.BlockHeight.md)
 
 ### Authorization
 

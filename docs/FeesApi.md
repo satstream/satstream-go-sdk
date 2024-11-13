@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **GetRecommendedFees**
-> BlocksGetFees GetRecommendedFees(ctx, )
+> BlocksFees GetRecommendedFees(ctx, )
 Get recommended fees
 
 Get recommended fees for Bitcoin transactions
@@ -18,7 +18,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BlocksGetFees**](blocks.GetFees.md)
+[**BlocksFees**](blocks.Fees.md)
 
 ### Authorization
 

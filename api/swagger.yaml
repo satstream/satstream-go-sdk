@@ -213,7 +213,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/blocks.GetCurrentBlockHeight"
+            $ref: "#/definitions/blocks.BlockHeight"
         "500":
           description: "Internal Server Error"
           schema:
@@ -240,7 +240,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/blocks.GetBlockByHash"
+            $ref: "#/definitions/blocks.BlockByHash"
         "400":
           description: "Bad Request"
           schema:
@@ -271,7 +271,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/blocks.GetBlockInfo"
+            $ref: "#/definitions/blocks.BlockInfo"
         "400":
           description: "Bad Request"
           schema:
@@ -302,7 +302,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/blocks.GetBlockTransactions"
+            $ref: "#/definitions/blocks.BlockTransactions"
         "400":
           description: "Bad Request"
           schema:
@@ -327,7 +327,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/blocks.GetFees"
+            $ref: "#/definitions/blocks.Fees"
         "500":
           description: "Internal Server Error"
           schema:
@@ -383,7 +383,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/blocks.GetAddressMempoolTransactions"
+            $ref: "#/definitions/blocks.AddressMempoolTxs"
         "500":
           description: "Internal Server Error"
           schema:
@@ -404,7 +404,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/blocks.GetMempoolTransactions"
+            $ref: "#/definitions/blocks.MempoolTransactions"
         "500":
           description: "Internal Server Error"
           schema:
@@ -433,7 +433,7 @@ paths:
         "200":
           description: "OK"
           schema:
-            $ref: "#/definitions/blocks.GetMempoolTxInfo"
+            $ref: "#/definitions/blocks.MempoolTxInfo"
         "500":
           description: "Internal Server Error"
           schema:
@@ -641,15 +641,7 @@ securityDefinitions:
 definitions:
   big.Int:
     type: "object"
-  blocks.Error:
-    type: "object"
-    properties:
-      code:
-        type: "integer"
-      data: {}
-      msg:
-        type: "string"
-  blocks.GetAddressMempoolTransactions:
+  blocks.AddressMempoolTxs:
     type: "object"
     properties:
       code:
@@ -846,7 +838,7 @@ definitions:
           - "txinwitness"
           vout: 9
         hash: "hash"
-  blocks.GetBlockByHash:
+  blocks.BlockByHash:
     type: "object"
     properties:
       code:
@@ -1059,7 +1051,28 @@ definitions:
         time: 2
         hash: "hash"
         height: 5
-  blocks.GetBlockInfo:
+  blocks.BlockHeight:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+      data:
+        $ref: "#/definitions/blocks.BlockHeightData"
+      msg:
+        type: "string"
+    example:
+      msg: "msg"
+      code: 0
+      data:
+        height: 6
+  blocks.BlockHeightData:
+    type: "object"
+    properties:
+      height:
+        type: "integer"
+    example:
+      height: 6
+  blocks.BlockInfo:
     type: "object"
     properties:
       code:
@@ -1272,7 +1285,7 @@ definitions:
         time: 2
         hash: "hash"
         height: 5
-  blocks.GetBlockTransactions:
+  blocks.BlockTransactions:
     type: "object"
     properties:
       code:
@@ -1311,34 +1324,21 @@ definitions:
         version: 1
         hash: "0000000000000000000000000000000000000000000000000000000000000000"
         blockheight: 100
-  blocks.GetCurrentBlockHeight:
+  blocks.Error:
     type: "object"
     properties:
       code:
         type: "integer"
-      data:
-        $ref: "#/definitions/blocks.GetCurrentBlockHeightData"
+      data: {}
       msg:
         type: "string"
-    example:
-      msg: "msg"
-      code: 0
-      data:
-        height: 6
-  blocks.GetCurrentBlockHeightData:
-    type: "object"
-    properties:
-      height:
-        type: "integer"
-    example:
-      height: 6
-  blocks.GetFees:
+  blocks.Fees:
     type: "object"
     properties:
       code:
         type: "integer"
       data:
-        $ref: "#/definitions/blocks.GetFeesData"
+        $ref: "#/definitions/blocks.FeesData"
       msg:
         type: "string"
     example:
@@ -1347,7 +1347,7 @@ definitions:
       data:
         confirmation_blocks: 6
         fee_rate_in_btc: 1.46581298050294517310021547018550336360931396484375
-  blocks.GetFeesData:
+  blocks.FeesData:
     type: "object"
     properties:
       confirmation_blocks:
@@ -1357,7 +1357,7 @@ definitions:
     example:
       confirmation_blocks: 6
       fee_rate_in_btc: 1.46581298050294517310021547018550336360931396484375
-  blocks.GetMempoolTransactions:
+  blocks.MempoolTransactions:
     type: "object"
     properties:
       code:
@@ -1554,7 +1554,7 @@ definitions:
           - "txinwitness"
           vout: 9
         hash: "hash"
-  blocks.GetMempoolTxInfo:
+  blocks.MempoolTxInfo:
     type: "object"
     properties:
       code:
