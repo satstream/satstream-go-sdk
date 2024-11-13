@@ -33,15 +33,15 @@ Broadcast a raw transaction to the Bitcoin network
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param transaction Raw transaction hex
 
-@return InlineResponse2009
+@return InlineResponse2007
 */
-func (a *TransactionsApiService) BroadcastTransaction(ctx context.Context, transaction string) (InlineResponse2009, *http.Response, error) {
+func (a *TransactionsApiService) BroadcastTransaction(ctx context.Context, transaction string) (InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2009
+		localVarReturnValue InlineResponse2007
 	)
 
 	// create path and map variables
@@ -112,7 +112,7 @@ func (a *TransactionsApiService) BroadcastTransaction(ctx context.Context, trans
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2009
+			var v InlineResponse2007
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -145,15 +145,15 @@ Get a transaction by its hash
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param hash Transaction hash
 
-@return InlineResponse2006
+@return InlineResponse2005
 */
-func (a *TransactionsApiService) GetTransaction(ctx context.Context, hash string) (InlineResponse2006, *http.Response, error) {
+func (a *TransactionsApiService) GetTransaction(ctx context.Context, hash string) (InlineResponse2005, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2006
+		localVarReturnValue InlineResponse2005
 	)
 
 	// create path and map variables
@@ -210,7 +210,7 @@ func (a *TransactionsApiService) GetTransaction(ctx context.Context, hash string
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2006
+			var v InlineResponse2005
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -243,15 +243,15 @@ Get detailed information about a specific transaction
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
 
-@return InlineResponse20010
+@return InlineResponse2008
 */
-func (a *TransactionsApiService) GetTransactionInfo(ctx context.Context, txid string) (InlineResponse20010, *http.Response, error) {
+func (a *TransactionsApiService) GetTransactionInfo(ctx context.Context, txid string) (InlineResponse2008, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20010
+		localVarReturnValue InlineResponse2008
 	)
 
 	// create path and map variables
@@ -321,7 +321,7 @@ func (a *TransactionsApiService) GetTransactionInfo(ctx context.Context, txid st
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20010
+			var v InlineResponse2008
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

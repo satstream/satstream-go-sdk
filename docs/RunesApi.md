@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRunesInfoList**
-> InlineResponse2008 GetRunesInfoList(ctx, optional)
+> InlineResponse2006 GetRunesInfoList(ctx, optional)
 Get runes info list
 
 Get information about all runes
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](inline_response_200_8.md)
+[**InlineResponse2006**](inline_response_200_6.md)
 
 ### Authorization
 

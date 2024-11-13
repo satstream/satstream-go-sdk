@@ -33,15 +33,15 @@ Get all mempool transactions for a specific address
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address
 
-@return []interface{}
+@return BlocksGetAddressMempoolTransactions
 */
-func (a *MempoolApiService) GetAddressMempoolTransactions(ctx context.Context, address string) ([]interface{}, *http.Response, error) {
+func (a *MempoolApiService) GetAddressMempoolTransactions(ctx context.Context, address string) (BlocksGetAddressMempoolTransactions, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue []interface{}
+		localVarReturnValue BlocksGetAddressMempoolTransactions
 	)
 
 	// create path and map variables
@@ -111,7 +111,7 @@ func (a *MempoolApiService) GetAddressMempoolTransactions(ctx context.Context, a
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []interface{}
+			var v BlocksGetAddressMempoolTransactions
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -144,15 +144,15 @@ Get information about a specific transaction in the mempool
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
 
-@return InlineResponse2007
+@return BlocksGetMempoolTxInfo
 */
-func (a *MempoolApiService) GetMempoolTransactionInfo(ctx context.Context, txid string) (InlineResponse2007, *http.Response, error) {
+func (a *MempoolApiService) GetMempoolTransactionInfo(ctx context.Context, txid string) (BlocksGetMempoolTxInfo, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2007
+		localVarReturnValue BlocksGetMempoolTxInfo
 	)
 
 	// create path and map variables
@@ -222,7 +222,7 @@ func (a *MempoolApiService) GetMempoolTransactionInfo(ctx context.Context, txid 
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2007
+			var v BlocksGetMempoolTxInfo
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -233,7 +233,7 @@ func (a *MempoolApiService) GetMempoolTransactionInfo(ctx context.Context, txid 
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v BlocksBase
+			var v BlocksError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -254,15 +254,15 @@ MempoolApiService Get mempool transactions
 Get all transactions currently in the mempool
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
-@return []interface{}
+@return BlocksGetMempoolTransactions
 */
-func (a *MempoolApiService) GetMempoolTransactions(ctx context.Context) ([]interface{}, *http.Response, error) {
+func (a *MempoolApiService) GetMempoolTransactions(ctx context.Context) (BlocksGetMempoolTransactions, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue []interface{}
+		localVarReturnValue BlocksGetMempoolTransactions
 	)
 
 	// create path and map variables
@@ -318,7 +318,7 @@ func (a *MempoolApiService) GetMempoolTransactions(ctx context.Context) ([]inter
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []interface{}
+			var v BlocksGetMempoolTransactions
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -329,7 +329,7 @@ func (a *MempoolApiService) GetMempoolTransactions(ctx context.Context) ([]inter
 		}
 		
 		if localVarHttpResponse.StatusCode == 500 {
-			var v BlocksBase
+			var v BlocksError
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

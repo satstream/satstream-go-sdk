@@ -258,7 +258,7 @@ Get information about all runes
      * @param "Page" (optional.Int32) -  Page number (default: 1)
      * @param "PerPage" (optional.Int32) -  Items per page (default: 10)
 
-@return InlineResponse2008
+@return InlineResponse2006
 */
 
 type RunesApiGetRunesInfoListOpts struct { 
@@ -266,13 +266,13 @@ type RunesApiGetRunesInfoListOpts struct {
 	PerPage optional.Int32
 }
 
-func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptionals *RunesApiGetRunesInfoListOpts) (InlineResponse2008, *http.Response, error) {
+func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptionals *RunesApiGetRunesInfoListOpts) (InlineResponse2006, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2008
+		localVarReturnValue InlineResponse2006
 	)
 
 	// create path and map variables
@@ -347,7 +347,7 @@ func (a *RunesApiService) GetRunesInfoList(ctx context.Context, localVarOptional
 		}
 		
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2008
+			var v InlineResponse2006
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

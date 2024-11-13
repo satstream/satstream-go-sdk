@@ -10,7 +10,8 @@
 
 package swagger
 
-type InlineResponse2005 struct {
+type BlocksGetMempoolTxInfo struct {
+	Code int32 `json:"code,omitempty"`
 	Data *GithubComSatstreamSsUtilsRpcBtcTx `json:"data,omitempty"`
-	GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse *GithubComSatstreamSsApiServerApiTransactionsResponsesBaseResponse `json:"github_com_satstream_ss-api_server_api_transactions_responses.BaseResponse,omitempty"`
+	Msg string `json:"msg,omitempty"`
 }

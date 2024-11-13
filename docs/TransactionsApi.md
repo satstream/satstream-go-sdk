@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **BroadcastTransaction**
-> InlineResponse2009 BroadcastTransaction(ctx, transaction)
+> InlineResponse2007 BroadcastTransaction(ctx, transaction)
 Broadcast transaction
 
 Broadcast a raw transaction to the Bitcoin network
@@ -25,7 +25,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](inline_response_200_9.md)
+[**InlineResponse2007**](inline_response_200_7.md)
 
 ### Authorization
 
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetTransaction**
-> InlineResponse2006 GetTransaction(ctx, hash)
+> InlineResponse2005 GetTransaction(ctx, hash)
 Get transaction
 
 Get a transaction by its hash
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](inline_response_200_6.md)
+[**InlineResponse2005**](inline_response_200_5.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetTransactionInfo**
-> InlineResponse20010 GetTransactionInfo(ctx, txid)
+> InlineResponse2008 GetTransactionInfo(ctx, txid)
 Get transaction info
 
 Get detailed information about a specific transaction
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](inline_response_200_10.md)
+[**InlineResponse2008**](inline_response_200_8.md)
 
 ### Authorization
 
