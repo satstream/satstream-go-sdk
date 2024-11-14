@@ -1,4 +1,4 @@
-# \BlocksApi
+# {{classname}}
 
 All URIs are relative to *https://api.satstream.io/api/v1*
 
@@ -8,7 +8,6 @@ Method | HTTP request | Description
 [**GetBlockInfo**](BlocksApi.md#GetBlockInfo) | **Get** /blocks/{height} | Get block info
 [**GetBlockTransactions**](BlocksApi.md#GetBlockTransactions) | **Get** /blocks/{height}/transactions | Get block transactions
 [**GetCurrentBlockHeight**](BlocksApi.md#GetCurrentBlockHeight) | **Get** /blocks/current-height | Get current block height
-
 
 # **GetBlockByHash**
 > ResponsesGetBlockByHash GetBlockByHash(ctx, hash)
@@ -33,7 +32,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -61,7 +60,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -89,7 +88,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -113,7 +112,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

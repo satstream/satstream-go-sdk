@@ -1,4 +1,4 @@
-# \MempoolApi
+# {{classname}}
 
 All URIs are relative to *https://api.satstream.io/api/v1*
 
@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**GetAddressMempoolTransactions**](MempoolApi.md#GetAddressMempoolTransactions) | **Get** /mempool/addresses/{address}/transactions | Get address mempool transactions
 [**GetMempoolTransactionInfo**](MempoolApi.md#GetMempoolTransactionInfo) | **Get** /mempool/transactions/{txid} | Get mempool transaction info
 [**GetMempoolTransactions**](MempoolApi.md#GetMempoolTransactions) | **Get** /mempool/transactions | Get mempool transactions
-
 
 # **GetAddressMempoolTransactions**
 > ResponsesGetAddressMempoolTxs GetAddressMempoolTransactions(ctx, address)
@@ -32,7 +31,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -60,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -84,7 +83,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

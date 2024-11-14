@@ -1,4 +1,4 @@
-# \RunesApi
+# {{classname}}
 
 All URIs are relative to *https://api.satstream.io/api/v1*
 
@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**GetRunesHolders**](RunesApi.md#GetRunesHolders) | **Get** /runes/{runeId}/holders | Get rune holders
 [**GetRunesInfo**](RunesApi.md#GetRunesInfo) | **Get** /runes/{runeId} | Get rune info
 [**GetRunesInfoList**](RunesApi.md#GetRunesInfoList) | **Get** /runes | Get runes info list
-
 
 # **GetRunesHolders**
 > ResponsesGetRuneHolders GetRunesHolders(ctx, runeId)
@@ -32,7 +31,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -60,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -80,7 +79,6 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a RunesApiGetRunesInfoListOpts struct
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **optional.Int32**| Page number (default: 1) | 
@@ -96,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Address** | **string** |  | [optional] [default to null]
 **Blockheight** | **int32** |  | [optional] [default to null]
-**Fee** | **float32** |  | [optional] [default to null]
+**Fee** | **float64** |  | [optional] [default to null]
 **Hash** | **string** |  | [optional] [default to null]
 **Hex** | **string** |  | [optional] [default to null]
 **Index** | **int32** |  | [optional] [default to null]
@@ -17,5 +17,4 @@ Name | Type | Description | Notes
 **Weight** | **int32** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

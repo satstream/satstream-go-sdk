@@ -1,4 +1,4 @@
-# \TransactionsApi
+# {{classname}}
 
 All URIs are relative to *https://api.satstream.io/api/v1*
 
@@ -8,9 +8,8 @@ Method | HTTP request | Description
 [**GetTransaction**](TransactionsApi.md#GetTransaction) | **Get** /indexer/tx/{hash} | Get transaction
 [**GetTransactionInfo**](TransactionsApi.md#GetTransactionInfo) | **Get** /transactions/{txid} | Get transaction info
 
-
 # **BroadcastTransaction**
-> ResponsesSendRawTransaction BroadcastTransaction(ctx, transaction)
+> ResponsesSendRawTransaction BroadcastTransaction(ctx, body)
 Broadcast transaction
 
 Broadcast a raw transaction to the Bitcoin network
@@ -20,7 +19,7 @@ Broadcast a raw transaction to the Bitcoin network
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **transaction** | **string**| Raw transaction hex | 
+  **body** | [**string**](string.md)| Raw transaction hex | 
 
 ### Return type
 
@@ -60,7 +59,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -88,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

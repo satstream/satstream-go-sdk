@@ -1,4 +1,4 @@
-# \AddressesApi
+# {{classname}}
 
 All URIs are relative to *https://api.satstream.io/api/v1*
 
@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**GetAddressRuneBalance**](AddressesApi.md#GetAddressRuneBalance) | **Get** /addresses/{address}/runes/{runeid} | Get address rune balance
 [**GetAddressRunesBalanceList**](AddressesApi.md#GetAddressRunesBalanceList) | **Get** /addresses/{address}/runes | Get address runes balance list
 [**GetAddressTimeframeBalance**](AddressesApi.md#GetAddressTimeframeBalance) | **Get** /addresses/{address}/balance/timeframe | Get address timeframe balance
-
 
 # **GetAddressBalance**
 > ResponsesGetAddressBalance GetAddressBalance(ctx, address)
@@ -34,7 +33,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -62,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -91,7 +90,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -119,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -141,7 +140,6 @@ Name | Type | Description  | Notes
 
 ### Optional Parameters
 Optional parameters are passed through a pointer to a AddressesApiGetAddressTimeframeBalanceOpts struct
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
@@ -158,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

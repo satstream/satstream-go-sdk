@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **Bits** | **string** |  | [optional] [default to null]
 **Chainwork** | **string** |  | [optional] [default to null]
 **Confirmations** | **int32** |  | [optional] [default to null]
-**Difficulty** | **float32** |  | [optional] [default to null]
+**Difficulty** | **float64** |  | [optional] [default to null]
 **Hash** | **string** |  | [optional] [default to null]
 **Height** | **int32** |  | [optional] [default to null]
 **Mediantime** | **int32** |  | [optional] [default to null]
@@ -23,5 +23,4 @@ Name | Type | Description | Notes
 **Weight** | **int32** |  | [optional] [default to null]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

@@ -1,11 +1,10 @@
-# \FeesApi
+# {{classname}}
 
 All URIs are relative to *https://api.satstream.io/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetRecommendedFees**](FeesApi.md#GetRecommendedFees) | **Get** /fees | Get recommended fees
-
 
 # **GetRecommendedFees**
 > ResponsesGetFees GetRecommendedFees(ctx, )
@@ -26,7 +25,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
