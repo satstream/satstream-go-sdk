@@ -1,4 +1,4 @@
-# Go API client for swagger
+# Go API client for satstream-go-sdk
 
 Satstream API
 
@@ -13,7 +13,7 @@ For more information, please visit [https://satstream.io](https://satstream.io)
 ## Installation
 Put the package under your project folder and add the following in import:
 ```golang
-import "./swagger"
+import "./satstream-go-sdk"
 ```
 
 ## Documentation for API Endpoints
