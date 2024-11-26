@@ -150,15 +150,15 @@ InscriptionsApiService Fetch multiple inscriptions
 Retrieve information about multiple inscriptions
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Inscription IDs
-@return []interface{}
+@return InlineResponse20019
 */
-func (a *InscriptionsApiService) FetchInscriptions(ctx context.Context, body []string) ([]interface{}, *http.Response, error) {
+func (a *InscriptionsApiService) FetchInscriptions(ctx context.Context, body []string) (InlineResponse20019, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue []interface{}
+		localVarReturnValue InlineResponse20019
 	)
 
 	// create path and map variables
@@ -230,7 +230,7 @@ func (a *InscriptionsApiService) FetchInscriptions(ctx context.Context, body []s
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v []interface{}
+			var v InlineResponse20019
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

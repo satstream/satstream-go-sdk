@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**GetStatus**](StatusApi.md#GetStatus) | **Get** /status | Get server status
 
 # **GetStatus**
-> InlineResponse20032 GetStatus(ctx, )
+> InlineResponse20033 GetStatus(ctx, )
 Get server status
 
 Retrieve information about the server installation and index
@@ -17,7 +17,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20032**](inline_response_200_32.md)
+[**InlineResponse20033**](inline_response_200_33.md)
 
 ### Authorization
 

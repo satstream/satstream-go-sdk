@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**GetOutputs**](OutputsApi.md#GetOutputs) | **Post** /outputs | Get multiple outputs
 
 # **GetOutputByOutpoint**
-> InlineResponse20025 GetOutputByOutpoint(ctx, outpoint)
+> InlineResponse20026 GetOutputByOutpoint(ctx, outpoint)
 Get output info by outpoint
 
 Retrieve information about a specific UTXO using outpoint string
@@ -22,7 +22,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20025**](inline_response_200_25.md)
+[**InlineResponse20026**](inline_response_200_26.md)
 
 ### Authorization
 

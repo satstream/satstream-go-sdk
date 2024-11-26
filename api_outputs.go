@@ -30,15 +30,15 @@ OutputsApiService Get output info by outpoint
 Retrieve information about a specific UTXO using outpoint string
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param outpoint Outpoint
-@return InlineResponse20025
+@return InlineResponse20026
 */
-func (a *OutputsApiService) GetOutputByOutpoint(ctx context.Context, outpoint string) (InlineResponse20025, *http.Response, error) {
+func (a *OutputsApiService) GetOutputByOutpoint(ctx context.Context, outpoint string) (InlineResponse20026, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20025
+		localVarReturnValue InlineResponse20026
 	)
 
 	// create path and map variables
@@ -109,7 +109,7 @@ func (a *OutputsApiService) GetOutputByOutpoint(ctx context.Context, outpoint st
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20025
+			var v InlineResponse20026
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

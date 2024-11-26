@@ -29,15 +29,15 @@ PSBTsApiService Analyze PSBT
 Analyzes and provides information about the current status of a PSBT and its inputs
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body PSBT to analyze
-@return InlineResponse20026
+@return InlineResponse20027
 */
-func (a *PSBTsApiService) AnalyzePsbt(ctx context.Context, body RequestsAnalyzePsbtRequest) (InlineResponse20026, *http.Response, error) {
+func (a *PSBTsApiService) AnalyzePsbt(ctx context.Context, body RequestsAnalyzePsbtRequest) (InlineResponse20027, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20026
+		localVarReturnValue InlineResponse20027
 	)
 
 	// create path and map variables
@@ -109,7 +109,7 @@ func (a *PSBTsApiService) AnalyzePsbt(ctx context.Context, body RequestsAnalyzeP
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20026
+			var v InlineResponse20027
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -386,15 +386,15 @@ PSBTsApiService Decode PSBT
 Return a JSON object representing the serialized, base64-encoded partially signed Bitcoin transaction.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body PSBT to decode
-@return InlineResponse20027
+@return InlineResponse20028
 */
-func (a *PSBTsApiService) DecodePsbt(ctx context.Context, body RequestsAnalyzePsbtRequest) (InlineResponse20027, *http.Response, error) {
+func (a *PSBTsApiService) DecodePsbt(ctx context.Context, body RequestsAnalyzePsbtRequest) (InlineResponse20028, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20027
+		localVarReturnValue InlineResponse20028
 	)
 
 	// create path and map variables
@@ -466,7 +466,7 @@ func (a *PSBTsApiService) DecodePsbt(ctx context.Context, body RequestsAnalyzePs
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20027
+			var v InlineResponse20028
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

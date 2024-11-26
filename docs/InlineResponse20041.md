@@ -1,9 +1,9 @@
-# InlineResponse20039
+# InlineResponse20041
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [***DecodeResponse**](DecodeResponse.md) |  | [optional] [default to null]
+**Data** | [***RawTx2**](RawTx2.md) |  | [optional] [default to null]
 **Code** | **int32** |  | [optional] [default to null]
 **Msg** | **string** |  | [optional] [default to null]
 

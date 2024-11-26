@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **FetchInscriptions**
-> []interface{} FetchInscriptions(ctx, body)
+> InlineResponse20019 FetchInscriptions(ctx, body)
 Fetch multiple inscriptions
 
 Retrieve information about multiple inscriptions
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]interface{}**](interface{}.md)
+[**InlineResponse20019**](inline_response_200_19.md)
 
 ### Authorization
 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [***RawTx2**](RawTx2.md) |  | [optional] [default to null]
+**Data** | [***RawTx1**](RawTx1.md) |  | [optional] [default to null]
 **Code** | **int32** |  | [optional] [default to null]
 **Msg** | **string** |  | [optional] [default to null]
 

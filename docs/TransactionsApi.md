@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DecodeTx**
-> InlineResponse20038 DecodeTx(ctx, txid)
+> InlineResponse20039 DecodeTx(ctx, txid)
 Decode a transaction
 
 Decodes a transaction and returns its inscriptions and runestone data
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20038**](inline_response_200_38.md)
+[**InlineResponse20039**](inline_response_200_39.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRawTransactionDecoded**
-> InlineResponse20039 GetRawTransactionDecoded(ctx, txid)
+> InlineResponse20040 GetRawTransactionDecoded(ctx, txid)
 Get raw transaction (verbosity 1)
 
 Get raw transaction as a decoded object
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20039**](inline_response_200_39.md)
+[**InlineResponse20040**](inline_response_200_40.md)
 
 ### Authorization
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRawTransactionPrevout**
-> InlineResponse20040 GetRawTransactionPrevout(ctx, txid)
+> InlineResponse20041 GetRawTransactionPrevout(ctx, txid)
 Get raw transaction (verbosity 2)
 
 Get raw transaction with prevout information
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20040**](inline_response_200_40.md)
+[**InlineResponse20041**](inline_response_200_41.md)
 
 ### Authorization
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetTransaction**
-> InlineResponse20037 GetTransaction(ctx, txid)
+> InlineResponse20038 GetTransaction(ctx, txid)
 Get transaction info
 
 Retrieve information about a specific transaction
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20037**](inline_response_200_37.md)
+[**InlineResponse20038**](inline_response_200_38.md)
 
 ### Authorization
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetTxOut**
-> InlineResponse20033 GetTxOut(ctx, body)
+> InlineResponse20034 GetTxOut(ctx, body)
 Get transaction output
 
 Returns details about an unspent transaction output
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20033**](inline_response_200_33.md)
+[**InlineResponse20034**](inline_response_200_34.md)
 
 ### Authorization
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetTxOutSetInfo**
-> InlineResponse20034 GetTxOutSetInfo(ctx, body)
+> InlineResponse20035 GetTxOutSetInfo(ctx, body)
 Get transaction output set information
 
 Returns statistics about the unspent transaction output set
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20034**](inline_response_200_34.md)
+[**InlineResponse20035**](inline_response_200_35.md)
 
 ### Authorization
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetTxSpendingPrevout**
-> InlineResponse20036 GetTxSpendingPrevout(ctx, body)
+> InlineResponse20037 GetTxSpendingPrevout(ctx, body)
 Get transaction spending prevout
 
 Scans the mempool to find transactions spending any of the given outputs
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20036**](inline_response_200_36.md)
+[**InlineResponse20037**](inline_response_200_37.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **VerifyTxOutProof**
-> InlineResponse20035 VerifyTxOutProof(ctx, body)
+> InlineResponse20036 VerifyTxOutProof(ctx, body)
 Verify transaction output proof
 
 Verifies that a proof points to a transaction in a block
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20035**](inline_response_200_35.md)
+[**InlineResponse20036**](inline_response_200_36.md)
 
 ### Authorization
 

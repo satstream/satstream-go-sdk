@@ -28,15 +28,15 @@ type MiningApiService service
 MiningApiService Get mining information
 Returns a json object containing mining-related information
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return InlineResponse20024
+@return InlineResponse20025
 */
-func (a *MiningApiService) GetMiningInfo(ctx context.Context) (InlineResponse20024, *http.Response, error) {
+func (a *MiningApiService) GetMiningInfo(ctx context.Context) (InlineResponse20025, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20024
+		localVarReturnValue InlineResponse20025
 	)
 
 	// create path and map variables
@@ -106,7 +106,7 @@ func (a *MiningApiService) GetMiningInfo(ctx context.Context) (InlineResponse200
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20024
+			var v InlineResponse20025
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

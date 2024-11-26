@@ -10,7 +10,7 @@
 package satstream_go_sdk
 
 type InlineResponse20038 struct {
-	Data *DecodeResponse `json:"data,omitempty"`
+	Data *TransactionResponse `json:"data,omitempty"`
 	Code int32 `json:"code,omitempty"`
 	Msg string `json:"msg,omitempty"`
 }

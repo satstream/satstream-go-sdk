@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**[]TxSpendingPrevoutResult**](TxSpendingPrevoutResult.md) |  | [optional] [default to null]
+**Data** | **[]string** |  | [optional] [default to null]
 **Code** | **int32** |  | [optional] [default to null]
 **Msg** | **string** |  | [optional] [default to null]
 

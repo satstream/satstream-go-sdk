@@ -940,16 +940,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  type: object
-                  allOf:
-                  - $ref: '#/components/schemas/utils.ResponseEnvelope'
-                  - type: object
-                    properties:
-                      data:
-                        $ref: '#/definitions/InscriptionResponse'
-                x-content-type: application/json
+                $ref: '#/components/schemas/inline_response_200_19'
         "400":
           description: Bad Request
           content:
@@ -1059,7 +1050,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_19'
+                $ref: '#/components/schemas/inline_response_200_20'
         "400":
           description: Invalid request parameters
           content:
@@ -1095,7 +1086,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_20'
+                $ref: '#/components/schemas/inline_response_200_21'
         "400":
           description: Invalid request parameters
           content:
@@ -1124,7 +1115,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_21'
+                $ref: '#/components/schemas/inline_response_200_22'
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
@@ -1153,7 +1144,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_22'
+                $ref: '#/components/schemas/inline_response_200_23'
         "400":
           description: Invalid request parameters
           content:
@@ -1189,7 +1180,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_23'
+                $ref: '#/components/schemas/inline_response_200_24'
         "400":
           description: Invalid request parameters
           content:
@@ -1218,7 +1209,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_24'
+                $ref: '#/components/schemas/inline_response_200_25'
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
@@ -1286,7 +1277,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_25'
+                $ref: '#/components/schemas/inline_response_200_26'
         "400":
           description: Bad Request
           content:
@@ -1372,7 +1363,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_26'
+                $ref: '#/components/schemas/inline_response_200_27'
         "400":
           description: Invalid request parameters
           content:
@@ -1483,7 +1474,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_27'
+                $ref: '#/components/schemas/inline_response_200_28'
         "400":
           description: Invalid request parameters
           content:
@@ -1558,7 +1549,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_28'
+                $ref: '#/components/schemas/inline_response_200_29'
         "400":
           description: Bad request
           content:
@@ -1593,7 +1584,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_29'
+                $ref: '#/components/schemas/inline_response_200_30'
         "400":
           description: Bad request
           content:
@@ -1636,7 +1627,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_29'
+                $ref: '#/components/schemas/inline_response_200_30'
         "400":
           description: Bad request
           content:
@@ -1679,7 +1670,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_30'
+                $ref: '#/components/schemas/inline_response_200_31'
         "400":
           description: Bad request
           content:
@@ -1721,7 +1712,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_31'
+                $ref: '#/components/schemas/inline_response_200_32'
         "400":
           description: Invalid request parameters
           content:
@@ -1750,7 +1741,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_32'
+                $ref: '#/components/schemas/inline_response_200_33'
         "400":
           description: Bad request
           content:
@@ -1903,7 +1894,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_33'
+                $ref: '#/components/schemas/inline_response_200_34'
         "400":
           description: Bad request
           content:
@@ -1939,7 +1930,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_34'
+                $ref: '#/components/schemas/inline_response_200_35'
         "400":
           description: Bad request
           content:
@@ -2012,7 +2003,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_35'
+                $ref: '#/components/schemas/inline_response_200_36'
         "400":
           description: Bad request
           content:
@@ -2085,7 +2076,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_36'
+                $ref: '#/components/schemas/inline_response_200_37'
         "400":
           description: Bad request
           content:
@@ -2123,7 +2114,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_37'
+                $ref: '#/components/schemas/inline_response_200_38'
         "400":
           description: Bad request
           content:
@@ -2167,7 +2158,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_38'
+                $ref: '#/components/schemas/inline_response_200_39'
         "400":
           description: Bad request
           content:
@@ -2210,7 +2201,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_39'
+                $ref: '#/components/schemas/inline_response_200_40'
         "400":
           description: Bad request
           content:
@@ -2296,7 +2287,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_40'
+                $ref: '#/components/schemas/inline_response_200_41'
         "400":
           description: Bad request
           content:
@@ -4465,29 +4456,38 @@ components:
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/MempoolAncestorsData'
+            type: array
+            items:
+              $ref: '#/components/schemas/InscriptionResponse'
     inline_response_200_20:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/MempoolDescendantsData'
+            $ref: '#/components/schemas/MempoolAncestorsData'
     inline_response_200_21:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/MempoolInfo'
+            $ref: '#/components/schemas/MempoolDescendantsData'
     inline_response_200_22:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/RawMempoolData'
+            $ref: '#/components/schemas/MempoolInfo'
     inline_response_200_23:
+      allOf:
+      - $ref: '#/components/schemas/utils.ResponseEnvelope'
+      - type: object
+        properties:
+          data:
+            $ref: '#/components/schemas/RawMempoolData'
+    inline_response_200_24:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
@@ -4496,92 +4496,83 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/TestMempoolAcceptResult'
-    inline_response_200_24:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/MiningInfo'
     inline_response_200_25:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/OutputResponse'
+            $ref: '#/components/schemas/MiningInfo'
     inline_response_200_26:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/PSBTAnalysis'
+            $ref: '#/components/schemas/OutputResponse'
     inline_response_200_27:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/DecodedPSBT'
+            $ref: '#/components/schemas/PSBTAnalysis'
     inline_response_200_28:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/RuneResponse'
+            $ref: '#/components/schemas/DecodedPSBT'
     inline_response_200_29:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/RunesListResponse'
+            $ref: '#/components/schemas/RuneResponse'
     inline_response_200_30:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/SatoshiResponse'
+            $ref: '#/components/schemas/RunesListResponse'
     inline_response_200_31:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/DecodedScript'
+            $ref: '#/components/schemas/SatoshiResponse'
     inline_response_200_32:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/StatusResponse'
+            $ref: '#/components/schemas/DecodedScript'
     inline_response_200_33:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/TxOut'
+            $ref: '#/components/schemas/StatusResponse'
     inline_response_200_34:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/UTXOSetInfo'
+            $ref: '#/components/schemas/TxOut'
     inline_response_200_35:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            type: array
-            items:
-              type: string
+            $ref: '#/components/schemas/UTXOSetInfo'
     inline_response_200_36:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
@@ -4590,29 +4581,38 @@ components:
           data:
             type: array
             items:
-              $ref: '#/components/schemas/TxSpendingPrevoutResult'
+              type: string
     inline_response_200_37:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/TransactionResponse'
+            type: array
+            items:
+              $ref: '#/components/schemas/TxSpendingPrevoutResult'
     inline_response_200_38:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/DecodeResponse'
+            $ref: '#/components/schemas/TransactionResponse'
     inline_response_200_39:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/RawTx1'
+            $ref: '#/components/schemas/DecodeResponse'
     inline_response_200_40:
+      allOf:
+      - $ref: '#/components/schemas/utils.ResponseEnvelope'
+      - type: object
+        properties:
+          data:
+            $ref: '#/components/schemas/RawTx1'
+    inline_response_200_41:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object

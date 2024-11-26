@@ -29,15 +29,15 @@ ScriptsApiService Decode Script
 Decode a hex-encoded script and return detailed information about it.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Script to decode
-@return InlineResponse20031
+@return InlineResponse20032
 */
-func (a *ScriptsApiService) DecodeScript(ctx context.Context, body RequestsDecodeScriptRequest) (InlineResponse20031, *http.Response, error) {
+func (a *ScriptsApiService) DecodeScript(ctx context.Context, body RequestsDecodeScriptRequest) (InlineResponse20032, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20031
+		localVarReturnValue InlineResponse20032
 	)
 
 	// create path and map variables
@@ -109,7 +109,7 @@ func (a *ScriptsApiService) DecodeScript(ctx context.Context, body RequestsDecod
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20031
+			var v InlineResponse20032
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

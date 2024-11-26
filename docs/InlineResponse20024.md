@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [***MiningInfo**](MiningInfo.md) |  | [optional] [default to null]
+**Data** | [**[]TestMempoolAcceptResult**](TestMempoolAcceptResult.md) |  | [optional] [default to null]
 **Code** | **int32** |  | [optional] [default to null]
 **Msg** | **string** |  | [optional] [default to null]
 

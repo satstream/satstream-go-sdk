@@ -30,15 +30,15 @@ SatoshisApiService Get satoshi info
 Retrieve information about a specific satoshi
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param number Satoshi Number
-@return InlineResponse20030
+@return InlineResponse20031
 */
-func (a *SatoshisApiService) GetSatoshi(ctx context.Context, number int32) (InlineResponse20030, *http.Response, error) {
+func (a *SatoshisApiService) GetSatoshi(ctx context.Context, number int32) (InlineResponse20031, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20030
+		localVarReturnValue InlineResponse20031
 	)
 
 	// create path and map variables
@@ -109,7 +109,7 @@ func (a *SatoshisApiService) GetSatoshi(ctx context.Context, number int32) (Inli
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20030
+			var v InlineResponse20031
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

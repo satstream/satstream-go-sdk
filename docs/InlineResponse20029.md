@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [***RunesListResponse**](RunesListResponse.md) |  | [optional] [default to null]
+**Data** | [***RuneResponse**](RuneResponse.md) |  | [optional] [default to null]
 **Code** | **int32** |  | [optional] [default to null]
 **Msg** | **string** |  | [optional] [default to null]
 

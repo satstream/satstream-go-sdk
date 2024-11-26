@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [***DecodedScript**](DecodedScript.md) |  | [optional] [default to null]
+**Data** | [***SatoshiResponse**](SatoshiResponse.md) |  | [optional] [default to null]
 **Code** | **int32** |  | [optional] [default to null]
 **Msg** | **string** |  | [optional] [default to null]
 
