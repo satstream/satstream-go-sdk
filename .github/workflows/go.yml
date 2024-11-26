@@ -22,6 +22,24 @@ jobs:
           go-version: '1.22'
           check-latest: true
 
+      - name: Setup Go module
+        run: |
+          cd sdk/go
+          # Initialize go module
+          go mod init github.com/satstream/satstream-go-sdk
+          # Add required dependencies
+          go mod tidy
+          # Create a basic README.md if it doesn't exist
+          if [ ! -f README.md ]; then
+            echo "# Satstream Go SDK" > README.md
+            echo "" >> README.md
+            echo "## Installation" >> README.md
+            echo "" >> README.md
+            echo "\`\`\`bash" >> README.md
+            echo "go get github.com/satstream/satstream-go-sdk" >> README.md
+            echo "\`\`\`" >> README.md
+          fi
+
       - name: Verify dependencies
         run: go mod tidy
 
