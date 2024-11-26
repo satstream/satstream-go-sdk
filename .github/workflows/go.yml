@@ -24,7 +24,6 @@ jobs:
 
       - name: Setup Go module
         run: |
-          cd sdk/go
           # Initialize go module
           go mod init github.com/satstream/satstream-go-sdk
           # Add required dependencies
