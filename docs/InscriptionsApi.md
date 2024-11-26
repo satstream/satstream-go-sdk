@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**GetLatestInscriptionsPage**](InscriptionsApi.md#GetLatestInscriptionsPage) | **Get** /inscriptions/{page} | Get latest inscriptions page
 
 # **FetchInscriptionChild**
-> InlineResponse20013 FetchInscriptionChild(ctx, inscriptionId, childIndex)
+> GetInscriptionChildResponse FetchInscriptionChild(ctx, inscriptionId, childIndex)
 Get inscription child info
 
 Retrieve information about a specific child of an inscription
@@ -27,7 +27,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](inline_response_200_13.md)
+[**GetInscriptionChildResponse**](GetInscriptionChildResponse.md)
 
 ### Authorization
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **FetchInscriptions**
-> InlineResponse20015 FetchInscriptions(ctx, body)
+> FetchInscriptionsResponse FetchInscriptions(ctx, body)
 Fetch multiple inscriptions
 
 Retrieve information about multiple inscriptions
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](inline_response_200_15.md)
+[**FetchInscriptionsResponse**](FetchInscriptionsResponse.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBlockInscriptions**
-> InlineResponse20014 GetBlockInscriptions(ctx, blockHeight)
+> GetBlockInscriptionsResponse GetBlockInscriptions(ctx, blockHeight)
 Get inscriptions in a specific block
 
 Retrieve all inscriptions in a specific block
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](inline_response_200_14.md)
+[**GetBlockInscriptionsResponse**](GetBlockInscriptionsResponse.md)
 
 ### Authorization
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetInscription**
-> InlineResponse20013 GetInscription(ctx, inscriptionId)
+> GetInscriptionResponse GetInscription(ctx, inscriptionId)
 Get inscription info
 
 Get information about a specific inscription
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](inline_response_200_13.md)
+[**GetInscriptionResponse**](GetInscriptionResponse.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetLatestInscriptions**
-> InlineResponse20014 GetLatestInscriptions(ctx, )
+> GetLatestInscriptionsResponse GetLatestInscriptions(ctx, )
 Get latest inscriptions
 
 Retrieve the latest 100 inscriptions (first page)
@@ -135,7 +135,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20014**](inline_response_200_14.md)
+[**GetLatestInscriptionsResponse**](GetLatestInscriptionsResponse.md)
 
 ### Authorization
 
@@ -149,7 +149,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetLatestInscriptionsPage**
-> InlineResponse20014 GetLatestInscriptionsPage(ctx, page)
+> GetLatestInscriptionsResponse GetLatestInscriptionsPage(ctx, page)
 Get latest inscriptions page
 
 Retrieve a specific page of 100 inscriptions
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](inline_response_200_14.md)
+[**GetLatestInscriptionsResponse**](GetLatestInscriptionsResponse.md)
 
 ### Authorization
 

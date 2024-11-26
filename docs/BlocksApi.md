@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**GetLatestBlocktime**](BlocksApi.md#GetLatestBlocktime) | **Get** /blocktime | Get the timestamp of the latest block
 
 # **GetBlockCount**
-> InlineResponse2007 GetBlockCount(ctx, )
+> GetBlockCountResponse GetBlockCount(ctx, )
 Get the height of the latest block
 
 Returns the height of the latest block
@@ -29,7 +29,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2007**](inline_response_200_7.md)
+[**GetBlockCountResponse**](GetBlockCountResponse.md)
 
 ### Authorization
 
@@ -43,7 +43,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBlockDecoded**
-> InlineResponse200 GetBlockDecoded(ctx, identifier)
+> GetBlockDecodedResponse GetBlockDecoded(ctx, identifier)
 Get block by hash or height (verbosity 2)
 
 Get block by hash or height as a decoded object
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**GetBlockDecodedResponse**](GetBlockDecodedResponse.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBlockHashByHeight**
-> InlineResponse2001 GetBlockHashByHeight(ctx, blockHeight)
+> GetBlockHashByHeightResponse GetBlockHashByHeight(ctx, blockHeight)
 Returns blockhash of specified block.
 
 Returns blockhash of specified block.
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**GetBlockHashByHeightResponse**](GetBlockHashByHeightResponse.md)
 
 ### Authorization
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBlockHex**
-> InlineResponse2001 GetBlockHex(ctx, identifier)
+> GetBlockHexResponse GetBlockHex(ctx, identifier)
 Get block by hash or height (verbosity 0)
 
 Get block by hash or height as a raw hex string
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**GetBlockHexResponse**](GetBlockHexResponse.md)
 
 ### Authorization
 
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBlockInfo**
-> InlineResponse2005 GetBlockInfo(ctx, identifier)
+> GetBlockResponse GetBlockInfo(ctx, identifier)
 Get block info by hash or height
 
 Get detailed information about a specific block by hash or height
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](inline_response_200_5.md)
+[**GetBlockResponse**](GetBlockResponse.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBlockPrevout**
-> InlineResponse2002 GetBlockPrevout(ctx, identifier)
+> GetBlockPrevoutResponse GetBlockPrevout(ctx, identifier)
 Get block by hash or height (verbosity 3)
 
 Get block by hash or height with prevout information
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](inline_response_200_2.md)
+[**GetBlockPrevoutResponse**](GetBlockPrevoutResponse.md)
 
 ### Authorization
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBlockStats**
-> InlineResponse2004 GetBlockStats(ctx, body)
+> GetBlockStatsResponse GetBlockStats(ctx, body)
 Get block stats
 
 Computes per block statistics for a given window
@@ -193,11 +193,11 @@ Computes per block statistics for a given window
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsGetBlockStatsRequest**](RequestsGetBlockStatsRequest.md)| Block stats request parameters | 
+  **body** | [**GetBlockStatsRequest**](GetBlockStatsRequest.md)| Block stats request parameters | 
 
 ### Return type
 
-[**InlineResponse2004**](inline_response_200_4.md)
+[**GetBlockStatsResponse**](GetBlockStatsResponse.md)
 
 ### Authorization
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBlockSummary**
-> InlineResponse2003 GetBlockSummary(ctx, identifier)
+> GetBlockSummaryResponse GetBlockSummary(ctx, identifier)
 Get block by hash or height (verbosity 1)
 
 Get block by hash or height as a summary object
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](inline_response_200_3.md)
+[**GetBlockSummaryResponse**](GetBlockSummaryResponse.md)
 
 ### Authorization
 
@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBlockchainInfo**
-> InlineResponse2006 GetBlockchainInfo(ctx, )
+> GetBlockchainInfoResponse GetBlockchainInfo(ctx, )
 Get blockchain information
 
 Returns an object containing various state info regarding blockchain processing
@@ -249,7 +249,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2006**](inline_response_200_6.md)
+[**GetBlockchainInfoResponse**](GetBlockchainInfoResponse.md)
 
 ### Authorization
 
@@ -263,7 +263,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetBlocks**
-> InlineResponse2008 GetBlocks(ctx, )
+> GetBlocksResponse GetBlocks(ctx, )
 Returns the latest block height, last 100 block hashes, and featured inscriptions
 
 Returns the latest block height, last 100 block hashes, and featured inscriptions
@@ -273,7 +273,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2008**](inline_response_200_8.md)
+[**GetBlocksResponse**](GetBlocksResponse.md)
 
 ### Authorization
 
@@ -287,7 +287,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetLatestBlockHeight**
-> InlineResponse2007 GetLatestBlockHeight(ctx, )
+> GetLatestBlockHeightResponse GetLatestBlockHeight(ctx, )
 Returns the height of the latest block.
 
 Returns the height of the latest block.
@@ -297,7 +297,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2007**](inline_response_200_7.md)
+[**GetLatestBlockHeightResponse**](GetLatestBlockHeightResponse.md)
 
 ### Authorization
 
@@ -311,7 +311,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetLatestBlockhash**
-> InlineResponse2001 GetLatestBlockhash(ctx, )
+> GetLatestBlockHashResponse GetLatestBlockhash(ctx, )
 Returns blockhash for the latest block.
 
 Returns blockhash for the latest block.
@@ -321,7 +321,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**GetLatestBlockHashResponse**](GetLatestBlockHashResponse.md)
 
 ### Authorization
 
@@ -335,7 +335,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetLatestBlocktime**
-> InlineResponse2007 GetLatestBlocktime(ctx, )
+> GetLatestBlockTimeResponse GetLatestBlocktime(ctx, )
 Get the timestamp of the latest block
 
 Returns the UNIX timestamp of when the latest block was mined
@@ -345,7 +345,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2007**](inline_response_200_7.md)
+[**GetLatestBlockTimeResponse**](GetLatestBlockTimeResponse.md)
 
 ### Authorization
 

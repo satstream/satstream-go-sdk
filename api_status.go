@@ -28,15 +28,15 @@ type StatusApiService service
 StatusApiService Get server status
 Retrieve information about the server installation and index
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return InlineResponse20030
+@return GetStatusResponse
 */
-func (a *StatusApiService) GetStatus(ctx context.Context) (InlineResponse20030, *http.Response, error) {
+func (a *StatusApiService) GetStatus(ctx context.Context) (GetStatusResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20030
+		localVarReturnValue GetStatusResponse
 	)
 
 	// create path and map variables
@@ -106,7 +106,7 @@ func (a *StatusApiService) GetStatus(ctx context.Context) (InlineResponse20030, 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20030
+			var v GetStatusResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**GetDifficulty**](NetworkApi.md#GetDifficulty) | **Get** /chain/difficulty | Get difficulty
 
 # **GetChainTxStats**
-> InlineResponse20010 GetChainTxStats(ctx, body)
+> GetChainTxStatsResponse GetChainTxStats(ctx, body)
 Get chain tx stats
 
 Computes statistics about the total number and rate of transactions in the chain
@@ -18,11 +18,11 @@ Computes statistics about the total number and rate of transactions in the chain
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsGetChainTxStatsRequest**](RequestsGetChainTxStatsRequest.md)| Chain tx stats request parameters | 
+  **body** | [**GetChainTxStatsRequest**](GetChainTxStatsRequest.md)| Chain tx stats request parameters | 
 
 ### Return type
 
-[**InlineResponse20010**](inline_response_200_10.md)
+[**GetChainTxStatsResponse**](GetChainTxStatsResponse.md)
 
 ### Authorization
 
@@ -36,7 +36,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetDifficulty**
-> InlineResponse2009 GetDifficulty(ctx, )
+> GetDifficultyResponse GetDifficulty(ctx, )
 Get difficulty
 
 Returns the proof-of-work difficulty as a multiple of the minimum difficulty
@@ -46,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse2009**](inline_response_200_9.md)
+[**GetDifficultyResponse**](GetDifficultyResponse.md)
 
 ### Authorization
 

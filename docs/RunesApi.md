@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**GetRune**](RunesApi.md#GetRune) | **Get** /rune/{rune_name} | Get rune info
 
 # **GetLatestRunes**
-> InlineResponse20027 GetLatestRunes(ctx, )
+> GetLatestRunesResponse GetLatestRunes(ctx, )
 Get latest runes
 
 Retrieve information about the last 100 inscribed runes (first page)
@@ -19,7 +19,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20027**](inline_response_200_27.md)
+[**GetLatestRunesResponse**](GetLatestRunesResponse.md)
 
 ### Authorization
 
@@ -33,7 +33,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetLatestRunesPage**
-> InlineResponse20027 GetLatestRunesPage(ctx, page)
+> GetLatestRunesResponse GetLatestRunesPage(ctx, page)
 Get latest runes page
 
 Retrieve a specific page of 100 inscribed runes
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](inline_response_200_27.md)
+[**GetLatestRunesResponse**](GetLatestRunesResponse.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRune**
-> InlineResponse20026 GetRune(ctx, runeName)
+> GetRuneResponse GetRune(ctx, runeName)
 Get rune info
 
 Retrieve information about a specific rune
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20026**](inline_response_200_26.md)
+[**GetRuneResponse**](GetRuneResponse.md)
 
 ### Authorization
 

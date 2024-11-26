@@ -29,15 +29,15 @@ FeesApiService Estimate Raw Fee
 Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within conf_target blocks if possible.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Fee estimation parameters
-@return InlineResponse20011
+@return EstimateRawFeeResponse
 */
-func (a *FeesApiService) EstimateRawFee(ctx context.Context, body RequestsEstimateRawFeeRequest) (InlineResponse20011, *http.Response, error) {
+func (a *FeesApiService) EstimateRawFee(ctx context.Context, body EstimateRawFeeRequest) (EstimateRawFeeResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20011
+		localVarReturnValue EstimateRawFeeResponse
 	)
 
 	// create path and map variables
@@ -109,7 +109,7 @@ func (a *FeesApiService) EstimateRawFee(ctx context.Context, body RequestsEstima
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20011
+			var v EstimateRawFeeResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -148,15 +148,15 @@ FeesApiService Estimate smart fee
 Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within conf_target blocks
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Fee estimation parameters
-@return InlineResponse20012
+@return EstimateSmartFeeResponse
 */
-func (a *FeesApiService) EstimateSmartFee(ctx context.Context, body RequestsEstimateSmartFeeRequest) (InlineResponse20012, *http.Response, error) {
+func (a *FeesApiService) EstimateSmartFee(ctx context.Context, body EstimateSmartFeeRequest) (EstimateSmartFeeResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20012
+		localVarReturnValue EstimateSmartFeeResponse
 	)
 
 	// create path and map variables
@@ -228,7 +228,7 @@ func (a *FeesApiService) EstimateSmartFee(ctx context.Context, body RequestsEsti
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20012
+			var v EstimateSmartFeeResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**EstimateSmartFee**](FeesApi.md#EstimateSmartFee) | **Post** /fee/estimate-smart | Estimate smart fee
 
 # **EstimateRawFee**
-> InlineResponse20011 EstimateRawFee(ctx, body)
+> EstimateRawFeeResponse EstimateRawFee(ctx, body)
 Estimate Raw Fee
 
 Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within conf_target blocks if possible.
@@ -18,11 +18,11 @@ Estimates the approximate fee per kilobyte needed for a transaction to begin con
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsEstimateRawFeeRequest**](RequestsEstimateRawFeeRequest.md)| Fee estimation parameters | 
+  **body** | [**EstimateRawFeeRequest**](EstimateRawFeeRequest.md)| Fee estimation parameters | 
 
 ### Return type
 
-[**InlineResponse20011**](inline_response_200_11.md)
+[**EstimateRawFeeResponse**](EstimateRawFeeResponse.md)
 
 ### Authorization
 
@@ -36,7 +36,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **EstimateSmartFee**
-> InlineResponse20012 EstimateSmartFee(ctx, body)
+> EstimateSmartFeeResponse EstimateSmartFee(ctx, body)
 Estimate smart fee
 
 Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within conf_target blocks
@@ -46,11 +46,11 @@ Estimates the approximate fee per kilobyte needed for a transaction to begin con
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsEstimateSmartFeeRequest**](RequestsEstimateSmartFeeRequest.md)| Fee estimation parameters | 
+  **body** | [**EstimateSmartFeeRequest**](EstimateSmartFeeRequest.md)| Fee estimation parameters | 
 
 ### Return type
 
-[**InlineResponse20012**](inline_response_200_12.md)
+[**EstimateSmartFeeResponse**](EstimateSmartFeeResponse.md)
 
 ### Authorization
 

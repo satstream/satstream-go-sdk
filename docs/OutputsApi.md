@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**GetOutputs**](OutputsApi.md#GetOutputs) | **Post** /outputs | Get multiple outputs
 
 # **GetOutputByOutpoint**
-> InlineResponse20022 GetOutputByOutpoint(ctx, outpoint)
+> InlineResponse200 GetOutputByOutpoint(ctx, outpoint)
 Get output info by outpoint
 
 Retrieve information about a specific UTXO using outpoint string
@@ -22,7 +22,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20022**](inline_response_200_22.md)
+[**InlineResponse200**](inline_response_200.md)
 
 ### Authorization
 
@@ -36,7 +36,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetOutputs**
-> InlineResponse20023 GetOutputs(ctx, body)
+> InlineResponse2001 GetOutputs(ctx, body)
 Get multiple outputs
 
 Retrieve information about multiple UTXOs
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](inline_response_200_23.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 

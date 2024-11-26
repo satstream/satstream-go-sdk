@@ -29,15 +29,15 @@ type BlocksApiService service
 BlocksApiService Get the height of the latest block
 Returns the height of the latest block
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return InlineResponse2007
+@return GetBlockCountResponse
 */
-func (a *BlocksApiService) GetBlockCount(ctx context.Context) (InlineResponse2007, *http.Response, error) {
+func (a *BlocksApiService) GetBlockCount(ctx context.Context) (GetBlockCountResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2007
+		localVarReturnValue GetBlockCountResponse
 	)
 
 	// create path and map variables
@@ -107,7 +107,7 @@ func (a *BlocksApiService) GetBlockCount(ctx context.Context) (InlineResponse200
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2007
+			var v GetBlockCountResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -156,15 +156,15 @@ BlocksApiService Get block by hash or height (verbosity 2)
 Get block by hash or height as a decoded object
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param identifier Block hash or height
-@return InlineResponse200
+@return GetBlockDecodedResponse
 */
-func (a *BlocksApiService) GetBlockDecoded(ctx context.Context, identifier string) (InlineResponse200, *http.Response, error) {
+func (a *BlocksApiService) GetBlockDecoded(ctx context.Context, identifier string) (GetBlockDecodedResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse200
+		localVarReturnValue GetBlockDecodedResponse
 	)
 
 	// create path and map variables
@@ -235,7 +235,7 @@ func (a *BlocksApiService) GetBlockDecoded(ctx context.Context, identifier strin
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse200
+			var v GetBlockDecodedResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -284,15 +284,15 @@ BlocksApiService Returns blockhash of specified block.
 Returns blockhash of specified block.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param blockHeight Block Height
-@return InlineResponse2001
+@return GetBlockHashByHeightResponse
 */
-func (a *BlocksApiService) GetBlockHashByHeight(ctx context.Context, blockHeight string) (InlineResponse2001, *http.Response, error) {
+func (a *BlocksApiService) GetBlockHashByHeight(ctx context.Context, blockHeight string) (GetBlockHashByHeightResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2001
+		localVarReturnValue GetBlockHashByHeightResponse
 	)
 
 	// create path and map variables
@@ -363,7 +363,7 @@ func (a *BlocksApiService) GetBlockHashByHeight(ctx context.Context, blockHeight
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v GetBlockHashByHeightResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -412,15 +412,15 @@ BlocksApiService Get block by hash or height (verbosity 0)
 Get block by hash or height as a raw hex string
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param identifier Block hash or height
-@return InlineResponse2001
+@return GetBlockHexResponse
 */
-func (a *BlocksApiService) GetBlockHex(ctx context.Context, identifier string) (InlineResponse2001, *http.Response, error) {
+func (a *BlocksApiService) GetBlockHex(ctx context.Context, identifier string) (GetBlockHexResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2001
+		localVarReturnValue GetBlockHexResponse
 	)
 
 	// create path and map variables
@@ -491,7 +491,7 @@ func (a *BlocksApiService) GetBlockHex(ctx context.Context, identifier string) (
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v GetBlockHexResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -540,15 +540,15 @@ BlocksApiService Get block info by hash or height
 Get detailed information about a specific block by hash or height
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param identifier Block hash or height
-@return InlineResponse2005
+@return GetBlockResponse
 */
-func (a *BlocksApiService) GetBlockInfo(ctx context.Context, identifier string) (InlineResponse2005, *http.Response, error) {
+func (a *BlocksApiService) GetBlockInfo(ctx context.Context, identifier string) (GetBlockResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2005
+		localVarReturnValue GetBlockResponse
 	)
 
 	// create path and map variables
@@ -619,7 +619,7 @@ func (a *BlocksApiService) GetBlockInfo(ctx context.Context, identifier string) 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2005
+			var v GetBlockResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -668,15 +668,15 @@ BlocksApiService Get block by hash or height (verbosity 3)
 Get block by hash or height with prevout information
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param identifier Block hash or height
-@return InlineResponse2002
+@return GetBlockPrevoutResponse
 */
-func (a *BlocksApiService) GetBlockPrevout(ctx context.Context, identifier string) (InlineResponse2002, *http.Response, error) {
+func (a *BlocksApiService) GetBlockPrevout(ctx context.Context, identifier string) (GetBlockPrevoutResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2002
+		localVarReturnValue GetBlockPrevoutResponse
 	)
 
 	// create path and map variables
@@ -747,7 +747,7 @@ func (a *BlocksApiService) GetBlockPrevout(ctx context.Context, identifier strin
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2002
+			var v GetBlockPrevoutResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -796,15 +796,15 @@ BlocksApiService Get block stats
 Computes per block statistics for a given window
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Block stats request parameters
-@return InlineResponse2004
+@return GetBlockStatsResponse
 */
-func (a *BlocksApiService) GetBlockStats(ctx context.Context, body RequestsGetBlockStatsRequest) (InlineResponse2004, *http.Response, error) {
+func (a *BlocksApiService) GetBlockStats(ctx context.Context, body GetBlockStatsRequest) (GetBlockStatsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2004
+		localVarReturnValue GetBlockStatsResponse
 	)
 
 	// create path and map variables
@@ -876,7 +876,7 @@ func (a *BlocksApiService) GetBlockStats(ctx context.Context, body RequestsGetBl
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2004
+			var v GetBlockStatsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -915,15 +915,15 @@ BlocksApiService Get block by hash or height (verbosity 1)
 Get block by hash or height as a summary object
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param identifier Block hash or height
-@return InlineResponse2003
+@return GetBlockSummaryResponse
 */
-func (a *BlocksApiService) GetBlockSummary(ctx context.Context, identifier string) (InlineResponse2003, *http.Response, error) {
+func (a *BlocksApiService) GetBlockSummary(ctx context.Context, identifier string) (GetBlockSummaryResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2003
+		localVarReturnValue GetBlockSummaryResponse
 	)
 
 	// create path and map variables
@@ -994,7 +994,7 @@ func (a *BlocksApiService) GetBlockSummary(ctx context.Context, identifier strin
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2003
+			var v GetBlockSummaryResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1042,15 +1042,15 @@ func (a *BlocksApiService) GetBlockSummary(ctx context.Context, identifier strin
 BlocksApiService Get blockchain information
 Returns an object containing various state info regarding blockchain processing
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return InlineResponse2006
+@return GetBlockchainInfoResponse
 */
-func (a *BlocksApiService) GetBlockchainInfo(ctx context.Context) (InlineResponse2006, *http.Response, error) {
+func (a *BlocksApiService) GetBlockchainInfo(ctx context.Context) (GetBlockchainInfoResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2006
+		localVarReturnValue GetBlockchainInfoResponse
 	)
 
 	// create path and map variables
@@ -1120,7 +1120,7 @@ func (a *BlocksApiService) GetBlockchainInfo(ctx context.Context) (InlineRespons
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2006
+			var v GetBlockchainInfoResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1148,15 +1148,15 @@ func (a *BlocksApiService) GetBlockchainInfo(ctx context.Context) (InlineRespons
 BlocksApiService Returns the latest block height, last 100 block hashes, and featured inscriptions
 Returns the latest block height, last 100 block hashes, and featured inscriptions
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return InlineResponse2008
+@return GetBlocksResponse
 */
-func (a *BlocksApiService) GetBlocks(ctx context.Context) (InlineResponse2008, *http.Response, error) {
+func (a *BlocksApiService) GetBlocks(ctx context.Context) (GetBlocksResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2008
+		localVarReturnValue GetBlocksResponse
 	)
 
 	// create path and map variables
@@ -1226,7 +1226,7 @@ func (a *BlocksApiService) GetBlocks(ctx context.Context) (InlineResponse2008, *
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2008
+			var v GetBlocksResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1274,15 +1274,15 @@ func (a *BlocksApiService) GetBlocks(ctx context.Context) (InlineResponse2008, *
 BlocksApiService Returns the height of the latest block.
 Returns the height of the latest block.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return InlineResponse2007
+@return GetLatestBlockHeightResponse
 */
-func (a *BlocksApiService) GetLatestBlockHeight(ctx context.Context) (InlineResponse2007, *http.Response, error) {
+func (a *BlocksApiService) GetLatestBlockHeight(ctx context.Context) (GetLatestBlockHeightResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2007
+		localVarReturnValue GetLatestBlockHeightResponse
 	)
 
 	// create path and map variables
@@ -1352,7 +1352,7 @@ func (a *BlocksApiService) GetLatestBlockHeight(ctx context.Context) (InlineResp
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2007
+			var v GetLatestBlockHeightResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1400,15 +1400,15 @@ func (a *BlocksApiService) GetLatestBlockHeight(ctx context.Context) (InlineResp
 BlocksApiService Returns blockhash for the latest block.
 Returns blockhash for the latest block.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return InlineResponse2001
+@return GetLatestBlockHashResponse
 */
-func (a *BlocksApiService) GetLatestBlockhash(ctx context.Context) (InlineResponse2001, *http.Response, error) {
+func (a *BlocksApiService) GetLatestBlockhash(ctx context.Context) (GetLatestBlockHashResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2001
+		localVarReturnValue GetLatestBlockHashResponse
 	)
 
 	// create path and map variables
@@ -1478,7 +1478,7 @@ func (a *BlocksApiService) GetLatestBlockhash(ctx context.Context) (InlineRespon
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v GetLatestBlockHashResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1526,15 +1526,15 @@ func (a *BlocksApiService) GetLatestBlockhash(ctx context.Context) (InlineRespon
 BlocksApiService Get the timestamp of the latest block
 Returns the UNIX timestamp of when the latest block was mined
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return InlineResponse2007
+@return GetLatestBlockTimeResponse
 */
-func (a *BlocksApiService) GetLatestBlocktime(ctx context.Context) (InlineResponse2007, *http.Response, error) {
+func (a *BlocksApiService) GetLatestBlocktime(ctx context.Context) (GetLatestBlockTimeResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2007
+		localVarReturnValue GetLatestBlockTimeResponse
 	)
 
 	// create path and map variables
@@ -1604,7 +1604,7 @@ func (a *BlocksApiService) GetLatestBlocktime(ctx context.Context) (InlineRespon
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2007
+			var v GetLatestBlockTimeResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**DecodeScript**](ScriptsApi.md#DecodeScript) | **Post** /script/decode | Decode Script
 
 # **DecodeScript**
-> InlineResponse20029 DecodeScript(ctx, body)
+> DecodeScriptResponse DecodeScript(ctx, body)
 Decode Script
 
 Decode a hex-encoded script and return detailed information about it.
@@ -17,11 +17,11 @@ Decode a hex-encoded script and return detailed information about it.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsDecodeScriptRequest**](RequestsDecodeScriptRequest.md)| Script to decode | 
+  **body** | [**DecodeScriptRequest**](DecodeScriptRequest.md)| Script to decode | 
 
 ### Return type
 
-[**InlineResponse20029**](inline_response_200_29.md)
+[**DecodeScriptResponse**](DecodeScriptResponse.md)
 
 ### Authorization
 

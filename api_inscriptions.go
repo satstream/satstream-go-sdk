@@ -31,15 +31,15 @@ Retrieve information about a specific child of an inscription
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param inscriptionId Inscription ID
  * @param childIndex Child Index
-@return InlineResponse20013
+@return GetInscriptionChildResponse
 */
-func (a *InscriptionsApiService) FetchInscriptionChild(ctx context.Context, inscriptionId string, childIndex int32) (InlineResponse20013, *http.Response, error) {
+func (a *InscriptionsApiService) FetchInscriptionChild(ctx context.Context, inscriptionId string, childIndex int32) (GetInscriptionChildResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20013
+		localVarReturnValue GetInscriptionChildResponse
 	)
 
 	// create path and map variables
@@ -111,7 +111,7 @@ func (a *InscriptionsApiService) FetchInscriptionChild(ctx context.Context, insc
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20013
+			var v GetInscriptionChildResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -150,15 +150,15 @@ InscriptionsApiService Fetch multiple inscriptions
 Retrieve information about multiple inscriptions
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Inscription IDs
-@return InlineResponse20015
+@return FetchInscriptionsResponse
 */
-func (a *InscriptionsApiService) FetchInscriptions(ctx context.Context, body []string) (InlineResponse20015, *http.Response, error) {
+func (a *InscriptionsApiService) FetchInscriptions(ctx context.Context, body []string) (FetchInscriptionsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20015
+		localVarReturnValue FetchInscriptionsResponse
 	)
 
 	// create path and map variables
@@ -230,7 +230,7 @@ func (a *InscriptionsApiService) FetchInscriptions(ctx context.Context, body []s
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20015
+			var v FetchInscriptionsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -269,15 +269,15 @@ InscriptionsApiService Get inscriptions in a specific block
 Retrieve all inscriptions in a specific block
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param blockHeight Block Height
-@return InlineResponse20014
+@return GetBlockInscriptionsResponse
 */
-func (a *InscriptionsApiService) GetBlockInscriptions(ctx context.Context, blockHeight int32) (InlineResponse20014, *http.Response, error) {
+func (a *InscriptionsApiService) GetBlockInscriptions(ctx context.Context, blockHeight int32) (GetBlockInscriptionsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20014
+		localVarReturnValue GetBlockInscriptionsResponse
 	)
 
 	// create path and map variables
@@ -348,7 +348,7 @@ func (a *InscriptionsApiService) GetBlockInscriptions(ctx context.Context, block
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20014
+			var v GetBlockInscriptionsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -387,15 +387,15 @@ InscriptionsApiService Get inscription info
 Get information about a specific inscription
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param inscriptionId Inscription ID
-@return InlineResponse20013
+@return GetInscriptionResponse
 */
-func (a *InscriptionsApiService) GetInscription(ctx context.Context, inscriptionId string) (InlineResponse20013, *http.Response, error) {
+func (a *InscriptionsApiService) GetInscription(ctx context.Context, inscriptionId string) (GetInscriptionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20013
+		localVarReturnValue GetInscriptionResponse
 	)
 
 	// create path and map variables
@@ -466,7 +466,7 @@ func (a *InscriptionsApiService) GetInscription(ctx context.Context, inscription
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20013
+			var v GetInscriptionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -504,15 +504,15 @@ func (a *InscriptionsApiService) GetInscription(ctx context.Context, inscription
 InscriptionsApiService Get latest inscriptions
 Retrieve the latest 100 inscriptions (first page)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return InlineResponse20014
+@return GetLatestInscriptionsResponse
 */
-func (a *InscriptionsApiService) GetLatestInscriptions(ctx context.Context) (InlineResponse20014, *http.Response, error) {
+func (a *InscriptionsApiService) GetLatestInscriptions(ctx context.Context) (GetLatestInscriptionsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20014
+		localVarReturnValue GetLatestInscriptionsResponse
 	)
 
 	// create path and map variables
@@ -582,7 +582,7 @@ func (a *InscriptionsApiService) GetLatestInscriptions(ctx context.Context) (Inl
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20014
+			var v GetLatestInscriptionsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -621,15 +621,15 @@ InscriptionsApiService Get latest inscriptions page
 Retrieve a specific page of 100 inscriptions
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param page Page number
-@return InlineResponse20014
+@return GetLatestInscriptionsResponse
 */
-func (a *InscriptionsApiService) GetLatestInscriptionsPage(ctx context.Context, page int32) (InlineResponse20014, *http.Response, error) {
+func (a *InscriptionsApiService) GetLatestInscriptionsPage(ctx context.Context, page int32) (GetLatestInscriptionsResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20014
+		localVarReturnValue GetLatestInscriptionsResponse
 	)
 
 	// create path and map variables
@@ -700,7 +700,7 @@ func (a *InscriptionsApiService) GetLatestInscriptionsPage(ctx context.Context, 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20014
+			var v GetLatestInscriptionsResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

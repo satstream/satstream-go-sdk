@@ -20,7 +20,7 @@ Method | HTTP request | Description
 [**VerifyTxOutProof**](TransactionsApi.md#VerifyTxOutProof) | **Post** /tx/outproof/verify | Verify transaction output proof
 
 # **CombineRawTransaction**
-> InlineResponse2001 CombineRawTransaction(ctx, body)
+> CombineRawTransactionResponse CombineRawTransaction(ctx, body)
 Combine Raw Transactions
 
 Combines multiple partially signed transactions into one transaction
@@ -30,11 +30,11 @@ Combines multiple partially signed transactions into one transaction
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsCombineRawTransactionRequest**](RequestsCombineRawTransactionRequest.md)| Array of hex-encoded raw transactions | 
+  **body** | [**TransactionCombineRawTransactionRequest**](TransactionCombineRawTransactionRequest.md)| Array of hex-encoded raw transactions | 
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**CombineRawTransactionResponse**](CombineRawTransactionResponse.md)
 
 ### Authorization
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ConvertToPsbt**
-> InlineResponse2001 ConvertToPsbt(ctx, body)
+> ConvertToPsbtResponse ConvertToPsbt(ctx, body)
 Convert Raw Transaction to PSBT
 
 Converts a network serialized transaction to a PSBT. This should be used only with createrawtransaction and fundrawtransaction. createpsbt and walletcreatefundedpsbt should be used for new applications.
@@ -58,11 +58,11 @@ Converts a network serialized transaction to a PSBT. This should be used only wi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsConvertToPsbtRequest**](RequestsConvertToPsbtRequest.md)| Raw transaction conversion parameters | 
+  **body** | [**TransactionConvertToPsbtRequest**](TransactionConvertToPsbtRequest.md)| Raw transaction conversion parameters | 
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**ConvertToPsbtResponse**](ConvertToPSBTResponse.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreateRawTransaction**
-> InlineResponse2001 CreateRawTransaction(ctx, body)
+> CreateRawTransactionResponse CreateRawTransaction(ctx, body)
 Create Raw Transaction
 
 Creates a raw transaction spending the given inputs and creating new outputs. Note that the transaction's inputs are not signed, and it is not stored in the wallet or transmitted to the network.
@@ -86,11 +86,11 @@ Creates a raw transaction spending the given inputs and creating new outputs. No
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsCreateRawTxRequest**](RequestsCreateRawTxRequest.md)| Transaction parameters | 
+  **body** | [**TransactionCreateRawTxRequest**](TransactionCreateRawTxRequest.md)| Transaction parameters | 
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**CreateRawTransactionResponse**](CreateRawTransactionResponse.md)
 
 ### Authorization
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DecodeTx**
-> InlineResponse20036 DecodeTx(ctx, txid)
+> DecodeTransactionResponse DecodeTx(ctx, txid)
 Decode a transaction
 
 Decodes a transaction and returns its inscriptions and runestone data
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20036**](inline_response_200_36.md)
+[**DecodeTransactionResponse**](DecodeTransactionResponse.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRawTransactionDecoded**
-> InlineResponse20037 GetRawTransactionDecoded(ctx, txid)
+> GetRawTransactionDecodedResponse GetRawTransactionDecoded(ctx, txid)
 Get raw transaction (verbosity 1)
 
 Get raw transaction as a decoded object
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20037**](inline_response_200_37.md)
+[**GetRawTransactionDecodedResponse**](GetRawTransactionDecodedResponse.md)
 
 ### Authorization
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRawTransactionHex**
-> InlineResponse2001 GetRawTransactionHex(ctx, txid)
+> GetRawTransactionHexResponse GetRawTransactionHex(ctx, txid)
 Get raw transaction (verbosity 0)
 
 Get raw transaction as a raw hex string
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**GetRawTransactionHexResponse**](GetRawTransactionHexResponse.md)
 
 ### Authorization
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRawTransactionPrevout**
-> InlineResponse20038 GetRawTransactionPrevout(ctx, txid)
+> GetRawTransactionPrevoutResponse GetRawTransactionPrevout(ctx, txid)
 Get raw transaction (verbosity 2)
 
 Get raw transaction with prevout information
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20038**](inline_response_200_38.md)
+[**GetRawTransactionPrevoutResponse**](GetRawTransactionPrevoutResponse.md)
 
 ### Authorization
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetTransaction**
-> InlineResponse20035 GetTransaction(ctx, txid)
+> GetTransactionResponse GetTransaction(ctx, txid)
 Get transaction info
 
 Retrieve information about a specific transaction
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20035**](inline_response_200_35.md)
+[**GetTransactionResponse**](GetTransactionResponse.md)
 
 ### Authorization
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetTxOut**
-> InlineResponse20031 GetTxOut(ctx, body)
+> GetTxOutResponse GetTxOut(ctx, body)
 Get transaction output
 
 Returns details about an unspent transaction output
@@ -254,11 +254,11 @@ Returns details about an unspent transaction output
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsGetTxOutRequest**](RequestsGetTxOutRequest.md)| Transaction output request parameters | 
+  **body** | [**TransactionGetTxOutRequest**](TransactionGetTxOutRequest.md)| Transaction output request parameters | 
 
 ### Return type
 
-[**InlineResponse20031**](inline_response_200_31.md)
+[**GetTxOutResponse**](GetTxOutResponse.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetTxOutProof**
-> InlineResponse2001 GetTxOutProof(ctx, body)
+> GetTxOutProofResponse GetTxOutProof(ctx, body)
 Get transaction output proof
 
 Returns a hex-encoded proof that one or more specified transactions were included in a block
@@ -282,11 +282,11 @@ Returns a hex-encoded proof that one or more specified transactions were include
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsGetTxOutProofRequest**](RequestsGetTxOutProofRequest.md)| Transaction proof request parameters | 
+  **body** | [**TransactionGetTxOutProofRequest**](TransactionGetTxOutProofRequest.md)| Transaction proof request parameters | 
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**GetTxOutProofResponse**](GetTxOutProofResponse.md)
 
 ### Authorization
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetTxOutSetInfo**
-> InlineResponse20032 GetTxOutSetInfo(ctx, body)
+> InlineResponse2002 GetTxOutSetInfo(ctx, body)
 Get transaction output set information
 
 Returns statistics about the unspent transaction output set
@@ -310,11 +310,11 @@ Returns statistics about the unspent transaction output set
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsGetTxOutSetInfoRequest**](RequestsGetTxOutSetInfoRequest.md)| UTXO set info request parameters | 
+  **body** | [**TransactionGetTxOutSetInfoRequest**](TransactionGetTxOutSetInfoRequest.md)| UTXO set info request parameters | 
 
 ### Return type
 
-[**InlineResponse20032**](inline_response_200_32.md)
+[**InlineResponse2002**](inline_response_200_2.md)
 
 ### Authorization
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetTxSpendingPrevout**
-> InlineResponse20034 GetTxSpendingPrevout(ctx, body)
+> GetTxSpendingPrevoutResponse GetTxSpendingPrevout(ctx, body)
 Get transaction spending prevout
 
 Scans the mempool to find transactions spending any of the given outputs
@@ -338,11 +338,11 @@ Scans the mempool to find transactions spending any of the given outputs
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsGetTxSpendingPrevoutRequest**](RequestsGetTxSpendingPrevoutRequest.md)| Transaction spending prevout request | 
+  **body** | [**TransactionGetTxSpendingPrevoutRequest**](TransactionGetTxSpendingPrevoutRequest.md)| Transaction spending prevout request | 
 
 ### Return type
 
-[**InlineResponse20034**](inline_response_200_34.md)
+[**GetTxSpendingPrevoutResponse**](GetTxSpendingPrevoutResponse.md)
 
 ### Authorization
 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **SendRawTransaction**
-> InlineResponse2001 SendRawTransaction(ctx, body)
+> SendRawTransactionResponse SendRawTransaction(ctx, body)
 Send raw transaction
 
 Submits a raw transaction to local node and network
@@ -366,11 +366,11 @@ Submits a raw transaction to local node and network
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsSendRawTransactionRequest**](RequestsSendRawTransactionRequest.md)| Raw transaction to send | 
+  **body** | [**TransactionSendRawTransactionRequest**](TransactionSendRawTransactionRequest.md)| Raw transaction to send | 
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**SendRawTransactionResponse**](SendRawTransactionResponse.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **VerifyTxOutProof**
-> InlineResponse20033 VerifyTxOutProof(ctx, body)
+> VerifyTxOutProofResponse VerifyTxOutProof(ctx, body)
 Verify transaction output proof
 
 Verifies that a proof points to a transaction in a block
@@ -394,11 +394,11 @@ Verifies that a proof points to a transaction in a block
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsVerifyTxOutProofRequest**](RequestsVerifyTxOutProofRequest.md)| Proof to verify | 
+  **body** | [**TransactionVerifyTxOutProofRequest**](TransactionVerifyTxOutProofRequest.md)| Proof to verify | 
 
 ### Return type
 
-[**InlineResponse20033**](inline_response_200_33.md)
+[**VerifyTxOutProofResponse**](VerifyTxOutProofResponse.md)
 
 ### Authorization
 

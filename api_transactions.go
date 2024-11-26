@@ -30,15 +30,15 @@ TransactionsApiService Combine Raw Transactions
 Combines multiple partially signed transactions into one transaction
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Array of hex-encoded raw transactions
-@return InlineResponse2001
+@return CombineRawTransactionResponse
 */
-func (a *TransactionsApiService) CombineRawTransaction(ctx context.Context, body RequestsCombineRawTransactionRequest) (InlineResponse2001, *http.Response, error) {
+func (a *TransactionsApiService) CombineRawTransaction(ctx context.Context, body TransactionCombineRawTransactionRequest) (CombineRawTransactionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2001
+		localVarReturnValue CombineRawTransactionResponse
 	)
 
 	// create path and map variables
@@ -110,7 +110,7 @@ func (a *TransactionsApiService) CombineRawTransaction(ctx context.Context, body
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v CombineRawTransactionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -149,15 +149,15 @@ TransactionsApiService Convert Raw Transaction to PSBT
 Converts a network serialized transaction to a PSBT. This should be used only with createrawtransaction and fundrawtransaction. createpsbt and walletcreatefundedpsbt should be used for new applications.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Raw transaction conversion parameters
-@return InlineResponse2001
+@return ConvertToPsbtResponse
 */
-func (a *TransactionsApiService) ConvertToPsbt(ctx context.Context, body RequestsConvertToPsbtRequest) (InlineResponse2001, *http.Response, error) {
+func (a *TransactionsApiService) ConvertToPsbt(ctx context.Context, body TransactionConvertToPsbtRequest) (ConvertToPsbtResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2001
+		localVarReturnValue ConvertToPsbtResponse
 	)
 
 	// create path and map variables
@@ -229,7 +229,7 @@ func (a *TransactionsApiService) ConvertToPsbt(ctx context.Context, body Request
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v ConvertToPsbtResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -268,15 +268,15 @@ TransactionsApiService Create Raw Transaction
 Creates a raw transaction spending the given inputs and creating new outputs. Note that the transaction&#x27;s inputs are not signed, and it is not stored in the wallet or transmitted to the network.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Transaction parameters
-@return InlineResponse2001
+@return CreateRawTransactionResponse
 */
-func (a *TransactionsApiService) CreateRawTransaction(ctx context.Context, body RequestsCreateRawTxRequest) (InlineResponse2001, *http.Response, error) {
+func (a *TransactionsApiService) CreateRawTransaction(ctx context.Context, body TransactionCreateRawTxRequest) (CreateRawTransactionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2001
+		localVarReturnValue CreateRawTransactionResponse
 	)
 
 	// create path and map variables
@@ -348,7 +348,7 @@ func (a *TransactionsApiService) CreateRawTransaction(ctx context.Context, body 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v CreateRawTransactionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -387,15 +387,15 @@ TransactionsApiService Decode a transaction
 Decodes a transaction and returns its inscriptions and runestone data
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
-@return InlineResponse20036
+@return DecodeTransactionResponse
 */
-func (a *TransactionsApiService) DecodeTx(ctx context.Context, txid string) (InlineResponse20036, *http.Response, error) {
+func (a *TransactionsApiService) DecodeTx(ctx context.Context, txid string) (DecodeTransactionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20036
+		localVarReturnValue DecodeTransactionResponse
 	)
 
 	// create path and map variables
@@ -466,7 +466,7 @@ func (a *TransactionsApiService) DecodeTx(ctx context.Context, txid string) (Inl
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20036
+			var v DecodeTransactionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -515,15 +515,15 @@ TransactionsApiService Get raw transaction (verbosity 1)
 Get raw transaction as a decoded object
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
-@return InlineResponse20037
+@return GetRawTransactionDecodedResponse
 */
-func (a *TransactionsApiService) GetRawTransactionDecoded(ctx context.Context, txid string) (InlineResponse20037, *http.Response, error) {
+func (a *TransactionsApiService) GetRawTransactionDecoded(ctx context.Context, txid string) (GetRawTransactionDecodedResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20037
+		localVarReturnValue GetRawTransactionDecodedResponse
 	)
 
 	// create path and map variables
@@ -594,7 +594,7 @@ func (a *TransactionsApiService) GetRawTransactionDecoded(ctx context.Context, t
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20037
+			var v GetRawTransactionDecodedResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -643,15 +643,15 @@ TransactionsApiService Get raw transaction (verbosity 0)
 Get raw transaction as a raw hex string
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
-@return InlineResponse2001
+@return GetRawTransactionHexResponse
 */
-func (a *TransactionsApiService) GetRawTransactionHex(ctx context.Context, txid string) (InlineResponse2001, *http.Response, error) {
+func (a *TransactionsApiService) GetRawTransactionHex(ctx context.Context, txid string) (GetRawTransactionHexResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2001
+		localVarReturnValue GetRawTransactionHexResponse
 	)
 
 	// create path and map variables
@@ -722,7 +722,7 @@ func (a *TransactionsApiService) GetRawTransactionHex(ctx context.Context, txid 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v GetRawTransactionHexResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -771,15 +771,15 @@ TransactionsApiService Get raw transaction (verbosity 2)
 Get raw transaction with prevout information
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
-@return InlineResponse20038
+@return GetRawTransactionPrevoutResponse
 */
-func (a *TransactionsApiService) GetRawTransactionPrevout(ctx context.Context, txid string) (InlineResponse20038, *http.Response, error) {
+func (a *TransactionsApiService) GetRawTransactionPrevout(ctx context.Context, txid string) (GetRawTransactionPrevoutResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20038
+		localVarReturnValue GetRawTransactionPrevoutResponse
 	)
 
 	// create path and map variables
@@ -850,7 +850,7 @@ func (a *TransactionsApiService) GetRawTransactionPrevout(ctx context.Context, t
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20038
+			var v GetRawTransactionPrevoutResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -899,15 +899,15 @@ TransactionsApiService Get transaction info
 Retrieve information about a specific transaction
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
-@return InlineResponse20035
+@return GetTransactionResponse
 */
-func (a *TransactionsApiService) GetTransaction(ctx context.Context, txid string) (InlineResponse20035, *http.Response, error) {
+func (a *TransactionsApiService) GetTransaction(ctx context.Context, txid string) (GetTransactionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20035
+		localVarReturnValue GetTransactionResponse
 	)
 
 	// create path and map variables
@@ -978,7 +978,7 @@ func (a *TransactionsApiService) GetTransaction(ctx context.Context, txid string
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20035
+			var v GetTransactionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1027,15 +1027,15 @@ TransactionsApiService Get transaction output
 Returns details about an unspent transaction output
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Transaction output request parameters
-@return InlineResponse20031
+@return GetTxOutResponse
 */
-func (a *TransactionsApiService) GetTxOut(ctx context.Context, body RequestsGetTxOutRequest) (InlineResponse20031, *http.Response, error) {
+func (a *TransactionsApiService) GetTxOut(ctx context.Context, body TransactionGetTxOutRequest) (GetTxOutResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20031
+		localVarReturnValue GetTxOutResponse
 	)
 
 	// create path and map variables
@@ -1107,7 +1107,7 @@ func (a *TransactionsApiService) GetTxOut(ctx context.Context, body RequestsGetT
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20031
+			var v GetTxOutResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1146,15 +1146,15 @@ TransactionsApiService Get transaction output proof
 Returns a hex-encoded proof that one or more specified transactions were included in a block
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Transaction proof request parameters
-@return InlineResponse2001
+@return GetTxOutProofResponse
 */
-func (a *TransactionsApiService) GetTxOutProof(ctx context.Context, body RequestsGetTxOutProofRequest) (InlineResponse2001, *http.Response, error) {
+func (a *TransactionsApiService) GetTxOutProof(ctx context.Context, body TransactionGetTxOutProofRequest) (GetTxOutProofResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2001
+		localVarReturnValue GetTxOutProofResponse
 	)
 
 	// create path and map variables
@@ -1226,7 +1226,7 @@ func (a *TransactionsApiService) GetTxOutProof(ctx context.Context, body Request
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v GetTxOutProofResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1265,15 +1265,15 @@ TransactionsApiService Get transaction output set information
 Returns statistics about the unspent transaction output set
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body UTXO set info request parameters
-@return InlineResponse20032
+@return InlineResponse2002
 */
-func (a *TransactionsApiService) GetTxOutSetInfo(ctx context.Context, body RequestsGetTxOutSetInfoRequest) (InlineResponse20032, *http.Response, error) {
+func (a *TransactionsApiService) GetTxOutSetInfo(ctx context.Context, body TransactionGetTxOutSetInfoRequest) (InlineResponse2002, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20032
+		localVarReturnValue InlineResponse2002
 	)
 
 	// create path and map variables
@@ -1345,7 +1345,7 @@ func (a *TransactionsApiService) GetTxOutSetInfo(ctx context.Context, body Reque
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20032
+			var v InlineResponse2002
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1384,15 +1384,15 @@ TransactionsApiService Get transaction spending prevout
 Scans the mempool to find transactions spending any of the given outputs
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Transaction spending prevout request
-@return InlineResponse20034
+@return GetTxSpendingPrevoutResponse
 */
-func (a *TransactionsApiService) GetTxSpendingPrevout(ctx context.Context, body RequestsGetTxSpendingPrevoutRequest) (InlineResponse20034, *http.Response, error) {
+func (a *TransactionsApiService) GetTxSpendingPrevout(ctx context.Context, body TransactionGetTxSpendingPrevoutRequest) (GetTxSpendingPrevoutResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20034
+		localVarReturnValue GetTxSpendingPrevoutResponse
 	)
 
 	// create path and map variables
@@ -1464,7 +1464,7 @@ func (a *TransactionsApiService) GetTxSpendingPrevout(ctx context.Context, body 
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20034
+			var v GetTxSpendingPrevoutResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1503,15 +1503,15 @@ TransactionsApiService Send raw transaction
 Submits a raw transaction to local node and network
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Raw transaction to send
-@return InlineResponse2001
+@return SendRawTransactionResponse
 */
-func (a *TransactionsApiService) SendRawTransaction(ctx context.Context, body RequestsSendRawTransactionRequest) (InlineResponse2001, *http.Response, error) {
+func (a *TransactionsApiService) SendRawTransaction(ctx context.Context, body TransactionSendRawTransactionRequest) (SendRawTransactionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2001
+		localVarReturnValue SendRawTransactionResponse
 	)
 
 	// create path and map variables
@@ -1583,7 +1583,7 @@ func (a *TransactionsApiService) SendRawTransaction(ctx context.Context, body Re
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v SendRawTransactionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1622,15 +1622,15 @@ TransactionsApiService Verify transaction output proof
 Verifies that a proof points to a transaction in a block
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Proof to verify
-@return InlineResponse20033
+@return VerifyTxOutProofResponse
 */
-func (a *TransactionsApiService) VerifyTxOutProof(ctx context.Context, body RequestsVerifyTxOutProofRequest) (InlineResponse20033, *http.Response, error) {
+func (a *TransactionsApiService) VerifyTxOutProof(ctx context.Context, body TransactionVerifyTxOutProofRequest) (VerifyTxOutProofResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20033
+		localVarReturnValue VerifyTxOutProofResponse
 	)
 
 	// create path and map variables
@@ -1702,7 +1702,7 @@ func (a *TransactionsApiService) VerifyTxOutProof(ctx context.Context, body Requ
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20033
+			var v VerifyTxOutProofResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

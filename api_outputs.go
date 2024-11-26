@@ -30,15 +30,15 @@ OutputsApiService Get output info by outpoint
 Retrieve information about a specific UTXO using outpoint string
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param outpoint Outpoint
-@return InlineResponse20022
+@return InlineResponse200
 */
-func (a *OutputsApiService) GetOutputByOutpoint(ctx context.Context, outpoint string) (InlineResponse20022, *http.Response, error) {
+func (a *OutputsApiService) GetOutputByOutpoint(ctx context.Context, outpoint string) (InlineResponse200, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20022
+		localVarReturnValue InlineResponse200
 	)
 
 	// create path and map variables
@@ -109,7 +109,7 @@ func (a *OutputsApiService) GetOutputByOutpoint(ctx context.Context, outpoint st
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20022
+			var v InlineResponse200
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -158,15 +158,15 @@ OutputsApiService Get multiple outputs
 Retrieve information about multiple UTXOs
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Outpoints
-@return InlineResponse20023
+@return InlineResponse2001
 */
-func (a *OutputsApiService) GetOutputs(ctx context.Context, body []string) (InlineResponse20023, *http.Response, error) {
+func (a *OutputsApiService) GetOutputs(ctx context.Context, body []string) (InlineResponse2001, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20023
+		localVarReturnValue InlineResponse2001
 	)
 
 	// create path and map variables
@@ -238,7 +238,7 @@ func (a *OutputsApiService) GetOutputs(ctx context.Context, body []string) (Inli
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20023
+			var v InlineResponse2001
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**TestMempoolAccept**](MempoolApi.md#TestMempoolAccept) | **Post** /mempool/test-accept | Test mempool accept
 
 # **GetMempoolAncestors**
-> InlineResponse20016 GetMempoolAncestors(ctx, body)
+> GetMempoolAncestorsResponse GetMempoolAncestors(ctx, body)
 Get mempool ancestors
 
 Returns all in-mempool ancestors for a transaction in the mempool
@@ -21,11 +21,11 @@ Returns all in-mempool ancestors for a transaction in the mempool
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsGetMempoolAncestorsRequest**](RequestsGetMempoolAncestorsRequest.md)| Mempool ancestors request parameters | 
+  **body** | [**GetMempoolAncestorsRequest**](GetMempoolAncestorsRequest.md)| Mempool ancestors request parameters | 
 
 ### Return type
 
-[**InlineResponse20016**](inline_response_200_16.md)
+[**GetMempoolAncestorsResponse**](GetMempoolAncestorsResponse.md)
 
 ### Authorization
 
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMempoolDescendants**
-> InlineResponse20017 GetMempoolDescendants(ctx, body)
+> GetMempoolDescendantsResponse GetMempoolDescendants(ctx, body)
 Get mempool descendants
 
 Returns all in-mempool descendants for a transaction in the mempool
@@ -49,11 +49,11 @@ Returns all in-mempool descendants for a transaction in the mempool
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsGetMempoolDescendantsRequest**](RequestsGetMempoolDescendantsRequest.md)| Mempool descendants request parameters | 
+  **body** | [**GetMempoolDescendantsRequest**](GetMempoolDescendantsRequest.md)| Mempool descendants request parameters | 
 
 ### Return type
 
-[**InlineResponse20017**](inline_response_200_17.md)
+[**GetMempoolDescendantsResponse**](GetMempoolDescendantsResponse.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMempoolInfo**
-> InlineResponse20018 GetMempoolInfo(ctx, )
+> GetMempoolInfoResponse GetMempoolInfo(ctx, )
 Get mempool information
 
 Returns details on the active state of the TX memory pool
@@ -77,7 +77,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20018**](inline_response_200_18.md)
+[**GetMempoolInfoResponse**](GetMempoolInfoResponse.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRawMempool**
-> InlineResponse20019 GetRawMempool(ctx, body)
+> GetRawMempoolResponse GetRawMempool(ctx, body)
 Get raw mempool
 
 Returns all transaction ids in memory pool
@@ -101,11 +101,11 @@ Returns all transaction ids in memory pool
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsGetRawMempoolRequest**](RequestsGetRawMempoolRequest.md)| Raw mempool request parameters | 
+  **body** | [**GetRawMempoolRequest**](GetRawMempoolRequest.md)| Raw mempool request parameters | 
 
 ### Return type
 
-[**InlineResponse20019**](inline_response_200_19.md)
+[**GetRawMempoolResponse**](GetRawMempoolResponse.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **TestMempoolAccept**
-> InlineResponse20020 TestMempoolAccept(ctx, body)
+> TestMempoolAcceptResponse TestMempoolAccept(ctx, body)
 Test mempool accept
 
 Tests whether raw transactions would be accepted by mempool
@@ -129,11 +129,11 @@ Tests whether raw transactions would be accepted by mempool
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsTestMempoolAcceptRequest**](RequestsTestMempoolAcceptRequest.md)| Raw transactions to test | 
+  **body** | [**TestMempoolAcceptRequest**](TestMempoolAcceptRequest.md)| Raw transactions to test | 
 
 ### Return type
 
-[**InlineResponse20020**](inline_response_200_20.md)
+[**TestMempoolAcceptResponse**](TestMempoolAcceptResponse.md)
 
 ### Authorization
 

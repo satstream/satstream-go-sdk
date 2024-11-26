@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**GetNetworkHashps**](MiningApi.md#GetNetworkHashps) | **Post** /mining/networkhashps | Get network hash per second
 
 # **GetMiningInfo**
-> InlineResponse20021 GetMiningInfo(ctx, )
+> GetMiningInfoResponse GetMiningInfo(ctx, )
 Get mining information
 
 Returns a json object containing mining-related information
@@ -18,7 +18,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20021**](inline_response_200_21.md)
+[**GetMiningInfoResponse**](GetMiningInfoResponse.md)
 
 ### Authorization
 
@@ -32,7 +32,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetNetworkHashps**
-> InlineResponse2009 GetNetworkHashps(ctx, body)
+> GetNetworkHashPsResponse GetNetworkHashps(ctx, body)
 Get network hash per second
 
 Returns the estimated network hashes per second based on the last n blocks
@@ -42,11 +42,11 @@ Returns the estimated network hashes per second based on the last n blocks
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsGetNetworkHashPsRequest**](RequestsGetNetworkHashPsRequest.md)| Network hash rate parameters | 
+  **body** | [**GetNetworkHashPsRequest**](GetNetworkHashPsRequest.md)| Network hash rate parameters | 
 
 ### Return type
 
-[**InlineResponse2009**](inline_response_200_9.md)
+[**GetNetworkHashPsResponse**](GetNetworkHashPSResponse.md)
 
 ### Authorization
 

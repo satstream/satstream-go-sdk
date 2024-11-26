@@ -208,7 +208,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/GetBlockDecodedResponse'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -247,11 +247,11 @@ paths:
           type: string
       responses:
         "200":
-          description: Raw block hex
+          description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/GetBlockHexResponse'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -294,7 +294,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_2'
+                $ref: '#/components/schemas/GetBlockPrevoutResponse'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -333,11 +333,11 @@ paths:
           type: string
       responses:
         "200":
-          description: Block summary
+          description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_3'
+                $ref: '#/components/schemas/GetBlockSummaryResponse'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -370,7 +370,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.GetBlockStatsRequest'
+              $ref: '#/components/schemas/GetBlockStatsRequest'
         required: true
       responses:
         "200":
@@ -378,7 +378,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_4'
+                $ref: '#/components/schemas/GetBlockStatsResponse'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -416,7 +416,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/GetBlockResponse'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -451,7 +451,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_6'
+                $ref: '#/components/schemas/GetBlockchainInfoResponse'
         "500":
           description: Internal Server Error
           content:
@@ -473,7 +473,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_7'
+                $ref: '#/components/schemas/GetBlockCountResponse'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -507,7 +507,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/GetLatestBlockHashResponse'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -550,7 +550,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/GetBlockHashByHeightResponse'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -584,7 +584,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_7'
+                $ref: '#/components/schemas/GetLatestBlockHeightResponse'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -620,7 +620,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_8'
+                $ref: '#/components/schemas/GetBlocksResponse'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -654,7 +654,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_7'
+                $ref: '#/components/schemas/GetLatestBlockTimeResponse'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -689,7 +689,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_9'
+                $ref: '#/components/schemas/GetDifficultyResponse'
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
@@ -711,7 +711,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.GetChainTxStatsRequest'
+              $ref: '#/components/schemas/GetChainTxStatsRequest'
         required: true
       responses:
         "200":
@@ -719,7 +719,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_10'
+                $ref: '#/components/schemas/GetChainTxStatsResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -748,7 +748,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.EstimateRawFeeRequest'
+              $ref: '#/components/schemas/EstimateRawFeeRequest'
         required: true
       responses:
         "200":
@@ -756,7 +756,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_11'
+                $ref: '#/components/schemas/EstimateRawFeeResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -785,7 +785,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.EstimateSmartFeeRequest'
+              $ref: '#/components/schemas/EstimateSmartFeeRequest'
         required: true
       responses:
         "200":
@@ -793,7 +793,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_12'
+                $ref: '#/components/schemas/EstimateSmartFeeResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -831,7 +831,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_13'
+                $ref: '#/components/schemas/GetInscriptionResponse'
         "400":
           description: Bad Request
           content:
@@ -876,7 +876,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_13'
+                $ref: '#/components/schemas/GetInscriptionChildResponse'
         "400":
           description: Bad Request
           content:
@@ -904,7 +904,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_14'
+                $ref: '#/components/schemas/GetLatestInscriptionsResponse'
         "400":
           description: Bad Request
           content:
@@ -940,7 +940,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_15'
+                $ref: '#/components/schemas/FetchInscriptionsResponse'
         "400":
           description: Bad Request
           content:
@@ -978,7 +978,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_14'
+                $ref: '#/components/schemas/GetBlockInscriptionsResponse'
         "400":
           description: Bad Request
           content:
@@ -1015,7 +1015,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_14'
+                $ref: '#/components/schemas/GetLatestInscriptionsResponse'
         "400":
           description: Bad Request
           content:
@@ -1042,7 +1042,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.GetMempoolAncestorsRequest'
+              $ref: '#/components/schemas/GetMempoolAncestorsRequest'
         required: true
       responses:
         "200":
@@ -1050,7 +1050,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_16'
+                $ref: '#/components/schemas/GetMempoolAncestorsResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -1078,7 +1078,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.GetMempoolDescendantsRequest'
+              $ref: '#/components/schemas/GetMempoolDescendantsRequest'
         required: true
       responses:
         "200":
@@ -1086,7 +1086,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_17'
+                $ref: '#/components/schemas/GetMempoolDescendantsResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -1115,7 +1115,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_18'
+                $ref: '#/components/schemas/GetMempoolInfoResponse'
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
@@ -1136,7 +1136,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.GetRawMempoolRequest'
+              $ref: '#/components/schemas/GetRawMempoolRequest'
         required: true
       responses:
         "200":
@@ -1144,7 +1144,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_19'
+                $ref: '#/components/schemas/GetRawMempoolResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -1172,7 +1172,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.TestMempoolAcceptRequest'
+              $ref: '#/components/schemas/TestMempoolAcceptRequest'
         required: true
       responses:
         "200":
@@ -1180,7 +1180,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_20'
+                $ref: '#/components/schemas/TestMempoolAcceptResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -1209,7 +1209,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_21'
+                $ref: '#/components/schemas/GetMiningInfoResponse'
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
@@ -1231,7 +1231,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.GetNetworkHashPSRequest'
+              $ref: '#/components/schemas/GetNetworkHashPSRequest'
         required: true
       responses:
         "200":
@@ -1239,7 +1239,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_9'
+                $ref: '#/components/schemas/GetNetworkHashPSResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -1277,7 +1277,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_22'
+                $ref: '#/components/schemas/inline_response_200'
         "400":
           description: Bad Request
           content:
@@ -1320,7 +1320,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_23'
+                $ref: '#/components/schemas/inline_response_200_1'
         "400":
           description: Bad Request
           content:
@@ -1355,7 +1355,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.AnalyzePSBTRequest'
+              $ref: '#/components/schemas/AnalyzePSBTRequest'
         required: true
       responses:
         "200":
@@ -1363,7 +1363,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_24'
+                $ref: '#/components/schemas/AnalyzePSBTResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -1392,7 +1392,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.CombinePSBTRequest'
+              $ref: '#/components/schemas/CombinePSBTRequest'
         required: true
       responses:
         "200":
@@ -1400,7 +1400,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/CombinePSBTResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -1429,7 +1429,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.CreatePSBTRequest'
+              $ref: '#/components/schemas/CreatePSBTRequest'
         required: true
       responses:
         "200":
@@ -1437,7 +1437,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/CreatePSBTResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -1466,7 +1466,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.AnalyzePSBTRequest'
+              $ref: '#/components/schemas/DecodePSBTRequest'
         required: true
       responses:
         "200":
@@ -1474,7 +1474,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_25'
+                $ref: '#/components/schemas/DecodePSBTResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -1503,7 +1503,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.JoinPSBTsRequest'
+              $ref: '#/components/schemas/JoinPSBTsRequest'
         required: true
       responses:
         "200":
@@ -1511,7 +1511,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/JoinPSBTsResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -1549,7 +1549,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_26'
+                $ref: '#/components/schemas/GetRuneResponse'
         "400":
           description: Bad request
           content:
@@ -1584,7 +1584,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_27'
+                $ref: '#/components/schemas/GetLatestRunesResponse'
         "400":
           description: Bad request
           content:
@@ -1627,7 +1627,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_27'
+                $ref: '#/components/schemas/GetLatestRunesResponse'
         "400":
           description: Bad request
           content:
@@ -1670,7 +1670,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_28'
+                $ref: '#/components/schemas/GetSatoshiResponse'
         "400":
           description: Bad request
           content:
@@ -1704,7 +1704,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.DecodeScriptRequest'
+              $ref: '#/components/schemas/DecodeScriptRequest'
         required: true
       responses:
         "200":
@@ -1712,7 +1712,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_29'
+                $ref: '#/components/schemas/DecodeScriptResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -1741,7 +1741,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_30'
+                $ref: '#/components/schemas/GetStatusResponse'
         "400":
           description: Bad request
           content:
@@ -1774,7 +1774,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.CombineRawTransactionRequest'
+              $ref: '#/components/schemas/transaction.CombineRawTransactionRequest'
         required: true
       responses:
         "200":
@@ -1782,7 +1782,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/CombineRawTransactionResponse'
         "400":
           description: Bad request
           content:
@@ -1812,7 +1812,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.ConvertToPSBTRequest'
+              $ref: '#/components/schemas/transaction.ConvertToPSBTRequest'
         required: true
       responses:
         "200":
@@ -1820,7 +1820,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/ConvertToPSBTResponse'
         "400":
           description: Bad request
           content:
@@ -1850,7 +1850,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.CreateRawTxRequest'
+              $ref: '#/components/schemas/transaction.CreateRawTxRequest'
         required: true
       responses:
         "200":
@@ -1858,7 +1858,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/CreateRawTransactionResponse'
         "400":
           description: Bad request
           content:
@@ -1886,7 +1886,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.GetTxOutRequest'
+              $ref: '#/components/schemas/transaction.GetTxOutRequest'
         required: true
       responses:
         "200":
@@ -1894,7 +1894,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_31'
+                $ref: '#/components/schemas/GetTxOutResponse'
         "400":
           description: Bad request
           content:
@@ -1922,7 +1922,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.GetTxOutSetInfoRequest'
+              $ref: '#/components/schemas/transaction.GetTxOutSetInfoRequest'
         required: true
       responses:
         "200":
@@ -1930,7 +1930,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_32'
+                $ref: '#/components/schemas/inline_response_200_2'
         "400":
           description: Bad request
           content:
@@ -1959,7 +1959,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.GetTxOutProofRequest'
+              $ref: '#/components/schemas/transaction.GetTxOutProofRequest'
         required: true
       responses:
         "200":
@@ -1967,7 +1967,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/GetTxOutProofResponse'
         "400":
           description: Bad request
           content:
@@ -1995,7 +1995,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.VerifyTxOutProofRequest'
+              $ref: '#/components/schemas/transaction.VerifyTxOutProofRequest'
         required: true
       responses:
         "200":
@@ -2003,7 +2003,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_33'
+                $ref: '#/components/schemas/VerifyTxOutProofResponse'
         "400":
           description: Bad request
           content:
@@ -2031,7 +2031,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.SendRawTransactionRequest'
+              $ref: '#/components/schemas/transaction.SendRawTransactionRequest'
         required: true
       responses:
         "200":
@@ -2039,7 +2039,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/SendRawTransactionResponse'
         "400":
           description: Bad request
           content:
@@ -2068,7 +2068,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.GetTxSpendingPrevoutRequest'
+              $ref: '#/components/schemas/transaction.GetTxSpendingPrevoutRequest'
         required: true
       responses:
         "200":
@@ -2076,7 +2076,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_34'
+                $ref: '#/components/schemas/GetTxSpendingPrevoutResponse'
         "400":
           description: Bad request
           content:
@@ -2114,7 +2114,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_35'
+                $ref: '#/components/schemas/GetTransactionResponse'
         "400":
           description: Bad request
           content:
@@ -2158,7 +2158,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_36'
+                $ref: '#/components/schemas/DecodeTransactionResponse'
         "400":
           description: Bad request
           content:
@@ -2201,7 +2201,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_37'
+                $ref: '#/components/schemas/GetRawTransactionDecodedResponse'
         "400":
           description: Bad request
           content:
@@ -2244,7 +2244,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/GetRawTransactionHexResponse'
         "400":
           description: Bad request
           content:
@@ -2287,7 +2287,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_38'
+                $ref: '#/components/schemas/GetRawTransactionPrevoutResponse'
         "400":
           description: Bad request
           content:
@@ -2342,6 +2342,55 @@ components:
         - inscriptions
         - inscriptions
         sat_balance: 6
+    AnalyzePSBTRequest:
+      type: object
+      properties:
+        psbt:
+          type: string
+          description: The base64-encoded PSBT to analyze
+    AnalyzePSBTResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/PSBTAnalysis'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          next: next
+          estimated_feerate: 6.027456183070403
+          inputs:
+          - next: next
+            is_final: true
+            missing:
+              pubkeys:
+              - pubkeys
+              - pubkeys
+              witnessscript: witnessscript
+              redeemscript: redeemscript
+              signatures:
+              - signatures
+              - signatures
+            has_utxo: true
+          - next: next
+            is_final: true
+            missing:
+              pubkeys:
+              - pubkeys
+              - pubkeys
+              witnessscript: witnessscript
+              redeemscript: redeemscript
+              signatures:
+              - signatures
+              - signatures
+            has_utxo: true
+          fee: 5.962133916683182
+          error: error
+          estimated_vsize: 1
     Bip32Deriv:
       type: object
       properties:
@@ -2351,6 +2400,9 @@ components:
         path:
           type: string
           description: The derivation path
+      example:
+        path: path
+        master_fingerprint: master_fingerprint
     Block1:
       type: object
       properties:
@@ -2394,6 +2446,28 @@ components:
           type: string
         weight:
           type: integer
+      example:
+        mediantime: 5
+        tx:
+        - tx
+        - tx
+        previousblockhash: previousblockhash
+        bits: bits
+        weight: 7
+        versionHex: versionHex
+        confirmations: 6
+        nonce: 7
+        version: 4
+        nextblockhash: nextblockhash
+        difficulty: 1.4658129805029452
+        chainwork: chainwork
+        nTx: 2
+        size: 9
+        merkleroot: merkleroot
+        strippedsize: 3
+        time: 2
+        hash: hash
+        height: 5
     Block2:
       type: object
       properties:
@@ -2438,6 +2512,112 @@ components:
           type: string
         weight:
           type: integer
+      example:
+        mediantime: 5
+        tx:
+        - vsize: 4
+          locktime: 7
+          size: 1
+          fee: 4.145608029883936
+          txid: txid
+          weight: 5
+          hex: hex
+          vin:
+          - sequence: 1
+            coinbase: coinbase
+            scriptSig: ""
+            txid: txid
+            txinwitness:
+            - txinwitness
+            - txinwitness
+            vout: 6
+          - sequence: 1
+            coinbase: coinbase
+            scriptSig: ""
+            txid: txid
+            txinwitness:
+            - txinwitness
+            - txinwitness
+            vout: 6
+          version: 1
+          hash: hash
+          vout:
+          - scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            value: 1.1730742509559433
+            "n": 7
+          - scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            value: 1.1730742509559433
+            "n": 7
+        - vsize: 4
+          locktime: 7
+          size: 1
+          fee: 4.145608029883936
+          txid: txid
+          weight: 5
+          hex: hex
+          vin:
+          - sequence: 1
+            coinbase: coinbase
+            scriptSig: ""
+            txid: txid
+            txinwitness:
+            - txinwitness
+            - txinwitness
+            vout: 6
+          - sequence: 1
+            coinbase: coinbase
+            scriptSig: ""
+            txid: txid
+            txinwitness:
+            - txinwitness
+            - txinwitness
+            vout: 6
+          version: 1
+          hash: hash
+          vout:
+          - scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            value: 1.1730742509559433
+            "n": 7
+          - scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            value: 1.1730742509559433
+            "n": 7
+        previousblockhash: previousblockhash
+        bits: bits
+        weight: 9
+        versionHex: versionHex
+        confirmations: 6
+        nonce: 7
+        version: 9
+        nextblockhash: nextblockhash
+        difficulty: 1.4658129805029452
+        chainwork: chainwork
+        nTx: 2
+        size: 9
+        merkleroot: merkleroot
+        strippedsize: 3
+        time: 2
+        hash: hash
+        height: 5
     Block3:
       type: object
       properties:
@@ -2482,6 +2662,124 @@ components:
           type: string
         weight:
           type: integer
+      example:
+        mediantime: 5
+        tx:
+        - vsize: 7
+          locktime: 7
+          size: 1
+          fee: 4.145608029883936
+          txid: txid
+          weight: 1
+          hex: hex
+          vin:
+          - sequence: 1
+            coinbase: coinbase
+            prevout: ""
+            scriptSig:
+              asm: asm
+              hex: hex
+            txid: txid
+            txinwitness:
+            - txinwitness
+            - txinwitness
+            vout: 6
+          - sequence: 1
+            coinbase: coinbase
+            prevout: ""
+            scriptSig:
+              asm: asm
+              hex: hex
+            txid: txid
+            txinwitness:
+            - txinwitness
+            - txinwitness
+            vout: 6
+          version: 1
+          hash: hash
+          vout:
+          - scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            value: 1.1730742509559433
+            "n": 7
+          - scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            value: 1.1730742509559433
+            "n": 7
+        - vsize: 7
+          locktime: 7
+          size: 1
+          fee: 4.145608029883936
+          txid: txid
+          weight: 1
+          hex: hex
+          vin:
+          - sequence: 1
+            coinbase: coinbase
+            prevout: ""
+            scriptSig:
+              asm: asm
+              hex: hex
+            txid: txid
+            txinwitness:
+            - txinwitness
+            - txinwitness
+            vout: 6
+          - sequence: 1
+            coinbase: coinbase
+            prevout: ""
+            scriptSig:
+              asm: asm
+              hex: hex
+            txid: txid
+            txinwitness:
+            - txinwitness
+            - txinwitness
+            vout: 6
+          version: 1
+          hash: hash
+          vout:
+          - scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            value: 1.1730742509559433
+            "n": 7
+          - scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            value: 1.1730742509559433
+            "n": 7
+        previousblockhash: previousblockhash
+        bits: bits
+        weight: 5
+        versionHex: versionHex
+        confirmations: 6
+        nonce: 7
+        version: 4
+        nextblockhash: nextblockhash
+        difficulty: 1.4658129805029452
+        chainwork: chainwork
+        nTx: 2
+        size: 9
+        merkleroot: merkleroot
+        strippedsize: 3
+        time: 2
+        hash: hash
+        height: 5
     BlockResponse:
       type: object
       properties:
@@ -2505,6 +2803,58 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Transaction'
+      example:
+        runes:
+        - runes
+        - runes
+        best_height: 6
+        inscriptions:
+        - inscriptions
+        - inscriptions
+        transactions:
+        - lock_time: 5
+          output:
+          - script_pubkey: script_pubkey
+            value: 2
+          - script_pubkey: script_pubkey
+            value: 2
+          input:
+          - sequence: 5
+            witness:
+            - witness
+            - witness
+            previous_output: previous_output
+            script_sig: script_sig
+          - sequence: 5
+            witness:
+            - witness
+            - witness
+            previous_output: previous_output
+            script_sig: script_sig
+          version: 7
+        - lock_time: 5
+          output:
+          - script_pubkey: script_pubkey
+            value: 2
+          - script_pubkey: script_pubkey
+            value: 2
+          input:
+          - sequence: 5
+            witness:
+            - witness
+            - witness
+            previous_output: previous_output
+            script_sig: script_sig
+          - sequence: 5
+            witness:
+            - witness
+            - witness
+            previous_output: previous_output
+            script_sig: script_sig
+          version: 7
+        hash: hash
+        height: 1
+        target: target
     BlockStats:
       type: object
       properties:
@@ -2597,6 +2947,38 @@ components:
         utxo_size_inc:
           type: integer
           description: The increase/decrease in size for the utxo index
+      example:
+        avgfee: 6.027456183070403
+        avgfeerate: 1.4658129805029452
+        subsidy: 1.1730742509559433
+        swtxs: 9
+        avgtxsize: 5.962133916683182
+        utxo_increase: 6
+        maxtxsize: 2
+        total_weight: 9
+        minfee: 1.0246457001441578
+        total_out: 6.683562403749608
+        swtotal_size: 4
+        swtotal_weight: 5
+        outs: 7
+        blockhash: blockhash
+        totalfee: 6.438423552598547
+        maxfeerate: 3.616076749251911
+        medianfee: 4.145608029883936
+        height: 2
+        feerate_percentiles:
+        - 5.637376656633329
+        - 5.637376656633329
+        mediantime: 7
+        minfeerate: 1.4894159098541704
+        total_size: 8
+        maxfee: 9.301444243932576
+        mediantxsize: 1
+        txs: 3
+        ins: 7
+        mintxsize: 6
+        time: 9
+        utxo_size_inc: 1
     BlockVin2:
       type: object
       properties:
@@ -2621,6 +3003,15 @@ components:
         vout:
           type: integer
           description: Index of the referenced output
+      example:
+        sequence: 1
+        coinbase: coinbase
+        scriptSig: ""
+        txid: txid
+        txinwitness:
+        - txinwitness
+        - txinwitness
+        vout: 6
     BlockVin3:
       type: object
       properties:
@@ -2643,6 +3034,18 @@ components:
             type: string
         vout:
           type: integer
+      example:
+        sequence: 1
+        coinbase: coinbase
+        prevout: ""
+        scriptSig:
+          asm: asm
+          hex: hex
+        txid: txid
+        txinwitness:
+        - txinwitness
+        - txinwitness
+        vout: 6
     BlockchainInfo:
       type: object
       properties:
@@ -2670,6 +3073,15 @@ components:
         time:
           type: integer
           description: The block time expressed in UNIX epoch time
+      example:
+        difficulty: 1.4658129805029452
+        headers: 5
+        chain: chain
+        chainwork: chainwork
+        mediantime: 5
+        blocks: 6
+        time: 2
+        bestblockhash: bestblockhash
     BlocksResponse:
       type: object
       properties:
@@ -2685,6 +3097,15 @@ components:
               type: string
         last:
           type: integer
+      example:
+        last: 6
+        blocks:
+        - blocks
+        - blocks
+        featured_blocks:
+          key:
+          - featured_blocks
+          - featured_blocks
     BtcTx2:
       type: object
       properties:
@@ -2714,6 +3135,50 @@ components:
           type: integer
         weight:
           type: integer
+      example:
+        vsize: 4
+        locktime: 7
+        size: 1
+        fee: 4.145608029883936
+        txid: txid
+        weight: 5
+        hex: hex
+        vin:
+        - sequence: 1
+          coinbase: coinbase
+          scriptSig: ""
+          txid: txid
+          txinwitness:
+          - txinwitness
+          - txinwitness
+          vout: 6
+        - sequence: 1
+          coinbase: coinbase
+          scriptSig: ""
+          txid: txid
+          txinwitness:
+          - txinwitness
+          - txinwitness
+          vout: 6
+        version: 1
+        hash: hash
+        vout:
+        - scriptPubKey:
+            address: address
+            asm: asm
+            hex: hex
+            type: type
+            desc: desc
+          value: 1.1730742509559433
+          "n": 7
+        - scriptPubKey:
+            address: address
+            asm: asm
+            hex: hex
+            type: type
+            desc: desc
+          value: 1.1730742509559433
+          "n": 7
     BtcTx3:
       type: object
       properties:
@@ -2743,6 +3208,56 @@ components:
           type: integer
         weight:
           type: integer
+      example:
+        vsize: 7
+        locktime: 7
+        size: 1
+        fee: 4.145608029883936
+        txid: txid
+        weight: 1
+        hex: hex
+        vin:
+        - sequence: 1
+          coinbase: coinbase
+          prevout: ""
+          scriptSig:
+            asm: asm
+            hex: hex
+          txid: txid
+          txinwitness:
+          - txinwitness
+          - txinwitness
+          vout: 6
+        - sequence: 1
+          coinbase: coinbase
+          prevout: ""
+          scriptSig:
+            asm: asm
+            hex: hex
+          txid: txid
+          txinwitness:
+          - txinwitness
+          - txinwitness
+          vout: 6
+        version: 1
+        hash: hash
+        vout:
+        - scriptPubKey:
+            address: address
+            asm: asm
+            hex: hex
+            type: type
+            desc: desc
+          value: 1.1730742509559433
+          "n": 7
+        - scriptPubKey:
+            address: address
+            asm: asm
+            hex: hex
+            type: type
+            desc: desc
+          value: 1.1730742509559433
+          "n": 7
     ChainTxStats:
       type: object
       properties:
@@ -2770,6 +3285,213 @@ components:
         window_tx_count:
           type: integer
           description: The number of transactions in the window
+      example:
+        window_tx_count: 9
+        window_final_block_hash: window_final_block_hash
+        txcount: 1
+        txrate: 5.962133916683182
+        window_block_count: 5
+        time: 6
+        window_final_block_height: 2
+        window_interval: 7
+    CombinePSBTRequest:
+      required:
+      - psbts
+      type: object
+      properties:
+        psbts:
+          minItems: 1
+          type: array
+          description: Array of base64-encoded PSBTs to combine
+          items:
+            type: string
+    CombinePSBTResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: string
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: data
+    CombineRawTransactionResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: string
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: data
+    ConvertToPSBTResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: string
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: data
+    CreatePSBTInput:
+      type: object
+      properties:
+        sequence:
+          type: integer
+          description: The sequence number to use for the input
+        txid:
+          type: string
+          description: The transaction id of the output to spend
+        vout:
+          type: integer
+          description: The output index number (vout) of the output to spend
+    CreatePSBTOutput:
+      type: object
+      properties:
+        address:
+          type: string
+          description: The bitcoin address to send to
+        data:
+          type: string
+          description: Hex-encoded data to embed in the transaction
+    CreatePSBTRequest:
+      required:
+      - inputs
+      - outputs
+      type: object
+      properties:
+        inputs:
+          minItems: 1
+          type: array
+          description: The inputs for the transaction
+          items:
+            $ref: '#/components/schemas/CreatePSBTInput'
+        locktime:
+          type: integer
+          description: Raw locktime. Non-0 value also locktime-activates inputs
+        outputs:
+          minItems: 1
+          type: array
+          description: The outputs for the transaction (each address can only appear
+            once)
+          items:
+            $ref: '#/components/schemas/CreatePSBTOutput'
+        replaceable:
+          type: boolean
+          description: Marks this transaction as BIP125-replaceable
+    CreatePSBTResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: string
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: data
+    CreateRawTransactionResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: string
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: data
+    DecodePSBTRequest:
+      type: object
+      properties:
+        psbt:
+          type: string
+          description: The base64-encoded PSBT to decode
+    DecodePSBTResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/DecodedPSBT'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          outputs:
+          - bip32_derivs:
+            - path: path
+              master_fingerprint: master_fingerprint
+              pubkey: pubkey
+            - path: path
+              master_fingerprint: master_fingerprint
+              pubkey: pubkey
+            redeem_script: ""
+            unknown: ""
+            witness_script: ""
+          - bip32_derivs:
+            - path: path
+              master_fingerprint: master_fingerprint
+              pubkey: pubkey
+            - path: path
+              master_fingerprint: master_fingerprint
+              pubkey: pubkey
+            redeem_script: ""
+            unknown: ""
+            witness_script: ""
+          tx: ""
+          inputs:
+          - non_witness_utxo: ""
+            final_scriptwitness:
+            - final_scriptwitness
+            - final_scriptwitness
+            bip32_derivs:
+              key:
+                path: path
+                master_fingerprint: master_fingerprint
+            partial_signatures:
+              key: partial_signatures
+            redeem_script: ""
+            sighash: sighash
+            final_scriptsig: ""
+            witness_utxo: ""
+            unknown: ""
+            witness_script: ""
+          - non_witness_utxo: ""
+            final_scriptwitness:
+            - final_scriptwitness
+            - final_scriptwitness
+            bip32_derivs:
+              key:
+                path: path
+                master_fingerprint: master_fingerprint
+            partial_signatures:
+              key: partial_signatures
+            redeem_script: ""
+            sighash: sighash
+            final_scriptsig: ""
+            witness_utxo: ""
+            unknown: ""
+            witness_script: ""
+          fee: 6.027456183070403
+          unknown: ""
     DecodeResponse:
       type: object
       properties:
@@ -2779,6 +3501,143 @@ components:
             $ref: '#/components/schemas/DecodedInscription'
         runestone:
           $ref: '#/components/schemas/RunestoneData'
+      example:
+        inscriptions:
+        - input: 6
+          offset: 1
+          stutter: true
+          payload:
+            delegate: delegate
+            metaprotocol: metaprotocol
+            metadata: metadata
+            pointer: pointer
+            content_type:
+            - 5
+            - 5
+            duplicate_field: true
+            content_encoding: content_encoding
+            body:
+            - 5
+            - 5
+            unrecognized_even_field: true
+            incomplete_field: true
+            parents:
+            - parents
+            - parents
+            rune: rune
+          pushnum: true
+        - input: 6
+          offset: 1
+          stutter: true
+          payload:
+            delegate: delegate
+            metaprotocol: metaprotocol
+            metadata: metadata
+            pointer: pointer
+            content_type:
+            - 5
+            - 5
+            duplicate_field: true
+            content_encoding: content_encoding
+            body:
+            - 5
+            - 5
+            unrecognized_even_field: true
+            incomplete_field: true
+            parents:
+            - parents
+            - parents
+            rune: rune
+          pushnum: true
+        runestone: {}
+    DecodeScriptRequest:
+      required:
+      - hexstring
+      type: object
+      properties:
+        hexstring:
+          type: string
+          description: The hex-encoded script to decode
+    DecodeScriptResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/DecodedScript'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          segwit: ""
+          address: address
+          p2sh: p2sh
+          asm: asm
+          type: type
+          desc: desc
+    DecodeTransactionResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/DecodeResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          inscriptions:
+          - input: 6
+            offset: 1
+            stutter: true
+            payload:
+              delegate: delegate
+              metaprotocol: metaprotocol
+              metadata: metadata
+              pointer: pointer
+              content_type:
+              - 5
+              - 5
+              duplicate_field: true
+              content_encoding: content_encoding
+              body:
+              - 5
+              - 5
+              unrecognized_even_field: true
+              incomplete_field: true
+              parents:
+              - parents
+              - parents
+              rune: rune
+            pushnum: true
+          - input: 6
+            offset: 1
+            stutter: true
+            payload:
+              delegate: delegate
+              metaprotocol: metaprotocol
+              metadata: metadata
+              pointer: pointer
+              content_type:
+              - 5
+              - 5
+              duplicate_field: true
+              content_encoding: content_encoding
+              body:
+              - 5
+              - 5
+              unrecognized_even_field: true
+              incomplete_field: true
+              parents:
+              - parents
+              - parents
+              rune: rune
+            pushnum: true
+          runestone: {}
     DecodedInscription:
       type: object
       properties:
@@ -2792,6 +3651,30 @@ components:
           type: boolean
         stutter:
           type: boolean
+      example:
+        input: 6
+        offset: 1
+        stutter: true
+        payload:
+          delegate: delegate
+          metaprotocol: metaprotocol
+          metadata: metadata
+          pointer: pointer
+          content_type:
+          - 5
+          - 5
+          duplicate_field: true
+          content_encoding: content_encoding
+          body:
+          - 5
+          - 5
+          unrecognized_even_field: true
+          incomplete_field: true
+          parents:
+          - parents
+          - parents
+          rune: rune
+        pushnum: true
     DecodedPSBT:
       type: object
       properties:
@@ -2818,6 +3701,64 @@ components:
           description: The unknown global fields
           allOf:
           - $ref: '#/components/schemas/UnknownFields'
+      example:
+        outputs:
+        - bip32_derivs:
+          - path: path
+            master_fingerprint: master_fingerprint
+            pubkey: pubkey
+          - path: path
+            master_fingerprint: master_fingerprint
+            pubkey: pubkey
+          redeem_script: ""
+          unknown: ""
+          witness_script: ""
+        - bip32_derivs:
+          - path: path
+            master_fingerprint: master_fingerprint
+            pubkey: pubkey
+          - path: path
+            master_fingerprint: master_fingerprint
+            pubkey: pubkey
+          redeem_script: ""
+          unknown: ""
+          witness_script: ""
+        tx: ""
+        inputs:
+        - non_witness_utxo: ""
+          final_scriptwitness:
+          - final_scriptwitness
+          - final_scriptwitness
+          bip32_derivs:
+            key:
+              path: path
+              master_fingerprint: master_fingerprint
+          partial_signatures:
+            key: partial_signatures
+          redeem_script: ""
+          sighash: sighash
+          final_scriptsig: ""
+          witness_utxo: ""
+          unknown: ""
+          witness_script: ""
+        - non_witness_utxo: ""
+          final_scriptwitness:
+          - final_scriptwitness
+          - final_scriptwitness
+          bip32_derivs:
+            key:
+              path: path
+              master_fingerprint: master_fingerprint
+          partial_signatures:
+            key: partial_signatures
+          redeem_script: ""
+          sighash: sighash
+          final_scriptsig: ""
+          witness_utxo: ""
+          unknown: ""
+          witness_script: ""
+        fee: 6.027456183070403
+        unknown: ""
     DecodedPSBTInput:
       type: object
       properties:
@@ -2869,6 +3810,23 @@ components:
           description: Transaction output for witness UTXOs
           allOf:
           - $ref: '#/components/schemas/PSBTWitnessUtxo'
+      example:
+        non_witness_utxo: ""
+        final_scriptwitness:
+        - final_scriptwitness
+        - final_scriptwitness
+        bip32_derivs:
+          key:
+            path: path
+            master_fingerprint: master_fingerprint
+        partial_signatures:
+          key: partial_signatures
+        redeem_script: ""
+        sighash: sighash
+        final_scriptsig: ""
+        witness_utxo: ""
+        unknown: ""
+        witness_script: ""
     DecodedPSBTOutput:
       type: object
       properties:
@@ -2892,6 +3850,17 @@ components:
           description: The witness script
           allOf:
           - $ref: '#/components/schemas/Script'
+      example:
+        bip32_derivs:
+        - path: path
+          master_fingerprint: master_fingerprint
+          pubkey: pubkey
+        - path: path
+          master_fingerprint: master_fingerprint
+          pubkey: pubkey
+        redeem_script: ""
+        unknown: ""
+        witness_script: ""
     DecodedScript:
       type: object
       properties:
@@ -2915,6 +3884,13 @@ components:
         type:
           type: string
           description: The output type
+      example:
+        segwit: ""
+        address: address
+        p2sh: p2sh
+        asm: asm
+        type: type
+        desc: desc
     Duration:
       type: object
       properties:
@@ -2922,6 +3898,69 @@ components:
           type: integer
         secs:
           type: integer
+      example:
+        nanos: 5
+        secs: 2
+    EstimateRawFeeRequest:
+      required:
+      - conf_target
+      type: object
+      properties:
+        conf_target:
+          maximum: 1008
+          minimum: 1
+          type: integer
+          description: Confirmation target in blocks (1 - 1008)
+        threshold:
+          type: number
+          description: |-
+            The proportion of transactions in a given feerate range that must have been
+            confirmed within conf_target in order to consider those feerates as high enough
+            and proceed to check lower buckets.
+            Optional, defaults to 0.95
+    EstimateRawFeeResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/RawFeeEstimate'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          short: ""
+          medium: ""
+          long: ""
+    EstimateSmartFeeRequest:
+      type: object
+      properties:
+        conf_target:
+          type: integer
+          description: "Required: Confirmation target in blocks (1 - 1008)"
+        estimate_mode:
+          type: string
+          description: "Optional: The fee estimate mode (unset, economical, conservative)"
+    EstimateSmartFeeResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/SmartFeeEstimate'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          blocks: 6
+          errors:
+          - errors
+          - errors
+          feerate: 1.4658129805029452
     FeeHorizonEstimate:
       type: object
       properties:
@@ -2970,6 +4009,69 @@ components:
         withintarget:
           type: number
           description: Number of txs confirmed within target
+    FetchInscriptionsResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/InscriptionResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+        - next: next
+          address: address
+          previous: previous
+          fee: 1
+          sat: sat
+          charms:
+          - charms
+          - charms
+          effective_content_type: effective_content_type
+          rune: rune
+          number: 5
+          content_type: content_type
+          children:
+          - children
+          - children
+          id: id
+          value: 7
+          content_length: 6
+          satpoint: satpoint
+          height: 5
+          parents:
+          - parents
+          - parents
+          timestamp: 2
+        - next: next
+          address: address
+          previous: previous
+          fee: 1
+          sat: sat
+          charms:
+          - charms
+          - charms
+          effective_content_type: effective_content_type
+          rune: rune
+          number: 5
+          content_type: content_type
+          children:
+          - children
+          - children
+          id: id
+          value: 7
+          content_length: 6
+          satpoint: satpoint
+          height: 5
+          parents:
+          - parents
+          - parents
+          timestamp: 2
     GetAddressResponse:
       type: object
       properties:
@@ -3046,6 +4148,1257 @@ components:
           value: 1
           outpoint: outpoint
           transaction: transaction
+    GetBlockCountResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: integer
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: 6
+    GetBlockDecodedResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/Block2'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          mediantime: 5
+          tx:
+          - vsize: 4
+            locktime: 7
+            size: 1
+            fee: 4.145608029883936
+            txid: txid
+            weight: 5
+            hex: hex
+            vin:
+            - sequence: 1
+              coinbase: coinbase
+              scriptSig: ""
+              txid: txid
+              txinwitness:
+              - txinwitness
+              - txinwitness
+              vout: 6
+            - sequence: 1
+              coinbase: coinbase
+              scriptSig: ""
+              txid: txid
+              txinwitness:
+              - txinwitness
+              - txinwitness
+              vout: 6
+            version: 1
+            hash: hash
+            vout:
+            - scriptPubKey:
+                address: address
+                asm: asm
+                hex: hex
+                type: type
+                desc: desc
+              value: 1.1730742509559433
+              "n": 7
+            - scriptPubKey:
+                address: address
+                asm: asm
+                hex: hex
+                type: type
+                desc: desc
+              value: 1.1730742509559433
+              "n": 7
+          - vsize: 4
+            locktime: 7
+            size: 1
+            fee: 4.145608029883936
+            txid: txid
+            weight: 5
+            hex: hex
+            vin:
+            - sequence: 1
+              coinbase: coinbase
+              scriptSig: ""
+              txid: txid
+              txinwitness:
+              - txinwitness
+              - txinwitness
+              vout: 6
+            - sequence: 1
+              coinbase: coinbase
+              scriptSig: ""
+              txid: txid
+              txinwitness:
+              - txinwitness
+              - txinwitness
+              vout: 6
+            version: 1
+            hash: hash
+            vout:
+            - scriptPubKey:
+                address: address
+                asm: asm
+                hex: hex
+                type: type
+                desc: desc
+              value: 1.1730742509559433
+              "n": 7
+            - scriptPubKey:
+                address: address
+                asm: asm
+                hex: hex
+                type: type
+                desc: desc
+              value: 1.1730742509559433
+              "n": 7
+          previousblockhash: previousblockhash
+          bits: bits
+          weight: 9
+          versionHex: versionHex
+          confirmations: 6
+          nonce: 7
+          version: 9
+          nextblockhash: nextblockhash
+          difficulty: 1.4658129805029452
+          chainwork: chainwork
+          nTx: 2
+          size: 9
+          merkleroot: merkleroot
+          strippedsize: 3
+          time: 2
+          hash: hash
+          height: 5
+    GetBlockHashByHeightResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: string
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: data
+    GetBlockHexResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: string
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: data
+    GetBlockInscriptionsResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/LatestInscriptionsResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          more: true
+          page_index: 6
+          ids:
+          - ids
+          - ids
+    GetBlockPrevoutResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/Block3'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          mediantime: 5
+          tx:
+          - vsize: 7
+            locktime: 7
+            size: 1
+            fee: 4.145608029883936
+            txid: txid
+            weight: 1
+            hex: hex
+            vin:
+            - sequence: 1
+              coinbase: coinbase
+              prevout: ""
+              scriptSig:
+                asm: asm
+                hex: hex
+              txid: txid
+              txinwitness:
+              - txinwitness
+              - txinwitness
+              vout: 6
+            - sequence: 1
+              coinbase: coinbase
+              prevout: ""
+              scriptSig:
+                asm: asm
+                hex: hex
+              txid: txid
+              txinwitness:
+              - txinwitness
+              - txinwitness
+              vout: 6
+            version: 1
+            hash: hash
+            vout:
+            - scriptPubKey:
+                address: address
+                asm: asm
+                hex: hex
+                type: type
+                desc: desc
+              value: 1.1730742509559433
+              "n": 7
+            - scriptPubKey:
+                address: address
+                asm: asm
+                hex: hex
+                type: type
+                desc: desc
+              value: 1.1730742509559433
+              "n": 7
+          - vsize: 7
+            locktime: 7
+            size: 1
+            fee: 4.145608029883936
+            txid: txid
+            weight: 1
+            hex: hex
+            vin:
+            - sequence: 1
+              coinbase: coinbase
+              prevout: ""
+              scriptSig:
+                asm: asm
+                hex: hex
+              txid: txid
+              txinwitness:
+              - txinwitness
+              - txinwitness
+              vout: 6
+            - sequence: 1
+              coinbase: coinbase
+              prevout: ""
+              scriptSig:
+                asm: asm
+                hex: hex
+              txid: txid
+              txinwitness:
+              - txinwitness
+              - txinwitness
+              vout: 6
+            version: 1
+            hash: hash
+            vout:
+            - scriptPubKey:
+                address: address
+                asm: asm
+                hex: hex
+                type: type
+                desc: desc
+              value: 1.1730742509559433
+              "n": 7
+            - scriptPubKey:
+                address: address
+                asm: asm
+                hex: hex
+                type: type
+                desc: desc
+              value: 1.1730742509559433
+              "n": 7
+          previousblockhash: previousblockhash
+          bits: bits
+          weight: 5
+          versionHex: versionHex
+          confirmations: 6
+          nonce: 7
+          version: 4
+          nextblockhash: nextblockhash
+          difficulty: 1.4658129805029452
+          chainwork: chainwork
+          nTx: 2
+          size: 9
+          merkleroot: merkleroot
+          strippedsize: 3
+          time: 2
+          hash: hash
+          height: 5
+    GetBlockResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/BlockResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          runes:
+          - runes
+          - runes
+          best_height: 6
+          inscriptions:
+          - inscriptions
+          - inscriptions
+          transactions:
+          - lock_time: 5
+            output:
+            - script_pubkey: script_pubkey
+              value: 2
+            - script_pubkey: script_pubkey
+              value: 2
+            input:
+            - sequence: 5
+              witness:
+              - witness
+              - witness
+              previous_output: previous_output
+              script_sig: script_sig
+            - sequence: 5
+              witness:
+              - witness
+              - witness
+              previous_output: previous_output
+              script_sig: script_sig
+            version: 7
+          - lock_time: 5
+            output:
+            - script_pubkey: script_pubkey
+              value: 2
+            - script_pubkey: script_pubkey
+              value: 2
+            input:
+            - sequence: 5
+              witness:
+              - witness
+              - witness
+              previous_output: previous_output
+              script_sig: script_sig
+            - sequence: 5
+              witness:
+              - witness
+              - witness
+              previous_output: previous_output
+              script_sig: script_sig
+            version: 7
+          hash: hash
+          height: 1
+          target: target
+    GetBlockStatsRequest:
+      type: object
+      properties:
+        hash_or_height:
+          type: object
+          description: "Required: The block hash (string) or height (numeric)"
+        stats:
+          type: array
+          description: "Optional: Values to plot (if empty, all values will be included)"
+          items:
+            type: string
+    GetBlockStatsResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/BlockStats'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          avgfee: 6.027456183070403
+          avgfeerate: 1.4658129805029452
+          subsidy: 1.1730742509559433
+          swtxs: 9
+          avgtxsize: 5.962133916683182
+          utxo_increase: 6
+          maxtxsize: 2
+          total_weight: 9
+          minfee: 1.0246457001441578
+          total_out: 6.683562403749608
+          swtotal_size: 4
+          swtotal_weight: 5
+          outs: 7
+          blockhash: blockhash
+          totalfee: 6.438423552598547
+          maxfeerate: 3.616076749251911
+          medianfee: 4.145608029883936
+          height: 2
+          feerate_percentiles:
+          - 5.637376656633329
+          - 5.637376656633329
+          mediantime: 7
+          minfeerate: 1.4894159098541704
+          total_size: 8
+          maxfee: 9.301444243932576
+          mediantxsize: 1
+          txs: 3
+          ins: 7
+          mintxsize: 6
+          time: 9
+          utxo_size_inc: 1
+    GetBlockSummaryResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/Block1'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          mediantime: 5
+          tx:
+          - tx
+          - tx
+          previousblockhash: previousblockhash
+          bits: bits
+          weight: 7
+          versionHex: versionHex
+          confirmations: 6
+          nonce: 7
+          version: 4
+          nextblockhash: nextblockhash
+          difficulty: 1.4658129805029452
+          chainwork: chainwork
+          nTx: 2
+          size: 9
+          merkleroot: merkleroot
+          strippedsize: 3
+          time: 2
+          hash: hash
+          height: 5
+    GetBlockchainInfoResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/BlockchainInfo'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          difficulty: 1.4658129805029452
+          headers: 5
+          chain: chain
+          chainwork: chainwork
+          mediantime: 5
+          blocks: 6
+          time: 2
+          bestblockhash: bestblockhash
+    GetBlocksResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/BlocksResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          last: 6
+          blocks:
+          - blocks
+          - blocks
+          featured_blocks:
+            key:
+            - featured_blocks
+            - featured_blocks
+    GetChainTxStatsRequest:
+      type: object
+      properties:
+        blockhash:
+          type: string
+          description: "Optional: The hash of the block that ends the window"
+        nblocks:
+          type: integer
+          description: "Optional: Size of the window in number of blocks"
+    GetChainTxStatsResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/ChainTxStats'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          window_tx_count: 9
+          window_final_block_hash: window_final_block_hash
+          txcount: 1
+          txrate: 5.962133916683182
+          window_block_count: 5
+          time: 6
+          window_final_block_height: 2
+          window_interval: 7
+    GetDifficultyResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: number
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: 6.027456183070403
+    GetInscriptionChildResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/InscriptionResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          next: next
+          address: address
+          previous: previous
+          fee: 1
+          sat: sat
+          charms:
+          - charms
+          - charms
+          effective_content_type: effective_content_type
+          rune: rune
+          number: 5
+          content_type: content_type
+          children:
+          - children
+          - children
+          id: id
+          value: 7
+          content_length: 6
+          satpoint: satpoint
+          height: 5
+          parents:
+          - parents
+          - parents
+          timestamp: 2
+    GetInscriptionResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/InscriptionResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          next: next
+          address: address
+          previous: previous
+          fee: 1
+          sat: sat
+          charms:
+          - charms
+          - charms
+          effective_content_type: effective_content_type
+          rune: rune
+          number: 5
+          content_type: content_type
+          children:
+          - children
+          - children
+          id: id
+          value: 7
+          content_length: 6
+          satpoint: satpoint
+          height: 5
+          parents:
+          - parents
+          - parents
+          timestamp: 2
+    GetLatestBlockHashResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: string
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: data
+    GetLatestBlockHeightResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: integer
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: 6
+    GetLatestBlockTimeResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: integer
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: 6
+    GetLatestInscriptionsResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/LatestInscriptionsResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          more: true
+          page_index: 6
+          ids:
+          - ids
+          - ids
+    GetLatestRunesResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/RunesListResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          next: 6
+          entries:
+          - "0": "0"
+            "1": ""
+          - "0": "0"
+            "1": ""
+          more: true
+          prev: 1
+    GetMempoolAncestorsRequest:
+      type: object
+      properties:
+        txid:
+          type: string
+          description: "Required: The transaction id (must be in mempool)"
+        verbose:
+          type: boolean
+          description: "Optional: True for detailed information, false for just txids"
+    GetMempoolAncestorsResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/MempoolAncestorsData'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          detailed:
+            key:
+              fees: ""
+              vsize: 9
+              depends:
+              - depends
+              - depends
+              bip125-replaceable: true
+              weight: 3
+              spentby:
+              - spentby
+              - spentby
+              descendantsize: 5
+              ancestorsize: 1
+              descendantcount: 5
+              ancestorcount: 6
+              wtxid: wtxid
+              time: 7
+              unbroadcast: true
+              height: 2
+          txids:
+          - txids
+          - txids
+    GetMempoolDescendantsRequest:
+      type: object
+      properties:
+        txid:
+          type: string
+          description: "Required: The transaction id (must be in mempool)"
+        verbose:
+          type: boolean
+          description: "Optional: True for detailed information, false for just txids"
+    GetMempoolDescendantsResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/MempoolDescendantsData'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          detailed:
+            key:
+              fees: ""
+              vsize: 9
+              depends:
+              - depends
+              - depends
+              bip125-replaceable: true
+              weight: 3
+              spentby:
+              - spentby
+              - spentby
+              descendantsize: 5
+              ancestorsize: 1
+              descendantcount: 5
+              ancestorcount: 6
+              wtxid: wtxid
+              time: 7
+              unbroadcast: true
+              height: 2
+          txids:
+          - txids
+          - txids
+    GetMempoolInfoResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/MempoolInfo'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          fullrbf: true
+          loaded: true
+          minrelaytxfee: 2.3021358869347655
+          size: 7
+          bytes: 6
+          total_fee: 9.301444243932576
+          usage: 2
+          incrementalrelayfee: 1.4658129805029452
+          maxmempool: 5
+          unbroadcastcount: 3
+          mempoolminfee: 5.637376656633329
+    GetMiningInfoResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/MiningInfo'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          difficulty: 5.637376656633329
+          chain: chain
+          currentblocktx: 1
+          blocks: 6
+          networkhashps: 2.3021358869347655
+          warnings: warnings
+          currentblockweight: 5
+          pooledtx: 7
+    GetNetworkHashPSRequest:
+      type: object
+      properties:
+        height:
+          type: integer
+          description: "Optional: To estimate at the time of the given height (default=-1)"
+        nblocks:
+          type: integer
+          description: "Optional: The number of blocks (default=120, -1 for since\
+            \ last difficulty change)"
+    GetNetworkHashPSResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: number
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: 6.027456183070403
+    GetRawMempoolRequest:
+      type: object
+      properties:
+        mempool_sequence:
+          type: boolean
+          description: "Optional: If verbose=false, returns txids with mempool sequence\
+            \ number"
+        verbose:
+          type: boolean
+          description: "Optional: True for detailed information, false for just txids"
+    GetRawMempoolResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/RawMempoolData'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          sequence: ""
+          detailed:
+            key:
+              fees: ""
+              vsize: 9
+              depends:
+              - depends
+              - depends
+              bip125-replaceable: true
+              weight: 3
+              spentby:
+              - spentby
+              - spentby
+              descendantsize: 5
+              ancestorsize: 1
+              descendantcount: 5
+              ancestorcount: 6
+              wtxid: wtxid
+              time: 7
+              unbroadcast: true
+              height: 2
+          txids:
+          - txids
+          - txids
+    GetRawTransactionDecodedResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/RawTx1'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          vsize: 2
+          locktime: 5
+          txid: txid
+          weight: 4
+          confirmations: 1
+          version: 7
+          vout:
+          - scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            value: 1.1730742509559433
+            "n": 7
+          - scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            value: 1.1730742509559433
+            "n": 7
+          blockhash: blockhash
+          size: 5
+          blocktime: 6
+          hex: hex
+          vin:
+          - sequence: 9
+            coinbase: coinbase
+            scriptSig:
+              asm: asm
+              hex: hex
+            txid: txid
+            txinwitness:
+            - txinwitness
+            - txinwitness
+            vout: 3
+          - sequence: 9
+            coinbase: coinbase
+            scriptSig:
+              asm: asm
+              hex: hex
+            txid: txid
+            txinwitness:
+            - txinwitness
+            - txinwitness
+            vout: 3
+          time: 2
+          hash: hash
+    GetRawTransactionHexResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: string
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: data
+    GetRawTransactionPrevoutResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/RawTx2'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          vsize: 7
+          locktime: 5
+          txid: txid
+          weight: 1
+          confirmations: 1
+          version: 7
+          vout:
+          - scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            value: 1.1730742509559433
+            "n": 7
+          - scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            value: 1.1730742509559433
+            "n": 7
+          blockhash: blockhash
+          size: 5
+          blocktime: 6
+          hex: hex
+          vin:
+          - sequence: 2
+            coinbase: coinbase
+            prevout:
+              scriptPubKey:
+                address: address
+                asm: asm
+                hex: hex
+                type: type
+                desc: desc
+              generated: true
+              value: 3.616076749251911
+              height: 9
+            scriptSig:
+              asm: asm
+              hex: hex
+            txid: txid
+            txinwitness:
+            - txinwitness
+            - txinwitness
+            vout: 4
+          - sequence: 2
+            coinbase: coinbase
+            prevout:
+              scriptPubKey:
+                address: address
+                asm: asm
+                hex: hex
+                type: type
+                desc: desc
+              generated: true
+              value: 3.616076749251911
+              height: 9
+            scriptSig:
+              asm: asm
+              hex: hex
+            txid: txid
+            txinwitness:
+            - txinwitness
+            - txinwitness
+            vout: 4
+          time: 2
+          hash: hash
+    GetRuneResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/RuneResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          entry:
+            mints: 5
+            number: 2
+            spaced_rune: spaced_rune
+            symbol: symbol
+            premine: 7
+            etching: etching
+            terms:
+              amount: 9
+              cap: cap
+              offset:
+              - 2
+              - 2
+              height:
+              - 3
+              - 3
+            turbo: true
+            block: 6
+            burned: 1
+            divisibility: 5
+            timestamp: 4
+          parent: parent
+          id: id
+          mintable: true
+    GetSatoshiResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/SatoshiResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          period: 7
+          offset: 2
+          inscriptions:
+          - inscriptions
+          - inscriptions
+          degree: degree
+          epoch: 5
+          charms:
+          - charms
+          - charms
+          cycle: 1
+          number: 5
+          percentile: percentile
+          name: name
+          block: 6
+          decimal: decimal
+          satpoint: satpoint
+          rarity: rarity
+          timestamp: 9
+    GetStatusResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/StatusResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          chain: chain
+          sat_index: true
+          cursed_inscriptions: 1
+          rune_index: true
+          runes: 3
+          inscriptions: 7
+          blessed_inscriptions: 6
+          started: started
+          transaction_index: true
+          initial_sync_time:
+            nanos: 5
+            secs: 2
+          minimum_rune_for_next_block: minimum_rune_for_next_block
+          uptime: null
+          unrecoverably_reorged: true
+          address_index: true
+          lost_sats: 9
+          height: 5
+    GetTransactionResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/TransactionResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          chain: chain
+          etching: etching
+          inscription_count: 6
+          txid: txid
+          transaction:
+            lock_time: 5
+            output:
+            - script_pubkey: script_pubkey
+              value: 5
+            - script_pubkey: script_pubkey
+              value: 5
+            input:
+            - sequence: 1
+              witness:
+              - witness
+              - witness
+              previous_output: previous_output
+              script_sig: script_sig
+            - sequence: 1
+              witness:
+              - witness
+              - witness
+              previous_output: previous_output
+              script_sig: script_sig
+            version: 2
+    GetTxOutProofResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: string
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: data
+    GetTxOutResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/TxOut'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          scriptPubKey: ""
+          coinbase: true
+          bestblock: bestblock
+          confirmations: 6
+          value: 1.4658129805029452
+    GetTxSpendingPrevoutResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TxSpendingPrevoutResult'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+        - spendingtxid: spendingtxid
+          spent: true
+          txid: txid
+          vout: 6
+        - spendingtxid: spendingtxid
+          spent: true
+          txid: txid
+          vout: 6
     Input:
       type: object
       properties:
@@ -3059,6 +5412,13 @@ components:
           type: array
           items:
             type: string
+      example:
+        sequence: 5
+        witness:
+        - witness
+        - witness
+        previous_output: previous_output
+        script_sig: script_sig
     InscriptionData:
       type: object
       properties:
@@ -3092,6 +5452,25 @@ components:
           type: string
         unrecognized_even_field:
           type: boolean
+      example:
+        delegate: delegate
+        metaprotocol: metaprotocol
+        metadata: metadata
+        pointer: pointer
+        content_type:
+        - 5
+        - 5
+        duplicate_field: true
+        content_encoding: content_encoding
+        body:
+        - 5
+        - 5
+        unrecognized_even_field: true
+        incomplete_field: true
+        parents:
+        - parents
+        - parents
+        rune: rune
     InscriptionResponse:
       type: object
       properties:
@@ -3137,6 +5516,52 @@ components:
           type: integer
         value:
           type: integer
+      example:
+        next: next
+        address: address
+        previous: previous
+        fee: 1
+        sat: sat
+        charms:
+        - charms
+        - charms
+        effective_content_type: effective_content_type
+        rune: rune
+        number: 5
+        content_type: content_type
+        children:
+        - children
+        - children
+        id: id
+        value: 7
+        content_length: 6
+        satpoint: satpoint
+        height: 5
+        parents:
+        - parents
+        - parents
+        timestamp: 2
+    JoinPSBTsRequest:
+      type: object
+      properties:
+        psbts:
+          type: array
+          description: Array of base64-encoded PSBTs to join
+          items:
+            type: string
+    JoinPSBTsResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: string
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: data
     LatestInscriptionsResponse:
       type: object
       properties:
@@ -3148,6 +5573,12 @@ components:
           type: boolean
         page_index:
           type: integer
+      example:
+        more: true
+        page_index: 6
+        ids:
+        - ids
+        - ids
     MempoolAncestorsData:
       type: object
       properties:
@@ -3161,6 +5592,30 @@ components:
           description: Only if verbose is false
           items:
             type: string
+      example:
+        detailed:
+          key:
+            fees: ""
+            vsize: 9
+            depends:
+            - depends
+            - depends
+            bip125-replaceable: true
+            weight: 3
+            spentby:
+            - spentby
+            - spentby
+            descendantsize: 5
+            ancestorsize: 1
+            descendantcount: 5
+            ancestorcount: 6
+            wtxid: wtxid
+            time: 7
+            unbroadcast: true
+            height: 2
+        txids:
+        - txids
+        - txids
     MempoolDescendantsData:
       type: object
       properties:
@@ -3174,6 +5629,30 @@ components:
           description: Only if verbose is false
           items:
             type: string
+      example:
+        detailed:
+          key:
+            fees: ""
+            vsize: 9
+            depends:
+            - depends
+            - depends
+            bip125-replaceable: true
+            weight: 3
+            spentby:
+            - spentby
+            - spentby
+            descendantsize: 5
+            ancestorsize: 1
+            descendantcount: 5
+            ancestorcount: 6
+            wtxid: wtxid
+            time: 7
+            unbroadcast: true
+            height: 2
+        txids:
+        - txids
+        - txids
     MempoolEntry:
       type: object
       properties:
@@ -3225,6 +5704,25 @@ components:
         wtxid:
           type: string
           description: Hash of serialized transaction with witness data
+      example:
+        fees: ""
+        vsize: 9
+        depends:
+        - depends
+        - depends
+        bip125-replaceable: true
+        weight: 3
+        spentby:
+        - spentby
+        - spentby
+        descendantsize: 5
+        ancestorsize: 1
+        descendantcount: 5
+        ancestorcount: 6
+        wtxid: wtxid
+        time: 7
+        unbroadcast: true
+        height: 2
     MempoolFees:
       type: object
       properties:
@@ -3276,6 +5774,18 @@ components:
         usage:
           type: integer
           description: Total memory usage for the mempool
+      example:
+        fullrbf: true
+        loaded: true
+        minrelaytxfee: 2.3021358869347655
+        size: 7
+        bytes: 6
+        total_fee: 9.301444243932576
+        usage: 2
+        incrementalrelayfee: 1.4658129805029452
+        maxmempool: 5
+        unbroadcastcount: 3
+        mempoolminfee: 5.637376656633329
     MempoolSequence:
       type: object
       properties:
@@ -3314,6 +5824,15 @@ components:
         warnings:
           type: string
           description: Any network and blockchain warnings
+      example:
+        difficulty: 5.637376656633329
+        chain: chain
+        currentblocktx: 1
+        blocks: 6
+        networkhashps: 2.3021358869347655
+        warnings: warnings
+        currentblockweight: 5
+        pooledtx: 7
     Output:
       type: object
       properties:
@@ -3321,6 +5840,9 @@ components:
           type: string
         value:
           type: integer
+      example:
+        script_pubkey: script_pubkey
+        value: 2
     OutputResponse:
       type: object
       properties:
@@ -3387,6 +5909,37 @@ components:
             $ref: '#/components/schemas/PSBTInputAnalysis'
         next:
           type: string
+      example:
+        next: next
+        estimated_feerate: 6.027456183070403
+        inputs:
+        - next: next
+          is_final: true
+          missing:
+            pubkeys:
+            - pubkeys
+            - pubkeys
+            witnessscript: witnessscript
+            redeemscript: redeemscript
+            signatures:
+            - signatures
+            - signatures
+          has_utxo: true
+        - next: next
+          is_final: true
+          missing:
+            pubkeys:
+            - pubkeys
+            - pubkeys
+            witnessscript: witnessscript
+            redeemscript: redeemscript
+            signatures:
+            - signatures
+            - signatures
+          has_utxo: true
+        fee: 5.962133916683182
+        error: error
+        estimated_vsize: 1
     PSBTBip32Deriv:
       type: object
       properties:
@@ -3399,6 +5952,10 @@ components:
         pubkey:
           type: string
           description: The public key
+      example:
+        path: path
+        master_fingerprint: master_fingerprint
+        pubkey: pubkey
     PSBTInputAnalysis:
       type: object
       properties:
@@ -3410,6 +5967,19 @@ components:
           $ref: '#/components/schemas/PSBTMissingData'
         next:
           type: string
+      example:
+        next: next
+        is_final: true
+        missing:
+          pubkeys:
+          - pubkeys
+          - pubkeys
+          witnessscript: witnessscript
+          redeemscript: redeemscript
+          signatures:
+          - signatures
+          - signatures
+        has_utxo: true
     PSBTMissingData:
       type: object
       properties:
@@ -3425,6 +5995,15 @@ components:
             type: string
         witnessscript:
           type: string
+      example:
+        pubkeys:
+        - pubkeys
+        - pubkeys
+        witnessscript: witnessscript
+        redeemscript: redeemscript
+        signatures:
+        - signatures
+        - signatures
     PSBTWitnessUtxo:
       type: object
       properties:
@@ -3447,6 +6026,16 @@ components:
           $ref: '#/components/schemas/ScriptPubKey'
         value:
           type: number
+      example:
+        scriptPubKey:
+          address: address
+          asm: asm
+          hex: hex
+          type: type
+          desc: desc
+        generated: true
+        value: 3.616076749251911
+        height: 9
     RawFeeEstimate:
       type: object
       properties:
@@ -3465,6 +6054,10 @@ components:
           description: Estimate for short time horizon
           allOf:
           - $ref: '#/components/schemas/FeeHorizonEstimate'
+      example:
+        short: ""
+        medium: ""
+        long: ""
     RawMempoolData:
       type: object
       properties:
@@ -3483,6 +6076,31 @@ components:
           description: Only if verbose is false
           items:
             type: string
+      example:
+        sequence: ""
+        detailed:
+          key:
+            fees: ""
+            vsize: 9
+            depends:
+            - depends
+            - depends
+            bip125-replaceable: true
+            weight: 3
+            spentby:
+            - spentby
+            - spentby
+            descendantsize: 5
+            ancestorsize: 1
+            descendantcount: 5
+            ancestorcount: 6
+            wtxid: wtxid
+            time: 7
+            unbroadcast: true
+            height: 2
+        txids:
+        - txids
+        - txids
     RawTx1:
       type: object
       properties:
@@ -3518,6 +6136,57 @@ components:
           type: integer
         weight:
           type: integer
+      example:
+        vsize: 2
+        locktime: 5
+        txid: txid
+        weight: 4
+        confirmations: 1
+        version: 7
+        vout:
+        - scriptPubKey:
+            address: address
+            asm: asm
+            hex: hex
+            type: type
+            desc: desc
+          value: 1.1730742509559433
+          "n": 7
+        - scriptPubKey:
+            address: address
+            asm: asm
+            hex: hex
+            type: type
+            desc: desc
+          value: 1.1730742509559433
+          "n": 7
+        blockhash: blockhash
+        size: 5
+        blocktime: 6
+        hex: hex
+        vin:
+        - sequence: 9
+          coinbase: coinbase
+          scriptSig:
+            asm: asm
+            hex: hex
+          txid: txid
+          txinwitness:
+          - txinwitness
+          - txinwitness
+          vout: 3
+        - sequence: 9
+          coinbase: coinbase
+          scriptSig:
+            asm: asm
+            hex: hex
+          txid: txid
+          txinwitness:
+          - txinwitness
+          - txinwitness
+          vout: 3
+        time: 2
+        hash: hash
     RawTx2:
       type: object
       properties:
@@ -3553,6 +6222,77 @@ components:
           type: integer
         weight:
           type: integer
+      example:
+        vsize: 7
+        locktime: 5
+        txid: txid
+        weight: 1
+        confirmations: 1
+        version: 7
+        vout:
+        - scriptPubKey:
+            address: address
+            asm: asm
+            hex: hex
+            type: type
+            desc: desc
+          value: 1.1730742509559433
+          "n": 7
+        - scriptPubKey:
+            address: address
+            asm: asm
+            hex: hex
+            type: type
+            desc: desc
+          value: 1.1730742509559433
+          "n": 7
+        blockhash: blockhash
+        size: 5
+        blocktime: 6
+        hex: hex
+        vin:
+        - sequence: 2
+          coinbase: coinbase
+          prevout:
+            scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            generated: true
+            value: 3.616076749251911
+            height: 9
+          scriptSig:
+            asm: asm
+            hex: hex
+          txid: txid
+          txinwitness:
+          - txinwitness
+          - txinwitness
+          vout: 4
+        - sequence: 2
+          coinbase: coinbase
+          prevout:
+            scriptPubKey:
+              address: address
+              asm: asm
+              hex: hex
+              type: type
+              desc: desc
+            generated: true
+            value: 3.616076749251911
+            height: 9
+          scriptSig:
+            asm: asm
+            hex: hex
+          txid: txid
+          txinwitness:
+          - txinwitness
+          - txinwitness
+          vout: 4
+        time: 2
+        hash: hash
     RuneEntry:
       type: object
       properties:
@@ -3580,6 +6320,27 @@ components:
           type: integer
         turbo:
           type: boolean
+      example:
+        mints: 5
+        number: 2
+        spaced_rune: spaced_rune
+        symbol: symbol
+        premine: 7
+        etching: etching
+        terms:
+          amount: 9
+          cap: cap
+          offset:
+          - 2
+          - 2
+          height:
+          - 3
+          - 3
+        turbo: true
+        block: 6
+        burned: 1
+        divisibility: 5
+        timestamp: 4
     RuneListEntry:
       type: object
       properties:
@@ -3591,6 +6352,9 @@ components:
           description: The second element is the entry data
           allOf:
           - $ref: '#/components/schemas/RuneEntry'
+      example:
+        "0": "0"
+        "1": ""
     RuneResponse:
       type: object
       properties:
@@ -3602,6 +6366,31 @@ components:
           type: boolean
         parent:
           type: string
+      example:
+        entry:
+          mints: 5
+          number: 2
+          spaced_rune: spaced_rune
+          symbol: symbol
+          premine: 7
+          etching: etching
+          terms:
+            amount: 9
+            cap: cap
+            offset:
+            - 2
+            - 2
+            height:
+            - 3
+            - 3
+          turbo: true
+          block: 6
+          burned: 1
+          divisibility: 5
+          timestamp: 4
+        parent: parent
+        id: id
+        mintable: true
     RuneTerms:
       type: object
       properties:
@@ -3617,6 +6406,15 @@ components:
           type: array
           items:
             type: integer
+      example:
+        amount: 9
+        cap: cap
+        offset:
+        - 2
+        - 2
+        height:
+        - 3
+        - 3
     RunesBalance:
       type: object
       properties:
@@ -3643,6 +6441,15 @@ components:
           type: integer
         prev:
           type: integer
+      example:
+        next: 6
+        entries:
+        - "0": "0"
+          "1": ""
+        - "0": "0"
+          "1": ""
+        more: true
+        prev: 1
     RunestoneData:
       type: object
     SatoshiResponse:
@@ -3682,6 +6489,26 @@ components:
           type: string
         timestamp:
           type: integer
+      example:
+        period: 7
+        offset: 2
+        inscriptions:
+        - inscriptions
+        - inscriptions
+        degree: degree
+        epoch: 5
+        charms:
+        - charms
+        - charms
+        cycle: 1
+        number: 5
+        percentile: percentile
+        name: name
+        block: 6
+        decimal: decimal
+        satpoint: satpoint
+        rarity: rarity
+        timestamp: 9
     Script:
       type: object
       properties:
@@ -3710,6 +6537,12 @@ components:
           type: string
         type:
           type: string
+      example:
+        address: address
+        asm: asm
+        hex: hex
+        type: type
+        desc: desc
     ScriptSig:
       type: object
       properties:
@@ -3717,6 +6550,9 @@ components:
           type: string
         hex:
           type: string
+      example:
+        asm: asm
+        hex: hex
     SegwitDetails:
       type: object
       properties:
@@ -3738,6 +6574,19 @@ components:
         type:
           type: string
           description: The type of the script public key
+    SendRawTransactionResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: string
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: data
     SmartFeeEstimate:
       type: object
       properties:
@@ -3752,6 +6601,12 @@ components:
         feerate:
           type: number
           description: Estimate fee rate in BTC/kvB
+      example:
+        blocks: 6
+        errors:
+        - errors
+        - errors
+        feerate: 1.4658129805029452
     StatusResponse:
       type: object
       properties:
@@ -3787,6 +6642,66 @@ components:
           type: boolean
         uptime:
           $ref: '#/components/schemas/Duration'
+      example:
+        chain: chain
+        sat_index: true
+        cursed_inscriptions: 1
+        rune_index: true
+        runes: 3
+        inscriptions: 7
+        blessed_inscriptions: 6
+        started: started
+        transaction_index: true
+        initial_sync_time:
+          nanos: 5
+          secs: 2
+        minimum_rune_for_next_block: minimum_rune_for_next_block
+        uptime: null
+        unrecoverably_reorged: true
+        address_index: true
+        lost_sats: 9
+        height: 5
+    TestMempoolAcceptRequest:
+      type: object
+      properties:
+        max_fee_rate:
+          type: number
+          description: "Optional: Reject transactions whose fee rate is higher than\
+            \ this value (BTC/kvB)"
+        raw_txs:
+          type: array
+          description: Array of hex-encoded raw transactions
+          items:
+            type: string
+    TestMempoolAcceptResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TestMempoolAcceptResult'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+        - package-error: package-error
+          fees: ""
+          vsize: 6
+          wtxid: wtxid
+          allowed: true
+          txid: txid
+          reject-reason: reject-reason
+        - package-error: package-error
+          fees: ""
+          vsize: 6
+          wtxid: wtxid
+          allowed: true
+          txid: txid
+          reject-reason: reject-reason
     TestMempoolAcceptResult:
       type: object
       properties:
@@ -3813,6 +6728,14 @@ components:
         wtxid:
           type: string
           description: The transaction witness hash in hex
+      example:
+        package-error: package-error
+        fees: ""
+        vsize: 6
+        wtxid: wtxid
+        allowed: true
+        txid: txid
+        reject-reason: reject-reason
     TestMempoolFees:
       type: object
       properties:
@@ -3834,6 +6757,27 @@ components:
             $ref: '#/components/schemas/Output'
         version:
           type: integer
+      example:
+        lock_time: 5
+        output:
+        - script_pubkey: script_pubkey
+          value: 2
+        - script_pubkey: script_pubkey
+          value: 2
+        input:
+        - sequence: 5
+          witness:
+          - witness
+          - witness
+          previous_output: previous_output
+          script_sig: script_sig
+        - sequence: 5
+          witness:
+          - witness
+          - witness
+          previous_output: previous_output
+          script_sig: script_sig
+        version: 7
     TransactionDetails:
       type: object
       properties:
@@ -3849,6 +6793,27 @@ components:
             $ref: '#/components/schemas/TransactionOutput'
         version:
           type: integer
+      example:
+        lock_time: 5
+        output:
+        - script_pubkey: script_pubkey
+          value: 5
+        - script_pubkey: script_pubkey
+          value: 5
+        input:
+        - sequence: 1
+          witness:
+          - witness
+          - witness
+          previous_output: previous_output
+          script_sig: script_sig
+        - sequence: 1
+          witness:
+          - witness
+          - witness
+          previous_output: previous_output
+          script_sig: script_sig
+        version: 2
     TransactionInput:
       type: object
       properties:
@@ -3862,6 +6827,13 @@ components:
           type: array
           items:
             type: string
+      example:
+        sequence: 1
+        witness:
+        - witness
+        - witness
+        previous_output: previous_output
+        script_sig: script_sig
     TransactionOutput:
       type: object
       properties:
@@ -3869,6 +6841,9 @@ components:
           type: string
         value:
           type: integer
+      example:
+        script_pubkey: script_pubkey
+        value: 5
     TransactionResponse:
       type: object
       properties:
@@ -3882,6 +6857,32 @@ components:
           $ref: '#/components/schemas/TransactionDetails'
         txid:
           type: string
+      example:
+        chain: chain
+        etching: etching
+        inscription_count: 6
+        txid: txid
+        transaction:
+          lock_time: 5
+          output:
+          - script_pubkey: script_pubkey
+            value: 5
+          - script_pubkey: script_pubkey
+            value: 5
+          input:
+          - sequence: 1
+            witness:
+            - witness
+            - witness
+            previous_output: previous_output
+            script_sig: script_sig
+          - sequence: 1
+            witness:
+            - witness
+            - witness
+            previous_output: previous_output
+            script_sig: script_sig
+          version: 2
     TxOut:
       type: object
       properties:
@@ -3902,6 +6903,12 @@ components:
         value:
           type: number
           description: The transaction value in BTC
+      example:
+        scriptPubKey: ""
+        coinbase: true
+        bestblock: bestblock
+        confirmations: 6
+        value: 1.4658129805029452
     TxSpendingPrevoutInput:
       type: object
       properties:
@@ -3927,6 +6934,11 @@ components:
         vout:
           type: integer
           description: The vout value of the checked output
+      example:
+        spendingtxid: spendingtxid
+        spent: true
+        txid: txid
+        vout: 6
     TxVin1:
       type: object
       properties:
@@ -3944,6 +6956,17 @@ components:
             type: string
         vout:
           type: integer
+      example:
+        sequence: 9
+        coinbase: coinbase
+        scriptSig:
+          asm: asm
+          hex: hex
+        txid: txid
+        txinwitness:
+        - txinwitness
+        - txinwitness
+        vout: 3
     TxVin2:
       type: object
       properties:
@@ -3963,6 +6986,27 @@ components:
             type: string
         vout:
           type: integer
+      example:
+        sequence: 2
+        coinbase: coinbase
+        prevout:
+          scriptPubKey:
+            address: address
+            asm: asm
+            hex: hex
+            type: type
+            desc: desc
+          generated: true
+          value: 3.616076749251911
+          height: 9
+        scriptSig:
+          asm: asm
+          hex: hex
+        txid: txid
+        txinwitness:
+        - txinwitness
+        - txinwitness
+        vout: 4
     UTXOBlockInfo:
       type: object
       properties:
@@ -4133,6 +7177,23 @@ components:
         msg: msg
         code: 0
         data: true
+    VerifyTxOutProofResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: array
+          items:
+            type: string
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+        - data
+        - data
     Vout:
       type: object
       properties:
@@ -4142,24 +7203,16 @@ components:
           $ref: '#/components/schemas/ScriptPubKey'
         value:
           type: number
-    requests.AnalyzePSBTRequest:
-      type: object
-      properties:
-        psbt:
-          type: string
-          description: The base64-encoded PSBT to analyze
-    requests.CombinePSBTRequest:
-      required:
-      - psbts
-      type: object
-      properties:
-        psbts:
-          minItems: 1
-          type: array
-          description: Array of base64-encoded PSBTs to combine
-          items:
-            type: string
-    requests.CombineRawTransactionRequest:
+      example:
+        scriptPubKey:
+          address: address
+          asm: asm
+          hex: hex
+          type: type
+          desc: desc
+        value: 1.1730742509559433
+        "n": 7
+    transaction.CombineRawTransactionRequest:
       required:
       - hexstrings
       type: object
@@ -4169,7 +7222,7 @@ components:
           type: array
           items:
             type: string
-    requests.ConvertToPSBTRequest:
+    transaction.ConvertToPSBTRequest:
       required:
       - hexstring
       type: object
@@ -4193,53 +7246,7 @@ components:
             If true, any signatures in the input will be discarded and conversion will continue.
             If false, RPC will fail if any signatures are present.
             Optional, defaults to false if not provided.
-    requests.CreatePSBTInput:
-      type: object
-      properties:
-        sequence:
-          type: integer
-          description: The sequence number to use for the input
-        txid:
-          type: string
-          description: The transaction id of the output to spend
-        vout:
-          type: integer
-          description: The output index number (vout) of the output to spend
-    requests.CreatePSBTOutput:
-      type: object
-      properties:
-        address:
-          type: string
-          description: The bitcoin address to send to
-        data:
-          type: string
-          description: Hex-encoded data to embed in the transaction
-    requests.CreatePSBTRequest:
-      required:
-      - inputs
-      - outputs
-      type: object
-      properties:
-        inputs:
-          minItems: 1
-          type: array
-          description: The inputs for the transaction
-          items:
-            $ref: '#/components/schemas/requests.CreatePSBTInput'
-        locktime:
-          type: integer
-          description: Raw locktime. Non-0 value also locktime-activates inputs
-        outputs:
-          minItems: 1
-          type: array
-          description: The outputs for the transaction (each address can only appear
-            once)
-          items:
-            $ref: '#/components/schemas/requests.CreatePSBTOutput'
-        replaceable:
-          type: boolean
-          description: Marks this transaction as BIP125-replaceable
-    requests.CreateRawTxInput:
+    transaction.CreateRawTxInput:
       required:
       - txid
       - vout
@@ -4256,7 +7263,7 @@ components:
         vout:
           type: integer
           description: The output number
-    requests.CreateRawTxOutput:
+    transaction.CreateRawTxOutput:
       type: object
       properties:
         address:
@@ -4269,7 +7276,7 @@ components:
           description: |-
             Hex-encoded data output
             If present, this must be the only field in the output
-    requests.CreateRawTxRequest:
+    transaction.CreateRawTxRequest:
       required:
       - inputs
       - outputs
@@ -4280,7 +7287,7 @@ components:
           type: array
           description: The inputs for the transaction
           items:
-            $ref: '#/components/schemas/requests.CreateRawTxInput'
+            $ref: '#/components/schemas/transaction.CreateRawTxInput'
         locktime:
           type: integer
           description: |-
@@ -4293,7 +7300,7 @@ components:
             The outputs for the transaction
             Each address can only appear once and there can only be one 'data' object
           items:
-            $ref: '#/components/schemas/requests.CreateRawTxOutput'
+            $ref: '#/components/schemas/transaction.CreateRawTxOutput'
         replaceable:
           type: boolean
           description: |-
@@ -4301,101 +7308,7 @@ components:
             Allows this transaction to be replaced by a transaction with higher fees
             If provided, it is an error if explicit sequence numbers are incompatible
             Optional, defaults to true
-    requests.DecodeScriptRequest:
-      required:
-      - hexstring
-      type: object
-      properties:
-        hexstring:
-          type: string
-          description: The hex-encoded script to decode
-    requests.EstimateRawFeeRequest:
-      required:
-      - conf_target
-      type: object
-      properties:
-        conf_target:
-          maximum: 1008
-          minimum: 1
-          type: integer
-          description: Confirmation target in blocks (1 - 1008)
-        threshold:
-          type: number
-          description: |-
-            The proportion of transactions in a given feerate range that must have been
-            confirmed within conf_target in order to consider those feerates as high enough
-            and proceed to check lower buckets.
-            Optional, defaults to 0.95
-    requests.EstimateSmartFeeRequest:
-      type: object
-      properties:
-        conf_target:
-          type: integer
-          description: "Required: Confirmation target in blocks (1 - 1008)"
-        estimate_mode:
-          type: string
-          description: "Optional: The fee estimate mode (unset, economical, conservative)"
-    requests.GetBlockStatsRequest:
-      type: object
-      properties:
-        hash_or_height:
-          type: object
-          description: "Required: The block hash (string) or height (numeric)"
-        stats:
-          type: array
-          description: "Optional: Values to plot (if empty, all values will be included)"
-          items:
-            type: string
-    requests.GetChainTxStatsRequest:
-      type: object
-      properties:
-        blockhash:
-          type: string
-          description: "Optional: The hash of the block that ends the window (default=chain\
-            \ tip)"
-        nblocks:
-          type: integer
-          description: "Optional: Size of the window in number of blocks (default=one\
-            \ month)"
-    requests.GetMempoolAncestorsRequest:
-      type: object
-      properties:
-        txid:
-          type: string
-          description: "Required: The transaction id (must be in mempool)"
-        verbose:
-          type: boolean
-          description: "Optional: True for detailed information, false for just txids"
-    requests.GetMempoolDescendantsRequest:
-      type: object
-      properties:
-        txid:
-          type: string
-          description: "Required: The transaction id (must be in mempool)"
-        verbose:
-          type: boolean
-          description: "Optional: True for detailed information, false for just txids"
-    requests.GetNetworkHashPSRequest:
-      type: object
-      properties:
-        height:
-          type: integer
-          description: "Optional: To estimate at the time of the given height (default=-1)"
-        nblocks:
-          type: integer
-          description: "Optional: The number of blocks (default=120, -1 for since\
-            \ last difficulty change)"
-    requests.GetRawMempoolRequest:
-      type: object
-      properties:
-        mempool_sequence:
-          type: boolean
-          description: "Optional: If verbose=false, returns txids with mempool sequence\
-            \ number"
-        verbose:
-          type: boolean
-          description: "Optional: True for detailed information, false for just txids"
-    requests.GetTxOutProofRequest:
+    transaction.GetTxOutProofRequest:
       type: object
       properties:
         blockhash:
@@ -4407,7 +7320,7 @@ components:
           description: "Required: Array of transaction ids to filter"
           items:
             type: string
-    requests.GetTxOutRequest:
+    transaction.GetTxOutRequest:
       type: object
       properties:
         include_mempool:
@@ -4419,7 +7332,7 @@ components:
         txid:
           type: string
           description: "Required: The transaction id"
-    requests.GetTxOutSetInfoRequest:
+    transaction.GetTxOutSetInfoRequest:
       type: object
       properties:
         hash_or_height:
@@ -4431,7 +7344,7 @@ components:
         use_index:
           type: boolean
           description: Whether to use coinstatsindex
-    requests.GetTxSpendingPrevoutRequest:
+    transaction.GetTxSpendingPrevoutRequest:
       type: object
       properties:
         outputs:
@@ -4439,15 +7352,7 @@ components:
           description: The transaction outputs to check
           items:
             $ref: '#/components/schemas/TxSpendingPrevoutInput'
-    requests.JoinPSBTsRequest:
-      type: object
-      properties:
-        psbts:
-          type: array
-          description: Array of base64-encoded PSBTs to join
-          items:
-            type: string
-    requests.SendRawTransactionRequest:
+    transaction.SendRawTransactionRequest:
       type: object
       properties:
         hex_string:
@@ -4457,19 +7362,7 @@ components:
           type: number
           description: "Optional: Reject transactions whose fee rate is higher than\
             \ this value (BTC/kvB)"
-    requests.TestMempoolAcceptRequest:
-      type: object
-      properties:
-        max_fee_rate:
-          type: number
-          description: "Optional: Reject transactions whose fee rate is higher than\
-            \ this value (BTC/kvB)"
-        raw_txs:
-          type: array
-          description: Array of hex-encoded raw transactions
-          items:
-            type: string
-    requests.VerifyTxOutProofRequest:
+    transaction.VerifyTxOutProofRequest:
       type: object
       properties:
         proof:
@@ -4490,166 +7383,8 @@ components:
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/Block2'
-    inline_response_200_1:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            type: string
-    inline_response_200_2:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/Block3'
-    inline_response_200_3:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/Block1'
-    inline_response_200_4:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/BlockStats'
-    inline_response_200_5:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/BlockResponse'
-    inline_response_200_6:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/BlockchainInfo'
-    inline_response_200_7:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            type: integer
-    inline_response_200_8:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/BlocksResponse'
-    inline_response_200_9:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            type: number
-    inline_response_200_10:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/ChainTxStats'
-    inline_response_200_11:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/RawFeeEstimate'
-    inline_response_200_12:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/SmartFeeEstimate'
-    inline_response_200_13:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/InscriptionResponse'
-    inline_response_200_14:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/LatestInscriptionsResponse'
-    inline_response_200_15:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              $ref: '#/components/schemas/InscriptionResponse'
-    inline_response_200_16:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/MempoolAncestorsData'
-    inline_response_200_17:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/MempoolDescendantsData'
-    inline_response_200_18:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/MempoolInfo'
-    inline_response_200_19:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/RawMempoolData'
-    inline_response_200_20:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              $ref: '#/components/schemas/TestMempoolAcceptResult'
-    inline_response_200_21:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/MiningInfo'
-    inline_response_200_22:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
             $ref: '#/components/schemas/OutputResponse'
-    inline_response_200_23:
+    inline_response_200_1:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
@@ -4658,115 +7393,13 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/OutputResponse'
-    inline_response_200_24:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/PSBTAnalysis'
-    inline_response_200_25:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/DecodedPSBT'
-    inline_response_200_26:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/RuneResponse'
-    inline_response_200_27:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/RunesListResponse'
-    inline_response_200_28:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/SatoshiResponse'
-    inline_response_200_29:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/DecodedScript'
-    inline_response_200_30:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/StatusResponse'
-    inline_response_200_31:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/TxOut'
-    inline_response_200_32:
+    inline_response_200_2:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/UTXOSetInfo'
-    inline_response_200_33:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              type: string
-    inline_response_200_34:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            type: array
-            items:
-              $ref: '#/components/schemas/TxSpendingPrevoutResult'
-    inline_response_200_35:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/TransactionResponse'
-    inline_response_200_36:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/DecodeResponse'
-    inline_response_200_37:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/RawTx1'
-    inline_response_200_38:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/RawTx2'
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
