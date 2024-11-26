@@ -155,6 +155,312 @@ func (a *AddressesApiService) GetAddress(ctx context.Context, address string) (G
 	return localVarReturnValue, localVarHttpResponse, nil
 }
 /*
+AddressesApiService Get address deltas
+Get deltas for a specific address with pagination
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param address Address
+ * @param optional nil or *AddressesApiGetAddressDeltasOpts - Optional Parameters:
+     * @param "PageSize" (optional.Int32) -  Number of results per page (default: 100, max: 1000)
+     * @param "StartHeight" (optional.Int32) -  Start block height
+     * @param "EndHeight" (optional.Int32) -  End block height
+     * @param "Cursor" (optional.String) -  Base64 encoded cursor for pagination
+@return GetAddressDeltasResponse
+*/
+
+type AddressesApiGetAddressDeltasOpts struct {
+    PageSize optional.Int32
+    StartHeight optional.Int32
+    EndHeight optional.Int32
+    Cursor optional.String
+}
+
+func (a *AddressesApiService) GetAddressDeltas(ctx context.Context, address string, localVarOptionals *AddressesApiGetAddressDeltasOpts) (GetAddressDeltasResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue GetAddressDeltasResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/address/{address}/deltas"
+	localVarPath = strings.Replace(localVarPath, "{"+"address"+"}", fmt.Sprintf("%v", address), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.PageSize.IsSet() {
+		localVarQueryParams.Add("page_size", parameterToString(localVarOptionals.PageSize.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartHeight.IsSet() {
+		localVarQueryParams.Add("start_height", parameterToString(localVarOptionals.StartHeight.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.EndHeight.IsSet() {
+		localVarQueryParams.Add("end_height", parameterToString(localVarOptionals.EndHeight.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Cursor.IsSet() {
+		localVarQueryParams.Add("cursor", parameterToString(localVarOptionals.Cursor.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-KEY"] = key
+			
+		}
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode < 300 {
+		// If we succeed, return the data, otherwise pass on to decode error.
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+		if err == nil { 
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body: localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v GetAddressDeltasResponse
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v UtilsResponseEnvelope
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 404 {
+			var v UtilsResponseEnvelope
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 500 {
+			var v UtilsResponseEnvelope
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+/*
+AddressesApiService Get address rune deltas
+Get rune deltas for a specific address with pagination
+ * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ * @param address Address
+ * @param optional nil or *AddressesApiGetAddressRuneDeltasOpts - Optional Parameters:
+     * @param "PageSize" (optional.Int32) -  Number of results per page (default: 100, max: 1000)
+     * @param "StartHeight" (optional.Int32) -  Start block height
+     * @param "EndHeight" (optional.Int32) -  End block height
+     * @param "Cursor" (optional.String) -  Cursor for pagination
+@return GetAddressRuneDeltasResponse
+*/
+
+type AddressesApiGetAddressRuneDeltasOpts struct {
+    PageSize optional.Int32
+    StartHeight optional.Int32
+    EndHeight optional.Int32
+    Cursor optional.String
+}
+
+func (a *AddressesApiService) GetAddressRuneDeltas(ctx context.Context, address string, localVarOptionals *AddressesApiGetAddressRuneDeltasOpts) (GetAddressRuneDeltasResponse, *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Get")
+		localVarPostBody   interface{}
+		localVarFileName   string
+		localVarFileBytes  []byte
+		localVarReturnValue GetAddressRuneDeltasResponse
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/address/{address}/deltas/runes"
+	localVarPath = strings.Replace(localVarPath, "{"+"address"+"}", fmt.Sprintf("%v", address), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if localVarOptionals != nil && localVarOptionals.PageSize.IsSet() {
+		localVarQueryParams.Add("page_size", parameterToString(localVarOptionals.PageSize.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.StartHeight.IsSet() {
+		localVarQueryParams.Add("start_height", parameterToString(localVarOptionals.StartHeight.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.EndHeight.IsSet() {
+		localVarQueryParams.Add("end_height", parameterToString(localVarOptionals.EndHeight.Value(), ""))
+	}
+	if localVarOptionals != nil && localVarOptionals.Cursor.IsSet() {
+		localVarQueryParams.Add("cursor", parameterToString(localVarOptionals.Cursor.Value(), ""))
+	}
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	if ctx != nil {
+		// API Key Authentication
+		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
+			var key string
+			if auth.Prefix != "" {
+				key = auth.Prefix + " " + auth.Key
+			} else {
+				key = auth.Key
+			}
+			localVarHeaderParams["X-API-KEY"] = key
+			
+		}
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
+	localVarHttpResponse.Body.Close()
+	if err != nil {
+		return localVarReturnValue, localVarHttpResponse, err
+	}
+
+	if localVarHttpResponse.StatusCode < 300 {
+		// If we succeed, return the data, otherwise pass on to decode error.
+		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+		if err == nil { 
+			return localVarReturnValue, localVarHttpResponse, err
+		}
+	}
+
+	if localVarHttpResponse.StatusCode >= 300 {
+		newErr := GenericSwaggerError{
+			body: localVarBody,
+			error: localVarHttpResponse.Status,
+		}
+		if localVarHttpResponse.StatusCode == 200 {
+			var v GetAddressRuneDeltasResponse
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 400 {
+			var v UtilsResponseEnvelope
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 404 {
+			var v UtilsResponseEnvelope
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 500 {
+			var v UtilsResponseEnvelope
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		return localVarReturnValue, localVarHttpResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHttpResponse, nil
+}
+/*
 AddressesApiService Get UTXOs for an address
 Retrieve UTXOs held by a specific address with optional type filtering
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().

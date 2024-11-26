@@ -93,6 +93,156 @@ paths:
                 $ref: '#/components/schemas/utils.ResponseEnvelope'
       security:
       - ApiKeyAuth: []
+  /address/{address}/deltas:
+    get:
+      tags:
+      - Addresses
+      summary: Get address deltas
+      description: Get deltas for a specific address with pagination
+      operationId: get-address-deltas
+      parameters:
+      - name: address
+        in: path
+        description: Address
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: "Number of results per page (default: 100, max: 1000)"
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: start_height
+        in: query
+        description: Start block height
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: end_height
+        in: query
+        description: End block height
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        description: Base64 encoded cursor for pagination
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAddressDeltasResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+      security:
+      - ApiKeyAuth: []
+  /address/{address}/deltas/runes:
+    get:
+      tags:
+      - Addresses
+      summary: Get address rune deltas
+      description: Get rune deltas for a specific address with pagination
+      operationId: get-address-rune-deltas
+      parameters:
+      - name: address
+        in: path
+        description: Address
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: page_size
+        in: query
+        description: "Number of results per page (default: 100, max: 1000)"
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: start_height
+        in: query
+        description: Start block height
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: end_height
+        in: query
+        description: End block height
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        description: Cursor for pagination
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAddressRuneDeltasResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+      security:
+      - ApiKeyAuth: []
   /address/{address}/outputs:
     get:
       tags:
@@ -4072,6 +4222,27 @@ components:
           - parents
           - parents
           timestamp: 2
+    GetAddressDeltasResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/github_com_satstream_ss-utils_database.AddressDelta'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+        - amount: 6
+          address: address
+          block_height: 1
+        - amount: 6
+          address: address
+          block_height: 1
     GetAddressResponse:
       type: object
       properties:
@@ -4099,6 +4270,33 @@ components:
           - inscriptions
           - inscriptions
           sat_balance: 6
+    GetAddressRuneDeltasResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/address.RuneDelta'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+        - amount: amount
+          address: address
+          txid: txid
+          rune_id: rune_id
+          block_height: 6
+          vout: 1
+        - amount: amount
+          address: address
+          txid: txid
+          rune_id: rune_id
+          block_height: 6
+          vout: 1
     GetAddressUTXOsResponse:
       type: object
       properties:
@@ -7212,6 +7410,41 @@ components:
           desc: desc
         value: 1.1730742509559433
         "n": 7
+    address.RuneDelta:
+      type: object
+      properties:
+        address:
+          type: string
+        amount:
+          type: string
+        block_height:
+          type: integer
+        rune_id:
+          type: string
+        txid:
+          type: string
+        vout:
+          type: integer
+      example:
+        amount: amount
+        address: address
+        txid: txid
+        rune_id: rune_id
+        block_height: 6
+        vout: 1
+    github_com_satstream_ss-utils_database.AddressDelta:
+      type: object
+      properties:
+        address:
+          type: string
+        amount:
+          type: integer
+        block_height:
+          type: integer
+      example:
+        amount: 6
+        address: address
+        block_height: 1
     transaction.CombineRawTransactionRequest:
       required:
       - hexstrings
