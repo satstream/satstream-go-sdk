@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**VerifyMessage**](AddressesApi.md#VerifyMessage) | **Post** /address/verify-message | Verify message
 
 # **GetAddress**
-> InlineResponse2001 GetAddress(ctx, address)
+> GetAddressResponse GetAddress(ctx, address)
 Get address info
 
 Get detailed information about a specific address
@@ -24,7 +24,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](inline_response_200_1.md)
+[**GetAddressResponse**](GetAddressResponse.md)
 
 ### Authorization
 
@@ -38,7 +38,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetAddressUtxos**
-> InlineResponse2002 GetAddressUtxos(ctx, address, optional)
+> GetAddressUtxosResponse GetAddressUtxos(ctx, address, optional)
 Get UTXOs for an address
 
 Retrieve UTXOs held by a specific address with optional type filtering
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](inline_response_200_2.md)
+[**GetAddressUtxosResponse**](GetAddressUTXOsResponse.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **ValidateAddress**
-> InlineResponse2003 ValidateAddress(ctx, address)
+> ValidateAddressResponse ValidateAddress(ctx, address)
 Validate address
 
 Returns information about the given Bitcoin address
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2003**](inline_response_200_3.md)
+[**ValidateAddressResponse**](ValidateAddressResponse.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **VerifyMessage**
-> InlineResponse200 VerifyMessage(ctx, body)
+> VerifyMessageResponse VerifyMessage(ctx, body)
 Verify message
 
 Verifies a signed message
@@ -112,11 +112,11 @@ Verifies a signed message
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsVerifyMessageRequest**](RequestsVerifyMessageRequest.md)| Message verification parameters | 
+  **body** | [**VerifyMessageRequest**](VerifyMessageRequest.md)| Message verification parameters | 
 
 ### Return type
 
-[**InlineResponse200**](inline_response_200.md)
+[**VerifyMessageResponse**](VerifyMessageResponse.md)
 
 ### Authorization
 

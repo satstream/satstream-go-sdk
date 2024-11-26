@@ -10,7 +10,7 @@
 package satstream_go_sdk
 
 type InlineResponse20021 struct {
-	Data *MempoolDescendantsData `json:"data,omitempty"`
+	Data *MiningInfo `json:"data,omitempty"`
 	Code int32 `json:"code,omitempty"`
 	Msg string `json:"msg,omitempty"`
 }

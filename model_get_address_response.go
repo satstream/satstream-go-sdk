@@ -9,8 +9,8 @@
  */
 package satstream_go_sdk
 
-type InlineResponse20041 struct {
-	Data *RawTx2 `json:"data,omitempty"`
+type GetAddressResponse struct {
 	Code int32 `json:"code,omitempty"`
+	Data *AddressResponse `json:"data,omitempty"`
 	Msg string `json:"msg,omitempty"`
 }

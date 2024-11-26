@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**TestMempoolAccept**](MempoolApi.md#TestMempoolAccept) | **Post** /mempool/test-accept | Test mempool accept
 
 # **GetMempoolAncestors**
-> InlineResponse20020 GetMempoolAncestors(ctx, body)
+> InlineResponse20016 GetMempoolAncestors(ctx, body)
 Get mempool ancestors
 
 Returns all in-mempool ancestors for a transaction in the mempool
@@ -25,7 +25,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20020**](inline_response_200_20.md)
+[**InlineResponse20016**](inline_response_200_16.md)
 
 ### Authorization
 
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMempoolDescendants**
-> InlineResponse20021 GetMempoolDescendants(ctx, body)
+> InlineResponse20017 GetMempoolDescendants(ctx, body)
 Get mempool descendants
 
 Returns all in-mempool descendants for a transaction in the mempool
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20021**](inline_response_200_21.md)
+[**InlineResponse20017**](inline_response_200_17.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetMempoolInfo**
-> InlineResponse20022 GetMempoolInfo(ctx, )
+> InlineResponse20018 GetMempoolInfo(ctx, )
 Get mempool information
 
 Returns details on the active state of the TX memory pool
@@ -77,7 +77,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20022**](inline_response_200_22.md)
+[**InlineResponse20018**](inline_response_200_18.md)
 
 ### Authorization
 
@@ -91,7 +91,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRawMempool**
-> InlineResponse20023 GetRawMempool(ctx, body)
+> InlineResponse20019 GetRawMempool(ctx, body)
 Get raw mempool
 
 Returns all transaction ids in memory pool
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20023**](inline_response_200_23.md)
+[**InlineResponse20019**](inline_response_200_19.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **TestMempoolAccept**
-> InlineResponse20024 TestMempoolAccept(ctx, body)
+> InlineResponse20020 TestMempoolAccept(ctx, body)
 Test mempool accept
 
 Tests whether raw transactions would be accepted by mempool
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20024**](inline_response_200_24.md)
+[**InlineResponse20020**](inline_response_200_20.md)
 
 ### Authorization
 

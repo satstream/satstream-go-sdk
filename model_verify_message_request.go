@@ -9,7 +9,7 @@
  */
 package satstream_go_sdk
 
-type RequestsVerifyMessageRequest struct {
+type VerifyMessageRequest struct {
 	// The bitcoin address to use for the signature
 	Address string `json:"address,omitempty"`
 	// The message that was signed

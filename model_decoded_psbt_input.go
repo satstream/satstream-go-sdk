@@ -25,7 +25,7 @@ type DecodedPsbtInput struct {
 	// The sighash type to be used
 	Sighash string `json:"sighash,omitempty"`
 	// Unknown fields
-	Unknown ModelMap `json:"unknown,omitempty"`
+	Unknown *AllOfDecodedPsbtInputUnknown `json:"unknown,omitempty"`
 	// The witness script
 	WitnessScript *AllOfDecodedPsbtInputWitnessScript `json:"witness_script,omitempty"`
 	// Transaction output for witness UTXOs

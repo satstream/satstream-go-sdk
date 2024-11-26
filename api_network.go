@@ -29,15 +29,15 @@ NetworkApiService Get chain tx stats
 Computes statistics about the total number and rate of transactions in the chain
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Chain tx stats request parameters
-@return InlineResponse20014
+@return InlineResponse20010
 */
-func (a *NetworkApiService) GetChainTxStats(ctx context.Context, body RequestsGetChainTxStatsRequest) (InlineResponse20014, *http.Response, error) {
+func (a *NetworkApiService) GetChainTxStats(ctx context.Context, body RequestsGetChainTxStatsRequest) (InlineResponse20010, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20014
+		localVarReturnValue InlineResponse20010
 	)
 
 	// create path and map variables
@@ -109,7 +109,7 @@ func (a *NetworkApiService) GetChainTxStats(ctx context.Context, body RequestsGe
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20014
+			var v InlineResponse20010
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -147,15 +147,15 @@ func (a *NetworkApiService) GetChainTxStats(ctx context.Context, body RequestsGe
 NetworkApiService Get difficulty
 Returns the proof-of-work difficulty as a multiple of the minimum difficulty
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return InlineResponse20013
+@return InlineResponse2009
 */
-func (a *NetworkApiService) GetDifficulty(ctx context.Context) (InlineResponse20013, *http.Response, error) {
+func (a *NetworkApiService) GetDifficulty(ctx context.Context) (InlineResponse2009, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20013
+		localVarReturnValue InlineResponse2009
 	)
 
 	// create path and map variables
@@ -225,7 +225,7 @@ func (a *NetworkApiService) GetDifficulty(ctx context.Context) (InlineResponse20
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20013
+			var v InlineResponse2009
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

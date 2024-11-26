@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**GetSatoshi**](SatoshisApi.md#GetSatoshi) | **Get** /sat/{number} | Get satoshi info
 
 # **GetSatoshi**
-> InlineResponse20031 GetSatoshi(ctx, number)
+> InlineResponse20028 GetSatoshi(ctx, number)
 Get satoshi info
 
 Retrieve information about a specific satoshi
@@ -21,7 +21,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20031**](inline_response_200_31.md)
+[**InlineResponse20028**](inline_response_200_28.md)
 
 ### Authorization
 

@@ -9,8 +9,6 @@
  */
 package satstream_go_sdk
 
-type InlineResponse20039 struct {
-	Data *DecodeResponse `json:"data,omitempty"`
-	Code int32 `json:"code,omitempty"`
-	Msg string `json:"msg,omitempty"`
+// The unknown global fields
+type AllOfDecodedPsbtUnknown struct {
 }

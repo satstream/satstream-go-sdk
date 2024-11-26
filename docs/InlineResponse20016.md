@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [***SmartFeeEstimate**](SmartFeeEstimate.md) |  | [optional] [default to null]
+**Data** | [***MempoolAncestorsData**](MempoolAncestorsData.md) |  | [optional] [default to null]
 **Code** | **int32** |  | [optional] [default to null]
 **Msg** | **string** |  | [optional] [default to null]
 

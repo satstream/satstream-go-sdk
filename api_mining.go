@@ -28,15 +28,15 @@ type MiningApiService service
 MiningApiService Get mining information
 Returns a json object containing mining-related information
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return InlineResponse20025
+@return InlineResponse20021
 */
-func (a *MiningApiService) GetMiningInfo(ctx context.Context) (InlineResponse20025, *http.Response, error) {
+func (a *MiningApiService) GetMiningInfo(ctx context.Context) (InlineResponse20021, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20025
+		localVarReturnValue InlineResponse20021
 	)
 
 	// create path and map variables
@@ -106,7 +106,7 @@ func (a *MiningApiService) GetMiningInfo(ctx context.Context) (InlineResponse200
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20025
+			var v InlineResponse20021
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -135,15 +135,15 @@ MiningApiService Get network hash per second
 Returns the estimated network hashes per second based on the last n blocks
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Network hash rate parameters
-@return InlineResponse20013
+@return InlineResponse2009
 */
-func (a *MiningApiService) GetNetworkHashps(ctx context.Context, body RequestsGetNetworkHashPsRequest) (InlineResponse20013, *http.Response, error) {
+func (a *MiningApiService) GetNetworkHashps(ctx context.Context, body RequestsGetNetworkHashPsRequest) (InlineResponse2009, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20013
+		localVarReturnValue InlineResponse2009
 	)
 
 	// create path and map variables
@@ -215,7 +215,7 @@ func (a *MiningApiService) GetNetworkHashps(ctx context.Context, body RequestsGe
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20013
+			var v InlineResponse2009
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [***InscriptionResponse**](InscriptionResponse.md) |  | [optional] [default to null]
+**Data** | [***MempoolDescendantsData**](MempoolDescendantsData.md) |  | [optional] [default to null]
 **Code** | **int32** |  | [optional] [default to null]
 **Msg** | **string** |  | [optional] [default to null]
 

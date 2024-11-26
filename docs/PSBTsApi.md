@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**JoinPsbts**](PSBTsApi.md#JoinPsbts) | **Post** /psbt/join | Join PSBTs
 
 # **AnalyzePsbt**
-> InlineResponse20027 AnalyzePsbt(ctx, body)
+> InlineResponse20024 AnalyzePsbt(ctx, body)
 Analyze PSBT
 
 Analyzes and provides information about the current status of a PSBT and its inputs
@@ -25,7 +25,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20027**](inline_response_200_27.md)
+[**InlineResponse20024**](inline_response_200_24.md)
 
 ### Authorization
 
@@ -39,7 +39,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CombinePsbt**
-> InlineResponse2005 CombinePsbt(ctx, body)
+> InlineResponse2001 CombinePsbt(ctx, body)
 Combine PSBTs
 
 Combines multiple partially signed Bitcoin transactions into one transaction
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](inline_response_200_5.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **CreatePsbt**
-> InlineResponse2005 CreatePsbt(ctx, body)
+> InlineResponse2001 CreatePsbt(ctx, body)
 Create PSBT
 
 Creates a transaction in the Partially Signed Transaction format. Implements the Creator role.
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](inline_response_200_5.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **DecodePsbt**
-> InlineResponse20028 DecodePsbt(ctx, body)
+> InlineResponse20025 DecodePsbt(ctx, body)
 Decode PSBT
 
 Return a JSON object representing the serialized, base64-encoded partially signed Bitcoin transaction.
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20028**](inline_response_200_28.md)
+[**InlineResponse20025**](inline_response_200_25.md)
 
 ### Authorization
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **JoinPsbts**
-> InlineResponse2005 JoinPsbts(ctx, body)
+> InlineResponse2001 JoinPsbts(ctx, body)
 Join PSBTs
 
 Joins multiple distinct PSBTs with different inputs and outputs into one PSBT
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](inline_response_200_5.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 

@@ -31,15 +31,15 @@ AddressesApiService Get address info
 Get detailed information about a specific address
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Address
-@return InlineResponse2001
+@return GetAddressResponse
 */
-func (a *AddressesApiService) GetAddress(ctx context.Context, address string) (InlineResponse2001, *http.Response, error) {
+func (a *AddressesApiService) GetAddress(ctx context.Context, address string) (GetAddressResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2001
+		localVarReturnValue GetAddressResponse
 	)
 
 	// create path and map variables
@@ -110,7 +110,7 @@ func (a *AddressesApiService) GetAddress(ctx context.Context, address string) (I
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2001
+			var v GetAddressResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -161,20 +161,20 @@ Retrieve UTXOs held by a specific address with optional type filtering
  * @param address Address
  * @param optional nil or *AddressesApiGetAddressUtxosOpts - Optional Parameters:
      * @param "Type_" (optional.String) -  UTXO Type
-@return InlineResponse2002
+@return GetAddressUtxosResponse
 */
 
 type AddressesApiGetAddressUtxosOpts struct {
     Type_ optional.String
 }
 
-func (a *AddressesApiService) GetAddressUtxos(ctx context.Context, address string, localVarOptionals *AddressesApiGetAddressUtxosOpts) (InlineResponse2002, *http.Response, error) {
+func (a *AddressesApiService) GetAddressUtxos(ctx context.Context, address string, localVarOptionals *AddressesApiGetAddressUtxosOpts) (GetAddressUtxosResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2002
+		localVarReturnValue GetAddressUtxosResponse
 	)
 
 	// create path and map variables
@@ -248,7 +248,7 @@ func (a *AddressesApiService) GetAddressUtxos(ctx context.Context, address strin
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2002
+			var v GetAddressUtxosResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -297,15 +297,15 @@ AddressesApiService Validate address
 Returns information about the given Bitcoin address
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Bitcoin address to validate
-@return InlineResponse2003
+@return ValidateAddressResponse
 */
-func (a *AddressesApiService) ValidateAddress(ctx context.Context, address string) (InlineResponse2003, *http.Response, error) {
+func (a *AddressesApiService) ValidateAddress(ctx context.Context, address string) (ValidateAddressResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2003
+		localVarReturnValue ValidateAddressResponse
 	)
 
 	// create path and map variables
@@ -376,7 +376,7 @@ func (a *AddressesApiService) ValidateAddress(ctx context.Context, address strin
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2003
+			var v ValidateAddressResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -415,15 +415,15 @@ AddressesApiService Verify message
 Verifies a signed message
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Message verification parameters
-@return InlineResponse200
+@return VerifyMessageResponse
 */
-func (a *AddressesApiService) VerifyMessage(ctx context.Context, body RequestsVerifyMessageRequest) (InlineResponse200, *http.Response, error) {
+func (a *AddressesApiService) VerifyMessage(ctx context.Context, body VerifyMessageRequest) (VerifyMessageResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse200
+		localVarReturnValue VerifyMessageResponse
 	)
 
 	// create path and map variables
@@ -495,7 +495,7 @@ func (a *AddressesApiService) VerifyMessage(ctx context.Context, body RequestsVe
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse200
+			var v VerifyMessageResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

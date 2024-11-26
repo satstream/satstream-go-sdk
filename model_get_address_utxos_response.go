@@ -9,8 +9,8 @@
  */
 package satstream_go_sdk
 
-type InlineResponse20028 struct {
-	Data *SatoshiResponse `json:"data,omitempty"`
+type GetAddressUtxosResponse struct {
 	Code int32 `json:"code,omitempty"`
+	Data []OutputResponse `json:"data,omitempty"`
 	Msg string `json:"msg,omitempty"`
 }

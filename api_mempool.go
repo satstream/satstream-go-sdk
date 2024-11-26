@@ -29,15 +29,15 @@ MempoolApiService Get mempool ancestors
 Returns all in-mempool ancestors for a transaction in the mempool
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Mempool ancestors request parameters
-@return InlineResponse20020
+@return InlineResponse20016
 */
-func (a *MempoolApiService) GetMempoolAncestors(ctx context.Context, body RequestsGetMempoolAncestorsRequest) (InlineResponse20020, *http.Response, error) {
+func (a *MempoolApiService) GetMempoolAncestors(ctx context.Context, body RequestsGetMempoolAncestorsRequest) (InlineResponse20016, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20020
+		localVarReturnValue InlineResponse20016
 	)
 
 	// create path and map variables
@@ -109,7 +109,7 @@ func (a *MempoolApiService) GetMempoolAncestors(ctx context.Context, body Reques
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20020
+			var v InlineResponse20016
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -148,15 +148,15 @@ MempoolApiService Get mempool descendants
 Returns all in-mempool descendants for a transaction in the mempool
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Mempool descendants request parameters
-@return InlineResponse20021
+@return InlineResponse20017
 */
-func (a *MempoolApiService) GetMempoolDescendants(ctx context.Context, body RequestsGetMempoolDescendantsRequest) (InlineResponse20021, *http.Response, error) {
+func (a *MempoolApiService) GetMempoolDescendants(ctx context.Context, body RequestsGetMempoolDescendantsRequest) (InlineResponse20017, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20021
+		localVarReturnValue InlineResponse20017
 	)
 
 	// create path and map variables
@@ -228,7 +228,7 @@ func (a *MempoolApiService) GetMempoolDescendants(ctx context.Context, body Requ
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20021
+			var v InlineResponse20017
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -266,15 +266,15 @@ func (a *MempoolApiService) GetMempoolDescendants(ctx context.Context, body Requ
 MempoolApiService Get mempool information
 Returns details on the active state of the TX memory pool
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return InlineResponse20022
+@return InlineResponse20018
 */
-func (a *MempoolApiService) GetMempoolInfo(ctx context.Context) (InlineResponse20022, *http.Response, error) {
+func (a *MempoolApiService) GetMempoolInfo(ctx context.Context) (InlineResponse20018, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20022
+		localVarReturnValue InlineResponse20018
 	)
 
 	// create path and map variables
@@ -344,7 +344,7 @@ func (a *MempoolApiService) GetMempoolInfo(ctx context.Context) (InlineResponse2
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20022
+			var v InlineResponse20018
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -373,15 +373,15 @@ MempoolApiService Get raw mempool
 Returns all transaction ids in memory pool
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Raw mempool request parameters
-@return InlineResponse20023
+@return InlineResponse20019
 */
-func (a *MempoolApiService) GetRawMempool(ctx context.Context, body RequestsGetRawMempoolRequest) (InlineResponse20023, *http.Response, error) {
+func (a *MempoolApiService) GetRawMempool(ctx context.Context, body RequestsGetRawMempoolRequest) (InlineResponse20019, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20023
+		localVarReturnValue InlineResponse20019
 	)
 
 	// create path and map variables
@@ -453,7 +453,7 @@ func (a *MempoolApiService) GetRawMempool(ctx context.Context, body RequestsGetR
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20023
+			var v InlineResponse20019
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -492,15 +492,15 @@ MempoolApiService Test mempool accept
 Tests whether raw transactions would be accepted by mempool
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Raw transactions to test
-@return InlineResponse20024
+@return InlineResponse20020
 */
-func (a *MempoolApiService) TestMempoolAccept(ctx context.Context, body RequestsTestMempoolAcceptRequest) (InlineResponse20024, *http.Response, error) {
+func (a *MempoolApiService) TestMempoolAccept(ctx context.Context, body RequestsTestMempoolAcceptRequest) (InlineResponse20020, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20024
+		localVarReturnValue InlineResponse20020
 	)
 
 	// create path and map variables
@@ -572,7 +572,7 @@ func (a *MempoolApiService) TestMempoolAccept(ctx context.Context, body Requests
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20024
+			var v InlineResponse20020
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

@@ -29,15 +29,15 @@ type RunesApiService service
 RunesApiService Get latest runes
 Retrieve information about the last 100 inscribed runes (first page)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-@return InlineResponse20030
+@return InlineResponse20027
 */
-func (a *RunesApiService) GetLatestRunes(ctx context.Context) (InlineResponse20030, *http.Response, error) {
+func (a *RunesApiService) GetLatestRunes(ctx context.Context) (InlineResponse20027, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20030
+		localVarReturnValue InlineResponse20027
 	)
 
 	// create path and map variables
@@ -107,7 +107,7 @@ func (a *RunesApiService) GetLatestRunes(ctx context.Context) (InlineResponse200
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20030
+			var v InlineResponse20027
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -156,15 +156,15 @@ RunesApiService Get latest runes page
 Retrieve a specific page of 100 inscribed runes
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param page Page number
-@return InlineResponse20030
+@return InlineResponse20027
 */
-func (a *RunesApiService) GetLatestRunesPage(ctx context.Context, page int32) (InlineResponse20030, *http.Response, error) {
+func (a *RunesApiService) GetLatestRunesPage(ctx context.Context, page int32) (InlineResponse20027, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20030
+		localVarReturnValue InlineResponse20027
 	)
 
 	// create path and map variables
@@ -235,7 +235,7 @@ func (a *RunesApiService) GetLatestRunesPage(ctx context.Context, page int32) (I
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20030
+			var v InlineResponse20027
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -284,15 +284,15 @@ RunesApiService Get rune info
 Retrieve information about a specific rune
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param runeName Rune Name
-@return InlineResponse20029
+@return InlineResponse20026
 */
-func (a *RunesApiService) GetRune(ctx context.Context, runeName string) (InlineResponse20029, *http.Response, error) {
+func (a *RunesApiService) GetRune(ctx context.Context, runeName string) (InlineResponse20026, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20029
+		localVarReturnValue InlineResponse20026
 	)
 
 	// create path and map variables
@@ -363,7 +363,7 @@ func (a *RunesApiService) GetRune(ctx context.Context, runeName string) (InlineR
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20029
+			var v InlineResponse20026
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

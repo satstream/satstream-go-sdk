@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [***ChainTxStats**](ChainTxStats.md) |  | [optional] [default to null]
+**Data** | [***LatestInscriptionsResponse**](LatestInscriptionsResponse.md) |  | [optional] [default to null]
 **Code** | **int32** |  | [optional] [default to null]
 **Msg** | **string** |  | [optional] [default to null]
 

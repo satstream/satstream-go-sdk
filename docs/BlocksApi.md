@@ -19,209 +19,13 @@ Method | HTTP request | Description
 [**GetLatestBlocktime**](BlocksApi.md#GetLatestBlocktime) | **Get** /blocktime | Get the timestamp of the latest block
 
 # **GetBlockCount**
-> InlineResponse20011 GetBlockCount(ctx, )
+> InlineResponse2007 GetBlockCount(ctx, )
 Get the height of the latest block
 
 Returns the height of the latest block
 
 ### Required Parameters
 This endpoint does not need any parameter.
-
-### Return type
-
-[**InlineResponse20011**](inline_response_200_11.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetBlockDecoded**
-> InlineResponse2004 GetBlockDecoded(ctx, identifier)
-Get block by hash or height (verbosity 2)
-
-Get block by hash or height as a decoded object
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **identifier** | **string**| Block hash or height | 
-
-### Return type
-
-[**InlineResponse2004**](inline_response_200_4.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetBlockHashByHeight**
-> InlineResponse2005 GetBlockHashByHeight(ctx, blockHeight)
-Returns blockhash of specified block.
-
-Returns blockhash of specified block.
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **blockHeight** | **string**| Block Height | 
-
-### Return type
-
-[**InlineResponse2005**](inline_response_200_5.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetBlockHex**
-> InlineResponse2005 GetBlockHex(ctx, identifier)
-Get block by hash or height (verbosity 0)
-
-Get block by hash or height as a raw hex string
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **identifier** | **string**| Block hash or height | 
-
-### Return type
-
-[**InlineResponse2005**](inline_response_200_5.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetBlockInfo**
-> InlineResponse2009 GetBlockInfo(ctx, identifier)
-Get block info by hash or height
-
-Get detailed information about a specific block by hash or height
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **identifier** | **string**| Block hash or height | 
-
-### Return type
-
-[**InlineResponse2009**](inline_response_200_9.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetBlockPrevout**
-> InlineResponse2006 GetBlockPrevout(ctx, identifier)
-Get block by hash or height (verbosity 3)
-
-Get block by hash or height with prevout information
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **identifier** | **string**| Block hash or height | 
-
-### Return type
-
-[**InlineResponse2006**](inline_response_200_6.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetBlockStats**
-> InlineResponse2008 GetBlockStats(ctx, body)
-Get block stats
-
-Computes per block statistics for a given window
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**RequestsGetBlockStatsRequest**](RequestsGetBlockStatsRequest.md)| Block stats request parameters | 
-
-### Return type
-
-[**InlineResponse2008**](inline_response_200_8.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetBlockSummary**
-> InlineResponse2007 GetBlockSummary(ctx, identifier)
-Get block by hash or height (verbosity 1)
-
-Get block by hash or height as a summary object
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **identifier** | **string**| Block hash or height | 
 
 ### Return type
 
@@ -238,18 +42,22 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetBlockchainInfo**
-> InlineResponse20010 GetBlockchainInfo(ctx, )
-Get blockchain information
+# **GetBlockDecoded**
+> InlineResponse200 GetBlockDecoded(ctx, identifier)
+Get block by hash or height (verbosity 2)
 
-Returns an object containing various state info regarding blockchain processing
+Get block by hash or height as a decoded object
 
 ### Required Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **identifier** | **string**| Block hash or height | 
 
 ### Return type
 
-[**InlineResponse20010**](inline_response_200_10.md)
+[**InlineResponse200**](inline_response_200.md)
 
 ### Authorization
 
@@ -262,18 +70,22 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetBlocks**
-> InlineResponse20012 GetBlocks(ctx, )
-Returns the latest block height, last 100 block hashes, and featured inscriptions
+# **GetBlockHashByHeight**
+> InlineResponse2001 GetBlockHashByHeight(ctx, blockHeight)
+Returns blockhash of specified block.
 
-Returns the latest block height, last 100 block hashes, and featured inscriptions
+Returns blockhash of specified block.
 
 ### Required Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **blockHeight** | **string**| Block Height | 
 
 ### Return type
 
-[**InlineResponse20012**](inline_response_200_12.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 
@@ -286,18 +98,22 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetLatestBlockHeight**
-> InlineResponse20011 GetLatestBlockHeight(ctx, )
-Returns the height of the latest block.
+# **GetBlockHex**
+> InlineResponse2001 GetBlockHex(ctx, identifier)
+Get block by hash or height (verbosity 0)
 
-Returns the height of the latest block.
+Get block by hash or height as a raw hex string
 
 ### Required Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **identifier** | **string**| Block hash or height | 
 
 ### Return type
 
-[**InlineResponse20011**](inline_response_200_11.md)
+[**InlineResponse2001**](inline_response_200_1.md)
 
 ### Authorization
 
@@ -310,14 +126,18 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetLatestBlockhash**
-> InlineResponse2005 GetLatestBlockhash(ctx, )
-Returns blockhash for the latest block.
+# **GetBlockInfo**
+> InlineResponse2005 GetBlockInfo(ctx, identifier)
+Get block info by hash or height
 
-Returns blockhash for the latest block.
+Get detailed information about a specific block by hash or height
 
 ### Required Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **identifier** | **string**| Block hash or height | 
 
 ### Return type
 
@@ -334,8 +154,188 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **GetBlockPrevout**
+> InlineResponse2002 GetBlockPrevout(ctx, identifier)
+Get block by hash or height (verbosity 3)
+
+Get block by hash or height with prevout information
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **identifier** | **string**| Block hash or height | 
+
+### Return type
+
+[**InlineResponse2002**](inline_response_200_2.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetBlockStats**
+> InlineResponse2004 GetBlockStats(ctx, body)
+Get block stats
+
+Computes per block statistics for a given window
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **body** | [**RequestsGetBlockStatsRequest**](RequestsGetBlockStatsRequest.md)| Block stats request parameters | 
+
+### Return type
+
+[**InlineResponse2004**](inline_response_200_4.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetBlockSummary**
+> InlineResponse2003 GetBlockSummary(ctx, identifier)
+Get block by hash or height (verbosity 1)
+
+Get block by hash or height as a summary object
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **identifier** | **string**| Block hash or height | 
+
+### Return type
+
+[**InlineResponse2003**](inline_response_200_3.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetBlockchainInfo**
+> InlineResponse2006 GetBlockchainInfo(ctx, )
+Get blockchain information
+
+Returns an object containing various state info regarding blockchain processing
+
+### Required Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InlineResponse2006**](inline_response_200_6.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetBlocks**
+> InlineResponse2008 GetBlocks(ctx, )
+Returns the latest block height, last 100 block hashes, and featured inscriptions
+
+Returns the latest block height, last 100 block hashes, and featured inscriptions
+
+### Required Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InlineResponse2008**](inline_response_200_8.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetLatestBlockHeight**
+> InlineResponse2007 GetLatestBlockHeight(ctx, )
+Returns the height of the latest block.
+
+Returns the height of the latest block.
+
+### Required Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InlineResponse2007**](inline_response_200_7.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetLatestBlockhash**
+> InlineResponse2001 GetLatestBlockhash(ctx, )
+Returns blockhash for the latest block.
+
+Returns blockhash for the latest block.
+
+### Required Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**InlineResponse2001**](inline_response_200_1.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **GetLatestBlocktime**
-> InlineResponse20011 GetLatestBlocktime(ctx, )
+> InlineResponse2007 GetLatestBlocktime(ctx, )
 Get the timestamp of the latest block
 
 Returns the UNIX timestamp of when the latest block was mined
@@ -345,7 +345,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**InlineResponse20011**](inline_response_200_11.md)
+[**InlineResponse2007**](inline_response_200_7.md)
 
 ### Authorization
 

@@ -26,7 +26,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/requests.VerifyMessageRequest'
+              $ref: '#/components/schemas/VerifyMessageRequest'
         required: true
       responses:
         "200":
@@ -34,7 +34,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: '#/components/schemas/VerifyMessageResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -72,7 +72,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: '#/components/schemas/GetAddressResponse'
         "400":
           description: Bad Request
           content:
@@ -128,7 +128,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_2'
+                $ref: '#/components/schemas/GetAddressUTXOsResponse'
         "400":
           description: Bad Request
           content:
@@ -171,7 +171,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_3'
+                $ref: '#/components/schemas/ValidateAddressResponse'
         "400":
           description: Invalid request parameters
           content:
@@ -208,7 +208,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_4'
+                $ref: '#/components/schemas/inline_response_200'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -251,7 +251,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/inline_response_200_1'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -294,7 +294,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_6'
+                $ref: '#/components/schemas/inline_response_200_2'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -337,7 +337,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_7'
+                $ref: '#/components/schemas/inline_response_200_3'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -378,7 +378,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_8'
+                $ref: '#/components/schemas/inline_response_200_4'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -416,7 +416,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_9'
+                $ref: '#/components/schemas/inline_response_200_5'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -451,7 +451,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_10'
+                $ref: '#/components/schemas/inline_response_200_6'
         "500":
           description: Internal Server Error
           content:
@@ -473,7 +473,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_11'
+                $ref: '#/components/schemas/inline_response_200_7'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -507,7 +507,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/inline_response_200_1'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -550,7 +550,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/inline_response_200_1'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -584,7 +584,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_11'
+                $ref: '#/components/schemas/inline_response_200_7'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -620,7 +620,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_12'
+                $ref: '#/components/schemas/inline_response_200_8'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -654,7 +654,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_11'
+                $ref: '#/components/schemas/inline_response_200_7'
         "400":
           description: Bad Request - Invalid parameters
           content:
@@ -689,7 +689,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_13'
+                $ref: '#/components/schemas/inline_response_200_9'
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
@@ -719,7 +719,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_14'
+                $ref: '#/components/schemas/inline_response_200_10'
         "400":
           description: Invalid request parameters
           content:
@@ -756,7 +756,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_15'
+                $ref: '#/components/schemas/inline_response_200_11'
         "400":
           description: Invalid request parameters
           content:
@@ -793,7 +793,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_16'
+                $ref: '#/components/schemas/inline_response_200_12'
         "400":
           description: Invalid request parameters
           content:
@@ -831,7 +831,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_17'
+                $ref: '#/components/schemas/inline_response_200_13'
         "400":
           description: Bad Request
           content:
@@ -876,7 +876,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_17'
+                $ref: '#/components/schemas/inline_response_200_13'
         "400":
           description: Bad Request
           content:
@@ -904,7 +904,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_18'
+                $ref: '#/components/schemas/inline_response_200_14'
         "400":
           description: Bad Request
           content:
@@ -940,7 +940,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_19'
+                $ref: '#/components/schemas/inline_response_200_15'
         "400":
           description: Bad Request
           content:
@@ -978,7 +978,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_18'
+                $ref: '#/components/schemas/inline_response_200_14'
         "400":
           description: Bad Request
           content:
@@ -1015,7 +1015,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_18'
+                $ref: '#/components/schemas/inline_response_200_14'
         "400":
           description: Bad Request
           content:
@@ -1050,7 +1050,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_20'
+                $ref: '#/components/schemas/inline_response_200_16'
         "400":
           description: Invalid request parameters
           content:
@@ -1086,7 +1086,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_21'
+                $ref: '#/components/schemas/inline_response_200_17'
         "400":
           description: Invalid request parameters
           content:
@@ -1115,7 +1115,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_22'
+                $ref: '#/components/schemas/inline_response_200_18'
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
@@ -1144,7 +1144,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_23'
+                $ref: '#/components/schemas/inline_response_200_19'
         "400":
           description: Invalid request parameters
           content:
@@ -1180,7 +1180,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_24'
+                $ref: '#/components/schemas/inline_response_200_20'
         "400":
           description: Invalid request parameters
           content:
@@ -1209,7 +1209,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_25'
+                $ref: '#/components/schemas/inline_response_200_21'
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
@@ -1239,7 +1239,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_13'
+                $ref: '#/components/schemas/inline_response_200_9'
         "400":
           description: Invalid request parameters
           content:
@@ -1277,7 +1277,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_26'
+                $ref: '#/components/schemas/inline_response_200_22'
         "400":
           description: Bad Request
           content:
@@ -1320,7 +1320,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_2'
+                $ref: '#/components/schemas/inline_response_200_23'
         "400":
           description: Bad Request
           content:
@@ -1363,7 +1363,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_27'
+                $ref: '#/components/schemas/inline_response_200_24'
         "400":
           description: Invalid request parameters
           content:
@@ -1400,7 +1400,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/inline_response_200_1'
         "400":
           description: Invalid request parameters
           content:
@@ -1437,7 +1437,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/inline_response_200_1'
         "400":
           description: Invalid request parameters
           content:
@@ -1474,7 +1474,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_28'
+                $ref: '#/components/schemas/inline_response_200_25'
         "400":
           description: Invalid request parameters
           content:
@@ -1511,7 +1511,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/inline_response_200_1'
         "400":
           description: Invalid request parameters
           content:
@@ -1549,7 +1549,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_29'
+                $ref: '#/components/schemas/inline_response_200_26'
         "400":
           description: Bad request
           content:
@@ -1584,7 +1584,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_30'
+                $ref: '#/components/schemas/inline_response_200_27'
         "400":
           description: Bad request
           content:
@@ -1627,7 +1627,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_30'
+                $ref: '#/components/schemas/inline_response_200_27'
         "400":
           description: Bad request
           content:
@@ -1670,7 +1670,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_31'
+                $ref: '#/components/schemas/inline_response_200_28'
         "400":
           description: Bad request
           content:
@@ -1712,7 +1712,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_32'
+                $ref: '#/components/schemas/inline_response_200_29'
         "400":
           description: Invalid request parameters
           content:
@@ -1741,7 +1741,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_33'
+                $ref: '#/components/schemas/inline_response_200_30'
         "400":
           description: Bad request
           content:
@@ -1782,7 +1782,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/inline_response_200_1'
         "400":
           description: Bad request
           content:
@@ -1820,7 +1820,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/inline_response_200_1'
         "400":
           description: Bad request
           content:
@@ -1858,7 +1858,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/inline_response_200_1'
         "400":
           description: Bad request
           content:
@@ -1894,7 +1894,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_34'
+                $ref: '#/components/schemas/inline_response_200_31'
         "400":
           description: Bad request
           content:
@@ -1930,7 +1930,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_35'
+                $ref: '#/components/schemas/inline_response_200_32'
         "400":
           description: Bad request
           content:
@@ -1967,7 +1967,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/inline_response_200_1'
         "400":
           description: Bad request
           content:
@@ -2003,7 +2003,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_36'
+                $ref: '#/components/schemas/inline_response_200_33'
         "400":
           description: Bad request
           content:
@@ -2039,7 +2039,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/inline_response_200_1'
         "400":
           description: Bad request
           content:
@@ -2076,7 +2076,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_37'
+                $ref: '#/components/schemas/inline_response_200_34'
         "400":
           description: Bad request
           content:
@@ -2114,7 +2114,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_38'
+                $ref: '#/components/schemas/inline_response_200_35'
         "400":
           description: Bad request
           content:
@@ -2158,7 +2158,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_39'
+                $ref: '#/components/schemas/inline_response_200_36'
         "400":
           description: Bad request
           content:
@@ -2201,7 +2201,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_40'
+                $ref: '#/components/schemas/inline_response_200_37'
         "400":
           description: Bad request
           content:
@@ -2244,7 +2244,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_5'
+                $ref: '#/components/schemas/inline_response_200_1'
         "400":
           description: Bad request
           content:
@@ -2287,7 +2287,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_41'
+                $ref: '#/components/schemas/inline_response_200_38'
         "400":
           description: Bad request
           content:
@@ -2327,6 +2327,21 @@ components:
             $ref: '#/components/schemas/RunesBalance'
         sat_balance:
           type: integer
+      example:
+        outputs:
+        - outputs
+        - outputs
+        runes_balances:
+        - spaced_rune: spaced_rune
+          symbol: symbol
+          amount: amount
+        - spaced_rune: spaced_rune
+          symbol: symbol
+          amount: amount
+        inscriptions:
+        - inscriptions
+        - inscriptions
+        sat_balance: 6
     Bip32Deriv:
       type: object
       properties:
@@ -2800,8 +2815,9 @@ components:
           - $ref: '#/components/schemas/RawTx1'
         unknown:
           type: object
-          additionalProperties: true
           description: The unknown global fields
+          allOf:
+          - $ref: '#/components/schemas/UnknownFields'
     DecodedPSBTInput:
       type: object
       properties:
@@ -2840,8 +2856,9 @@ components:
           description: The sighash type to be used
         unknown:
           type: object
-          additionalProperties: true
           description: Unknown fields
+          allOf:
+          - $ref: '#/components/schemas/UnknownFields'
         witness_script:
           type: object
           description: The witness script
@@ -2867,8 +2884,9 @@ components:
           - $ref: '#/components/schemas/Script'
         unknown:
           type: object
-          additionalProperties: true
           description: Unknown fields
+          allOf:
+          - $ref: '#/components/schemas/UnknownFields'
         witness_script:
           type: object
           description: The witness script
@@ -2952,6 +2970,82 @@ components:
         withintarget:
           type: number
           description: Number of txs confirmed within target
+    GetAddressResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/AddressResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          outputs:
+          - outputs
+          - outputs
+          runes_balances:
+          - spaced_rune: spaced_rune
+            symbol: symbol
+            amount: amount
+          - spaced_rune: spaced_rune
+            symbol: symbol
+            amount: amount
+          inscriptions:
+          - inscriptions
+          - inscriptions
+          sat_balance: 6
+    GetAddressUTXOsResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/OutputResponse'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+        - address: address
+          runes:
+            key: runes
+          indexed: true
+          inscriptions:
+          - inscriptions
+          - inscriptions
+          spent: true
+          sat_ranges:
+          - - 6
+            - 6
+          - - 6
+            - 6
+          script_pubkey: script_pubkey
+          value: 1
+          outpoint: outpoint
+          transaction: transaction
+        - address: address
+          runes:
+            key: runes
+          indexed: true
+          inscriptions:
+          - inscriptions
+          - inscriptions
+          spent: true
+          sat_ranges:
+          - - 6
+            - 6
+          - - 6
+            - 6
+          script_pubkey: script_pubkey
+          value: 1
+          outpoint: outpoint
+          transaction: transaction
     Input:
       type: object
       properties:
@@ -3258,6 +3352,24 @@ components:
           type: string
         value:
           type: integer
+      example:
+        address: address
+        runes:
+          key: runes
+        indexed: true
+        inscriptions:
+        - inscriptions
+        - inscriptions
+        spent: true
+        sat_ranges:
+        - - 6
+          - 6
+        - - 6
+          - 6
+        script_pubkey: script_pubkey
+        value: 1
+        outpoint: outpoint
+        transaction: transaction
     PSBTAnalysis:
       type: object
       properties:
@@ -3514,6 +3626,10 @@ components:
           type: string
         symbol:
           type: string
+      example:
+        spaced_rune: spaced_rune
+        symbol: symbol
+        amount: amount
     RunesListResponse:
       type: object
       properties:
@@ -3920,6 +4036,34 @@ components:
         unclaimed_rewards:
           type: number
           description: Fee rewards unclaimed by miners
+    UnknownFields:
+      type: object
+      additionalProperties:
+        type: string
+    ValidateAddressResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/ValidateAddressResult'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          scriptPubKey: scriptPubKey
+          witness_program: witness_program
+          address: address
+          error_locations:
+          - 6
+          - 6
+          witness_version: 1
+          isscript: true
+          isvalid: true
+          error: error
+          iswitness: true
     ValidateAddressResult:
       type: object
       properties:
@@ -3952,6 +4096,43 @@ components:
         witness_version:
           type: integer
           description: The version number of the witness program
+      example:
+        scriptPubKey: scriptPubKey
+        witness_program: witness_program
+        address: address
+        error_locations:
+        - 6
+        - 6
+        witness_version: 1
+        isscript: true
+        isvalid: true
+        error: error
+        iswitness: true
+    VerifyMessageRequest:
+      type: object
+      properties:
+        address:
+          type: string
+          description: The bitcoin address to use for the signature
+        message:
+          type: string
+          description: The message that was signed
+        signature:
+          type: string
+          description: The signature provided by the signer in base 64 encoding
+    VerifyMessageResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          type: boolean
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data: true
     Vout:
       type: object
       properties:
@@ -4288,18 +4469,6 @@ components:
           description: Array of hex-encoded raw transactions
           items:
             type: string
-    requests.VerifyMessageRequest:
-      type: object
-      properties:
-        address:
-          type: string
-          description: The bitcoin address to use for the signature
-        message:
-          type: string
-          description: The message that was signed
-        signature:
-          type: string
-          description: The signature provided by the signer in base 64 encoding
     requests.VerifyTxOutProofRequest:
       type: object
       properties:
@@ -4321,136 +4490,106 @@ components:
       - type: object
         properties:
           data:
-            type: boolean
+            $ref: '#/components/schemas/Block2'
     inline_response_200_1:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/AddressResponse'
+            type: string
     inline_response_200_2:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            type: array
-            items:
-              $ref: '#/components/schemas/OutputResponse'
+            $ref: '#/components/schemas/Block3'
     inline_response_200_3:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/ValidateAddressResult'
+            $ref: '#/components/schemas/Block1'
     inline_response_200_4:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/Block2'
+            $ref: '#/components/schemas/BlockStats'
     inline_response_200_5:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            type: string
+            $ref: '#/components/schemas/BlockResponse'
     inline_response_200_6:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/Block3'
+            $ref: '#/components/schemas/BlockchainInfo'
     inline_response_200_7:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/Block1'
+            type: integer
     inline_response_200_8:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/BlockStats'
+            $ref: '#/components/schemas/BlocksResponse'
     inline_response_200_9:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/BlockResponse'
+            type: number
     inline_response_200_10:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/BlockchainInfo'
+            $ref: '#/components/schemas/ChainTxStats'
     inline_response_200_11:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            type: integer
+            $ref: '#/components/schemas/RawFeeEstimate'
     inline_response_200_12:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/BlocksResponse'
+            $ref: '#/components/schemas/SmartFeeEstimate'
     inline_response_200_13:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            type: number
+            $ref: '#/components/schemas/InscriptionResponse'
     inline_response_200_14:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/ChainTxStats'
-    inline_response_200_15:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/RawFeeEstimate'
-    inline_response_200_16:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/SmartFeeEstimate'
-    inline_response_200_17:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/InscriptionResponse'
-    inline_response_200_18:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
             $ref: '#/components/schemas/LatestInscriptionsResponse'
-    inline_response_200_19:
+    inline_response_200_15:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
@@ -4459,35 +4598,35 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/InscriptionResponse'
-    inline_response_200_20:
+    inline_response_200_16:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/MempoolAncestorsData'
-    inline_response_200_21:
+    inline_response_200_17:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/MempoolDescendantsData'
-    inline_response_200_22:
+    inline_response_200_18:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/MempoolInfo'
-    inline_response_200_23:
+    inline_response_200_19:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/RawMempoolData'
-    inline_response_200_24:
+    inline_response_200_20:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
@@ -4496,84 +4635,93 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/TestMempoolAcceptResult'
-    inline_response_200_25:
+    inline_response_200_21:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/MiningInfo'
-    inline_response_200_26:
+    inline_response_200_22:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/OutputResponse'
-    inline_response_200_27:
+    inline_response_200_23:
+      allOf:
+      - $ref: '#/components/schemas/utils.ResponseEnvelope'
+      - type: object
+        properties:
+          data:
+            type: array
+            items:
+              $ref: '#/components/schemas/OutputResponse'
+    inline_response_200_24:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/PSBTAnalysis'
-    inline_response_200_28:
+    inline_response_200_25:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/DecodedPSBT'
-    inline_response_200_29:
+    inline_response_200_26:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/RuneResponse'
-    inline_response_200_30:
+    inline_response_200_27:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/RunesListResponse'
-    inline_response_200_31:
+    inline_response_200_28:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/SatoshiResponse'
-    inline_response_200_32:
+    inline_response_200_29:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/DecodedScript'
-    inline_response_200_33:
+    inline_response_200_30:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/StatusResponse'
-    inline_response_200_34:
+    inline_response_200_31:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/TxOut'
-    inline_response_200_35:
+    inline_response_200_32:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/UTXOSetInfo'
-    inline_response_200_36:
+    inline_response_200_33:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
@@ -4582,7 +4730,7 @@ components:
             type: array
             items:
               type: string
-    inline_response_200_37:
+    inline_response_200_34:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
@@ -4591,28 +4739,28 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/TxSpendingPrevoutResult'
-    inline_response_200_38:
+    inline_response_200_35:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/TransactionResponse'
-    inline_response_200_39:
+    inline_response_200_36:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/DecodeResponse'
-    inline_response_200_40:
+    inline_response_200_37:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object
         properties:
           data:
             $ref: '#/components/schemas/RawTx1'
-    inline_response_200_41:
+    inline_response_200_38:
       allOf:
       - $ref: '#/components/schemas/utils.ResponseEnvelope'
       - type: object

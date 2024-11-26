@@ -19,5 +19,5 @@ type DecodedPsbt struct {
 	// The decoded network-serialized unsigned transaction
 	Tx *AllOfDecodedPsbttx `json:"tx,omitempty"`
 	// The unknown global fields
-	Unknown ModelMap `json:"unknown,omitempty"`
+	Unknown *AllOfDecodedPsbtUnknown `json:"unknown,omitempty"`
 }

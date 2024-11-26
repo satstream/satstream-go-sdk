@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**EstimateSmartFee**](FeesApi.md#EstimateSmartFee) | **Post** /fee/estimate-smart | Estimate smart fee
 
 # **EstimateRawFee**
-> InlineResponse20015 EstimateRawFee(ctx, body)
+> InlineResponse20011 EstimateRawFee(ctx, body)
 Estimate Raw Fee
 
 Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within conf_target blocks if possible.
@@ -22,7 +22,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](inline_response_200_15.md)
+[**InlineResponse20011**](inline_response_200_11.md)
 
 ### Authorization
 
@@ -36,7 +36,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **EstimateSmartFee**
-> InlineResponse20016 EstimateSmartFee(ctx, body)
+> InlineResponse20012 EstimateSmartFee(ctx, body)
 Estimate smart fee
 
 Estimates the approximate fee per kilobyte needed for a transaction to begin confirmation within conf_target blocks
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](inline_response_200_16.md)
+[**InlineResponse20012**](inline_response_200_12.md)
 
 ### Authorization
 

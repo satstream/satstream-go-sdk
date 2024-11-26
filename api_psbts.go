@@ -29,15 +29,15 @@ PSBTsApiService Analyze PSBT
 Analyzes and provides information about the current status of a PSBT and its inputs
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body PSBT to analyze
-@return InlineResponse20027
+@return InlineResponse20024
 */
-func (a *PSBTsApiService) AnalyzePsbt(ctx context.Context, body RequestsAnalyzePsbtRequest) (InlineResponse20027, *http.Response, error) {
+func (a *PSBTsApiService) AnalyzePsbt(ctx context.Context, body RequestsAnalyzePsbtRequest) (InlineResponse20024, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20027
+		localVarReturnValue InlineResponse20024
 	)
 
 	// create path and map variables
@@ -109,7 +109,7 @@ func (a *PSBTsApiService) AnalyzePsbt(ctx context.Context, body RequestsAnalyzeP
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20027
+			var v InlineResponse20024
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -148,15 +148,15 @@ PSBTsApiService Combine PSBTs
 Combines multiple partially signed Bitcoin transactions into one transaction
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Array of PSBTs to combine
-@return InlineResponse2005
+@return InlineResponse2001
 */
-func (a *PSBTsApiService) CombinePsbt(ctx context.Context, body RequestsCombinePsbtRequest) (InlineResponse2005, *http.Response, error) {
+func (a *PSBTsApiService) CombinePsbt(ctx context.Context, body RequestsCombinePsbtRequest) (InlineResponse2001, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2005
+		localVarReturnValue InlineResponse2001
 	)
 
 	// create path and map variables
@@ -228,7 +228,7 @@ func (a *PSBTsApiService) CombinePsbt(ctx context.Context, body RequestsCombineP
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2005
+			var v InlineResponse2001
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -267,15 +267,15 @@ PSBTsApiService Create PSBT
 Creates a transaction in the Partially Signed Transaction format. Implements the Creator role.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body Transaction parameters
-@return InlineResponse2005
+@return InlineResponse2001
 */
-func (a *PSBTsApiService) CreatePsbt(ctx context.Context, body RequestsCreatePsbtRequest) (InlineResponse2005, *http.Response, error) {
+func (a *PSBTsApiService) CreatePsbt(ctx context.Context, body RequestsCreatePsbtRequest) (InlineResponse2001, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2005
+		localVarReturnValue InlineResponse2001
 	)
 
 	// create path and map variables
@@ -347,7 +347,7 @@ func (a *PSBTsApiService) CreatePsbt(ctx context.Context, body RequestsCreatePsb
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2005
+			var v InlineResponse2001
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -386,15 +386,15 @@ PSBTsApiService Decode PSBT
 Return a JSON object representing the serialized, base64-encoded partially signed Bitcoin transaction.
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body PSBT to decode
-@return InlineResponse20028
+@return InlineResponse20025
 */
-func (a *PSBTsApiService) DecodePsbt(ctx context.Context, body RequestsAnalyzePsbtRequest) (InlineResponse20028, *http.Response, error) {
+func (a *PSBTsApiService) DecodePsbt(ctx context.Context, body RequestsAnalyzePsbtRequest) (InlineResponse20025, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse20028
+		localVarReturnValue InlineResponse20025
 	)
 
 	// create path and map variables
@@ -466,7 +466,7 @@ func (a *PSBTsApiService) DecodePsbt(ctx context.Context, body RequestsAnalyzePs
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse20028
+			var v InlineResponse20025
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -505,15 +505,15 @@ PSBTsApiService Join PSBTs
 Joins multiple distinct PSBTs with different inputs and outputs into one PSBT
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param body PSBTs to join
-@return InlineResponse2005
+@return InlineResponse2001
 */
-func (a *PSBTsApiService) JoinPsbts(ctx context.Context, body RequestsJoinPsbtsRequest) (InlineResponse2005, *http.Response, error) {
+func (a *PSBTsApiService) JoinPsbts(ctx context.Context, body RequestsJoinPsbtsRequest) (InlineResponse2001, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Post")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue InlineResponse2005
+		localVarReturnValue InlineResponse2001
 	)
 
 	// create path and map variables
@@ -585,7 +585,7 @@ func (a *PSBTsApiService) JoinPsbts(ctx context.Context, body RequestsJoinPsbtsR
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v InlineResponse2005
+			var v InlineResponse2001
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()

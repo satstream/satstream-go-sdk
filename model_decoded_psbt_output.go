@@ -15,7 +15,7 @@ type DecodedPsbtOutput struct {
 	// The redeem script
 	RedeemScript *AllOfDecodedPsbtOutputRedeemScript `json:"redeem_script,omitempty"`
 	// Unknown fields
-	Unknown ModelMap `json:"unknown,omitempty"`
+	Unknown *AllOfDecodedPsbtOutputUnknown `json:"unknown,omitempty"`
 	// The witness script
 	WitnessScript *AllOfDecodedPsbtOutputWitnessScript `json:"witness_script,omitempty"`
 }
