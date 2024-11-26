@@ -39,6 +39,10 @@
               echo "\`\`\`" >> README.md
             fi
 
+        - name: Tidy module
+          run: |
+            go mod tidy
+
         - name: Get latest version
           id: get_version
           run: |
@@ -71,4 +75,4 @@
 
         - name: Publish to Go proxy
           run: |
-            GOPROXY=proxy.golang.org go list -m github.com/satstream/ss-api@${{ env.NEW_VERSION }}
+            GOPROXY=proxy.golang.org go list -m github.com/satstream/satstream-go-sdk@${{ env.NEW_VERSION }}
