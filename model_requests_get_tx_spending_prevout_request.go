@@ -11,5 +11,5 @@ package satstream_go_sdk
 
 type RequestsGetTxSpendingPrevoutRequest struct {
 	// The transaction outputs to check
-	Outputs []GithubComSatstreamSsUtilsBitcoinCliTxSpendingPrevoutInput `json:"outputs,omitempty"`
+	Outputs []TxSpendingPrevoutInput `json:"outputs,omitempty"`
 }

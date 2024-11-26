@@ -45,11 +45,33 @@ type APIClient struct {
 
 	// API Services
 
-	BitcoinApi *BitcoinApiService
+	AddressesApi *AddressesApiService
 
 	BlocksApi *BlocksApiService
 
+	FeesApi *FeesApiService
+
 	InscriptionsApi *InscriptionsApiService
+
+	MempoolApi *MempoolApiService
+
+	MiningApi *MiningApiService
+
+	NetworkApi *NetworkApiService
+
+	OutputsApi *OutputsApiService
+
+	PSBTsApi *PSBTsApiService
+
+	RunesApi *RunesApiService
+
+	SatoshisApi *SatoshisApiService
+
+	ScriptsApi *ScriptsApiService
+
+	StatusApi *StatusApiService
+
+	TransactionsApi *TransactionsApiService
 }
 
 type service struct {
@@ -68,9 +90,20 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.BitcoinApi = (*BitcoinApiService)(&c.common)
+	c.AddressesApi = (*AddressesApiService)(&c.common)
 	c.BlocksApi = (*BlocksApiService)(&c.common)
+	c.FeesApi = (*FeesApiService)(&c.common)
 	c.InscriptionsApi = (*InscriptionsApiService)(&c.common)
+	c.MempoolApi = (*MempoolApiService)(&c.common)
+	c.MiningApi = (*MiningApiService)(&c.common)
+	c.NetworkApi = (*NetworkApiService)(&c.common)
+	c.OutputsApi = (*OutputsApiService)(&c.common)
+	c.PSBTsApi = (*PSBTsApiService)(&c.common)
+	c.RunesApi = (*RunesApiService)(&c.common)
+	c.SatoshisApi = (*SatoshisApiService)(&c.common)
+	c.ScriptsApi = (*ScriptsApiService)(&c.common)
+	c.StatusApi = (*StatusApiService)(&c.common)
+	c.TransactionsApi = (*TransactionsApiService)(&c.common)
 
 	return c
 }

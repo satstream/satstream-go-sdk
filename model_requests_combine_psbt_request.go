@@ -10,5 +10,6 @@
 package satstream_go_sdk
 
 type RequestsCombinePsbtRequest struct {
+	// Array of base64-encoded PSBTs to combine
 	Psbts []string `json:"psbts"`
 }

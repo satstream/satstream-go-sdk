@@ -10,5 +10,6 @@
 package satstream_go_sdk
 
 type RequestsAnalyzePsbtRequest struct {
+	// The base64-encoded PSBT to analyze
 	Psbt string `json:"psbt,omitempty"`
 }
