@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**FetchInscriptionChild**](InscriptionsApi.md#FetchInscriptionChild) | **Get** /inscription/{inscription_id}/{child_index} | Get inscription child info
 [**FetchInscriptions**](InscriptionsApi.md#FetchInscriptions) | **Post** /inscriptions | Fetch multiple inscriptions
 [**GetBlockInscriptions**](InscriptionsApi.md#GetBlockInscriptions) | **Get** /inscriptions/block/{block_height} | Get inscriptions in a specific block
+[**GetBlockInscriptionsPage**](InscriptionsApi.md#GetBlockInscriptionsPage) | **Get** /inscriptions/block/{block_height}/{page} | Get paginated inscriptions in a specific block
 [**GetInscription**](InscriptionsApi.md#GetInscription) | **Get** /inscription/{inscription_id} | Get inscription info
 [**GetLatestInscriptions**](InscriptionsApi.md#GetLatestInscriptions) | **Get** /inscriptions | Get latest inscriptions
 [**GetLatestInscriptionsPage**](InscriptionsApi.md#GetLatestInscriptionsPage) | **Get** /inscriptions/{page} | Get latest inscriptions page
@@ -80,6 +81,35 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
   **blockHeight** | **int32**| Block Height | 
+
+### Return type
+
+[**GetBlockInscriptionsResponse**](GetBlockInscriptionsResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetBlockInscriptionsPage**
+> GetBlockInscriptionsResponse GetBlockInscriptionsPage(ctx, blockHeight, page)
+Get paginated inscriptions in a specific block
+
+Retrieve paginated inscriptions in a specific block
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **blockHeight** | **int32**| Block Height | 
+  **page** | **int32**| Page Number | 
 
 ### Return type
 

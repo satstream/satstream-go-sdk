@@ -15,7 +15,7 @@ type TransactionCreateRawTxRequest struct {
 	// Raw locktime. Non-0 value also locktime-activates inputs Optional, defaults to 0
 	Locktime int32 `json:"locktime,omitempty"`
 	// The outputs for the transaction Each address can only appear once and there can only be one 'data' object
-	Outputs []TransactionCreateRawTxOutput `json:"outputs"`
+	Outputs []map[string]float64 `json:"outputs"`
 	// Marks this transaction as BIP125-replaceable Allows this transaction to be replaced by a transaction with higher fees If provided, it is an error if explicit sequence numbers are incompatible Optional, defaults to true
 	Replaceable bool `json:"replaceable,omitempty"`
 }

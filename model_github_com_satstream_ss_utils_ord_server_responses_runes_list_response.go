@@ -9,8 +9,8 @@
  */
 package satstream_go_sdk
 
-type RunesListResponse struct {
-	Entries []RuneListEntry `json:"entries,omitempty"`
+type GithubComSatstreamSsUtilsOrdServerResponsesRunesListResponse struct {
+	Entries []GithubComSatstreamSsUtilsOrdServerResponsesRuneListEntry `json:"entries,omitempty"`
 	More bool `json:"more,omitempty"`
 	Next int32 `json:"next,omitempty"`
 	Prev int32 `json:"prev,omitempty"`

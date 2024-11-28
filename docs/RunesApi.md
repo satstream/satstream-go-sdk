@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetLatestRunes**](RunesApi.md#GetLatestRunes) | **Get** /runes | Get latest runes
 [**GetLatestRunesPage**](RunesApi.md#GetLatestRunesPage) | **Get** /runes/{page} | Get latest runes page
-[**GetRune**](RunesApi.md#GetRune) | **Get** /rune/{rune_name} | Get rune info
+[**GetRune**](RunesApi.md#GetRune) | **Get** /rune/{identifier} | Get rune info
 
 # **GetLatestRunes**
 > GetLatestRunesResponse GetLatestRunes(ctx, )
@@ -61,17 +61,17 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **GetRune**
-> GetRuneResponse GetRune(ctx, runeName)
+> GetRuneResponse GetRune(ctx, identifier)
 Get rune info
 
-Retrieve information about a specific rune
+Retrieve information about a specific rune by name or ID (e.g., \"UNCOMMON•GOODS\" or \"1:0\")
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **runeName** | **string**| Rune Name | 
+  **identifier** | **string**| Rune Name or ID | 
 
 ### Return type
 

@@ -11,6 +11,6 @@ package satstream_go_sdk
 
 type GetLatestRunesResponse struct {
 	Code int32 `json:"code,omitempty"`
-	Data *RunesListResponse `json:"data,omitempty"`
+	Data *GithubComSatstreamSsUtilsOrdServerResponsesRunesListResponse `json:"data,omitempty"`
 	Msg string `json:"msg,omitempty"`
 }

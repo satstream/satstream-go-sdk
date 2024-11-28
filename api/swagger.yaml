@@ -14,42 +14,6 @@ info:
 servers:
 - url: https://api.satstream.io/api/v1
 paths:
-  /address/verify-message:
-    post:
-      tags:
-      - Addresses
-      summary: Verify message
-      description: Verifies a signed message
-      operationId: verify-message
-      requestBody:
-        description: Message verification parameters
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/VerifyMessageRequest'
-        required: true
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/VerifyMessageResponse'
-        "400":
-          description: Invalid request parameters
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-        "500":
-          description: Internal server error or Bitcoin RPC error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-      security:
-      - ApiKeyAuth: []
-      x-codegen-request-body-name: request
   /address/{address}:
     get:
       tags:
@@ -1143,6 +1107,51 @@ paths:
                 $ref: '#/components/schemas/utils.ResponseEnvelope'
       security:
       - ApiKeyAuth: []
+  /inscriptions/block/{block_height}/{page}:
+    get:
+      tags:
+      - Inscriptions
+      summary: Get paginated inscriptions in a specific block
+      description: Retrieve paginated inscriptions in a specific block
+      operationId: get-block-inscriptions-page
+      parameters:
+      - name: block_height
+        in: path
+        description: Block Height
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      - name: page
+        in: path
+        description: Page Number
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetBlockInscriptionsResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+      security:
+      - ApiKeyAuth: []
   /inscriptions/{page}:
     get:
       tags:
@@ -1429,19 +1438,19 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_200'
         "400":
-          description: Bad Request
+          description: Bad request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/utils.ResponseEnvelope'
         "404":
-          description: Not Found
+          description: Not found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/utils.ResponseEnvelope'
         "500":
-          description: Internal Server Error
+          description: Internal server error
           content:
             application/json:
               schema:
@@ -1472,19 +1481,19 @@ paths:
               schema:
                 $ref: '#/components/schemas/inline_response_200_1'
         "400":
-          description: Bad Request
+          description: Bad request
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/utils.ResponseEnvelope'
         "404":
-          description: Not Found
+          description: Not found
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/utils.ResponseEnvelope'
         "500":
-          description: Internal Server Error
+          description: Internal server error
           content:
             application/json:
               schema:
@@ -1677,17 +1686,18 @@ paths:
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
-  /rune/{rune_name}:
+  /rune/{identifier}:
     get:
       tags:
       - Runes
       summary: Get rune info
-      description: Retrieve information about a specific rune
+      description: "Retrieve information about a specific rune by name or ID (e.g.,\
+        \ \"UNCOMMON•GOODS\" or \"1:0\")"
       operationId: get-rune
       parameters:
-      - name: rune_name
+      - name: identifier
         in: path
-        description: Rune Name
+        description: Rune Name or ID
         required: true
         style: simple
         explode: false
@@ -2051,6 +2061,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "404":
+          description: Transaction output not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
@@ -2242,136 +2258,6 @@ paths:
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
-  /tx/{txid}:
-    get:
-      tags:
-      - Transactions
-      summary: Get transaction info
-      description: Retrieve information about a specific transaction
-      operationId: get-transaction
-      parameters:
-      - name: txid
-        in: path
-        description: Transaction ID
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetTransactionResponse'
-        "400":
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-        "404":
-          description: Transaction not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-        "500":
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-      security:
-      - ApiKeyAuth: []
-  /tx/{txid}/decode:
-    get:
-      tags:
-      - Transactions
-      summary: Decode a transaction
-      description: Decodes a transaction and returns its inscriptions and runestone
-        data
-      operationId: decode-tx
-      parameters:
-      - name: txid
-        in: path
-        description: Transaction ID
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/DecodeTransactionResponse'
-        "400":
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-        "404":
-          description: Transaction not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-        "500":
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-      security:
-      - ApiKeyAuth: []
-  /tx/{txid}/decoded:
-    get:
-      tags:
-      - Transactions
-      summary: Get raw transaction (verbosity 1)
-      description: Get raw transaction as a decoded object
-      operationId: get-raw-transaction-decoded
-      parameters:
-      - name: txid
-        in: path
-        description: Transaction ID
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      responses:
-        "200":
-          description: Decoded transaction
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetRawTransactionDecodedResponse'
-        "400":
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-        "404":
-          description: Transaction not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-        "500":
-          description: Internal server error or Bitcoin RPC error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-      security:
-      - ApiKeyAuth: []
   /tx/{txid}/hex:
     get:
       tags:
@@ -2415,11 +2301,98 @@ paths:
                 $ref: '#/components/schemas/utils.ResponseEnvelope'
       security:
       - ApiKeyAuth: []
-  /tx/{txid}/prevout:
+  /tx/{txid}/inscriptions:
     get:
       tags:
       - Transactions
-      summary: Get raw transaction (verbosity 2)
+      summary: Decode transaction inscriptions
+      description: Decodes a transaction and returns its inscriptions and runestone
+        data
+      operationId: decode-tx-inscriptions
+      parameters:
+      - name: txid
+        in: path
+        description: Transaction ID
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DecodeTransactionResponse'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "404":
+          description: Transaction not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+      security:
+      - ApiKeyAuth: []
+  /tx/{txid}/raw/decode:
+    get:
+      tags:
+      - Transactions
+      summary: Get raw transaction (verbosity 1)
+      description: Get raw transaction with basic decoded information
+      operationId: get-raw-transaction
+      parameters:
+      - name: txid
+        in: path
+        description: Transaction ID
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Decoded transaction
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRawTransactionDecodeResponse'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "404":
+          description: Transaction not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "500":
+          description: Internal server error or Bitcoin RPC error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+      security:
+      - ApiKeyAuth: []
+  /tx/{txid}/raw/prevout:
+    get:
+      tags:
+      - Transactions
+      summary: Get raw transaction with prevouts (verbosity 2)
       description: Get raw transaction with prevout information
       operationId: get-raw-transaction-prevout
       parameters:
@@ -3506,15 +3479,6 @@ components:
         vout:
           type: integer
           description: The output index number (vout) of the output to spend
-    CreatePSBTOutput:
-      type: object
-      properties:
-        address:
-          type: string
-          description: The bitcoin address to send to
-        data:
-          type: string
-          description: Hex-encoded data to embed in the transaction
     CreatePSBTRequest:
       required:
       - inputs
@@ -3533,10 +3497,10 @@ components:
         outputs:
           minItems: 1
           type: array
-          description: The outputs for the transaction (each address can only appear
-            once)
+          description: "The outputs (address:amount pairs or {\"data\":\"hex\"})"
           items:
-            $ref: '#/components/schemas/CreatePSBTOutput'
+            type: object
+            additionalProperties: true
         replaceable:
           type: boolean
           description: Marks this transaction as BIP125-replaceable
@@ -3699,7 +3663,15 @@ components:
             - parents
             rune: rune
           pushnum: true
-        runestone: {}
+        runestone:
+          mint: mint
+          pointer: 7
+          edicts:
+          - - 2
+            - 2
+          - - 2
+            - 2
+          etching: etching
     DecodeScriptRequest:
       required:
       - hexstring
@@ -3787,7 +3759,15 @@ components:
               - parents
               rune: rune
             pushnum: true
-          runestone: {}
+          runestone:
+            mint: mint
+            pointer: 7
+            edicts:
+            - - 2
+              - 2
+            - - 2
+              - 2
+            etching: etching
     DecodedInscription:
       type: object
       properties:
@@ -4041,16 +4021,6 @@ components:
         asm: asm
         type: type
         desc: desc
-    Duration:
-      type: object
-      properties:
-        nanos:
-          type: integer
-        secs:
-          type: integer
-      example:
-        nanos: 5
-        secs: 2
     EstimateRawFeeRequest:
       required:
       - conf_target
@@ -4178,7 +4148,7 @@ components:
           address: address
           previous: previous
           fee: 1
-          sat: sat
+          sat: 2
           charms:
           - charms
           - charms
@@ -4190,19 +4160,19 @@ components:
           - children
           - children
           id: id
-          value: 7
+          value: 9
           content_length: 6
           satpoint: satpoint
           height: 5
           parents:
           - parents
           - parents
-          timestamp: 2
+          timestamp: 7
         - next: next
           address: address
           previous: previous
           fee: 1
-          sat: sat
+          sat: 2
           charms:
           - charms
           - charms
@@ -4214,14 +4184,14 @@ components:
           - children
           - children
           id: id
-          value: 7
+          value: 9
           content_length: 6
           satpoint: satpoint
           height: 5
           parents:
           - parents
           - parents
-          timestamp: 2
+          timestamp: 7
     GetAddressDeltasResponse:
       type: object
       properties:
@@ -4314,36 +4284,42 @@ components:
         data:
         - address: address
           runes:
-            key: runes
+            key:
+              symbol: symbol
+              amount: 6
+              divisibility: 1
           indexed: true
           inscriptions:
           - inscriptions
           - inscriptions
           spent: true
           sat_ranges:
-          - - 6
-            - 6
-          - - 6
-            - 6
+          - - 5
+            - 5
+          - - 5
+            - 5
           script_pubkey: script_pubkey
-          value: 1
+          value: 5
           outpoint: outpoint
           transaction: transaction
         - address: address
           runes:
-            key: runes
+            key:
+              symbol: symbol
+              amount: 6
+              divisibility: 1
           indexed: true
           inscriptions:
           - inscriptions
           - inscriptions
           spent: true
           sat_ranges:
-          - - 6
-            - 6
-          - - 6
-            - 6
+          - - 5
+            - 5
+          - - 5
+            - 5
           script_pubkey: script_pubkey
-          value: 1
+          value: 5
           outpoint: outpoint
           transaction: transaction
     GetBlockCountResponse:
@@ -4906,7 +4882,7 @@ components:
           address: address
           previous: previous
           fee: 1
-          sat: sat
+          sat: 2
           charms:
           - charms
           - charms
@@ -4918,14 +4894,14 @@ components:
           - children
           - children
           id: id
-          value: 7
+          value: 9
           content_length: 6
           satpoint: satpoint
           height: 5
           parents:
           - parents
           - parents
-          timestamp: 2
+          timestamp: 7
     GetInscriptionResponse:
       type: object
       properties:
@@ -4943,7 +4919,7 @@ components:
           address: address
           previous: previous
           fee: 1
-          sat: sat
+          sat: 2
           charms:
           - charms
           - charms
@@ -4955,14 +4931,14 @@ components:
           - children
           - children
           id: id
-          value: 7
+          value: 9
           content_length: 6
           satpoint: satpoint
           height: 5
           parents:
           - parents
           - parents
-          timestamp: 2
+          timestamp: 7
     GetLatestBlockHashResponse:
       type: object
       properties:
@@ -5026,21 +5002,59 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/RunesListResponse'
+          $ref: '#/components/schemas/github_com_satstream_ss-utils_ord_server_responses.RunesListResponse'
         msg:
           type: string
       example:
         msg: msg
         code: 0
         data:
-          next: 6
+          next: 4
           entries:
-          - "0": "0"
-            "1": ""
-          - "0": "0"
-            "1": ""
+          - mints: 5
+            symbol: symbol
+            etching: etching
+            turbo: true
+            burned: 1
+            number: 2
+            spaced_rune: spaced_rune
+            premine: {}
+            terms:
+              amount: 7
+              cap: null
+              offset:
+              - 3
+              - 3
+              height:
+              - 9
+              - 9
+            block: 6
+            id: id
+            divisibility: 5
+            timestamp: 2
+          - mints: 5
+            symbol: symbol
+            etching: etching
+            turbo: true
+            burned: 1
+            number: 2
+            spaced_rune: spaced_rune
+            premine: {}
+            terms:
+              amount: 7
+              cap: null
+              offset:
+              - 3
+              - 3
+              height:
+              - 9
+              - 9
+            block: 6
+            id: id
+            divisibility: 5
+            timestamp: 2
           more: true
-          prev: 1
+          prev: 7
     GetMempoolAncestorsRequest:
       type: object
       properties:
@@ -5246,7 +5260,7 @@ components:
           txids:
           - txids
           - txids
-    GetRawTransactionDecodedResponse:
+    GetRawTransactionDecodeResponse:
       type: object
       properties:
         code:
@@ -5418,27 +5432,6 @@ components:
         msg: msg
         code: 0
         data:
-          entry:
-            mints: 5
-            number: 2
-            spaced_rune: spaced_rune
-            symbol: symbol
-            premine: 7
-            etching: etching
-            terms:
-              amount: 9
-              cap: cap
-              offset:
-              - 2
-              - 2
-              height:
-              - 3
-              - 3
-            turbo: true
-            block: 6
-            burned: 1
-            divisibility: 5
-            timestamp: 4
           parent: parent
           id: id
           mintable: true
@@ -5488,61 +5481,13 @@ components:
         code: 0
         data:
           chain: chain
-          sat_index: true
           cursed_inscriptions: 1
-          rune_index: true
-          runes: 3
-          inscriptions: 7
+          runes: 7
+          inscriptions: 5
+          lost_sats: 2
           blessed_inscriptions: 6
-          started: started
-          transaction_index: true
-          initial_sync_time:
-            nanos: 5
-            secs: 2
-          minimum_rune_for_next_block: minimum_rune_for_next_block
-          uptime: null
-          unrecoverably_reorged: true
-          address_index: true
-          lost_sats: 9
           height: 5
-    GetTransactionResponse:
-      type: object
-      properties:
-        code:
-          type: integer
-        data:
-          $ref: '#/components/schemas/TransactionResponse'
-        msg:
-          type: string
-      example:
-        msg: msg
-        code: 0
-        data:
-          chain: chain
-          etching: etching
-          inscription_count: 6
-          txid: txid
-          transaction:
-            lock_time: 5
-            output:
-            - script_pubkey: script_pubkey
-              value: 5
-            - script_pubkey: script_pubkey
-              value: 5
-            input:
-            - sequence: 1
-              witness:
-              - witness
-              - witness
-              previous_output: previous_output
-              script_sig: script_sig
-            - sequence: 1
-              witness:
-              - witness
-              - witness
-              previous_output: previous_output
-              script_sig: script_sig
-            version: 2
+          minimum_rune_for_next_block: minimum_rune_for_next_block
     GetTxOutProofResponse:
       type: object
       properties:
@@ -5707,7 +5652,7 @@ components:
         rune:
           type: string
         sat:
-          type: string
+          type: integer
         satpoint:
           type: string
         timestamp:
@@ -5719,7 +5664,7 @@ components:
         address: address
         previous: previous
         fee: 1
-        sat: sat
+        sat: 2
         charms:
         - charms
         - charms
@@ -5731,14 +5676,14 @@ components:
         - children
         - children
         id: id
-        value: 7
+        value: 9
         content_length: 6
         satpoint: satpoint
         height: 5
         parents:
         - parents
         - parents
-        timestamp: 2
+        timestamp: 7
     JoinPSBTsRequest:
       type: object
       properties:
@@ -6057,7 +6002,7 @@ components:
         runes:
           type: object
           additionalProperties:
-            type: string
+            $ref: '#/components/schemas/github_com_satstream_ss-utils_ord_server_responses.RuneDetails'
         sat_ranges:
           type: array
           items:
@@ -6075,19 +6020,22 @@ components:
       example:
         address: address
         runes:
-          key: runes
+          key:
+            symbol: symbol
+            amount: 6
+            divisibility: 1
         indexed: true
         inscriptions:
         - inscriptions
         - inscriptions
         spent: true
         sat_ranges:
-        - - 6
-          - 6
-        - - 6
-          - 6
+        - - 5
+          - 5
+        - - 5
+          - 5
         script_pubkey: script_pubkey
-        value: 1
+        value: 5
         outpoint: outpoint
         transaction: transaction
     PSBTAnalysis:
@@ -6491,73 +6439,9 @@ components:
           vout: 4
         time: 2
         hash: hash
-    RuneEntry:
-      type: object
-      properties:
-        block:
-          type: integer
-        burned:
-          type: integer
-        divisibility:
-          type: integer
-        etching:
-          type: string
-        mints:
-          type: integer
-        number:
-          type: integer
-        premine:
-          type: integer
-        spaced_rune:
-          type: string
-        symbol:
-          type: string
-        terms:
-          $ref: '#/components/schemas/RuneTerms'
-        timestamp:
-          type: integer
-        turbo:
-          type: boolean
-      example:
-        mints: 5
-        number: 2
-        spaced_rune: spaced_rune
-        symbol: symbol
-        premine: 7
-        etching: etching
-        terms:
-          amount: 9
-          cap: cap
-          offset:
-          - 2
-          - 2
-          height:
-          - 3
-          - 3
-        turbo: true
-        block: 6
-        burned: 1
-        divisibility: 5
-        timestamp: 4
-    RuneListEntry:
-      type: object
-      properties:
-        "0":
-          type: string
-          description: The first element is the ID
-        "1":
-          type: object
-          description: The second element is the entry data
-          allOf:
-          - $ref: '#/components/schemas/RuneEntry'
-      example:
-        "0": "0"
-        "1": ""
     RuneResponse:
       type: object
       properties:
-        entry:
-          $ref: '#/components/schemas/RuneEntry'
         id:
           type: string
         mintable:
@@ -6565,27 +6449,6 @@ components:
         parent:
           type: string
       example:
-        entry:
-          mints: 5
-          number: 2
-          spaced_rune: spaced_rune
-          symbol: symbol
-          premine: 7
-          etching: etching
-          terms:
-            amount: 9
-            cap: cap
-            offset:
-            - 2
-            - 2
-            height:
-            - 3
-            - 3
-          turbo: true
-          block: 6
-          burned: 1
-          divisibility: 5
-          timestamp: 4
         parent: parent
         id: id
         mintable: true
@@ -6595,7 +6458,7 @@ components:
         amount:
           type: integer
         cap:
-          type: string
+          $ref: '#/components/schemas/big.Int'
         height:
           type: array
           items:
@@ -6605,14 +6468,14 @@ components:
           items:
             type: integer
       example:
-        amount: 9
-        cap: cap
+        amount: 7
+        cap: null
         offset:
-        - 2
-        - 2
+        - 3
+        - 3
         height:
-        - 3
-        - 3
+        - 9
+        - 9
     RunesBalance:
       type: object
       properties:
@@ -6626,30 +6489,30 @@ components:
         spaced_rune: spaced_rune
         symbol: symbol
         amount: amount
-    RunesListResponse:
-      type: object
-      properties:
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/RuneListEntry'
-        more:
-          type: boolean
-        next:
-          type: integer
-        prev:
-          type: integer
-      example:
-        next: 6
-        entries:
-        - "0": "0"
-          "1": ""
-        - "0": "0"
-          "1": ""
-        more: true
-        prev: 1
     RunestoneData:
       type: object
+      properties:
+        edicts:
+          type: array
+          items:
+            type: array
+            items:
+              type: integer
+        etching:
+          type: string
+        mint:
+          type: string
+        pointer:
+          type: integer
+      example:
+        mint: mint
+        pointer: 7
+        edicts:
+        - - 2
+          - 2
+        - - 2
+          - 2
+        etching: etching
     SatoshiResponse:
       type: object
       properties:
@@ -6808,8 +6671,6 @@ components:
     StatusResponse:
       type: object
       properties:
-        address_index:
-          type: boolean
         blessed_inscriptions:
           type: integer
         chain:
@@ -6818,47 +6679,23 @@ components:
           type: integer
         height:
           type: integer
-        initial_sync_time:
-          $ref: '#/components/schemas/Duration'
         inscriptions:
           type: integer
         lost_sats:
           type: integer
         minimum_rune_for_next_block:
           type: string
-        rune_index:
-          type: boolean
         runes:
           type: integer
-        sat_index:
-          type: boolean
-        started:
-          type: string
-        transaction_index:
-          type: boolean
-        unrecoverably_reorged:
-          type: boolean
-        uptime:
-          $ref: '#/components/schemas/Duration'
       example:
         chain: chain
-        sat_index: true
         cursed_inscriptions: 1
-        rune_index: true
-        runes: 3
-        inscriptions: 7
+        runes: 7
+        inscriptions: 5
+        lost_sats: 2
         blessed_inscriptions: 6
-        started: started
-        transaction_index: true
-        initial_sync_time:
-          nanos: 5
-          secs: 2
-        minimum_rune_for_next_block: minimum_rune_for_next_block
-        uptime: null
-        unrecoverably_reorged: true
-        address_index: true
-        lost_sats: 9
         height: 5
+        minimum_rune_for_next_block: minimum_rune_for_next_block
     TestMempoolAcceptRequest:
       type: object
       properties:
@@ -6976,111 +6813,6 @@ components:
           previous_output: previous_output
           script_sig: script_sig
         version: 7
-    TransactionDetails:
-      type: object
-      properties:
-        input:
-          type: array
-          items:
-            $ref: '#/components/schemas/TransactionInput'
-        lock_time:
-          type: integer
-        output:
-          type: array
-          items:
-            $ref: '#/components/schemas/TransactionOutput'
-        version:
-          type: integer
-      example:
-        lock_time: 5
-        output:
-        - script_pubkey: script_pubkey
-          value: 5
-        - script_pubkey: script_pubkey
-          value: 5
-        input:
-        - sequence: 1
-          witness:
-          - witness
-          - witness
-          previous_output: previous_output
-          script_sig: script_sig
-        - sequence: 1
-          witness:
-          - witness
-          - witness
-          previous_output: previous_output
-          script_sig: script_sig
-        version: 2
-    TransactionInput:
-      type: object
-      properties:
-        previous_output:
-          type: string
-        script_sig:
-          type: string
-        sequence:
-          type: integer
-        witness:
-          type: array
-          items:
-            type: string
-      example:
-        sequence: 1
-        witness:
-        - witness
-        - witness
-        previous_output: previous_output
-        script_sig: script_sig
-    TransactionOutput:
-      type: object
-      properties:
-        script_pubkey:
-          type: string
-        value:
-          type: integer
-      example:
-        script_pubkey: script_pubkey
-        value: 5
-    TransactionResponse:
-      type: object
-      properties:
-        chain:
-          type: string
-        etching:
-          type: string
-        inscription_count:
-          type: integer
-        transaction:
-          $ref: '#/components/schemas/TransactionDetails'
-        txid:
-          type: string
-      example:
-        chain: chain
-        etching: etching
-        inscription_count: 6
-        txid: txid
-        transaction:
-          lock_time: 5
-          output:
-          - script_pubkey: script_pubkey
-            value: 5
-          - script_pubkey: script_pubkey
-            value: 5
-          input:
-          - sequence: 1
-            witness:
-            - witness
-            - witness
-            previous_output: previous_output
-            script_sig: script_sig
-          - sequence: 1
-            witness:
-            - witness
-            - witness
-            previous_output: previous_output
-            script_sig: script_sig
-          version: 2
     TxOut:
       type: object
       properties:
@@ -7350,31 +7082,6 @@ components:
         isvalid: true
         error: error
         iswitness: true
-    VerifyMessageRequest:
-      type: object
-      properties:
-        address:
-          type: string
-          description: The bitcoin address to use for the signature
-        message:
-          type: string
-          description: The message that was signed
-        signature:
-          type: string
-          description: The signature provided by the signer in base 64 encoding
-    VerifyMessageResponse:
-      type: object
-      properties:
-        code:
-          type: integer
-        data:
-          type: boolean
-        msg:
-          type: string
-      example:
-        msg: msg
-        code: 0
-        data: true
     VerifyTxOutProofResponse:
       type: object
       properties:
@@ -7432,6 +7139,8 @@ components:
         rune_id: rune_id
         block_height: 6
         vout: 1
+    big.Int:
+      type: object
     github_com_satstream_ss-utils_database.AddressDelta:
       type: object
       properties:
@@ -7445,6 +7154,130 @@ components:
         amount: 6
         address: address
         block_height: 1
+    github_com_satstream_ss-utils_ord_server_responses.RuneDetails:
+      type: object
+      properties:
+        amount:
+          type: integer
+        divisibility:
+          type: integer
+        symbol:
+          type: string
+      example:
+        symbol: symbol
+        amount: 6
+        divisibility: 1
+    github_com_satstream_ss-utils_ord_server_responses.RuneListEntry:
+      type: object
+      properties:
+        block:
+          type: integer
+        burned:
+          type: integer
+        divisibility:
+          type: integer
+        etching:
+          type: string
+        id:
+          type: string
+        mints:
+          type: integer
+        number:
+          type: integer
+        premine:
+          $ref: '#/components/schemas/big.Int'
+        spaced_rune:
+          type: string
+        symbol:
+          type: string
+        terms:
+          $ref: '#/components/schemas/RuneTerms'
+        timestamp:
+          type: integer
+        turbo:
+          type: boolean
+      example:
+        mints: 5
+        symbol: symbol
+        etching: etching
+        turbo: true
+        burned: 1
+        number: 2
+        spaced_rune: spaced_rune
+        premine: {}
+        terms:
+          amount: 7
+          cap: null
+          offset:
+          - 3
+          - 3
+          height:
+          - 9
+          - 9
+        block: 6
+        id: id
+        divisibility: 5
+        timestamp: 2
+    github_com_satstream_ss-utils_ord_server_responses.RunesListResponse:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/github_com_satstream_ss-utils_ord_server_responses.RuneListEntry'
+        more:
+          type: boolean
+        next:
+          type: integer
+        prev:
+          type: integer
+      example:
+        next: 4
+        entries:
+        - mints: 5
+          symbol: symbol
+          etching: etching
+          turbo: true
+          burned: 1
+          number: 2
+          spaced_rune: spaced_rune
+          premine: {}
+          terms:
+            amount: 7
+            cap: null
+            offset:
+            - 3
+            - 3
+            height:
+            - 9
+            - 9
+          block: 6
+          id: id
+          divisibility: 5
+          timestamp: 2
+        - mints: 5
+          symbol: symbol
+          etching: etching
+          turbo: true
+          burned: 1
+          number: 2
+          spaced_rune: spaced_rune
+          premine: {}
+          terms:
+            amount: 7
+            cap: null
+            offset:
+            - 3
+            - 3
+            height:
+            - 9
+            - 9
+          block: 6
+          id: id
+          divisibility: 5
+          timestamp: 2
+        more: true
+        prev: 7
     transaction.CombineRawTransactionRequest:
       required:
       - hexstrings
@@ -7496,19 +7329,6 @@ components:
         vout:
           type: integer
           description: The output number
-    transaction.CreateRawTxOutput:
-      type: object
-      properties:
-        address:
-          type: number
-          description: |-
-            The bitcoin address and amount pairs
-            Key is the bitcoin address, value is the amount in BTC
-        data:
-          type: string
-          description: |-
-            Hex-encoded data output
-            If present, this must be the only field in the output
     transaction.CreateRawTxRequest:
       required:
       - inputs
@@ -7533,7 +7353,9 @@ components:
             The outputs for the transaction
             Each address can only appear once and there can only be one 'data' object
           items:
-            $ref: '#/components/schemas/transaction.CreateRawTxOutput'
+            type: object
+            additionalProperties:
+              type: number
         replaceable:
           type: boolean
           description: |-
@@ -7559,12 +7381,12 @@ components:
         include_mempool:
           type: boolean
           description: "Optional: Whether to include the mempool (default=true)"
-        "n":
-          type: integer
-          description: "Required: vout number"
         txid:
           type: string
           description: "Required: The transaction id"
+        vout:
+          type: integer
+          description: "Required: vout number"
     transaction.GetTxOutSetInfoRequest:
       type: object
       properties:

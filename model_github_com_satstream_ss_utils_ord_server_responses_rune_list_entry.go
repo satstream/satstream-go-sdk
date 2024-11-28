@@ -9,14 +9,15 @@
  */
 package satstream_go_sdk
 
-type RuneEntry struct {
+type GithubComSatstreamSsUtilsOrdServerResponsesRuneListEntry struct {
 	Block int32 `json:"block,omitempty"`
 	Burned int32 `json:"burned,omitempty"`
 	Divisibility int32 `json:"divisibility,omitempty"`
 	Etching string `json:"etching,omitempty"`
+	Id string `json:"id,omitempty"`
 	Mints int32 `json:"mints,omitempty"`
 	Number int32 `json:"number,omitempty"`
-	Premine int32 `json:"premine,omitempty"`
+	Premine *BigInt `json:"premine,omitempty"`
 	SpacedRune string `json:"spaced_rune,omitempty"`
 	Symbol string `json:"symbol,omitempty"`
 	Terms *RuneTerms `json:"terms,omitempty"`

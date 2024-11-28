@@ -10,4 +10,8 @@
 package satstream_go_sdk
 
 type RunestoneData struct {
+	Edicts [][]int32 `json:"edicts,omitempty"`
+	Etching string `json:"etching,omitempty"`
+	Mint string `json:"mint,omitempty"`
+	Pointer int32 `json:"pointer,omitempty"`
 }

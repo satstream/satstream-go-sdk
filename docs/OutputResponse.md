@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Indexed** | **bool** |  | [optional] [default to null]
 **Inscriptions** | **[]string** |  | [optional] [default to null]
 **Outpoint** | **string** |  | [optional] [default to null]
-**Runes** | **map[string]string** |  | [optional] [default to null]
+**Runes** | [**map[string]GithubComSatstreamSsUtilsOrdServerResponsesRuneDetails**](github_com_satstream_ss-utils_ord_server_responses.RuneDetails.md) |  | [optional] [default to null]
 **SatRanges** | [**[][]int32**](array.md) |  | [optional] [default to null]
 **ScriptPubkey** | **string** |  | [optional] [default to null]
 **Spent** | **bool** |  | [optional] [default to null]

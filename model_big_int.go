@@ -9,7 +9,5 @@
  */
 package satstream_go_sdk
 
-type TransactionOutput struct {
-	ScriptPubkey string `json:"script_pubkey,omitempty"`
-	Value int32 `json:"value,omitempty"`
+type BigInt struct {
 }

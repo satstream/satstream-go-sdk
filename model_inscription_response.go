@@ -24,7 +24,7 @@ type InscriptionResponse struct {
 	Parents []string `json:"parents,omitempty"`
 	Previous string `json:"previous,omitempty"`
 	Rune_ string `json:"rune,omitempty"`
-	Sat string `json:"sat,omitempty"`
+	Sat int32 `json:"sat,omitempty"`
 	Satpoint string `json:"satpoint,omitempty"`
 	Timestamp int32 `json:"timestamp,omitempty"`
 	Value int32 `json:"value,omitempty"`

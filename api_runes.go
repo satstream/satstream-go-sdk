@@ -281,12 +281,12 @@ func (a *RunesApiService) GetLatestRunesPage(ctx context.Context, page int32) (G
 }
 /*
 RunesApiService Get rune info
-Retrieve information about a specific rune
+Retrieve information about a specific rune by name or ID (e.g., \&quot;UNCOMMON•GOODS\&quot; or \&quot;1:0\&quot;)
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param runeName Rune Name
+ * @param identifier Rune Name or ID
 @return GetRuneResponse
 */
-func (a *RunesApiService) GetRune(ctx context.Context, runeName string) (GetRuneResponse, *http.Response, error) {
+func (a *RunesApiService) GetRune(ctx context.Context, identifier string) (GetRuneResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -296,8 +296,8 @@ func (a *RunesApiService) GetRune(ctx context.Context, runeName string) (GetRune
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/rune/{rune_name}"
-	localVarPath = strings.Replace(localVarPath, "{"+"rune_name"+"}", fmt.Sprintf("%v", runeName), -1)
+	localVarPath := a.client.cfg.BasePath + "/rune/{identifier}"
+	localVarPath = strings.Replace(localVarPath, "{"+"identifier"+"}", fmt.Sprintf("%v", identifier), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

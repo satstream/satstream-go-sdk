@@ -383,13 +383,13 @@ func (a *TransactionsApiService) CreateRawTransaction(ctx context.Context, body 
 	return localVarReturnValue, localVarHttpResponse, nil
 }
 /*
-TransactionsApiService Decode a transaction
+TransactionsApiService Decode transaction inscriptions
 Decodes a transaction and returns its inscriptions and runestone data
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
 @return DecodeTransactionResponse
 */
-func (a *TransactionsApiService) DecodeTx(ctx context.Context, txid string) (DecodeTransactionResponse, *http.Response, error) {
+func (a *TransactionsApiService) DecodeTxInscriptions(ctx context.Context, txid string) (DecodeTransactionResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
@@ -399,7 +399,7 @@ func (a *TransactionsApiService) DecodeTx(ctx context.Context, txid string) (Dec
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/tx/{txid}/decode"
+	localVarPath := a.client.cfg.BasePath + "/tx/{txid}/inscriptions"
 	localVarPath = strings.Replace(localVarPath, "{"+"txid"+"}", fmt.Sprintf("%v", txid), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -512,22 +512,22 @@ func (a *TransactionsApiService) DecodeTx(ctx context.Context, txid string) (Dec
 }
 /*
 TransactionsApiService Get raw transaction (verbosity 1)
-Get raw transaction as a decoded object
+Get raw transaction with basic decoded information
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
-@return GetRawTransactionDecodedResponse
+@return GetRawTransactionDecodeResponse
 */
-func (a *TransactionsApiService) GetRawTransactionDecoded(ctx context.Context, txid string) (GetRawTransactionDecodedResponse, *http.Response, error) {
+func (a *TransactionsApiService) GetRawTransaction(ctx context.Context, txid string) (GetRawTransactionDecodeResponse, *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody   interface{}
 		localVarFileName   string
 		localVarFileBytes  []byte
-		localVarReturnValue GetRawTransactionDecodedResponse
+		localVarReturnValue GetRawTransactionDecodeResponse
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/tx/{txid}/decoded"
+	localVarPath := a.client.cfg.BasePath + "/tx/{txid}/raw/decode"
 	localVarPath = strings.Replace(localVarPath, "{"+"txid"+"}", fmt.Sprintf("%v", txid), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -594,7 +594,7 @@ func (a *TransactionsApiService) GetRawTransactionDecoded(ctx context.Context, t
 			error: localVarHttpResponse.Status,
 		}
 		if localVarHttpResponse.StatusCode == 200 {
-			var v GetRawTransactionDecodedResponse
+			var v GetRawTransactionDecodeResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -767,7 +767,7 @@ func (a *TransactionsApiService) GetRawTransactionHex(ctx context.Context, txid 
 	return localVarReturnValue, localVarHttpResponse, nil
 }
 /*
-TransactionsApiService Get raw transaction (verbosity 2)
+TransactionsApiService Get raw transaction with prevouts (verbosity 2)
 Get raw transaction with prevout information
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param txid Transaction ID
@@ -783,7 +783,7 @@ func (a *TransactionsApiService) GetRawTransactionPrevout(ctx context.Context, t
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/tx/{txid}/prevout"
+	localVarPath := a.client.cfg.BasePath + "/tx/{txid}/raw/prevout"
 	localVarPath = strings.Replace(localVarPath, "{"+"txid"+"}", fmt.Sprintf("%v", txid), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -851,134 +851,6 @@ func (a *TransactionsApiService) GetRawTransactionPrevout(ctx context.Context, t
 		}
 		if localVarHttpResponse.StatusCode == 200 {
 			var v GetRawTransactionPrevoutResponse
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
-				return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		if localVarHttpResponse.StatusCode == 400 {
-			var v UtilsResponseEnvelope
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
-				return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		if localVarHttpResponse.StatusCode == 404 {
-			var v UtilsResponseEnvelope
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
-				return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		if localVarHttpResponse.StatusCode == 500 {
-			var v UtilsResponseEnvelope
-			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-				if err != nil {
-					newErr.error = err.Error()
-					return localVarReturnValue, localVarHttpResponse, newErr
-				}
-				newErr.model = v
-				return localVarReturnValue, localVarHttpResponse, newErr
-		}
-		return localVarReturnValue, localVarHttpResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHttpResponse, nil
-}
-/*
-TransactionsApiService Get transaction info
-Retrieve information about a specific transaction
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param txid Transaction ID
-@return GetTransactionResponse
-*/
-func (a *TransactionsApiService) GetTransaction(ctx context.Context, txid string) (GetTransactionResponse, *http.Response, error) {
-	var (
-		localVarHttpMethod = strings.ToUpper("Get")
-		localVarPostBody   interface{}
-		localVarFileName   string
-		localVarFileBytes  []byte
-		localVarReturnValue GetTransactionResponse
-	)
-
-	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/tx/{txid}"
-	localVarPath = strings.Replace(localVarPath, "{"+"txid"+"}", fmt.Sprintf("%v", txid), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHttpContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
-	if localVarHttpContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHttpContentType
-	}
-
-	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
-	if localVarHttpHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
-	}
-	if ctx != nil {
-		// API Key Authentication
-		if auth, ok := ctx.Value(ContextAPIKey).(APIKey); ok {
-			var key string
-			if auth.Prefix != "" {
-				key = auth.Prefix + " " + auth.Key
-			} else {
-				key = auth.Key
-			}
-			localVarHeaderParams["X-API-KEY"] = key
-			
-		}
-	}
-	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHttpResponse, err := a.client.callAPI(r)
-	if err != nil || localVarHttpResponse == nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	localVarBody, err := ioutil.ReadAll(localVarHttpResponse.Body)
-	localVarHttpResponse.Body.Close()
-	if err != nil {
-		return localVarReturnValue, localVarHttpResponse, err
-	}
-
-	if localVarHttpResponse.StatusCode < 300 {
-		// If we succeed, return the data, otherwise pass on to decode error.
-		err = a.client.decode(&localVarReturnValue, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
-		if err == nil { 
-			return localVarReturnValue, localVarHttpResponse, err
-		}
-	}
-
-	if localVarHttpResponse.StatusCode >= 300 {
-		newErr := GenericSwaggerError{
-			body: localVarBody,
-			error: localVarHttpResponse.Status,
-		}
-		if localVarHttpResponse.StatusCode == 200 {
-			var v GetTransactionResponse
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {
 					newErr.error = err.Error()
@@ -1117,6 +989,16 @@ func (a *TransactionsApiService) GetTxOut(ctx context.Context, body TransactionG
 				return localVarReturnValue, localVarHttpResponse, newErr
 		}
 		if localVarHttpResponse.StatusCode == 400 {
+			var v UtilsResponseEnvelope
+			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
+				if err != nil {
+					newErr.error = err.Error()
+					return localVarReturnValue, localVarHttpResponse, newErr
+				}
+				newErr.model = v
+				return localVarReturnValue, localVarHttpResponse, newErr
+		}
+		if localVarHttpResponse.StatusCode == 404 {
 			var v UtilsResponseEnvelope
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"));
 				if err != nil {

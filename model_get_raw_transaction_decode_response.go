@@ -9,9 +9,8 @@
  */
 package satstream_go_sdk
 
-type RuneListEntry struct {
-	// The first element is the ID
-	Var0 string `json:"0,omitempty"`
-	// The second element is the entry data
-	Var1 *AllOfRuneListEntryVar1 `json:"1,omitempty"`
+type GetRawTransactionDecodeResponse struct {
+	Code int32 `json:"code,omitempty"`
+	Data *RawTx1 `json:"data,omitempty"`
+	Msg string `json:"msg,omitempty"`
 }

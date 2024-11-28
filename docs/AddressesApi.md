@@ -9,7 +9,6 @@ Method | HTTP request | Description
 [**GetAddressRuneDeltas**](AddressesApi.md#GetAddressRuneDeltas) | **Get** /address/{address}/deltas/runes | Get address rune deltas
 [**GetAddressUtxos**](AddressesApi.md#GetAddressUtxos) | **Get** /address/{address}/outputs | Get UTXOs for an address
 [**ValidateAddress**](AddressesApi.md#ValidateAddress) | **Get** /address/{address}/validate | Validate address
-[**VerifyMessage**](AddressesApi.md#VerifyMessage) | **Post** /address/verify-message | Verify message
 
 # **GetAddress**
 > GetAddressResponse GetAddress(ctx, address)
@@ -177,34 +176,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **VerifyMessage**
-> VerifyMessageResponse VerifyMessage(ctx, body)
-Verify message
-
-Verifies a signed message
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**VerifyMessageRequest**](VerifyMessageRequest.md)| Message verification parameters | 
-
-### Return type
-
-[**VerifyMessageResponse**](VerifyMessageResponse.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

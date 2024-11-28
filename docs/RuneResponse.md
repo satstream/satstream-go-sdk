@@ -3,7 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Entry** | [***RuneEntry**](RuneEntry.md) |  | [optional] [default to null]
 **Id** | **string** |  | [optional] [default to null]
 **Mintable** | **bool** |  | [optional] [default to null]
 **Parent** | **string** |  | [optional] [default to null]

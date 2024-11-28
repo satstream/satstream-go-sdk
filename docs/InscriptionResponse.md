@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Parents** | **[]string** |  | [optional] [default to null]
 **Previous** | **string** |  | [optional] [default to null]
 **Rune_** | **string** |  | [optional] [default to null]
-**Sat** | **string** |  | [optional] [default to null]
+**Sat** | **int32** |  | [optional] [default to null]
 **Satpoint** | **string** |  | [optional] [default to null]
 **Timestamp** | **int32** |  | [optional] [default to null]
 **Value** | **int32** |  | [optional] [default to null]

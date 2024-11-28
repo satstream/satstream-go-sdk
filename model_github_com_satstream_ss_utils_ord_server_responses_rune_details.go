@@ -9,8 +9,8 @@
  */
 package satstream_go_sdk
 
-type GetTransactionResponse struct {
-	Code int32 `json:"code,omitempty"`
-	Data *TransactionResponse `json:"data,omitempty"`
-	Msg string `json:"msg,omitempty"`
+type GithubComSatstreamSsUtilsOrdServerResponsesRuneDetails struct {
+	Amount int32 `json:"amount,omitempty"`
+	Divisibility int32 `json:"divisibility,omitempty"`
+	Symbol string `json:"symbol,omitempty"`
 }

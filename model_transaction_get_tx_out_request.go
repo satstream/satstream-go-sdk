@@ -12,8 +12,8 @@ package satstream_go_sdk
 type TransactionGetTxOutRequest struct {
 	// Optional: Whether to include the mempool (default=true)
 	IncludeMempool bool `json:"include_mempool,omitempty"`
-	// Required: vout number
-	N int32 `json:"n,omitempty"`
 	// Required: The transaction id
 	Txid string `json:"txid,omitempty"`
+	// Required: vout number
+	Vout int32 `json:"vout,omitempty"`
 }

@@ -10,7 +10,6 @@
 package satstream_go_sdk
 
 type RuneResponse struct {
-	Entry *RuneEntry `json:"entry,omitempty"`
 	Id string `json:"id,omitempty"`
 	Mintable bool `json:"mintable,omitempty"`
 	Parent string `json:"parent,omitempty"`

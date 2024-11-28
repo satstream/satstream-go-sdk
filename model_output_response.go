@@ -14,7 +14,7 @@ type OutputResponse struct {
 	Indexed bool `json:"indexed,omitempty"`
 	Inscriptions []string `json:"inscriptions,omitempty"`
 	Outpoint string `json:"outpoint,omitempty"`
-	Runes map[string]string `json:"runes,omitempty"`
+	Runes map[string]GithubComSatstreamSsUtilsOrdServerResponsesRuneDetails `json:"runes,omitempty"`
 	SatRanges [][]int32 `json:"sat_ranges,omitempty"`
 	ScriptPubkey string `json:"script_pubkey,omitempty"`
 	Spent bool `json:"spent,omitempty"`

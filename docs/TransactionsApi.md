@@ -7,11 +7,10 @@ Method | HTTP request | Description
 [**CombineRawTransaction**](TransactionsApi.md#CombineRawTransaction) | **Post** /tx/combine | Combine Raw Transactions
 [**ConvertToPsbt**](TransactionsApi.md#ConvertToPsbt) | **Post** /tx/convert-to-psbt | Convert Raw Transaction to PSBT
 [**CreateRawTransaction**](TransactionsApi.md#CreateRawTransaction) | **Post** /tx/create | Create Raw Transaction
-[**DecodeTx**](TransactionsApi.md#DecodeTx) | **Get** /tx/{txid}/decode | Decode a transaction
-[**GetRawTransactionDecoded**](TransactionsApi.md#GetRawTransactionDecoded) | **Get** /tx/{txid}/decoded | Get raw transaction (verbosity 1)
+[**DecodeTxInscriptions**](TransactionsApi.md#DecodeTxInscriptions) | **Get** /tx/{txid}/inscriptions | Decode transaction inscriptions
+[**GetRawTransaction**](TransactionsApi.md#GetRawTransaction) | **Get** /tx/{txid}/raw/decode | Get raw transaction (verbosity 1)
 [**GetRawTransactionHex**](TransactionsApi.md#GetRawTransactionHex) | **Get** /tx/{txid}/hex | Get raw transaction (verbosity 0)
-[**GetRawTransactionPrevout**](TransactionsApi.md#GetRawTransactionPrevout) | **Get** /tx/{txid}/prevout | Get raw transaction (verbosity 2)
-[**GetTransaction**](TransactionsApi.md#GetTransaction) | **Get** /tx/{txid} | Get transaction info
+[**GetRawTransactionPrevout**](TransactionsApi.md#GetRawTransactionPrevout) | **Get** /tx/{txid}/raw/prevout | Get raw transaction with prevouts (verbosity 2)
 [**GetTxOut**](TransactionsApi.md#GetTxOut) | **Post** /tx/out | Get transaction output
 [**GetTxOutProof**](TransactionsApi.md#GetTxOutProof) | **Post** /tx/outproof | Get transaction output proof
 [**GetTxOutSetInfo**](TransactionsApi.md#GetTxOutSetInfo) | **Post** /tx/out/set/info | Get transaction output set information
@@ -103,9 +102,9 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DecodeTx**
-> DecodeTransactionResponse DecodeTx(ctx, txid)
-Decode a transaction
+# **DecodeTxInscriptions**
+> DecodeTransactionResponse DecodeTxInscriptions(ctx, txid)
+Decode transaction inscriptions
 
 Decodes a transaction and returns its inscriptions and runestone data
 
@@ -131,11 +130,11 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **GetRawTransactionDecoded**
-> GetRawTransactionDecodedResponse GetRawTransactionDecoded(ctx, txid)
+# **GetRawTransaction**
+> GetRawTransactionDecodeResponse GetRawTransaction(ctx, txid)
 Get raw transaction (verbosity 1)
 
-Get raw transaction as a decoded object
+Get raw transaction with basic decoded information
 
 ### Required Parameters
 
@@ -146,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetRawTransactionDecodedResponse**](GetRawTransactionDecodedResponse.md)
+[**GetRawTransactionDecodeResponse**](GetRawTransactionDecodeResponse.md)
 
 ### Authorization
 
@@ -189,7 +188,7 @@ Name | Type | Description  | Notes
 
 # **GetRawTransactionPrevout**
 > GetRawTransactionPrevoutResponse GetRawTransactionPrevout(ctx, txid)
-Get raw transaction (verbosity 2)
+Get raw transaction with prevouts (verbosity 2)
 
 Get raw transaction with prevout information
 
@@ -203,34 +202,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetRawTransactionPrevoutResponse**](GetRawTransactionPrevoutResponse.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetTransaction**
-> GetTransactionResponse GetTransaction(ctx, txid)
-Get transaction info
-
-Retrieve information about a specific transaction
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **txid** | **string**| Transaction ID | 
-
-### Return type
-
-[**GetTransactionResponse**](GetTransactionResponse.md)
 
 ### Authorization
 
