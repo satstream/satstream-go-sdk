@@ -9,8 +9,7 @@
  */
 package satstream_go_sdk
 
-// Unknown fields
-type AllOfDecodedPsbtInputUnknown struct {
+type UnknownFields struct {
 	// Map of unknown field names to their values
 	Fields map[string]string `json:"fields,omitempty"`
 }

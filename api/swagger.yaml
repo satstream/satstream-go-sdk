@@ -7012,8 +7012,12 @@ components:
           description: Fee rewards unclaimed by miners
     UnknownFields:
       type: object
-      additionalProperties:
-        type: string
+      properties:
+        fields:
+          type: object
+          additionalProperties:
+            type: string
+          description: Map of unknown field names to their values
     ValidateAddressResponse:
       type: object
       properties:

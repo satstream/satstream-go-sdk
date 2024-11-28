@@ -1,4 +1,4 @@
-# AllOfDecodedPsbtOutputUnknown
+# UnknownFields
 
 ## Properties
 Name | Type | Description | Notes
