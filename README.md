@@ -23,6 +23,7 @@ All URIs are relative to *https://api.satstream.io/api/v1*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AddressesApi* | [**GetAddress**](docs/AddressesApi.md#getaddress) | **Get** /address/{address} | Get address info
+*AddressesApi* | [**GetAddressBalance**](docs/AddressesApi.md#getaddressbalance) | **Get** /address/{address}/balance | Get address balance
 *AddressesApi* | [**GetAddressDeltas**](docs/AddressesApi.md#getaddressdeltas) | **Get** /address/{address}/deltas | Get address deltas
 *AddressesApi* | [**GetAddressRuneDeltas**](docs/AddressesApi.md#getaddressrunedeltas) | **Get** /address/{address}/deltas/runes | Get address rune deltas
 *AddressesApi* | [**GetAddressUtxos**](docs/AddressesApi.md#getaddressutxos) | **Get** /address/{address}/outputs | Get UTXOs for an address
@@ -157,6 +158,8 @@ Class | Method | HTTP request | Description
  - [FeeHorizonEstimate](docs/FeeHorizonEstimate.md)
  - [FeeRange](docs/FeeRange.md)
  - [FetchInscriptionsResponse](docs/FetchInscriptionsResponse.md)
+ - [GetAddressBalanceResponse](docs/GetAddressBalanceResponse.md)
+ - [GetAddressBalanceResponseData](docs/GetAddressBalanceResponseData.md)
  - [GetAddressDeltasResponse](docs/GetAddressDeltasResponse.md)
  - [GetAddressResponse](docs/GetAddressResponse.md)
  - [GetAddressRuneDeltasResponse](docs/GetAddressRuneDeltasResponse.md)

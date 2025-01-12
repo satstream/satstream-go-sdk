@@ -5,6 +5,7 @@ All URIs are relative to *https://api.satstream.io/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetAddress**](AddressesApi.md#GetAddress) | **Get** /address/{address} | Get address info
+[**GetAddressBalance**](AddressesApi.md#GetAddressBalance) | **Get** /address/{address}/balance | Get address balance
 [**GetAddressDeltas**](AddressesApi.md#GetAddressDeltas) | **Get** /address/{address}/deltas | Get address deltas
 [**GetAddressRuneDeltas**](AddressesApi.md#GetAddressRuneDeltas) | **Get** /address/{address}/deltas/runes | Get address rune deltas
 [**GetAddressUtxos**](AddressesApi.md#GetAddressUtxos) | **Get** /address/{address}/outputs | Get UTXOs for an address
@@ -26,6 +27,34 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetAddressResponse**](GetAddressResponse.md)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetAddressBalance**
+> GetAddressBalanceResponse GetAddressBalance(ctx, address)
+Get address balance
+
+Get the total BTC balance of an address by summing all its deltas
+
+### Required Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+  **address** | **string**| Address | 
+
+### Return type
+
+[**GetAddressBalanceResponse**](GetAddressBalanceResponse.md)
 
 ### Authorization
 

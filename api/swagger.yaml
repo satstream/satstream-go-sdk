@@ -57,6 +57,49 @@ paths:
                 $ref: '#/components/schemas/utils.ResponseEnvelope'
       security:
       - ApiKeyAuth: []
+  /address/{address}/balance:
+    get:
+      tags:
+      - Addresses
+      summary: Get address balance
+      description: Get the total BTC balance of an address by summing all its deltas
+      operationId: get-address-balance
+      parameters:
+      - name: address
+        in: path
+        description: Address
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAddressBalanceResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+      security:
+      - ApiKeyAuth: []
   /address/{address}/deltas:
     get:
       tags:
@@ -4192,6 +4235,21 @@ components:
           - parents
           - parents
           timestamp: 7
+    GetAddressBalanceResponse:
+      type: object
+      properties:
+        code:
+          type: integer
+        data:
+          $ref: '#/components/schemas/GetAddressBalanceResponse_data'
+        msg:
+          type: string
+      example:
+        msg: msg
+        code: 0
+        data:
+          address: address
+          balance: 6
     GetAddressDeltasResponse:
       type: object
       properties:
@@ -7459,6 +7517,16 @@ components:
         properties:
           data:
             $ref: '#/components/schemas/UTXOSetInfo'
+    GetAddressBalanceResponse_data:
+      type: object
+      properties:
+        address:
+          type: string
+        balance:
+          type: integer
+      example:
+        address: address
+        balance: 6
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
