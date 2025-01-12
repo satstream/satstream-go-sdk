@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 > GetAddressBalanceResponse GetAddressBalance(ctx, address)
 Get address balance
 
-Get the total BTC balance of an address by summing all its deltas
+Get the total BTC balance in satoshis of an address by summing all its deltas
 
 ### Required Parameters
 

@@ -62,7 +62,8 @@ paths:
       tags:
       - Addresses
       summary: Get address balance
-      description: Get the total BTC balance of an address by summing all its deltas
+      description: Get the total BTC balance in satoshis of an address by summing
+        all its deltas
       operationId: get-address-balance
       parameters:
       - name: address

@@ -156,7 +156,7 @@ func (a *AddressesApiService) GetAddress(ctx context.Context, address string) (G
 }
 /*
 AddressesApiService Get address balance
-Get the total BTC balance of an address by summing all its deltas
+Get the total BTC balance in satoshis of an address by summing all its deltas
  * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param address Address
 @return GetAddressBalanceResponse
