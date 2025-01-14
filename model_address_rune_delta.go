@@ -10,10 +10,9 @@
 package satstream_go_sdk
 
 type AddressRuneDelta struct {
-	Address string `json:"address,omitempty"`
-	Amount string `json:"amount,omitempty"`
 	BlockHeight int32 `json:"block_height,omitempty"`
+	Delta string `json:"delta,omitempty"`
+	Incoming string `json:"incoming,omitempty"`
+	Outgoing string `json:"outgoing,omitempty"`
 	RuneId string `json:"rune_id,omitempty"`
-	Txid string `json:"txid,omitempty"`
-	Vout int32 `json:"vout,omitempty"`
 }

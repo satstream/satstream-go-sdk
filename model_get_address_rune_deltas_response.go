@@ -12,5 +12,6 @@ package satstream_go_sdk
 type GetAddressRuneDeltasResponse struct {
 	Code int32 `json:"code,omitempty"`
 	Data []AddressRuneDelta `json:"data,omitempty"`
+	HasMore bool `json:"has_more,omitempty"`
 	Msg string `json:"msg,omitempty"`
 }

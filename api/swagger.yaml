@@ -4308,24 +4308,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/address.RuneDelta'
+        has_more:
+          type: boolean
         msg:
           type: string
       example:
         msg: msg
         code: 0
         data:
-        - amount: amount
-          address: address
-          txid: txid
+        - incoming: incoming
+          outgoing: outgoing
+          delta: delta
           rune_id: rune_id
           block_height: 6
-          vout: 1
-        - amount: amount
-          address: address
-          txid: txid
+        - incoming: incoming
+          outgoing: outgoing
+          delta: delta
           rune_id: rune_id
           block_height: 6
-          vout: 1
+        has_more: true
     GetAddressUTXOsResponse:
       type: object
       properties:
@@ -7183,25 +7184,22 @@ components:
     address.RuneDelta:
       type: object
       properties:
-        address:
-          type: string
-        amount:
-          type: string
         block_height:
           type: integer
+        delta:
+          type: string
+        incoming:
+          type: string
+        outgoing:
+          type: string
         rune_id:
           type: string
-        txid:
-          type: string
-        vout:
-          type: integer
       example:
-        amount: amount
-        address: address
-        txid: txid
+        incoming: incoming
+        outgoing: outgoing
+        delta: delta
         rune_id: rune_id
         block_height: 6
-        vout: 1
     big.Int:
       type: object
     github_com_satstream_ss-utils_database.AddressDelta:
