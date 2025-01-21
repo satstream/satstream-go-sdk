@@ -2302,49 +2302,6 @@ paths:
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
-  /tx/{txid}/hex:
-    get:
-      tags:
-      - Transactions
-      summary: Get raw transaction (verbosity 0)
-      description: Get raw transaction as a raw hex string
-      operationId: get-raw-transaction-hex
-      parameters:
-      - name: txid
-        in: path
-        description: Transaction ID
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-      responses:
-        "200":
-          description: Raw transaction hex
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetRawTransactionHexResponse'
-        "400":
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-        "404":
-          description: Transaction not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-        "500":
-          description: Internal server error or Bitcoin RPC error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-      security:
-      - ApiKeyAuth: []
   /tx/{txid}/inscriptions:
     get:
       tags:
@@ -2412,6 +2369,49 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetRawTransactionDecodeResponse'
+        "400":
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "404":
+          description: Transaction not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+        "500":
+          description: Internal server error or Bitcoin RPC error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/utils.ResponseEnvelope'
+      security:
+      - ApiKeyAuth: []
+  /tx/{txid}/raw/hex:
+    get:
+      tags:
+      - Transactions
+      summary: Get raw transaction (verbosity 0)
+      description: Get raw transaction as a raw hex string
+      operationId: get-raw-transaction-hex
+      parameters:
+      - name: txid
+        in: path
+        description: Transaction ID
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Raw transaction hex
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetRawTransactionHexResponse'
         "400":
           description: Bad request
           content:

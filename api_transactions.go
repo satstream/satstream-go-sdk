@@ -655,7 +655,7 @@ func (a *TransactionsApiService) GetRawTransactionHex(ctx context.Context, txid 
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/tx/{txid}/hex"
+	localVarPath := a.client.cfg.BasePath + "/tx/{txid}/raw/hex"
 	localVarPath = strings.Replace(localVarPath, "{"+"txid"+"}", fmt.Sprintf("%v", txid), -1)
 
 	localVarHeaderParams := make(map[string]string)
