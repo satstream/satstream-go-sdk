@@ -2120,42 +2120,6 @@ paths:
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
-  /tx/out/set/info:
-    post:
-      tags:
-      - Transactions
-      summary: Get transaction output set information
-      description: Returns statistics about the unspent transaction output set
-      operationId: get-tx-out-set-info
-      requestBody:
-        description: UTXO set info request parameters
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/transaction.GetTxOutSetInfoRequest'
-        required: true
-      responses:
-        "200":
-          description: UTXO set information
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/inline_response_200_2'
-        "400":
-          description: Bad request
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-        "500":
-          description: Internal server error or Bitcoin RPC error
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
-      security:
-      - ApiKeyAuth: []
-      x-codegen-request-body-name: request
   /tx/outproof:
     post:
       tags:
@@ -5069,7 +5033,7 @@ components:
         msg: msg
         code: 0
         data:
-          next: 4
+          next: 2
           entries:
           - mints: 5
             symbol: symbol
@@ -5080,18 +5044,18 @@ components:
             spaced_rune: spaced_rune
             premine: {}
             terms:
-              amount: 7
+              amount: null
               cap: null
               offset:
-              - 3
-              - 3
+              - 9
+              - 9
               height:
-              - 9
-              - 9
+              - 7
+              - 7
             block: 6
             id: id
             divisibility: 5
-            timestamp: 2
+            timestamp: 3
           - mints: 5
             symbol: symbol
             etching: etching
@@ -5101,20 +5065,20 @@ components:
             spaced_rune: spaced_rune
             premine: {}
             terms:
-              amount: 7
+              amount: null
               cap: null
               offset:
-              - 3
-              - 3
+              - 9
+              - 9
               height:
-              - 9
-              - 9
+              - 7
+              - 7
             block: 6
             id: id
             divisibility: 5
-            timestamp: 2
+            timestamp: 3
           more: true
-          prev: 7
+          prev: 4
     GetMempoolAncestorsRequest:
       type: object
       properties:
@@ -6516,7 +6480,7 @@ components:
       type: object
       properties:
         amount:
-          type: integer
+          $ref: '#/components/schemas/big.Int'
         cap:
           $ref: '#/components/schemas/big.Int'
         height:
@@ -6528,14 +6492,14 @@ components:
           items:
             type: integer
       example:
-        amount: 7
+        amount: null
         cap: null
         offset:
-        - 3
-        - 3
+        - 9
+        - 9
         height:
-        - 9
-        - 9
+        - 7
+        - 7
     RunesBalance:
       type: object
       properties:
@@ -6997,79 +6961,6 @@ components:
         - txinwitness
         - txinwitness
         vout: 4
-    UTXOBlockInfo:
-      type: object
-      properties:
-        coinbase:
-          type: number
-          description: Coinbase subsidy amount of this block
-        new_outputs_ex_coinbase:
-          type: number
-          description: Total amount of new outputs created by this block
-        prevout_spent:
-          type: number
-          description: Total amount of all prevouts spent in this block
-        unspendable:
-          type: number
-          description: Total amount of unspendable outputs created
-        unspendables:
-          type: object
-          description: Detailed view of unspendable categories
-          allOf:
-          - $ref: '#/components/schemas/UTXOUnspendables'
-    UTXOSetInfo:
-      type: object
-      properties:
-        bestblock:
-          type: string
-          description: The hash of the block at which these statistics are calculated
-        block_info:
-          type: object
-          description: Info on amounts in the block at this height
-          allOf:
-          - $ref: '#/components/schemas/UTXOBlockInfo'
-        bogosize:
-          type: integer
-          description: Database-independent metric indicating the UTXO set size
-        disk_size:
-          type: integer
-          description: The estimated size of the chainstate on disk
-        hash_serialized_2:
-          type: string
-          description: The serialized hash (only for hash_serialized_2)
-        height:
-          type: integer
-          description: The block height of the returned statistics
-        muhash:
-          type: string
-          description: The serialized hash (only for muhash)
-        total_amount:
-          type: number
-          description: The total amount of coins in the UTXO set
-        total_unspendable_amount:
-          type: number
-          description: Total amount permanently excluded from UTXO set
-        transactions:
-          type: integer
-          description: The number of transactions with unspent outputs
-        txouts:
-          type: integer
-          description: The number of unspent transaction outputs
-    UTXOUnspendables:
-      type: object
-      properties:
-        bip30:
-          type: number
-          description: Transactions overridden by duplicates
-        genesis_block:
-          type: number
-          description: Unspendable amount of Genesis block subsidy
-        scripts:
-          type: number
-          description: Amounts sent to unspendable scripts
-        unclaimed_rewards:
-          type: number
-          description: Fee rewards unclaimed by miners
     UnknownFields:
       type: object
       properties:
@@ -7267,18 +7158,18 @@ components:
         spaced_rune: spaced_rune
         premine: {}
         terms:
-          amount: 7
+          amount: null
           cap: null
           offset:
-          - 3
-          - 3
+          - 9
+          - 9
           height:
-          - 9
-          - 9
+          - 7
+          - 7
         block: 6
         id: id
         divisibility: 5
-        timestamp: 2
+        timestamp: 3
     github_com_satstream_ss-utils_ord_server_responses.RunesListResponse:
       type: object
       properties:
@@ -7293,7 +7184,7 @@ components:
         prev:
           type: integer
       example:
-        next: 4
+        next: 2
         entries:
         - mints: 5
           symbol: symbol
@@ -7304,18 +7195,18 @@ components:
           spaced_rune: spaced_rune
           premine: {}
           terms:
-            amount: 7
+            amount: null
             cap: null
             offset:
-            - 3
-            - 3
+            - 9
+            - 9
             height:
-            - 9
-            - 9
+            - 7
+            - 7
           block: 6
           id: id
           divisibility: 5
-          timestamp: 2
+          timestamp: 3
         - mints: 5
           symbol: symbol
           etching: etching
@@ -7325,20 +7216,20 @@ components:
           spaced_rune: spaced_rune
           premine: {}
           terms:
-            amount: 7
+            amount: null
             cap: null
             offset:
-            - 3
-            - 3
+            - 9
+            - 9
             height:
-            - 9
-            - 9
+            - 7
+            - 7
           block: 6
           id: id
           divisibility: 5
-          timestamp: 2
+          timestamp: 3
         more: true
-        prev: 7
+        prev: 4
     transaction.CombineRawTransactionRequest:
       required:
       - hexstrings
@@ -7448,18 +7339,6 @@ components:
         vout:
           type: integer
           description: "Required: vout number"
-    transaction.GetTxOutSetInfoRequest:
-      type: object
-      properties:
-        hash_or_height:
-          type: object
-          description: Block hash or height
-        hash_type:
-          type: string
-          description: Which UTXO set hash should be calculated
-        use_index:
-          type: boolean
-          description: Whether to use coinstatsindex
     transaction.GetTxSpendingPrevoutRequest:
       type: object
       properties:
@@ -7509,13 +7388,6 @@ components:
             type: array
             items:
               $ref: '#/components/schemas/OutputResponse'
-    inline_response_200_2:
-      allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
-      - type: object
-        properties:
-          data:
-            $ref: '#/components/schemas/UTXOSetInfo'
     GetAddressBalanceResponse_data:
       type: object
       properties:

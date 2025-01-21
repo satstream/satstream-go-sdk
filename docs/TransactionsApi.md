@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**GetRawTransactionPrevout**](TransactionsApi.md#GetRawTransactionPrevout) | **Get** /tx/{txid}/raw/prevout | Get raw transaction with prevouts (verbosity 2)
 [**GetTxOut**](TransactionsApi.md#GetTxOut) | **Post** /tx/out | Get transaction output
 [**GetTxOutProof**](TransactionsApi.md#GetTxOutProof) | **Post** /tx/outproof | Get transaction output proof
-[**GetTxOutSetInfo**](TransactionsApi.md#GetTxOutSetInfo) | **Post** /tx/out/set/info | Get transaction output set information
 [**GetTxSpendingPrevout**](TransactionsApi.md#GetTxSpendingPrevout) | **Post** /tx/spending-prevout | Get transaction spending prevout
 [**SendRawTransaction**](TransactionsApi.md#SendRawTransaction) | **Post** /tx/send | Send raw transaction
 [**VerifyTxOutProof**](TransactionsApi.md#VerifyTxOutProof) | **Post** /tx/outproof/verify | Verify transaction output proof
@@ -258,34 +257,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetTxOutProofResponse**](GetTxOutProofResponse.md)
-
-### Authorization
-
-[ApiKeyAuth](../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **GetTxOutSetInfo**
-> InlineResponse2002 GetTxOutSetInfo(ctx, body)
-Get transaction output set information
-
-Returns statistics about the unspent transaction output set
-
-### Required Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**TransactionGetTxOutSetInfoRequest**](TransactionGetTxOutSetInfoRequest.md)| UTXO set info request parameters | 
-
-### Return type
-
-[**InlineResponse2002**](inline_response_200_2.md)
 
 ### Authorization
 

@@ -10,7 +10,7 @@
 package satstream_go_sdk
 
 type RuneTerms struct {
-	Amount int32 `json:"amount,omitempty"`
+	Amount *BigInt `json:"amount,omitempty"`
 	Cap *BigInt `json:"cap,omitempty"`
 	Height []int32 `json:"height,omitempty"`
 	Offset []int32 `json:"offset,omitempty"`

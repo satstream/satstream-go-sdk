@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Amount** | **int32** |  | [optional] [default to null]
+**Amount** | [***BigInt**](big.Int.md) |  | [optional] [default to null]
 **Cap** | [***BigInt**](big.Int.md) |  | [optional] [default to null]
 **Height** | **[]int32** |  | [optional] [default to null]
 **Offset** | **[]int32** |  | [optional] [default to null]
