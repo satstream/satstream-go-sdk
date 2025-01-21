@@ -13,7 +13,7 @@ type CreatePsbtInput struct {
 	// The sequence number to use for the input
 	Sequence int32 `json:"sequence,omitempty"`
 	// The transaction id of the output to spend
-	Txid string `json:"txid,omitempty"`
+	Txid string `json:"txid"`
 	// The output index number (vout) of the output to spend
-	Vout int32 `json:"vout,omitempty"`
+	Vout int32 `json:"vout"`
 }

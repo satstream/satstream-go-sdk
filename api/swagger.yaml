@@ -3476,6 +3476,9 @@ components:
         code: 0
         data: data
     CreatePSBTInput:
+      required:
+      - txid
+      - vout
       type: object
       properties:
         sequence:
@@ -3487,6 +3490,18 @@ components:
         vout:
           type: integer
           description: The output index number (vout) of the output to spend
+    CreatePSBTOutput:
+      type: object
+      properties:
+        address:
+          type: string
+          description: The bitcoin address to send to
+        amount:
+          type: number
+          description: The amount in BTC to send
+        data:
+          type: string
+          description: Hex-encoded data to embed in the transaction
     CreatePSBTRequest:
       required:
       - inputs
@@ -3507,8 +3522,7 @@ components:
           type: array
           description: "The outputs (address:amount pairs or {\"data\":\"hex\"})"
           items:
-            type: object
-            additionalProperties: true
+            $ref: '#/components/schemas/CreatePSBTOutput'
         replaceable:
           type: boolean
           description: Marks this transaction as BIP125-replaceable

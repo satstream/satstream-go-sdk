@@ -15,7 +15,7 @@ type CreatePsbtRequest struct {
 	// Raw locktime. Non-0 value also locktime-activates inputs
 	Locktime int32 `json:"locktime,omitempty"`
 	// The outputs (address:amount pairs or {\"data\":\"hex\"})
-	Outputs []ModelMap `json:"outputs"`
+	Outputs []CreatePsbtOutput `json:"outputs"`
 	// Marks this transaction as BIP125-replaceable
 	Replaceable bool `json:"replaceable,omitempty"`
 }
