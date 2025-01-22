@@ -10,8 +10,6 @@
 package satstream_go_sdk
 
 type GetRawMempoolRequest struct {
-	// Optional: If verbose=false, returns txids with mempool sequence number
+	// Optional: Returns txids with mempool sequence number
 	MempoolSequence bool `json:"mempool_sequence,omitempty"`
-	// Optional: True for detailed information, false for just txids
-	Verbose bool `json:"verbose,omitempty"`
 }

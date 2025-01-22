@@ -5256,11 +5256,7 @@ components:
       properties:
         mempool_sequence:
           type: boolean
-          description: "Optional: If verbose=false, returns txids with mempool sequence\
-            \ number"
-        verbose:
-          type: boolean
-          description: "Optional: True for detailed information, false for just txids"
+          description: "Optional: Returns txids with mempool sequence number"
     GetRawMempoolResponse:
       type: object
       properties:
