@@ -36,25 +36,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetAddressResponse'
+                $ref: "#/components/schemas/GetAddressResponse"
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /address/{address}/balance:
@@ -80,25 +80,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetAddressBalanceResponse'
+                $ref: "#/components/schemas/GetAddressBalanceResponse"
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /address/{address}/deltas:
@@ -155,25 +155,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetAddressDeltasResponse'
+                $ref: "#/components/schemas/GetAddressDeltasResponse"
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /address/{address}/deltas/runes:
@@ -230,25 +230,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetAddressRuneDeltasResponse'
+                $ref: "#/components/schemas/GetAddressRuneDeltasResponse"
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /address/{address}/outputs:
@@ -286,25 +286,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetAddressUTXOsResponse'
+                $ref: "#/components/schemas/GetAddressUTXOsResponse"
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /address/{address}/validate:
@@ -329,19 +329,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ValidateAddressResponse'
+                $ref: "#/components/schemas/ValidateAddressResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /block/raw/{identifier}/decoded:
@@ -366,25 +366,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetBlockDecodedResponse'
+                $ref: "#/components/schemas/GetBlockDecodedResponse"
         "400":
           description: Bad Request - Invalid parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found - Block not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /block/raw/{identifier}/hex:
@@ -409,25 +409,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetBlockHexResponse'
+                $ref: "#/components/schemas/GetBlockHexResponse"
         "400":
           description: Bad Request - Invalid parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found - Block not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /block/raw/{identifier}/prevout:
@@ -452,25 +452,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetBlockPrevoutResponse'
+                $ref: "#/components/schemas/GetBlockPrevoutResponse"
         "400":
           description: Bad Request - Invalid parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found - Block not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /block/raw/{identifier}/summary:
@@ -495,25 +495,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetBlockSummaryResponse'
+                $ref: "#/components/schemas/GetBlockSummaryResponse"
         "400":
           description: Bad Request - Invalid parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found - Block not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /block/stats:
@@ -528,7 +528,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GetBlockStatsRequest'
+              $ref: "#/components/schemas/GetBlockStatsRequest"
         required: true
       responses:
         "200":
@@ -536,19 +536,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetBlockStatsResponse'
+                $ref: "#/components/schemas/GetBlockStatsResponse"
         "400":
           description: Bad Request - Invalid parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -574,25 +574,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetBlockResponse'
+                $ref: "#/components/schemas/GetBlockResponse"
         "400":
           description: Bad Request - Invalid parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found - Block not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /blockchain/info:
@@ -609,13 +609,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetBlockchainInfoResponse'
+                $ref: "#/components/schemas/GetBlockchainInfoResponse"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /blockcount:
@@ -631,25 +631,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetBlockCountResponse'
+                $ref: "#/components/schemas/GetBlockCountResponse"
         "400":
           description: Bad Request - Invalid parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found - Block not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /blockhash:
@@ -665,25 +665,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetLatestBlockHashResponse'
+                $ref: "#/components/schemas/GetLatestBlockHashResponse"
         "400":
           description: Bad Request - Invalid parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found - Block not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /blockhash/{block_height}:
@@ -708,25 +708,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetBlockHashByHeightResponse'
+                $ref: "#/components/schemas/GetBlockHashByHeightResponse"
         "400":
           description: Bad Request - Invalid parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found - Block not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /blockheight:
@@ -742,25 +742,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetLatestBlockHeightResponse'
+                $ref: "#/components/schemas/GetLatestBlockHeightResponse"
         "400":
           description: Bad Request - Invalid parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found - Block not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /blocks:
@@ -778,25 +778,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetBlocksResponse'
+                $ref: "#/components/schemas/GetBlocksResponse"
         "400":
           description: Bad Request - Invalid parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found - Block not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /blocktime:
@@ -812,25 +812,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetLatestBlockTimeResponse'
+                $ref: "#/components/schemas/GetLatestBlockTimeResponse"
         "400":
           description: Bad Request - Invalid parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not Found - Block not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /chain/difficulty:
@@ -847,13 +847,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetDifficultyResponse'
+                $ref: "#/components/schemas/GetDifficultyResponse"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /chain/txstats:
@@ -869,7 +869,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GetChainTxStatsRequest'
+              $ref: "#/components/schemas/GetChainTxStatsRequest"
         required: true
       responses:
         "200":
@@ -877,19 +877,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetChainTxStatsResponse'
+                $ref: "#/components/schemas/GetChainTxStatsResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -906,7 +906,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/EstimateRawFeeRequest'
+              $ref: "#/components/schemas/EstimateRawFeeRequest"
         required: true
       responses:
         "200":
@@ -914,19 +914,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EstimateRawFeeResponse'
+                $ref: "#/components/schemas/EstimateRawFeeResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -943,7 +943,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/EstimateSmartFeeRequest'
+              $ref: "#/components/schemas/EstimateSmartFeeRequest"
         required: true
       responses:
         "200":
@@ -951,19 +951,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/EstimateSmartFeeResponse'
+                $ref: "#/components/schemas/EstimateSmartFeeResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -989,19 +989,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetInscriptionResponse'
+                $ref: "#/components/schemas/GetInscriptionResponse"
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /inscription/{inscription_id}/{child_index}:
@@ -1034,19 +1034,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetInscriptionChildResponse'
+                $ref: "#/components/schemas/GetInscriptionChildResponse"
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /inscriptions:
@@ -1062,19 +1062,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetLatestInscriptionsResponse'
+                $ref: "#/components/schemas/GetLatestInscriptionsResponse"
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
     post:
@@ -1098,19 +1098,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FetchInscriptionsResponse'
+                $ref: "#/components/schemas/FetchInscriptionsResponse"
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: inscriptions
@@ -1136,19 +1136,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetBlockInscriptionsResponse'
+                $ref: "#/components/schemas/GetBlockInscriptionsResponse"
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /inscriptions/block/{block_height}/{page}:
@@ -1181,19 +1181,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetBlockInscriptionsResponse'
+                $ref: "#/components/schemas/GetBlockInscriptionsResponse"
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /inscriptions/{page}:
@@ -1218,19 +1218,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetLatestInscriptionsResponse'
+                $ref: "#/components/schemas/GetLatestInscriptionsResponse"
         "400":
           description: Bad Request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /mempool/ancestors:
@@ -1245,7 +1245,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GetMempoolAncestorsRequest'
+              $ref: "#/components/schemas/GetMempoolAncestorsRequest"
         required: true
       responses:
         "200":
@@ -1253,19 +1253,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetMempoolAncestorsResponse'
+                $ref: "#/components/schemas/GetMempoolAncestorsResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -1281,7 +1281,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GetMempoolDescendantsRequest'
+              $ref: "#/components/schemas/GetMempoolDescendantsRequest"
         required: true
       responses:
         "200":
@@ -1289,19 +1289,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetMempoolDescendantsResponse'
+                $ref: "#/components/schemas/GetMempoolDescendantsResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -1318,13 +1318,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetMempoolInfoResponse'
+                $ref: "#/components/schemas/GetMempoolInfoResponse"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /mempool/raw:
@@ -1339,7 +1339,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GetRawMempoolRequest'
+              $ref: "#/components/schemas/GetRawMempoolRequest"
         required: true
       responses:
         "200":
@@ -1347,19 +1347,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetRawMempoolResponse'
+                $ref: "#/components/schemas/GetRawMempoolResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -1375,7 +1375,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/TestMempoolAcceptRequest'
+              $ref: "#/components/schemas/TestMempoolAcceptRequest"
         required: true
       responses:
         "200":
@@ -1383,19 +1383,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TestMempoolAcceptResponse'
+                $ref: "#/components/schemas/TestMempoolAcceptResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -1412,13 +1412,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetMiningInfoResponse'
+                $ref: "#/components/schemas/GetMiningInfoResponse"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /mining/networkhashps:
@@ -1434,7 +1434,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GetNetworkHashPSRequest'
+              $ref: "#/components/schemas/GetNetworkHashPSRequest"
         required: true
       responses:
         "200":
@@ -1442,19 +1442,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetNetworkHashPSResponse'
+                $ref: "#/components/schemas/GetNetworkHashPSResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -1480,25 +1480,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200'
+                $ref: "#/components/schemas/inline_response_200"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /outputs:
@@ -1523,25 +1523,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/inline_response_200_1'
+                $ref: "#/components/schemas/inline_response_200_1"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: outpoints
@@ -1558,7 +1558,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AnalyzePSBTRequest'
+              $ref: "#/components/schemas/AnalyzePSBTRequest"
         required: true
       responses:
         "200":
@@ -1566,19 +1566,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AnalyzePSBTResponse'
+                $ref: "#/components/schemas/AnalyzePSBTResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -1595,7 +1595,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CombinePSBTRequest'
+              $ref: "#/components/schemas/CombinePSBTRequest"
         required: true
       responses:
         "200":
@@ -1603,19 +1603,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CombinePSBTResponse'
+                $ref: "#/components/schemas/CombinePSBTResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -1632,7 +1632,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreatePSBTRequest'
+              $ref: "#/components/schemas/CreatePSBTRequest"
         required: true
       responses:
         "200":
@@ -1640,19 +1640,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreatePSBTResponse'
+                $ref: "#/components/schemas/CreatePSBTResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -1669,7 +1669,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DecodePSBTRequest'
+              $ref: "#/components/schemas/DecodePSBTRequest"
         required: true
       responses:
         "200":
@@ -1677,19 +1677,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DecodePSBTResponse'
+                $ref: "#/components/schemas/DecodePSBTResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -1706,7 +1706,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/JoinPSBTsRequest'
+              $ref: "#/components/schemas/JoinPSBTsRequest"
         required: true
       responses:
         "200":
@@ -1714,19 +1714,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/JoinPSBTsResponse'
+                $ref: "#/components/schemas/JoinPSBTsResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -1753,25 +1753,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetRuneResponse'
+                $ref: "#/components/schemas/GetRuneResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Rune not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /runes:
@@ -1788,25 +1788,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetLatestRunesResponse'
+                $ref: "#/components/schemas/GetLatestRunesResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Rune not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /runes/{page}:
@@ -1831,25 +1831,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetLatestRunesResponse'
+                $ref: "#/components/schemas/GetLatestRunesResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Rune not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /sat/{number}:
@@ -1874,25 +1874,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetSatoshiResponse'
+                $ref: "#/components/schemas/GetSatoshiResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Satoshi not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /script/decode:
@@ -1908,7 +1908,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DecodeScriptRequest'
+              $ref: "#/components/schemas/DecodeScriptRequest"
         required: true
       responses:
         "200":
@@ -1916,19 +1916,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DecodeScriptResponse'
+                $ref: "#/components/schemas/DecodeScriptResponse"
         "400":
           description: Invalid request parameters
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -1945,25 +1945,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetStatusResponse'
+                $ref: "#/components/schemas/GetStatusResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Server not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /tx/combine:
@@ -1978,7 +1978,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/transaction.CombineRawTransactionRequest'
+              $ref: "#/components/schemas/transaction.CombineRawTransactionRequest"
         required: true
       responses:
         "200":
@@ -1986,19 +1986,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CombineRawTransactionResponse'
+                $ref: "#/components/schemas/CombineRawTransactionResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -2016,7 +2016,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/transaction.ConvertToPSBTRequest'
+              $ref: "#/components/schemas/transaction.ConvertToPSBTRequest"
         required: true
       responses:
         "200":
@@ -2024,19 +2024,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ConvertToPSBTResponse'
+                $ref: "#/components/schemas/ConvertToPSBTResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -2054,7 +2054,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/transaction.CreateRawTxRequest'
+              $ref: "#/components/schemas/transaction.CreateRawTxRequest"
         required: true
       responses:
         "200":
@@ -2062,19 +2062,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateRawTransactionResponse'
+                $ref: "#/components/schemas/CreateRawTransactionResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -2090,7 +2090,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/transaction.GetTxOutRequest'
+              $ref: "#/components/schemas/transaction.GetTxOutRequest"
         required: true
       responses:
         "200":
@@ -2098,25 +2098,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetTxOutResponse'
+                $ref: "#/components/schemas/GetTxOutResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Transaction output not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -2133,7 +2133,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/transaction.GetTxOutProofRequest'
+              $ref: "#/components/schemas/transaction.GetTxOutProofRequest"
         required: true
       responses:
         "200":
@@ -2141,19 +2141,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetTxOutProofResponse'
+                $ref: "#/components/schemas/GetTxOutProofResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -2169,7 +2169,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/transaction.VerifyTxOutProofRequest'
+              $ref: "#/components/schemas/transaction.VerifyTxOutProofRequest"
         required: true
       responses:
         "200":
@@ -2177,19 +2177,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/VerifyTxOutProofResponse'
+                $ref: "#/components/schemas/VerifyTxOutProofResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -2205,7 +2205,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/transaction.SendRawTransactionRequest'
+              $ref: "#/components/schemas/transaction.SendRawTransactionRequest"
         required: true
       responses:
         "200":
@@ -2213,19 +2213,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SendRawTransactionResponse'
+                $ref: "#/components/schemas/SendRawTransactionResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -2242,7 +2242,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/transaction.GetTxSpendingPrevoutRequest'
+              $ref: "#/components/schemas/transaction.GetTxSpendingPrevoutRequest"
         required: true
       responses:
         "200":
@@ -2250,19 +2250,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetTxSpendingPrevoutResponse'
+                $ref: "#/components/schemas/GetTxSpendingPrevoutResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
       x-codegen-request-body-name: request
@@ -2289,25 +2289,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DecodeTransactionResponse'
+                $ref: "#/components/schemas/DecodeTransactionResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Transaction not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /tx/{txid}/raw/decode:
@@ -2332,25 +2332,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetRawTransactionDecodeResponse'
+                $ref: "#/components/schemas/GetRawTransactionDecodeResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Transaction not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /tx/{txid}/raw/hex:
@@ -2375,25 +2375,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetRawTransactionHexResponse'
+                $ref: "#/components/schemas/GetRawTransactionHexResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Transaction not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
   /tx/{txid}/raw/prevout:
@@ -2418,25 +2418,25 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetRawTransactionPrevoutResponse'
+                $ref: "#/components/schemas/GetRawTransactionPrevoutResponse"
         "400":
           description: Bad request
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "404":
           description: Transaction not found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
         "500":
           description: Internal server error or Bitcoin RPC error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/utils.ResponseEnvelope'
+                $ref: "#/components/schemas/utils.ResponseEnvelope"
       security:
       - ApiKeyAuth: []
 components:
@@ -2455,7 +2455,7 @@ components:
         runes_balances:
           type: array
           items:
-            $ref: '#/components/schemas/RunesBalance'
+            $ref: "#/components/schemas/RunesBalance"
         sat_balance:
           type: integer
       example:
@@ -2485,7 +2485,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/PSBTAnalysis'
+          $ref: "#/components/schemas/PSBTAnalysis"
         msg:
           type: string
       example:
@@ -2636,7 +2636,7 @@ components:
           type: array
           description: List of detailed transactions
           items:
-            $ref: '#/components/schemas/BtcTx2'
+            $ref: "#/components/schemas/BtcTx2"
         version:
           type: integer
         versionHex:
@@ -2786,7 +2786,7 @@ components:
           type: array
           description: List of fully detailed transactions
           items:
-            $ref: '#/components/schemas/BtcTx3'
+            $ref: "#/components/schemas/BtcTx3"
         version:
           type: integer
         versionHex:
@@ -2933,7 +2933,7 @@ components:
         transactions:
           type: array
           items:
-            $ref: '#/components/schemas/Transaction'
+            $ref: "#/components/schemas/Transaction"
       example:
         runes:
         - runes
@@ -3120,7 +3120,7 @@ components:
           type: object
           description: The script signature
           allOf:
-          - $ref: '#/components/schemas/ScriptSig'
+          - $ref: "#/components/schemas/ScriptSig"
         sequence:
           type: integer
           description: Input sequence number
@@ -3152,9 +3152,9 @@ components:
           type: object
           description: Detailed previous output
           allOf:
-          - $ref: '#/components/schemas/PrevOut'
+          - $ref: "#/components/schemas/PrevOut"
         scriptSig:
-          $ref: '#/components/schemas/ScriptSig'
+          $ref: "#/components/schemas/ScriptSig"
         sequence:
           type: integer
         txid:
@@ -3257,11 +3257,11 @@ components:
         vin:
           type: array
           items:
-            $ref: '#/components/schemas/BlockVin2'
+            $ref: "#/components/schemas/BlockVin2"
         vout:
           type: array
           items:
-            $ref: '#/components/schemas/Vout'
+            $ref: "#/components/schemas/Vout"
         vsize:
           type: integer
         weight:
@@ -3330,11 +3330,11 @@ components:
         vin:
           type: array
           items:
-            $ref: '#/components/schemas/BlockVin3'
+            $ref: "#/components/schemas/BlockVin3"
         vout:
           type: array
           items:
-            $ref: '#/components/schemas/Vout'
+            $ref: "#/components/schemas/Vout"
         vsize:
           type: integer
         weight:
@@ -3513,7 +3513,7 @@ components:
           type: array
           description: The inputs for the transaction
           items:
-            $ref: '#/components/schemas/CreatePSBTInput'
+            $ref: "#/components/schemas/CreatePSBTInput"
         locktime:
           type: integer
           description: Raw locktime. Non-0 value also locktime-activates inputs
@@ -3522,7 +3522,7 @@ components:
           type: array
           description: "The outputs (address:amount pairs or {\"data\":\"hex\"})"
           items:
-            $ref: '#/components/schemas/CreatePSBTOutput'
+            $ref: "#/components/schemas/CreatePSBTOutput"
         replaceable:
           type: boolean
           description: Marks this transaction as BIP125-replaceable
@@ -3564,7 +3564,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/DecodedPSBT'
+          $ref: "#/components/schemas/DecodedPSBT"
         msg:
           type: string
       example:
@@ -3634,9 +3634,9 @@ components:
         inscriptions:
           type: array
           items:
-            $ref: '#/components/schemas/DecodedInscription'
+            $ref: "#/components/schemas/DecodedInscription"
         runestone:
-          $ref: '#/components/schemas/RunestoneData'
+          $ref: "#/components/schemas/RunestoneData"
       example:
         inscriptions:
         - input: 6
@@ -3708,7 +3708,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/DecodedScript'
+          $ref: "#/components/schemas/DecodedScript"
         msg:
           type: string
       example:
@@ -3727,7 +3727,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/DecodeResponse'
+          $ref: "#/components/schemas/DecodeResponse"
         msg:
           type: string
       example:
@@ -3798,7 +3798,7 @@ components:
         offset:
           type: integer
         payload:
-          $ref: '#/components/schemas/InscriptionData'
+          $ref: "#/components/schemas/InscriptionData"
         pushnum:
           type: boolean
         stutter:
@@ -3837,22 +3837,22 @@ components:
           type: array
           description: Array of inputs
           items:
-            $ref: '#/components/schemas/DecodedPSBTInput'
+            $ref: "#/components/schemas/DecodedPSBTInput"
         outputs:
           type: array
           description: Array of outputs
           items:
-            $ref: '#/components/schemas/DecodedPSBTOutput'
+            $ref: "#/components/schemas/DecodedPSBTOutput"
         tx:
           type: object
           description: The decoded network-serialized unsigned transaction
           allOf:
-          - $ref: '#/components/schemas/RawTx1'
+          - $ref: "#/components/schemas/RawTx1"
         unknown:
           type: object
           description: The unknown global fields
           allOf:
-          - $ref: '#/components/schemas/UnknownFields'
+          - $ref: "#/components/schemas/UnknownFields"
       example:
         outputs:
         - bip32_derivs:
@@ -3917,13 +3917,13 @@ components:
         bip32_derivs:
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/Bip32Deriv'
+            $ref: "#/components/schemas/Bip32Deriv"
           description: The BIP32 derivation paths
         final_scriptsig:
           type: object
           description: The final script sig
           allOf:
-          - $ref: '#/components/schemas/Script'
+          - $ref: "#/components/schemas/Script"
         final_scriptwitness:
           type: array
           description: The final script witness
@@ -3933,7 +3933,7 @@ components:
           type: object
           description: Decoded network transaction for non-witness UTXOs
           allOf:
-          - $ref: '#/components/schemas/RawTx1'
+          - $ref: "#/components/schemas/RawTx1"
         partial_signatures:
           type: object
           additionalProperties:
@@ -3943,7 +3943,7 @@ components:
           type: object
           description: The redeem script
           allOf:
-          - $ref: '#/components/schemas/Script'
+          - $ref: "#/components/schemas/Script"
         sighash:
           type: string
           description: The sighash type to be used
@@ -3951,17 +3951,17 @@ components:
           type: object
           description: Unknown fields
           allOf:
-          - $ref: '#/components/schemas/UnknownFields'
+          - $ref: "#/components/schemas/UnknownFields"
         witness_script:
           type: object
           description: The witness script
           allOf:
-          - $ref: '#/components/schemas/Script'
+          - $ref: "#/components/schemas/Script"
         witness_utxo:
           type: object
           description: Transaction output for witness UTXOs
           allOf:
-          - $ref: '#/components/schemas/PSBTWitnessUtxo'
+          - $ref: "#/components/schemas/PSBTWitnessUtxo"
       example:
         non_witness_utxo: ""
         final_scriptwitness:
@@ -3986,22 +3986,22 @@ components:
           type: array
           description: The BIP32 derivation paths
           items:
-            $ref: '#/components/schemas/PSBTBip32Deriv'
+            $ref: "#/components/schemas/PSBTBip32Deriv"
         redeem_script:
           type: object
           description: The redeem script
           allOf:
-          - $ref: '#/components/schemas/Script'
+          - $ref: "#/components/schemas/Script"
         unknown:
           type: object
           description: Unknown fields
           allOf:
-          - $ref: '#/components/schemas/UnknownFields'
+          - $ref: "#/components/schemas/UnknownFields"
         witness_script:
           type: object
           description: The witness script
           allOf:
-          - $ref: '#/components/schemas/Script'
+          - $ref: "#/components/schemas/Script"
       example:
         bip32_derivs:
         - path: path
@@ -4032,7 +4032,7 @@ components:
           type: object
           description: Witness script details
           allOf:
-          - $ref: '#/components/schemas/SegwitDetails'
+          - $ref: "#/components/schemas/SegwitDetails"
         type:
           type: string
           description: The output type
@@ -4066,7 +4066,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/RawFeeEstimate'
+          $ref: "#/components/schemas/RawFeeEstimate"
         msg:
           type: string
       example:
@@ -4091,7 +4091,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/SmartFeeEstimate'
+          $ref: "#/components/schemas/SmartFeeEstimate"
         msg:
           type: string
       example:
@@ -4118,7 +4118,7 @@ components:
           type: object
           description: Information about highest range of feerates to fail
           allOf:
-          - $ref: '#/components/schemas/FeeRange'
+          - $ref: "#/components/schemas/FeeRange"
         feerate:
           type: number
           description: Estimate fee rate in BTC/kvB
@@ -4126,7 +4126,7 @@ components:
           type: object
           description: Information about lowest range of feerates to succeed
           allOf:
-          - $ref: '#/components/schemas/FeeRange'
+          - $ref: "#/components/schemas/FeeRange"
         scale:
           type: number
           description: Resolution of confirmation targets at this time horizon
@@ -4159,7 +4159,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/InscriptionResponse'
+            $ref: "#/components/schemas/InscriptionResponse"
         msg:
           type: string
       example:
@@ -4220,7 +4220,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/GetAddressBalanceResponse_data'
+          $ref: "#/components/schemas/GetAddressBalanceResponse_data"
         msg:
           type: string
       example:
@@ -4237,7 +4237,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/github_com_satstream_ss-utils_database.AddressDelta'
+            $ref: "#/components/schemas/github_com_satstream_ss-utils_database.AddressDelta"
         msg:
           type: string
       example:
@@ -4256,7 +4256,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/AddressResponse'
+          $ref: "#/components/schemas/AddressResponse"
         msg:
           type: string
       example:
@@ -4285,7 +4285,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/address.RuneDelta'
+            $ref: "#/components/schemas/address.RuneDelta"
         has_more:
           type: boolean
         msg:
@@ -4313,7 +4313,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/OutputResponse'
+            $ref: "#/components/schemas/OutputResponse"
         msg:
           type: string
       example:
@@ -4379,7 +4379,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/Block2'
+          $ref: "#/components/schemas/Block2"
         msg:
           type: string
       example:
@@ -4523,7 +4523,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/LatestInscriptionsResponse'
+          $ref: "#/components/schemas/LatestInscriptionsResponse"
         msg:
           type: string
       example:
@@ -4541,7 +4541,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/Block3'
+          $ref: "#/components/schemas/Block3"
         msg:
           type: string
       example:
@@ -4671,7 +4671,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/BlockResponse'
+          $ref: "#/components/schemas/BlockResponse"
         msg:
           type: string
       example:
@@ -4746,7 +4746,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/BlockStats'
+          $ref: "#/components/schemas/BlockStats"
         msg:
           type: string
       example:
@@ -4790,7 +4790,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/Block1'
+          $ref: "#/components/schemas/Block1"
         msg:
           type: string
       example:
@@ -4824,7 +4824,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/BlockchainInfo'
+          $ref: "#/components/schemas/BlockchainInfo"
         msg:
           type: string
       example:
@@ -4845,7 +4845,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/BlocksResponse'
+          $ref: "#/components/schemas/BlocksResponse"
         msg:
           type: string
       example:
@@ -4875,7 +4875,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/ChainTxStats'
+          $ref: "#/components/schemas/ChainTxStats"
         msg:
           type: string
       example:
@@ -4909,7 +4909,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/InscriptionResponse'
+          $ref: "#/components/schemas/InscriptionResponse"
         msg:
           type: string
       example:
@@ -4946,7 +4946,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/InscriptionResponse'
+          $ref: "#/components/schemas/InscriptionResponse"
         msg:
           type: string
       example:
@@ -5022,7 +5022,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/LatestInscriptionsResponse'
+          $ref: "#/components/schemas/LatestInscriptionsResponse"
         msg:
           type: string
       example:
@@ -5040,7 +5040,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/github_com_satstream_ss-utils_ord_server_responses.RunesListResponse'
+          $ref: "#/components/schemas/github_com_satstream_ss-utils_ord_server_responses.RunesListResponse"
         msg:
           type: string
       example:
@@ -5108,7 +5108,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/MempoolAncestorsData'
+          $ref: "#/components/schemas/MempoolAncestorsData"
         msg:
           type: string
       example:
@@ -5153,7 +5153,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/MempoolDescendantsData'
+          $ref: "#/components/schemas/MempoolDescendantsData"
         msg:
           type: string
       example:
@@ -5189,7 +5189,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/MempoolInfo'
+          $ref: "#/components/schemas/MempoolInfo"
         msg:
           type: string
       example:
@@ -5213,7 +5213,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/MiningInfo'
+          $ref: "#/components/schemas/MiningInfo"
         msg:
           type: string
       example:
@@ -5263,7 +5263,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/RawMempoolData'
+          $ref: "#/components/schemas/RawMempoolData"
         msg:
           type: string
       example:
@@ -5300,7 +5300,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/RawTx1'
+          $ref: "#/components/schemas/RawTx1"
         msg:
           type: string
       example:
@@ -5376,7 +5376,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/RawTx2'
+          $ref: "#/components/schemas/RawTx2"
         msg:
           type: string
       example:
@@ -5459,7 +5459,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/RuneResponse'
+          $ref: "#/components/schemas/RuneResponse"
         msg:
           type: string
       example:
@@ -5475,7 +5475,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/SatoshiResponse'
+          $ref: "#/components/schemas/SatoshiResponse"
         msg:
           type: string
       example:
@@ -5507,7 +5507,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/StatusResponse'
+          $ref: "#/components/schemas/StatusResponse"
         msg:
           type: string
       example:
@@ -5541,7 +5541,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/TxOut'
+          $ref: "#/components/schemas/TxOut"
         msg:
           type: string
       example:
@@ -5561,7 +5561,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/TxSpendingPrevoutResult'
+            $ref: "#/components/schemas/TxSpendingPrevoutResult"
         msg:
           type: string
       example:
@@ -5762,7 +5762,7 @@ components:
         detailed:
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/MempoolEntry'
+            $ref: "#/components/schemas/MempoolEntry"
           description: Only if verbose is true
         txids:
           type: array
@@ -5799,7 +5799,7 @@ components:
         detailed:
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/MempoolEntry'
+            $ref: "#/components/schemas/MempoolEntry"
           description: Only if verbose is true
         txids:
           type: array
@@ -5857,7 +5857,7 @@ components:
           type: object
           description: Fee information
           allOf:
-          - $ref: '#/components/schemas/MempoolFees'
+          - $ref: "#/components/schemas/MempoolFees"
         height:
           type: integer
           description: Block height when transaction entered pool
@@ -6036,7 +6036,7 @@ components:
         runes:
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/github_com_satstream_ss-utils_ord_server_responses.RuneDetails'
+            $ref: "#/components/schemas/github_com_satstream_ss-utils_ord_server_responses.RuneDetails"
         sat_ranges:
           type: array
           items:
@@ -6086,7 +6086,7 @@ components:
         inputs:
           type: array
           items:
-            $ref: '#/components/schemas/PSBTInputAnalysis'
+            $ref: "#/components/schemas/PSBTInputAnalysis"
         next:
           type: string
       example:
@@ -6144,7 +6144,7 @@ components:
         is_final:
           type: boolean
         missing:
-          $ref: '#/components/schemas/PSBTMissingData'
+          $ref: "#/components/schemas/PSBTMissingData"
         next:
           type: string
       example:
@@ -6194,7 +6194,7 @@ components:
           type: object
           description: The script pub key
           allOf:
-          - $ref: '#/components/schemas/Script'
+          - $ref: "#/components/schemas/Script"
     PrevOut:
       type: object
       properties:
@@ -6203,7 +6203,7 @@ components:
         height:
           type: integer
         scriptPubKey:
-          $ref: '#/components/schemas/ScriptPubKey'
+          $ref: "#/components/schemas/ScriptPubKey"
         value:
           type: number
       example:
@@ -6223,17 +6223,17 @@ components:
           type: object
           description: Estimate for long time horizon
           allOf:
-          - $ref: '#/components/schemas/FeeHorizonEstimate'
+          - $ref: "#/components/schemas/FeeHorizonEstimate"
         medium:
           type: object
           description: Estimate for medium time horizon
           allOf:
-          - $ref: '#/components/schemas/FeeHorizonEstimate'
+          - $ref: "#/components/schemas/FeeHorizonEstimate"
         short:
           type: object
           description: Estimate for short time horizon
           allOf:
-          - $ref: '#/components/schemas/FeeHorizonEstimate'
+          - $ref: "#/components/schemas/FeeHorizonEstimate"
       example:
         short: ""
         medium: ""
@@ -6244,13 +6244,13 @@ components:
         detailed:
           type: object
           additionalProperties:
-            $ref: '#/components/schemas/MempoolEntry'
+            $ref: "#/components/schemas/MempoolEntry"
           description: Only if verbose is true
         sequence:
           type: object
           description: Only if mempool_sequence is true
           allOf:
-          - $ref: '#/components/schemas/MempoolSequence'
+          - $ref: "#/components/schemas/MempoolSequence"
         txids:
           type: array
           description: Only if verbose is false
@@ -6307,11 +6307,11 @@ components:
         vin:
           type: array
           items:
-            $ref: '#/components/schemas/TxVin1'
+            $ref: "#/components/schemas/TxVin1"
         vout:
           type: array
           items:
-            $ref: '#/components/schemas/Vout'
+            $ref: "#/components/schemas/Vout"
         vsize:
           type: integer
         weight:
@@ -6393,11 +6393,11 @@ components:
         vin:
           type: array
           items:
-            $ref: '#/components/schemas/TxVin2'
+            $ref: "#/components/schemas/TxVin2"
         vout:
           type: array
           items:
-            $ref: '#/components/schemas/Vout'
+            $ref: "#/components/schemas/Vout"
         vsize:
           type: integer
         weight:
@@ -6490,9 +6490,9 @@ components:
       type: object
       properties:
         amount:
-          $ref: '#/components/schemas/big.Int'
+          $ref: "#/components/schemas/big.Int"
         cap:
-          $ref: '#/components/schemas/big.Int'
+          $ref: "#/components/schemas/big.Int"
         height:
           type: array
           items:
@@ -6750,7 +6750,7 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/TestMempoolAcceptResult'
+            $ref: "#/components/schemas/TestMempoolAcceptResult"
         msg:
           type: string
       example:
@@ -6781,7 +6781,7 @@ components:
           type: object
           description: Transaction fees
           allOf:
-          - $ref: '#/components/schemas/TestMempoolFees'
+          - $ref: "#/components/schemas/TestMempoolFees"
         package-error:
           type: string
           description: "Package validation error, if any"
@@ -6817,13 +6817,13 @@ components:
         input:
           type: array
           items:
-            $ref: '#/components/schemas/Input'
+            $ref: "#/components/schemas/Input"
         lock_time:
           type: integer
         output:
           type: array
           items:
-            $ref: '#/components/schemas/Output'
+            $ref: "#/components/schemas/Output"
         version:
           type: integer
       example:
@@ -6863,7 +6863,7 @@ components:
           type: object
           description: The public key script
           allOf:
-          - $ref: '#/components/schemas/ScriptPubKey'
+          - $ref: "#/components/schemas/ScriptPubKey"
         value:
           type: number
           description: The transaction value in BTC
@@ -6909,7 +6909,7 @@ components:
         coinbase:
           type: string
         scriptSig:
-          $ref: '#/components/schemas/ScriptSig'
+          $ref: "#/components/schemas/ScriptSig"
         sequence:
           type: integer
         txid:
@@ -6937,9 +6937,9 @@ components:
         coinbase:
           type: string
         prevout:
-          $ref: '#/components/schemas/PrevOut'
+          $ref: "#/components/schemas/PrevOut"
         scriptSig:
-          $ref: '#/components/schemas/ScriptSig'
+          $ref: "#/components/schemas/ScriptSig"
         sequence:
           type: integer
         txid:
@@ -6985,7 +6985,7 @@ components:
         code:
           type: integer
         data:
-          $ref: '#/components/schemas/ValidateAddressResult'
+          $ref: "#/components/schemas/ValidateAddressResult"
         msg:
           type: string
       example:
@@ -7070,7 +7070,7 @@ components:
         "n":
           type: integer
         scriptPubKey:
-          $ref: '#/components/schemas/ScriptPubKey'
+          $ref: "#/components/schemas/ScriptPubKey"
         value:
           type: number
       example:
@@ -7147,13 +7147,13 @@ components:
         number:
           type: integer
         premine:
-          $ref: '#/components/schemas/big.Int'
+          $ref: "#/components/schemas/big.Int"
         spaced_rune:
           type: string
         symbol:
           type: string
         terms:
-          $ref: '#/components/schemas/RuneTerms'
+          $ref: "#/components/schemas/RuneTerms"
         timestamp:
           type: integer
         turbo:
@@ -7186,7 +7186,7 @@ components:
         entries:
           type: array
           items:
-            $ref: '#/components/schemas/github_com_satstream_ss-utils_ord_server_responses.RuneListEntry'
+            $ref: "#/components/schemas/github_com_satstream_ss-utils_ord_server_responses.RuneListEntry"
         more:
           type: boolean
         next:
@@ -7302,7 +7302,7 @@ components:
           type: array
           description: The inputs for the transaction
           items:
-            $ref: '#/components/schemas/transaction.CreateRawTxInput'
+            $ref: "#/components/schemas/transaction.CreateRawTxInput"
         locktime:
           type: integer
           description: |-
@@ -7356,7 +7356,7 @@ components:
           type: array
           description: The transaction outputs to check
           items:
-            $ref: '#/components/schemas/TxSpendingPrevoutInput'
+            $ref: "#/components/schemas/TxSpendingPrevoutInput"
     transaction.SendRawTransactionRequest:
       type: object
       properties:
@@ -7384,20 +7384,20 @@ components:
           type: string
     inline_response_200:
       allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
+      - $ref: "#/components/schemas/utils.ResponseEnvelope"
       - type: object
         properties:
           data:
-            $ref: '#/components/schemas/OutputResponse'
+            $ref: "#/components/schemas/OutputResponse"
     inline_response_200_1:
       allOf:
-      - $ref: '#/components/schemas/utils.ResponseEnvelope'
+      - $ref: "#/components/schemas/utils.ResponseEnvelope"
       - type: object
         properties:
           data:
             type: array
             items:
-              $ref: '#/components/schemas/OutputResponse'
+              $ref: "#/components/schemas/OutputResponse"
     GetAddressBalanceResponse_data:
       type: object
       properties:
