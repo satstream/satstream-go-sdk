@@ -62,7 +62,7 @@ func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		BasePath:      "https://api.satstream.io/api/v1",
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "Swagger-Codegen/1.0.53/go",
+		UserAgent:     "Swagger-Codegen/1.0.54/go",
 	}
 	return cfg
 }
